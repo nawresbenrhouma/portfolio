@@ -33,7 +33,7 @@ test('styles.css never transitions layout properties', () => {
 
 test('styles.css styles the essentials', () => {
   const s = css();
-  for (const sel of ['.skip-link', '.site-header', '.site-nav__link[aria-current="true"]', '.theme-toggle', '.hero__photo',
+  for (const sel of ['.skip-link', '.site-header', '.site-nav__link[aria-current="true"]', '.theme-toggle',
     '.skill-group--primary', '.timeline', '.note', '.contact__list', '.print-hint', ':focus-visible']) {
     assert.ok(s.includes(sel), `selector ${sel} missing`);
   }
@@ -83,5 +83,5 @@ test('redesign world: butter ground, sheets lifted by shadow alone, Gabarito dis
   const narrow = s.match(/@media \(max-width: 900px\)\s*{([\s\S]*?)\n}\n/);
   assert.ok(narrow, 'narrow media block');
   assert.match(narrow[1], /\.hero__inner\s*{[^}]*grid-template-columns:\s*1fr/);
-  assert.match(narrow[1], /\.hero__photo\s*{[^}]*width:\s*6rem/);
+  assert.doesNotMatch(s, /hero__photo/, 'no photo rules remain');
 });

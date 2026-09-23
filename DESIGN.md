@@ -298,7 +298,6 @@ Depth is carried by exactly one device per theme. In light, a sheet is lifted of
 There is no second elevation level. A sheet is lifted; everything else is flat and separated by hairlines, by the band's tint step, or by whitespace.
 
 ### Shadow Vocabulary
-- **Sheet lift** (`box-shadow: 0 12px 32px rgba(56, 42, 12, 0.14)`, light): sheets, panels, project notes, the portrait, the CV page.
 - **Sheet edge** (`box-shadow: 0 0 0 1px var(--border)`, dark): the same surfaces, same token, dark theme.
 - **Tab lift** (`box-shadow: 0 -8px 20px rgba(56, 42, 12, 0.08)`, light only): the one upward-cast shadow in the system, on the selected folder tab, so the tab reads as continuous with the sheet below it. In dark it is replaced by the hairline ring.
 
@@ -311,7 +310,6 @@ There is no second elevation level. A sheet is lifted; everything else is flat a
 ## Shapes
 
 Four radii, assigned by function, not by size:
-- **Sheets** — gently rounded at **12px** (`--radius-lg`): sheets, panels, notes, the portrait, the CV page.
 - **Controls** — **8px** (`--radius`): buttons, the skip link, the print hint, the focus ring's own rounding.
 - **Chips** — **6px** (`--radius-sm`): code chips.
 - **Pills** — **999px**: the theme toggle, the status tokens, and the mail button in its collapsed circular form.

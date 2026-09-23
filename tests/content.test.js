@@ -71,7 +71,6 @@ test('index.html: enhancement hooks present', () => {
   assert.match(html, /<script src="js\/theme\.js" defer><\/script>/);
   assert.match(html, /<script src="js\/nav\.js" defer><\/script>/);
   assert.match(html, /<link rel="stylesheet" href="css\/styles\.css">/);
-  assert.match(html, /<img[^>]*class="hero__photo"[^>]*alt="Portrait of Nawres Ben Rhouma"/);
 });
 
 test('cv.html: required facts and structure present', () => {
@@ -212,8 +211,11 @@ test('cv.html: indexable by search engines (user decision 2026-09-23)', () => {
   assert.doesNotMatch(readHtml('cv.html'), /<meta name="robots" content="noindex">/);
 });
 
-test('index.html: hero uses the real photo with responsive sources', () => {
+test('index.html: no portrait on the page and no photo files shipped', () => {
   const html = readHtml('index.html');
-  assert.match(html, /<img class="hero__photo" src="assets\/photo-480\.jpg" srcset="assets\/photo-480\.jpg 480w, assets\/photo-768\.jpg 768w" sizes="[^"]+" width="480" height="480" alt="Portrait of Nawres Ben Rhouma" loading="eager" decoding="async">/);
-  assert.doesNotMatch(html, /photo-placeholder/);
+  assert.doesNotMatch(html, /hero__photo|photo-\d+\.jpg|photo-placeholder/);
+  const fs = require('node:fs'); const path = require('node:path');
+  for (const f of ['assets/photo-480.jpg', 'assets/photo-768.jpg', 'assets/photo.jpg', 'docs/photo-original.jpg']) {
+    assert.ok(!fs.existsSync(path.resolve(__dirname, '..', f)), `${f} must not exist`);
+  }
 });

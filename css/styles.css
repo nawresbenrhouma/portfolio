@@ -364,13 +364,6 @@ code { font-family: var(--font-code); font-size: 0.9em; }
   gap: var(--space-2) var(--space-4);
   margin-bottom: var(--space-6);
 }
-.hero__photo {
-  width: 10rem;
-  height: 10rem;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-}
 .work { grid-column: 6 / span 7; background: none; box-shadow: none; border-radius: 0; }
 
 /* 7. Folder tabs: the structural signature. The tab row sits on the band and
@@ -750,11 +743,7 @@ code { font-family: var(--font-code); font-size: 0.9em; }
   html { scroll-padding-top: 7.5rem; }
   .hero { padding: var(--space-6) var(--space-4); }
   .hero__inner { grid-template-columns: 1fr; gap: var(--space-5); }
-  .hero__text { display: grid; grid-template-columns: minmax(0, 1fr) 6rem; column-gap: var(--space-4); }
-  .hero__text > h1, .hero__text > .rule, .hero__text > .hero__availability, .hero__text > .hero__actions { grid-column: 1 / -1; }
-  .hero__statement { grid-column: 1; }
-  .hero__photo { grid-column: 2; grid-row: 3; width: 6rem; height: 6rem; align-self: start; justify-self: end; margin-top: 0; }
-  .hero__actions { margin-bottom: 0; }
+    .hero__actions { margin-bottom: 0; }
   .tabs__list { padding: 0 var(--space-3) 0 0; gap: var(--space-1); -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); }
   .panel { padding: var(--space-4); }
   .tab { padding: 0.65rem 0.9rem; font-size: 0.875rem; }
