@@ -127,7 +127,7 @@
         "role": "neutral",
         "displayName": "Sand Border Strong",
         "canonical": "#8f8058",
-        "purpose": "Control outlines only; roughly 3.5:1 on the butter ground, so never used under text and never on the green panel.",
+        "purpose": "Control outlines only; roughly 3.5:1 on the butter ground, so never used under text and never on the butter panel.",
         "tonalRamp": [
           "oklch(15% 0.024 90)",
           "oklch(26% 0.034 90)",
@@ -143,7 +143,7 @@
       "forest-accent": {
         "role": "primary",
         "displayName": "Forest Green",
-        "canonical": "#2f6b3a",
+        "canonical": "#7a5a00",
         "purpose": "The only accent. As ink: the closing words of the name and of every heading, links, timeline and bullet markers, column icons, the selected folder tab, the focus ring. As a surface: the at-a-glance panel, once per page.",
         "tonalRamp": [
           "oklch(20% 0.05 150)",
@@ -155,12 +155,12 @@
           "oklch(80% 0.075 150)",
           "oklch(93% 0.035 150)"
         ],
-        "darkValue": "#86cf8f"
+        "darkValue": "#f0cf5a"
       },
       "forest-action-hover": {
         "role": "primary",
         "displayName": "Deep Forest",
-        "canonical": "#245530",
+        "canonical": "#e9c43a",
         "purpose": "Hover state of the filled primary button in light mode.",
         "tonalRamp": [
           "oklch(18% 0.045 150)",
@@ -172,12 +172,12 @@
           "oklch(77% 0.08 150)",
           "oklch(92% 0.038 150)"
         ],
-        "darkValue": "#86cf8f"
+        "darkValue": "#f0cf5a"
       },
       "forest-soft": {
         "role": "primary",
         "displayName": "Forest Soft",
-        "canonical": "#e6f0e6",
+        "canonical": "#fbf0c4",
         "purpose": "Reduced to a single job: the text selection highlight.",
         "tonalRamp": [
           "oklch(18% 0.014 150)",
@@ -189,13 +189,13 @@
           "oklch(90% 0.018 150)",
           "oklch(96% 0.012 150)"
         ],
-        "darkValue": "#24352a"
+        "darkValue": "#3a3115"
       },
-      "mint-action-dark": {
+      "light butter-action-dark": {
         "role": "primary",
         "displayName": "Mint Action",
-        "canonical": "#5fae6c",
-        "purpose": "Dark mode only: the filled primary button, one step below the mint accent so it does not flare on the dark ground.",
+        "canonical": "#e9c43a",
+        "purpose": "Dark mode only: the filled primary button, one step below the light butter accent so it does not flare on the dark ground.",
         "tonalRamp": [
           "oklch(20% 0.05 150)",
           "oklch(30% 0.07 150)",
@@ -243,7 +243,7 @@
       },
       "glance-label": {
         "displayName": "Glance Label",
-        "purpose": "The green panel's terms: wider 0.08em tracking at 80% opacity on the accent surface."
+        "purpose": "The butter panel's terms: wider 0.08em tracking at 80% opacity on the accent surface."
       },
       "role-line": {
         "displayName": "Role Line",
@@ -258,7 +258,7 @@
       {
         "name": "sheet-lift",
         "value": "0 12px 32px rgba(56, 42, 12, 0.14)",
-        "purpose": "The only elevation: every lifted surface, green panel included. One altitude, never raised on hover."
+        "purpose": "The only elevation: every lifted surface, butter panel included. One altitude, never raised on hover."
       },
       {
         "name": "sheet-lift-dark",
@@ -307,7 +307,7 @@
       {
         "name": "hero-stack",
         "value": "1100px",
-        "purpose": "Hero drops from 7:5 to one column; the green panel goes full width under the name."
+        "purpose": "Hero drops from 7:5 to one column; the butter panel goes full width under the name."
       },
       {
         "name": "wrap",
@@ -355,7 +355,7 @@
       "refersTo": "button-primary",
       "description": "The one filled action per section: View work, Get in touch.",
       "html": "<a class=\"ds-btn-primary\" href=\"#work\">View work</a>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.125rem; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: var(--action, #2f6b3a); color: var(--accent-contrast, #fff); border: 1px solid var(--action, #2f6b3a); border-radius: var(--radius, 8px); transition: background-color 150ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)), border-color 150ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)); } .ds-btn-primary:hover { background: var(--action-hover, #245530); border-color: var(--action-hover, #245530); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #2f6b3a); outline-offset: 3px; border-radius: 6px; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.125rem; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: var(--action, #7a5a00); color: var(--accent-contrast, #fff); border: 1px solid var(--action, #7a5a00); border-radius: var(--radius, 8px); transition: background-color 150ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)), border-color 150ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)); } .ds-btn-primary:hover { background: var(--action-hover, #e9c43a); border-color: var(--action-hover, #e9c43a); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #7a5a00); outline-offset: 3px; border-radius: 6px; }"
     },
     {
       "name": "Outline Button",
@@ -363,7 +363,7 @@
       "refersTo": "button-outline",
       "description": "The quiet second action beside the primary; hover swaps border and text to the accent.",
       "html": "<a class=\"ds-btn-outline\" href=\"mailto:hello@example.com\">Get in touch</a>",
-      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.125rem; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: transparent; color: var(--text, #2b2417); border: 1px solid var(--border-strong, #8f8058); border-radius: var(--radius, 8px); transition: border-color 150ms ease, color 150ms ease; } .ds-btn-outline:hover { border-color: var(--accent, #2f6b3a); color: var(--accent, #2f6b3a); } .ds-btn-outline:focus-visible { outline: 2px solid var(--focus, #2f6b3a); outline-offset: 3px; border-radius: 6px; }"
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.125rem; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: transparent; color: var(--text, #2b2417); border: 1px solid var(--border-strong, #8f8058); border-radius: var(--radius, 8px); transition: border-color 150ms ease, color 150ms ease; } .ds-btn-outline:hover { border-color: var(--accent, #7a5a00); color: var(--accent, #7a5a00); } .ds-btn-outline:focus-visible { outline: 2px solid var(--focus, #7a5a00); outline-offset: 3px; border-radius: 6px; }"
     },
     {
       "name": "At-a-Glance Panel",
@@ -371,7 +371,7 @@
       "refersTo": "panel-green",
       "description": "The signature: the one object where the accent is a surface. Three stacked label/value pairs (Availability, Working on, Since) in Gabarito over tracked labels at 80% opacity, then the profile links on a 28%-white hairline footer. Dark mode switches its text to the page ground colour.",
       "html": "<aside class=\"ds-glance-panel\" aria-label=\"At a glance\"><dl class=\"ds-glance\"><dt>Availability</dt><dd>Based in Tunis · Open to remote, part-time roles</dd><dt>Working on</dt><dd>Java backend · Azure platform · AI-assisted development</dd><dt>Since</dt><dd>MaibornWolff, Nov 2022</dd></dl><div class=\"ds-glance__links\"><a class=\"ds-glance__link\" href=\"https://github.com/\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z\"/></svg>GitHub</a></div></aside>",
-      "css": ".ds-glance-panel { background: var(--accent, #2f6b3a); color: var(--accent-contrast, #fff); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); font-family: var(--font-body, \"Source Sans 3\", sans-serif); } .ds-glance { margin: 0 0 1.5rem; display: grid; gap: 1rem; } .ds-glance dt { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; margin: 0 0 0.25rem; } .ds-glance dd { margin: 0; font-family: var(--font-display, Gabarito, sans-serif); font-size: 1.25rem; font-weight: 700; line-height: 1.25; } .ds-glance__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.28); } .ds-glance__link { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0 0.5rem; color: var(--accent-contrast, #fff); font-weight: 600; text-decoration: none; } .ds-glance__link:hover { text-decoration: underline; text-underline-offset: 0.2em; } .ds-glance__link:focus-visible { outline: 2px solid var(--accent-contrast, #fff); outline-offset: 3px; border-radius: 6px; }"
+      "css": ".ds-glance-panel { background: var(--accent, #7a5a00); color: var(--accent-contrast, #fff); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); font-family: var(--font-body, \"Source Sans 3\", sans-serif); } .ds-glance { margin: 0 0 1.5rem; display: grid; gap: 1rem; } .ds-glance dt { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; margin: 0 0 0.25rem; } .ds-glance dd { margin: 0; font-family: var(--font-display, Gabarito, sans-serif); font-size: 1.25rem; font-weight: 700; line-height: 1.25; } .ds-glance__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.28); } .ds-glance__link { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0 0.5rem; color: var(--accent-contrast, #fff); font-weight: 600; text-decoration: none; } .ds-glance__link:hover { text-decoration: underline; text-underline-offset: 0.2em; } .ds-glance__link:focus-visible { outline: 2px solid var(--accent-contrast, #fff); outline-offset: 3px; border-radius: 6px; }"
     },
     {
       "name": "Two-Tone Name",
@@ -379,7 +379,7 @@
       "refersTo": "display",
       "description": "The hero name: the accent span is display:block, so the colour change carries the line break. No <br>, no mid-line tint.",
       "html": "<h1 class=\"ds-name\">Nawres <span class=\"ds-accent\">Ben Rhouma.</span></h1>",
-      "css": ".ds-name { font-family: var(--font-heading, Gabarito, sans-serif); font-size: clamp(3rem, 2rem + 3.6vw, 5rem); font-weight: 800; line-height: 0.98; letter-spacing: -0.04em; margin: 0 0 1rem; color: var(--text, #2b2417); text-wrap: balance; } .ds-name > .ds-accent { display: block; color: var(--accent, #2f6b3a); }"
+      "css": ".ds-name { font-family: var(--font-heading, Gabarito, sans-serif); font-size: clamp(3rem, 2rem + 3.6vw, 5rem); font-weight: 800; line-height: 0.98; letter-spacing: -0.04em; margin: 0 0 1rem; color: var(--text, #2b2417); text-wrap: balance; } .ds-name > .ds-accent { display: block; color: var(--accent, #7a5a00); }"
     },
     {
       "name": "Two-Tone Heading",
@@ -387,7 +387,7 @@
       "refersTo": "headline",
       "description": "Every section heading: a plain first clause, an accent closing clause, a full stop, and a # anchor that appears on hover or focus.",
       "html": "<h2 class=\"ds-h2\">Selected work, <span class=\"ds-accent\">up close.</span> <a class=\"ds-anchor\" href=\"#work\" aria-label=\"Link to Selected work\">#</a></h2>",
-      "css": ".ds-h2 { font-family: var(--font-heading, Gabarito, sans-serif); font-size: 1.75rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 1.5rem; color: var(--text, #2b2417); text-wrap: balance; } .ds-accent { color: var(--accent, #2f6b3a); } .ds-anchor { margin-left: 0.5rem; font-family: var(--font-body, sans-serif); font-weight: 400; color: var(--text-muted, #5b4e35); text-decoration: none; opacity: 0; transition: opacity 150ms ease; } .ds-h2:hover .ds-anchor, .ds-anchor:focus-visible { opacity: 1; } .ds-anchor:hover { color: var(--accent, #2f6b3a); }"
+      "css": ".ds-h2 { font-family: var(--font-heading, Gabarito, sans-serif); font-size: 1.75rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 1.5rem; color: var(--text, #2b2417); text-wrap: balance; } .ds-accent { color: var(--accent, #7a5a00); } .ds-anchor { margin-left: 0.5rem; font-family: var(--font-body, sans-serif); font-weight: 400; color: var(--text-muted, #5b4e35); text-decoration: none; opacity: 0; transition: opacity 150ms ease; } .ds-h2:hover .ds-anchor, .ds-anchor:focus-visible { opacity: 1; } .ds-anchor:hover { color: var(--accent, #7a5a00); }"
     },
     {
       "name": "Folder Tabs and Panel",
@@ -395,7 +395,7 @@
       "refersTo": "tab",
       "description": "The structural signature: the selected tab takes the sheet colour and fuses into the panel below, whose top-left corner is squared. Every tab holds the 2.75rem minimum target. Tab semantics and the visible tab row are added by JavaScript; without it the panels stack as separate sheets.",
       "html": "<div class=\"ds-tabs\"><div class=\"ds-tabs__list ds-tabs__list--enhanced\" role=\"tablist\" aria-label=\"Selected work\"><button class=\"ds-tab\" type=\"button\" role=\"tab\" aria-selected=\"true\">Techem WebPortal</button><button class=\"ds-tab\" type=\"button\" role=\"tab\" aria-selected=\"false\">Copilot Studio pilot</button></div><article class=\"ds-panel\"><h3 class=\"ds-panel__title\">Techem WebPortal</h3><p class=\"ds-panel__meta\">Backend Engineer · MaibornWolff · Feb 2024 – present</p></article></div>",
-      "css": ".ds-tabs__list { display: flex; align-items: flex-end; gap: 0.25rem; padding: 0 1rem 0 0; overflow-x: auto; scrollbar-width: none; } .ds-tab { flex: none; min-height: 2.75rem; padding: 0.75rem 1.125rem; background: rgba(43, 36, 23, 0.08); border: 0; border-radius: 10px 10px 0 0; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; color: var(--text-muted, #5b4e35); cursor: pointer; white-space: nowrap; transition: color 150ms ease, background-color 150ms ease; } .ds-tab:hover { color: var(--text, #2b2417); background: rgba(43, 36, 23, 0.14); } .ds-tab[aria-selected=\"true\"] { color: var(--accent, #2f6b3a); background: var(--sheet, #fff); padding-top: 0.95rem; box-shadow: 0 -8px 20px rgba(56, 42, 12, 0.08); } .ds-tab:focus-visible { outline: 2px solid var(--focus, #2f6b3a); outline-offset: 3px; } .ds-panel { padding: 2rem; background: var(--sheet, #fff); border-radius: 0 12px 12px 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); } .ds-panel__title { font-family: var(--font-heading, Gabarito, sans-serif); font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5rem; color: var(--text, #2b2417); } .ds-panel__meta { margin: 0; font-family: var(--font-body, sans-serif); font-size: 0.875rem; color: var(--text-muted, #5b4e35); }"
+      "css": ".ds-tabs__list { display: flex; align-items: flex-end; gap: 0.25rem; padding: 0 1rem 0 0; overflow-x: auto; scrollbar-width: none; } .ds-tab { flex: none; min-height: 2.75rem; padding: 0.75rem 1.125rem; background: rgba(43, 36, 23, 0.08); border: 0; border-radius: 10px 10px 0 0; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; color: var(--text-muted, #5b4e35); cursor: pointer; white-space: nowrap; transition: color 150ms ease, background-color 150ms ease; } .ds-tab:hover { color: var(--text, #2b2417); background: rgba(43, 36, 23, 0.14); } .ds-tab[aria-selected=\"true\"] { color: var(--accent, #7a5a00); background: var(--sheet, #fff); padding-top: 0.95rem; box-shadow: 0 -8px 20px rgba(56, 42, 12, 0.08); } .ds-tab:focus-visible { outline: 2px solid var(--focus, #7a5a00); outline-offset: 3px; } .ds-panel { padding: 2rem; background: var(--sheet, #fff); border-radius: 0 12px 12px 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); } .ds-panel__title { font-family: var(--font-heading, Gabarito, sans-serif); font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5rem; color: var(--text, #2b2417); } .ds-panel__meta { margin: 0; font-family: var(--font-body, sans-serif); font-size: 0.875rem; color: var(--text-muted, #5b4e35); }"
     },
     {
       "name": "Column Note",
@@ -403,7 +403,7 @@
       "refersTo": null,
       "description": "One of the three 'What I did' notes inside a work panel: a 22px single-stroke accent icon at 2px stroke, the label in Gabarito 700, a muted note beneath. The icon is decorative and never replaces the word.",
       "html": "<div class=\"ds-col\"><p class=\"ds-col__title\"><svg class=\"ds-col__icon\" viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m8 7-5 5 5 5\"/><path d=\"m16 7 5 5-5 5\"/><path d=\"m14 4-4 16\"/></svg>Backend</p><p class=\"ds-col__note\">Features and maintenance of the Spring Boot services and the GraphQL API.</p></div>",
-      "css": ".ds-col__title { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.25rem; font-family: var(--font-display, Gabarito, sans-serif); font-size: 1.125rem; font-weight: 700; color: var(--text, #2b2417); } .ds-col__icon { flex: none; color: var(--accent, #2f6b3a); } .ds-col__note { margin: 0; font-family: var(--font-body, sans-serif); font-size: 0.875rem; line-height: 1.6; color: var(--text-muted, #5b4e35); }"
+      "css": ".ds-col__title { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.25rem; font-family: var(--font-display, Gabarito, sans-serif); font-size: 1.125rem; font-weight: 700; color: var(--text, #2b2417); } .ds-col__icon { flex: none; color: var(--accent, #7a5a00); } .ds-col__note { margin: 0; font-family: var(--font-body, sans-serif); font-size: 0.875rem; line-height: 1.6; color: var(--text-muted, #5b4e35); }"
     },
     {
       "name": "Project Card",
@@ -427,7 +427,7 @@
       "refersTo": "status",
       "description": "An inline honesty marker attached to a heading: Core in the accent, Growing in ink, Completed muted. Outline only, never filled.",
       "html": "<h3 class=\"ds-h3\">Backend Engineering <span class=\"ds-status ds-status--core\">Core</span></h3>",
-      "css": ".ds-h3 { font-family: var(--font-heading, Gabarito, sans-serif); font-size: 1.125rem; font-weight: 700; margin: 0; color: var(--text, #2b2417); } .ds-status { display: inline-block; vertical-align: 0.15em; margin-left: 0.5rem; padding: 0.05rem 0.5rem; font-family: var(--font-code, \"Source Code Pro\", monospace); font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.02em; line-height: 1.5; border: 1px solid var(--border-strong, #8f8058); border-radius: 999px; color: var(--text-muted, #5b4e35); white-space: nowrap; } .ds-status--core { color: var(--accent, #2f6b3a); border-color: var(--accent, #2f6b3a); }"
+      "css": ".ds-h3 { font-family: var(--font-heading, Gabarito, sans-serif); font-size: 1.125rem; font-weight: 700; margin: 0; color: var(--text, #2b2417); } .ds-status { display: inline-block; vertical-align: 0.15em; margin-left: 0.5rem; padding: 0.05rem 0.5rem; font-family: var(--font-code, \"Source Code Pro\", monospace); font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.02em; line-height: 1.5; border: 1px solid var(--border-strong, #8f8058); border-radius: 999px; color: var(--text-muted, #5b4e35); white-space: nowrap; } .ds-status--core { color: var(--accent, #7a5a00); border-color: var(--accent, #7a5a00); }"
     },
     {
       "name": "Section Navigation",
@@ -435,7 +435,7 @@
       "refersTo": null,
       "description": "Sticky header nav: muted links, aria-current marking the visible section, and a single accent indicator slid under the active link by transform when JavaScript is present.",
       "html": "<nav class=\"ds-nav ds-nav--has-indicator\" aria-label=\"Sections\"><ul class=\"ds-nav__list\"><li><a class=\"ds-nav__link\" href=\"#about\" aria-current=\"true\">About</a></li><li><a class=\"ds-nav__link\" href=\"#work\">Work</a></li><li><a class=\"ds-nav__link\" href=\"#skills\">Skills</a></li></ul><span class=\"ds-nav__indicator\" aria-hidden=\"true\"></span></nav>",
-      "css": ".ds-nav { position: relative; border-bottom: 1px solid var(--border, #e8dcb6); } .ds-nav__list { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; } .ds-nav__link { display: inline-block; padding: 1.25rem 0; font-family: var(--font-body, sans-serif); font-size: 0.9375rem; font-weight: 600; color: var(--text-muted, #5b4e35); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; } .ds-nav__link:hover { color: var(--text, #2b2417); } .ds-nav__link[aria-current=\"true\"] { color: var(--text, #2b2417); } .ds-nav--has-indicator .ds-nav__link[aria-current=\"true\"] { border-bottom-color: transparent; } .ds-nav__indicator { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100px; background: var(--accent, #2f6b3a); transform: translateX(0) scaleX(0.6); transform-origin: 0 0; transition: transform 220ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)); pointer-events: none; } .ds-nav__link:focus-visible { outline: 2px solid var(--focus, #2f6b3a); outline-offset: 3px; border-radius: 6px; }"
+      "css": ".ds-nav { position: relative; border-bottom: 1px solid var(--border, #e8dcb6); } .ds-nav__list { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; } .ds-nav__link { display: inline-block; padding: 1.25rem 0; font-family: var(--font-body, sans-serif); font-size: 0.9375rem; font-weight: 600; color: var(--text-muted, #5b4e35); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; } .ds-nav__link:hover { color: var(--text, #2b2417); } .ds-nav__link[aria-current=\"true\"] { color: var(--text, #2b2417); } .ds-nav--has-indicator .ds-nav__link[aria-current=\"true\"] { border-bottom-color: transparent; } .ds-nav__indicator { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100px; background: var(--accent, #7a5a00); transform: translateX(0) scaleX(0.6); transform-origin: 0 0; transition: transform 220ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)); pointer-events: none; } .ds-nav__link:focus-visible { outline: 2px solid var(--focus, #7a5a00); outline-offset: 3px; border-radius: 6px; }"
     },
     {
       "name": "Timeline Entry",
@@ -443,24 +443,24 @@
       "refersTo": null,
       "description": "A 2px rail with a 1rem accent disc ringed in the current section ground, an uppercase tracked date above, and the entry body on a white sheet.",
       "html": "<ol class=\"ds-timeline\"><li class=\"ds-timeline__item\"><span class=\"ds-timeline__dates\">Nov 2022 – present</span><div class=\"ds-timeline__body\"><h3 class=\"ds-h3\">Software Engineer · MaibornWolff</h3><p>Grew from a backend-focused role into cloud, DevOps and platform engineering.</p></div></li></ol>",
-      "css": ".ds-timeline { list-style: none; margin: 0; padding: 0 0 0 2rem; position: relative; font-family: var(--font-body, sans-serif); color: var(--text, #2b2417); } .ds-timeline::before { content: \"\"; position: absolute; left: 0.45rem; top: 0.6rem; bottom: 0.6rem; width: 2px; background: var(--border, #e8dcb6); } .ds-timeline__item { position: relative; padding: 0 0 2rem; } .ds-timeline__item:last-child { padding-bottom: 0; } .ds-timeline__item::before { content: \"\"; position: absolute; left: -2rem; top: 0.35rem; width: 1rem; height: 1rem; border-radius: 50%; background: var(--accent, #2f6b3a); box-shadow: 0 0 0 4px var(--bg, #fffcf2); } .ds-timeline__dates { display: block; margin-bottom: 0.5rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted, #5b4e35); } .ds-timeline__body { background: var(--sheet, #fff); border-radius: 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); padding: 1.5rem 2rem; }"
+      "css": ".ds-timeline { list-style: none; margin: 0; padding: 0 0 0 2rem; position: relative; font-family: var(--font-body, sans-serif); color: var(--text, #2b2417); } .ds-timeline::before { content: \"\"; position: absolute; left: 0.45rem; top: 0.6rem; bottom: 0.6rem; width: 2px; background: var(--border, #e8dcb6); } .ds-timeline__item { position: relative; padding: 0 0 2rem; } .ds-timeline__item:last-child { padding-bottom: 0; } .ds-timeline__item::before { content: \"\"; position: absolute; left: -2rem; top: 0.35rem; width: 1rem; height: 1rem; border-radius: 50%; background: var(--accent, #7a5a00); box-shadow: 0 0 0 4px var(--bg, #fffcf2); } .ds-timeline__dates { display: block; margin-bottom: 0.5rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted, #5b4e35); } .ds-timeline__body { background: var(--sheet, #fff); border-radius: 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); padding: 1.5rem 2rem; }"
     }
   ],
   "narrative": {
-    "northStar": "The Green Full Stop",
+    "northStar": "The Butter Full Stop",
     "northStarProvenance": "Derived from the direction contract in .impeccable/surfaces/index-html.md and PRODUCT.md; no user was available to confirm the qualitative language.",
-    "overview": "**Creative North Star: \"The Green Full Stop\"** *(derived from the direction contract; no user was available to confirm)*\n\nA near-white page that behaves like good paper: butter-tinted, quiet, and generous with air. Everything structural is achieved by tone and edge rather than by decoration — the ground alternates between two warm near-whites section by section, and pure white sheets float on top of it carrying the content that needs to be read closely. The one thing that raises its voice is forest green, and it is spent on endings: the surname and its full stop, the second clause of every section heading, the timeline markers, the selected folder tab, the drawn column icons.\n\nOnce, and only once, that green stops being ink and becomes a surface. In the hero's right column a solid green panel holds four at-a-glance facts in Gabarito over small tracked labels, with the profile links on a translucent hairline footer. It is the page's single loud object, and its weight is what lets the rest of the page stay pale. The name beside it is set so that its colour change *is* its line break — \"Nawres\" in ink, \"Ben Rhouma.\" in green on the next line — so the split reads as a typographic decision rather than a highlight.\n\nThe density is document-like without being a document. Headings are Gabarito at 800, tracked tight, so they read as built rather than typed; body text is Source Sans 3 at 1.0625rem on a 1.6 line, and the About sheet is sized to its own measure rather than to the grid, so the biography reads as one column of a printed page. Source Code Pro appears only where content is literally a token — a technology chip, a status marker. What the world refuses is equally load-bearing: no photography, no logos, no invented metrics, no second hue, and no motion beyond a single authored entrance.",
+    "overview": "**Creative North Star: \"The Butter Full Stop\"** *(derived from the direction contract; no user was available to confirm)*\n\nA near-white page that behaves like good paper: butter-tinted, quiet, and generous with air. Everything structural is achieved by tone and edge rather than by decoration — the ground alternates between two warm near-whites section by section, and pure white sheets float on top of it carrying the content that needs to be read closely. The one thing that raises its voice is butter yellow, and it is spent on endings: the surname and its full stop, the second clause of every section heading, the timeline markers, the selected folder tab, the drawn column icons.\n\nOnce, and only once, that green stops being ink and becomes a surface. In the hero's right column a solid butter panel holds four at-a-glance facts in Gabarito over small tracked labels, with the profile links on a translucent hairline footer. It is the page's single loud object, and its weight is what lets the rest of the page stay pale. The name beside it is set so that its colour change *is* its line break — \"Nawres\" in ink, \"Ben Rhouma.\" in green on the next line — so the split reads as a typographic decision rather than a highlight.\n\nThe density is document-like without being a document. Headings are Gabarito at 800, tracked tight, so they read as built rather than typed; body text is Source Sans 3 at 1.0625rem on a 1.6 line, and the About sheet is sized to its own measure rather than to the grid, so the biography reads as one column of a printed page. Source Code Pro appears only where content is literally a token — a technology chip, a status marker. What the world refuses is equally load-bearing: no photography, no logos, no invented metrics, no second hue, and no motion beyond a single authored entrance.",
     "keyCharacteristics": [
       "Butter-tinted near-white ground (#fffcf2) alternating with a warmer tone (#f6f2e6), full-bleed, section by section",
       "Pure white sheets on a single soft offset shadow in light; a hairline ring in dark",
-      "One accent, forest green (#2f6b3a) in light and mint (#86cf8f) in dark, used as ink everywhere and as a surface exactly once",
+      "One accent, butter yellow (#7a5a00) in light and light butter (#f0cf5a) in dark, used as ink everywhere and as a surface exactly once",
       "Gabarito 700/800 display and headings; Source Sans 3 body; Source Code Pro only in chips and status tokens",
       "8px module, 76rem content maximum, 68ch measure",
       "One authored entrance motion on one element, JS-only, reduced-motion and print safe; every surface works with JavaScript off"
     ],
     "rules": [
       {
-        "name": "The Green Full Stop Rule",
+        "name": "The Butter Full Stop Rule",
         "body": "The accent is reserved for the ending: the surname and its period, the second clause of every h2, and the small terminal signals (timeline dots, list markers, column icons, the selected tab). It never appears twice in the same role on one screen and never acquires a companion hue.",
         "section": "colors"
       },
@@ -471,7 +471,7 @@
       },
       {
         "name": "The Hairline Two-Tier Rule",
-        "body": "Content separation uses Sand Border; interactive outlines use Sand Border Strong. Never put Sand Border Strong under text or Sand Border around a control. On the green panel the divider is neither — it is 28% white (30% of the dark ink in dark mode), because a hairline on a saturated surface must be drawn from that surface's own contrast.",
+        "body": "Content separation uses Sand Border; interactive outlines use Sand Border Strong. Never put Sand Border Strong under text or Sand Border around a control. On the butter panel the divider is neither — it is 28% white (30% of the dark ink in dark mode), because a hairline on a saturated surface must be drawn from that surface's own contrast.",
         "section": "colors"
       },
       {
@@ -551,7 +551,7 @@
       }
     ],
     "dos": [
-      "Do keep the accent on endings — the closing clause, the terminal marker, the selected state — per The Green Full Stop Rule.",
+      "Do keep the accent on endings — the closing clause, the terminal marker, the selected state — per The Butter Full Stop Rule.",
       "Do let the green fill exactly one object per page, and set everything on it from the accent-contrast token.",
       "Do write every section heading as two clauses with the second in an accent span and a full stop at the end.",
       "Do alternate section tone with .section--alt full-bleed, and put new content in the section grid's middle column at the 76rem cap.",
@@ -567,7 +567,7 @@
       "Don't use pure white as a page ground, or a shadow anywhere in dark mode.",
       "Don't raise a surface on hover or add a second elevation level; state is colour and border only.",
       "Don't set body copy, headings, dates or labels in Source Code Pro — chips and status tokens only.",
-      "Don't put Sand Border Strong (#8f8058) under text; it is a control outline, not a text or divider colour, and it never appears on the green panel.",
+      "Don't put Sand Border Strong (#8f8058) under text; it is a control outline, not a text or divider colour, and it never appears on the butter panel.",
       "Don't add a radius outside 12 / 8 / 6 / 999 (the folder tab's 10px top corners are the one fused exception).",
       "Don't add a second authored reveal, or any transform-based motion that is not switched off under prefers-reduced-motion: reduce.",
       "Don't ship a component whose content only exists once JavaScript runs.",

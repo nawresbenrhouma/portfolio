@@ -28,10 +28,10 @@ test('styles.css reduced-motion block removes motion but keeps colour feedback; 
   const print = s.match(/@media print\s*{([\s\S]*?)\n}\n/);
   assert.ok(print, 'print block');
   assert.match(print[1], /\.reveal\s*{[^}]*opacity:\s*1/, 'print shows every section');
-  assert.match(print[1], /\.panel-green\s*{[^}]*color:\s*#000/, 'green panel prints in ink, not white on white');
+  assert.match(print[1], /\.panel-green\s*{[^}]*color:\s*#000/, 'panel prints in ink');
   assert.match(print[1], /\.button\s*{[^}]*color:\s*#000/);
   assert.match(s, /\.tabs__list--enhanced ~ \.panel \+ \.panel\s*{[^}]*margin-top:\s*0/, 'selected tab 2 or 3 stays fused to the tab row');
-  assert.match(s, /\.glance dt\s*{[^}]*opacity:\s*0\.85/);
+  assert.match(s, /\.glance dt\s*{[^}]*opacity:\s*0\.9/);
   assert.match(s, /\.tab\s*{[^}]*min-height:\s*2\.75rem/, 'tabs are 44px tall');
 });
 
@@ -64,11 +64,13 @@ test('print.css hides chrome, keeps entries together, shows link URLs, sets A4',
 
 test('mix world: forest accent, alternating section tones, facts card, pill, vertical timeline, reveal', () => {
   const s = css();
-  assert.match(s, /--accent:\s*#2f6b3a/);
+  assert.match(s, /--accent:\s*#7a5a00/, 'deep butter for text');
+  assert.match(s, /--action:\s*#f3d35f/, 'butter fill for buttons and the panel');
+  assert.match(s, /\.contact-form\s*{/);
   assert.match(s, /--alt:\s*#/);
   assert.match(s, /\.section--alt\s*{[^}]*background:\s*var\(--alt\)/);
   assert.match(s, /\.section\s*{[^}]*grid-template-columns:\s*minmax\(var\(--space-6\), 1fr\) minmax\(0, var\(--content-max\)\) minmax\(var\(--space-6\), 1fr\)/, 'full-bleed sections with centred content');
-  assert.match(s, /\.panel-green\s*{[^}]*background:\s*var\(--accent\)/, 'the accent becomes a surface');
+  assert.match(s, /\.panel-green\s*{[^}]*background:\s*var\(--action\)/, 'the butter becomes a surface');
   assert.match(s, /\.glance\s*{/);
   assert.match(s, /\.hero__text > h1 > \.accent\s*{[^}]*display:\s*block/, 'colour break coincides with the line break');
   assert.match(s, /\.project\s*{/);
@@ -109,6 +111,6 @@ test('redesign world: butter ground, sheets lifted by shadow alone, Gabarito dis
   const narrow = s.match(/@media \(max-width: 900px\)\s*{([\s\S]*?)\n}\n/);
   assert.ok(narrow, 'narrow media block');
   assert.match(narrow[1], /\.hero__inner\s*{[^}]*grid-template-columns:\s*minmax\(0, 1fr\)/);
-  assert.match(s.slice(0, 200), /forest green/i, 'stylesheet header describes the shipped world');
+  assert.match(s.slice(0, 260), /butter/i, 'stylesheet header describes the shipped world');
   assert.doesNotMatch(s, /hero__photo/, 'no photo rules remain');
 });

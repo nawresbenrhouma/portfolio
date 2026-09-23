@@ -11,9 +11,10 @@ const REQUIRED_INDEX = [
   'https://www.linkedin.com/in/nawres-ben-rhouma21/',
   'https://github.com/nawresbenrhouma',
   'Tunis, Tunisia · remote',
-  'Techem WebPortal',
+  'T WebPortal',
   'Beiersdorf',
-  'Consommi Tounsi',
+  'Travel App',
+  'MSR PolyCTRL',
   'TravelEase',
   'AZ-900',
   'ESPRIT',
@@ -26,7 +27,7 @@ for (const page of ['index.html', 'cv.html']) {
   test(`${page}: forbidden content absent`, () => {
     const html = readHtml(page);
     assert.doesNotMatch(html, /junior/i, 'the word Junior must not appear');
-    assert.doesNotMatch(html, /\.pdf\b/i, 'no PDF references');
+    assert.doesNotMatch(html, /Techem/, 'client name is not published');
     assert.doesNotMatch(html, /\s(href|src)="\/(?!\/)/, 'no root-relative URLs');
     // Only loaded resources count: scripts, stylesheets and preconnects. Canonical / Open Graph URLs are metadata.
     const external = [...html.matchAll(/<(?:script[^>]*\ssrc|link[^>]*rel="(?:stylesheet|preconnect)"[^>]*\shref)="(https?:[^"]+)"/g)].map((m) => m[1]);
@@ -75,6 +76,7 @@ test('index.html: enhancement hooks present', () => {
 
 test('cv.html: required facts and structure present', () => {
   const html = readHtml('cv.html');
+  assert.doesNotMatch(html, /Techem/, 'client name is not published');
   for (const s of [
     'Nawres Ben Rhouma',
     'Software Engineer at MaibornWolff',
@@ -83,7 +85,9 @@ test('cv.html: required facts and structure present', () => {
     'github.com/nawresbenrhouma',
     'Tunis, Tunisia · remote',
     'Open to remote, part-time roles',
-    'Techem WebPortal',
+    'T WebPortal',
+    'Travel App',
+    'MSR PolyCTRL',
     'Beiersdorf',
     'Consommi Tounsi',
     'TravelEase',
@@ -124,7 +128,8 @@ test('index.html: skip link lands on main content, heading anchors have unique n
 
 test('cv.html: nested engagements are h4 under the h3 employer entry', () => {
   const html = readHtml('cv.html');
-  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Techem WebPortal/);
+  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>T WebPortal/);
+  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>MSR PolyCTRL/);
   assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Beiersdorf/);
 });
 
@@ -135,9 +140,11 @@ test('index.html: hero is a two-line name, role, statement, actions and a green 
   assert.match(html, /<h1 id="hero-title">Nawres <span class="accent">Ben Rhouma\.<\/span><\/h1>/);
   assert.match(html, /<p class="hero__role">Software Engineer at MaibornWolff<\/p>/);
   assert.match(html, /<a class="button button--primary" href="#work">View work<\/a>/);
-  assert.match(html, /<a class="button button--outline" href="mailto:benrhoumanawres7@gmail\.com">Get in touch<\/a>/);
+  assert.match(html, /<a class="button button--outline" href="assets\/Nawres_Ben_Rhouma_CV\.pdf" download>Download CV<\/a>/);
+  assert.ok(require('node:fs').existsSync(require('node:path').resolve(__dirname, '../assets/Nawres_Ben_Rhouma_CV.pdf')), 'CV PDF ships');
+  assert.match(html, /<a class="site-header__brand" href="#top" aria-label="Nawres Ben Rhouma, home">NB\.<\/a>/, 'header shows a monogram, not the full name twice');
   assert.match(html, /<aside class="panel-green" aria-label="At a glance">/);
-  assert.match(html, /<dl class="glance">\s*<dt>Availability<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>/);
+  assert.match(html, /<dl class="glance">\s*<dt>Availability<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>\s*<dt>Working on<\/dt>\s*<dd>Software development · Azure platform · AI-assisted development<\/dd>/);
   assert.doesNotMatch(html.slice(html.indexOf('<dl class="glance">'), html.indexOf('</dl>', html.indexOf('<dl class="glance">'))), /Tunis, Tunisia/, 'location is stated once in the panel');
   assert.match(html, /<div class="panel-green__links">[\s\S]*iconlink[\s\S]*<\/div>/, 'GitHub and LinkedIn live in the panel');
   assert.match(html, /<section id="work" class="section section--work" aria-labelledby="work-title">/);
@@ -162,10 +169,10 @@ test('index.html: About is prose only; availability is stated once outside conta
 test('index.html: selected-work tabs ship as plain markup; ARIA is added by JS', () => {
   const html = readHtml('index.html');
   const tabs = [...html.matchAll(/<button class="tab" type="button" id="tab-([a-z]+)" data-panel="panel-\1">([^<]+)<\/button>/g)];
-  assert.deepEqual(tabs.map((m) => m[1]), ['techem', 'copilot', 'consommi']);
-  assert.deepEqual(tabs.map((m) => m[2]), ['Techem WebPortal', 'Copilot Studio pilot', 'Consommi Tounsi']);
+  assert.deepEqual(tabs.map((m) => m[1]), ['webportal', 'travelapp', 'msr', 'copilot']);
+  assert.deepEqual(tabs.map((m) => m[2]), ['T WebPortal', 'Travel App', 'MSR PolyCTRL', 'Copilot Studio pilot']);
   assert.match(html, /<div class="tabs__list" data-tablist-label="Selected work">/);
-  for (const id of ['techem', 'copilot', 'consommi']) {
+  for (const id of ['webportal', 'travelapp', 'msr', 'copilot']) {
     assert.match(html, new RegExp(`<article class="panel" id="panel-${id}">`), `panel ${id}`);
   }
   assert.doesNotMatch(html, /role="tab(list|panel)?"|aria-selected|aria-controls/, 'no static tab ARIA: it is inert without JS');
@@ -175,9 +182,9 @@ test('index.html: selected-work tabs ship as plain markup; ARIA is added by JS',
 test('index.html: projects are a compact grid with real headings, not an accordion', () => {
   const html = readHtml('index.html');
   assert.doesNotMatch(html, /<details class="note">/);
-  const cards = [...html.matchAll(/<article class="project">\s*<h3>/g)];
-  assert.equal(cards.length, 4);
-  assert.match(html, /<article class="project">\s*<h3>TravelEase<\/h3>/);
+  const cards = [...html.matchAll(/<article class="project">\s*<h3>([^<]+)<\/h3>/g)].map((m) => m[1]);
+  assert.deepEqual(cards, ['TravelEase', 'Cloud IaaS with CloudStack'], 'grid holds only projects the tabs do not cover');
+  assert.doesNotMatch(html, /Consommi Tounsi/, 'Consommi Tounsi stays on the CV only');
   assert.doesNotMatch(html, /Copilot Studio Pilot/, 'consistent casing: pilot');
   assert.match(html, /<h2><span id="projects-title">Other things I <span class="accent">built\.<\/span>/);
 });
@@ -186,7 +193,25 @@ test('index.html: only the work sheet reveals; What-I-did columns carry drawn ic
   const html = readHtml('index.html');
   assert.equal((html.match(/ data-reveal>/g) || []).length, 1, 'one authored motion, on one element');
   assert.match(html, /<div class="work" data-reveal>/);
-  assert.ok((html.match(/<svg class="col__icon"/g) || []).length >= 9, 'three drawn icons per panel');
+  assert.ok((html.match(/<svg class="col__icon"/g) || []).length >= 12, 'three drawn icons per panel');
+});
+
+test('index.html: GitHub and LinkedIn open in a new tab safely', () => {
+  const html = readHtml('index.html');
+  const ext = [...html.matchAll(/<a [^>]*href="https:\/\/(?:github\.com|www\.linkedin\.com)[^"]*"[^>]*>/g)].map((m) => m[0]);
+  assert.ok(ext.length >= 4);
+  for (const a of ext) {
+    assert.match(a, /target="_blank"/, a);
+    assert.match(a, /rel="[^"]*noopener[^"]*"/, a);
+  }
+});
+
+test('index.html: contact form works without a backend and without JS', () => {
+  const html = readHtml('index.html');
+  assert.match(html, /<form class="contact-form" action="mailto:benrhoumanawres7@gmail\.com" method="post" enctype="text\/plain">/);
+  for (const name of ['name', 'email', 'message']) assert.match(html, new RegExp(`<(input|textarea)[^>]*name="${name}"[^>]*required`), name);
+  assert.match(html, /<label for="cf-name">/);
+  assert.match(html, /<button class="button button--primary" type="submit">Send message<\/button>/);
 });
 
 test('index.html: no invented numbers in the work sheet', () => {

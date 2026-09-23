@@ -13,6 +13,11 @@ No build step. Plain HTML, CSS and JavaScript.
     scripts/check.sh          # node tests + html-validate
     scripts/screenshots.sh    # desktop / mobile / 320px screenshots into .qa/
     scripts/print-check.sh    # prints cv.html to .qa/cv.pdf and reports page count
+    scripts/build-cv-pdf.sh   # regenerates assets/Nawres_Ben_Rhouma_CV.pdf from cv.html (run after editing the CV)
+
+## Contact form
+
+The form posts to a `mailto:` address, so it opens the visitor's email app with the message prefilled and needs no backend. To receive submissions directly instead, create a free Formspree form and change the form's `action` to its endpoint.
 
 ## Deploy
 

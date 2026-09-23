@@ -27,6 +27,7 @@ test('light tokens: text and accent pairs meet AA on every surface they sit on',
     assert.ok(ratio(t['border-strong'], t[surface]) >= 3, `control outline on ${surface}`);
   }
   assert.ok(ratio(t['accent-contrast'], t.action) >= 4.5, 'button label on action');
+  assert.ok(ratio(t['text'], t.action) >= 4.5, 'ink on the butter panel');
 });
 
 test('dark tokens: text and accent pairs meet AA on every surface they sit on', () => {

@@ -8,28 +8,28 @@ colors:
   butter-raised: "#f7f0da"
   espresso-ink: "#2b2417"
   bark-muted: "#5b4e35"
-  forest-accent: "#2f6b3a"
-  forest-action: "#2f6b3a"
-  forest-action-hover: "#245530"
+  forest-accent: "#7a5a00"
+  forest-action: "#7a5a00"
+  forest-action-hover: "#e9c43a"
   accent-contrast: "#ffffff"
-  forest-soft: "#e6f0e6"
+  forest-soft: "#fbf0c4"
   sand-border: "#e8dcb6"
   sand-border-strong: "#8f8058"
-  focus-forest: "#2f6b3a"
+  focus-forest: "#7a5a00"
   butter-ground-dark: "#1b170f"
   warm-band-dark: "#201d17"
   sheet-dark: "#332c1e"
   butter-raised-dark: "#3f3727"
   cream-ink-dark: "#f2e9d3"
   bark-muted-dark: "#cbbd9c"
-  mint-accent-dark: "#86cf8f"
-  mint-action-dark: "#5fae6c"
-  mint-action-hover-dark: "#86cf8f"
+  light butter-accent-dark: "#f0cf5a"
+  light butter-action-dark: "#e9c43a"
+  light butter-action-hover-dark: "#f0cf5a"
   accent-contrast-dark: "#1b170f"
-  mint-soft-dark: "#24352a"
+  light butter-soft-dark: "#3a3115"
   border-dark: "#4a4130"
   border-strong-dark: "#8f8160"
-  focus-mint-dark: "#86cf8f"
+  focus-light butter-dark: "#f0cf5a"
 typography:
   display:
     fontFamily: "Gabarito, Source Sans 3, Segoe UI, Helvetica Neue, Arial, sans-serif"
@@ -210,31 +210,31 @@ components:
 
 ## Overview
 
-**Creative North Star: "The Green Full Stop"** *(derived from the direction contract; no user was available to confirm)*
+**Creative North Star: "The Butter Full Stop"** *(derived from the direction contract; no user was available to confirm)*
 
-A near-white page that behaves like good paper: butter-tinted, quiet, and generous with air. Everything structural is achieved by tone and edge rather than by decoration — the ground alternates between two warm near-whites section by section, and pure white sheets float on top of it carrying the content that needs to be read closely. The one thing that raises its voice is forest green, and it is spent on endings: the surname and its full stop, the second clause of every section heading, the timeline markers, the selected folder tab, the drawn column icons.
+A near-white page that behaves like good paper: butter-tinted, quiet, and generous with air. Everything structural is achieved by tone and edge rather than by decoration — the ground alternates between two warm near-whites section by section, and pure white sheets float on top of it carrying the content that needs to be read closely. The one thing that raises its voice is butter yellow, and it is spent on endings: the surname and its full stop, the second clause of every section heading, the timeline markers, the selected folder tab, the drawn column icons.
 
-Once, and only once, that green stops being ink and becomes a surface. In the hero's right column a solid green panel holds four at-a-glance facts in Gabarito over small tracked labels, with the profile links on a translucent hairline footer. It is the page's single loud object, and its weight is what lets the rest of the page stay pale. The name beside it is set so that its colour change *is* its line break — "Nawres" in ink, "Ben Rhouma." in green on the next line — so the split reads as a typographic decision rather than a highlight.
+Once, and only once, that green stops being ink and becomes a surface. In the hero's right column a solid butter panel holds four at-a-glance facts in Gabarito over small tracked labels, with the profile links on a translucent hairline footer. It is the page's single loud object, and its weight is what lets the rest of the page stay pale. The name beside it is set so that its colour change *is* its line break — "Nawres" in ink, "Ben Rhouma." in green on the next line — so the split reads as a typographic decision rather than a highlight.
 
 The density is document-like without being a document. Headings are Gabarito at 800, tracked tight, so they read as built rather than typed; body text is Source Sans 3 at 1.0625rem on a 1.6 line, and the About sheet is sized to its own measure rather than to the grid, so the biography reads as one column of a printed page. Source Code Pro appears only where content is literally a token — a technology chip, a status marker. What the world refuses is equally load-bearing: no photography, no logos, no invented metrics, no second hue, and no motion beyond a single authored entrance.
 
 **Key Characteristics:**
 - Butter-tinted near-white ground (#fffcf2) alternating with a warmer tone (#f6f2e6), full-bleed, section by section
 - Pure white sheets on a single soft offset shadow in light; a hairline ring in dark
-- One accent, forest green (#2f6b3a) in light and mint (#86cf8f) in dark, used as ink everywhere and as a surface exactly once
+- One accent, butter yellow (#7a5a00) in light and light butter (#f0cf5a) in dark, used as ink everywhere and as a surface exactly once
 - Gabarito 700/800 display and headings; Source Sans 3 body; Source Code Pro only in chips and status tokens
 - 8px module, 76rem content maximum, 68ch measure
 - One authored entrance motion on one element, JS-only, reduced-motion and print safe; every surface works with JavaScript off
 
 ## Colors
 
-Two warm near-whites, an espresso ink, and a single forest green that never shares the stage with a second hue.
+Two warm near-whites, an espresso ink, and a single butter yellow that never shares the stage with a second hue.
 
 ### Primary
-- **Forest Green** (`#2f6b3a`): the only accent. As ink it lands on the closing words of the name and of every section heading, on links, on timeline and bullet markers, on the drawn column icons, on the selected folder tab's label and on the focus ring. As a surface it appears exactly once, filling the hero's at-a-glance panel. In dark it becomes **Mint** (`#86cf8f`) so it can carry text weight on a dark ground.
-- **Forest Action** (`#2f6b3a` → hover `#245530`): the filled primary button. Dark ships a separate, slightly lighter **Mint Action** (`#5fae6c`) whose hover resolves up to the full mint, because the light green would flare against the dark ground.
-- **Accent Contrast** (`#ffffff` light / `#1b170f` dark): everything set on the green panel — labels, values, links, its hairline divider at 28% white. Never hand-pick a white here; in dark the panel's text switches to the page ground colour so it stays legible on mint.
-- **Forest Soft** (`#e6f0e6` light / `#24352a` dark): reduced to a single job — the text selection highlight.
+- **Forest Green** (`#7a5a00`): the only accent. As ink it lands on the closing words of the name and of every section heading, on links, on timeline and bullet markers, on the drawn column icons, on the selected folder tab's label and on the focus ring. As a surface it appears exactly once, filling the hero's at-a-glance panel. In dark it becomes **Mint** (`#f0cf5a`) so it can carry text weight on a dark ground.
+- **Forest Action** (`#7a5a00` → hover `#e9c43a`): the filled primary button. Dark ships a separate, slightly lighter **Mint Action** (`#e9c43a`) whose hover resolves up to the full light butter, because the light green would flare against the dark ground.
+- **Accent Contrast** (`#ffffff` light / `#1b170f` dark): everything set on the butter panel — labels, values, links, its hairline divider at 28% white. Never hand-pick a white here; in dark the panel's text switches to the page ground colour so it stays legible on light butter.
+- **Forest Soft** (`#fbf0c4` light / `#3a3115` dark): reduced to a single job — the text selection highlight.
 
 ### Neutral
 - **Butter Ground** (`#fffcf2` light / `#1b170f` dark): the page. Near-white with a warm tint, never pure white.
@@ -247,11 +247,11 @@ Two warm near-whites, an espresso ink, and a single forest green that never shar
 - **Sand Border Strong** (`#8f8058` light / `#8f8160` dark): control outlines only. It sits around 3.5:1 on the butter ground, which is enough for a non-text UI boundary and not enough for text.
 
 ### Named Rules
-**The Green Full Stop Rule.** The accent is reserved for the ending: the surname and its period, the second clause of every `h2`, and the small terminal signals (timeline dots, list markers, column icons, the selected tab). It never appears twice in the same role on one screen and never acquires a companion hue.
+**The Butter Full Stop Rule.** The accent is reserved for the ending: the surname and its period, the second clause of every `h2`, and the small terminal signals (timeline dots, list markers, column icons, the selected tab). It never appears twice in the same role on one screen and never acquires a companion hue.
 
 **The Accent-as-Surface Rule.** Green fills exactly one object per page — the at-a-glance panel. A second filled green area would turn the accent into a theme colour and cost the first one its weight. Everywhere else the accent is ink, a 1rem marker, or a 2px line.
 
-**The Hairline Two-Tier Rule.** Content separation uses Sand Border; interactive outlines use Sand Border Strong. Never put Sand Border Strong under text or Sand Border around a control. On the green panel the divider is neither — it is 28% white (30% of the dark ink in dark mode), because a hairline on a saturated surface must be drawn from that surface's own contrast.
+**The Hairline Two-Tier Rule.** Content separation uses Sand Border; interactive outlines use Sand Border Strong. Never put Sand Border Strong under text or Sand Border around a control. On the butter panel the divider is neither — it is 28% white (30% of the dark ink in dark mode), because a hairline on a saturated surface must be drawn from that surface's own contrast.
 
 **The Warm White Rule.** There is no pure white ground. White appears only as a sheet lifted off the butter page; if a surface is the page itself, it is tinted.
 
@@ -268,7 +268,7 @@ Two warm near-whites, an espresso ink, and a single forest green that never shar
 - **Panel Title** (800, `clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem)`, tracking -0.02em): the project name inside a work panel. Deliberately near-display scale — the folder sheet is the page's second hero.
 - **Headline** (800, 1.75rem, line-height 1.1, tracking -0.02em): section `h2`. Always two clauses, the second wrapped in an accent span, ending in a full stop; a `#` heading anchor follows, invisible until hover or focus.
 - **Title** (700, 1.25rem, tracking -0.01em): `h3` — timeline roles, project cards, skill groups, learning columns.
-- **Glance Value** (Gabarito 700, 1.25rem, line-height 1.25): the three values on the green panel. The only place display type is used at body scale, which is what makes the panel read as a summary rather than a list.
+- **Glance Value** (Gabarito 700, 1.25rem, line-height 1.25): the three values on the butter panel. The only place display type is used at body scale, which is what makes the panel read as a summary rather than a list.
 - **Body** (400, 1.0625rem, line-height 1.6): all prose, capped at a 68ch measure. The About sheet takes the same cap plus its own 2rem padding on each side, so the sheet ends where the text ends.
 - **Small** (400, 0.875rem): meta lines, dates, project meta, footer, the print hint.
 - **Label** (600, 0.75rem, 0.06em, uppercase): contact labels and timeline dates. The glance panel's terms track slightly wider (0.08em) and sit at 80% opacity on the green.
@@ -285,13 +285,13 @@ Two warm near-whites, an espresso ink, and a single forest green that never shar
 
 ## Layout
 
-The page is a stack of full-bleed sections, each a three-column grid — a flexible gutter of at least 2rem, a centred content column capped at 76rem, and a matching gutter — so the alternating background tone reaches the viewport edges while the content stays aligned. The hero sits outside that grid on its own 4rem/2rem padding and splits 7:5 into text and the green panel, vertically centred against each other.
+The page is a stack of full-bleed sections, each a three-column grid — a flexible gutter of at least 2rem, a centred content column capped at 76rem, and a matching gutter — so the alternating background tone reaches the viewport edges while the content stays aligned. The hero sits outside that grid on its own 4rem/2rem padding and splits 7:5 into text and the butter panel, vertically centred against each other.
 
 Spacing is an 8px module (0.25 / 0.5 / 0.75 / 1 / 1.5 / 2 / 3 / 4rem). Section padding is 4rem vertical, dropping to 3rem below 640px. Sheets pad at 2rem, tightening to 1.5rem/1rem on narrow screens. A sticky header 4rem tall pins the brand, eight section anchors, the View CV button and the theme toggle; `scroll-padding-top` is kept in sync with it.
 
 One multi-column block carries real content rather than boxes: the projects grid runs two equal columns of cards at a 1.5rem gap, collapsing to one at 900px. The About sheet takes the opposite approach — it is capped at the 68ch measure plus its own padding, so a prose-only sheet never stretches to the full 76rem.
 
-Three breakpoints, each doing one job. At 1100px the hero collapses to a single column and the green panel takes the full width under the name. At 900px the header wraps — the nav becomes a masked horizontal scroll strip on its own row and the header grows to 6.5rem — the projects grid goes to one column, the panel and skill grids go single-column, divider borders rotate from left edges to top edges, and the timeline rail tightens. At 640px the section gutters drop to 1rem and the contact rows stack.
+Three breakpoints, each doing one job. At 1100px the hero collapses to a single column and the butter panel takes the full width under the name. At 900px the header wraps — the nav becomes a masked horizontal scroll strip on its own row and the header grows to 6.5rem — the projects grid goes to one column, the panel and skill grids go single-column, divider borders rotate from left edges to top edges, and the timeline rail tightens. At 640px the section gutters drop to 1rem and the contact rows stack.
 
 ### Named Rules
 **The Alternating Ground Rule.** Section tone alternates via `.section--alt` across the full bleed. Never tint only the content column; never run two alternate sections back to back.
@@ -302,7 +302,7 @@ Three breakpoints, each doing one job. At 1100px the hero collapses to a single 
 
 ## Elevation & Depth
 
-Depth is tonal first and shadowed second. The page ground, the alternate band and the white sheet form a three-step tonal ladder that does most of the structural work; a single soft, warm-tinted drop shadow then lifts sheets off the page. There is exactly one elevation level — nothing is lifted higher than anything else, and the green panel is lifted on the same shadow as the white sheets, so it reads as the same kind of object in a different colour. In dark mode the shadow token is replaced by a 1px hairline ring in the border colour, because a dark-on-dark drop shadow reads as smudge rather than lift.
+Depth is tonal first and shadowed second. The page ground, the alternate band and the white sheet form a three-step tonal ladder that does most of the structural work; a single soft, warm-tinted drop shadow then lifts sheets off the page. There is exactly one elevation level — nothing is lifted higher than anything else, and the butter panel is lifted on the same shadow as the white sheets, so it reads as the same kind of object in a different colour. In dark mode the shadow token is replaced by a 1px hairline ring in the border colour, because a dark-on-dark drop shadow reads as smudge rather than lift.
 
 ### Shadow Vocabulary
 - **Sheet lift** (`box-shadow: 0 12px 32px rgba(56, 42, 12, 0.14)`): every lifted surface — the green at-a-glance panel, work panels, project cards, the about/skills/contact sheets, timeline bodies, the CV page.
@@ -316,7 +316,7 @@ Depth is tonal first and shadowed second. The page ground, the alternate band an
 
 ## Shapes
 
-Four radii and nothing else: 12px on every lifted surface (the green panel, sheets, work panels, project cards); 8px on buttons, the skip link and the print hint; 6px on chips and the focus ring; 999px on the status tokens and the circular theme toggle. Folder tabs take a 10px top-only radius (`10px 10px 0 0`), and the panel beneath the tab row squares its top-left corner (`0 12px 12px 12px`) so tab and sheet fuse into one silhouette.
+Four radii and nothing else: 12px on every lifted surface (the butter panel, sheets, work panels, project cards); 8px on buttons, the skip link and the print hint; 6px on chips and the focus ring; 999px on the status tokens and the circular theme toggle. Folder tabs take a 10px top-only radius (`10px 10px 0 0`), and the panel beneath the tab row squares its top-left corner (`0 12px 12px 12px`) so tab and sheet fuse into one silhouette.
 
 Borders are hairlines at 1px in two weights (see The Hairline Two-Tier Rule). Three deliberate exceptions carry meaning: the learning columns open with a 2px rule in full ink; the vertical timeline rail is a 2px line in the border colour with 1rem accent discs punched through it, each ringed by 4px of the current section ground; and the panel's column icons are drawn at 2px stroke so they sit at the same weight as those rules rather than as filled glyphs.
 
@@ -331,7 +331,7 @@ For each component: a short character line, then shape, colour assignment, state
 
 ### Buttons
 - **Shape:** gently curved (8px radius), 2.75rem minimum height, 0.5rem × 1.125rem padding, 0.9375rem semibold body type, 150ms colour transitions.
-- **Primary:** forest green fill with accent-contrast text and a matching border; hover deepens to `#245530` (dark: mint action lifting to full mint). Used once per section at most — "View work", "Get in touch".
+- **Primary:** butter yellow fill with accent-contrast text and a matching border; hover deepens to `#e9c43a` (dark: light butter action lifting to full light butter). Used once per section at most — "View work", "Get in touch".
 - **Secondary:** inverted — espresso ink fill, page-coloured text; hover softens to the muted ink. Used for the CV link in the contact sheet.
 - **Outline:** transparent with a Sand Border Strong outline and ink text; hover swaps both border and text to the accent. The hero's second action.
 - **Ghost:** the outline treatment at a tighter 0.375rem × 0.875rem — the header's View CV and the CV page's back link.
@@ -341,7 +341,7 @@ For each component: a short character line, then shape, colour assignment, state
 The page's single loud object and the hero's right column: a solid accent-filled `<aside>` at 12px radius and 2rem padding, lifted on the standard sheet shadow. Inside, a `<dl>` of three stacked pairs at a 1rem gap — an uppercase tracked term at 0.75rem/0.08em held at 80% opacity, and a Gabarito 700 value at 1.25rem directly under it (Availability, Working on, Since) — followed by a links footer separated by a 28%-white hairline, carrying the GitHub and LinkedIn icon links. On the panel, links take the contrast colour and answer hover with an underline instead of a colour change, because there is no second colour available on a filled surface. In dark mode the panel's text and links switch to the page ground colour and the divider becomes 30% of the dark ink. Below 1100px it sits full width beneath the name.
 
 ### Icon Links
-Inline SVG (currentColor, 20px) plus a label in semibold ink, 2.75rem tall, no underline; on the page ground hover turns the pair accent, inside the green panel it underlines instead.
+Inline SVG (currentColor, 20px) plus a label in semibold ink, 2.75rem tall, no underline; on the page ground hover turns the pair accent, inside the butter panel it underlines instead.
 
 ### Folder Tabs and Panel (signature)
 The structural signature. A horizontally scrollable row of tabs sits on the section ground in a low-opacity ink wash, each tab holding the same 2.75rem minimum target as every other control; the selected tab switches to the sheet colour, gains accent text, grows 0.2rem of top padding and throws an upward shadow so it fuses into the panel below. The panel is a white sheet with its top-left corner squared off to complete the folder silhouette. Inside: a near-display panel title, a semibold subtitle, a muted meta line, a body paragraph, a "What I did" label under a hairline rule, a three-column note grid with left-edge dividers, a row of chips, and a fact strip separated by hairlines. Progressive enhancement is part of the component: the markup ships without tab semantics, the tab row is hidden by default and shown only when JavaScript adds `role="tablist"` and the ARIA wiring, and without JavaScript the panels simply stack as separate sheets, each with a full 12px radius.
@@ -394,7 +394,7 @@ Under `prefers-reduced-motion: reduce` the suppression is scoped rather than bla
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep the accent on endings — the closing clause, the terminal marker, the selected state — per The Green Full Stop Rule.
+- **Do** keep the accent on endings — the closing clause, the terminal marker, the selected state — per The Butter Full Stop Rule.
 - **Do** let the green fill exactly one object per page, and set everything on it from the accent-contrast token.
 - **Do** write every section heading as two clauses with the second in an accent span and a full stop at the end.
 - **Do** alternate section tone with `.section--alt` full-bleed, and put new content in the section grid's middle column at the 76rem cap.
@@ -410,7 +410,7 @@ Under `prefers-reduced-motion: reduce` the suppression is scoped rather than bla
 - **Don't** use pure white as a page ground, or a shadow anywhere in dark mode.
 - **Don't** raise a surface on hover or add a second elevation level; state is colour and border only.
 - **Don't** set body copy, headings, dates or labels in Source Code Pro — chips and status tokens only.
-- **Don't** put Sand Border Strong (`#8f8058`) under text; it is a control outline, not a text or divider colour, and it never appears on the green panel.
+- **Don't** put Sand Border Strong (`#8f8058`) under text; it is a control outline, not a text or divider colour, and it never appears on the butter panel.
 - **Don't** add a radius outside 12 / 8 / 6 / 999 (the folder tab's 10px top corners are the one fused exception).
 - **Don't** add a second authored reveal, or any transform-based motion that is not switched off under `prefers-reduced-motion: reduce`.
 - **Don't** ship a component whose content only exists once JavaScript runs.
