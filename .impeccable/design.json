@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-23T00:00:00Z",
+  "title": "Design System: Nawres Ben Rhouma — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "reference-blue": {
+        "role": "primary",
+        "displayName": "Reference Blue",
+        "canonical": "#1f5fbf",
+        "note": "The only chromatic voice: links, primary action, current section, focus ring, selection, Core status. Pairs with lit-reference-blue-dark in dark theme.",
+        "tonalRamp": [
+          "oklch(15% 0.08 263)",
+          "oklch(26% 0.11 263)",
+          "oklch(36% 0.14 263)",
+          "oklch(45% 0.16 263)",
+          "oklch(56% 0.15 263)",
+          "oklch(68% 0.12 263)",
+          "oklch(82% 0.07 263)",
+          "oklch(95% 0.02 263)"
+        ]
+      },
+      "lit-reference-blue-dark": {
+        "role": "primary",
+        "displayName": "Lit Reference Blue (dark theme)",
+        "canonical": "#7faeff",
+        "note": "Same role as reference-blue at dark-theme luminance. Geometry and usage rules are identical.",
+        "tonalRamp": [
+          "oklch(15% 0.08 263)",
+          "oklch(26% 0.11 263)",
+          "oklch(36% 0.14 263)",
+          "oklch(48% 0.15 263)",
+          "oklch(60% 0.14 263)",
+          "oklch(75% 0.11 263)",
+          "oklch(86% 0.06 263)",
+          "oklch(95% 0.02 263)"
+        ]
+      },
+      "blue-wash": {
+        "role": "primary",
+        "displayName": "Blue Wash",
+        "canonical": "#e6eefb",
+        "note": "Secondary-button hover fill only; never a section background. Dark counterpart #1a2740.",
+        "tonalRamp": [
+          "oklch(15% 0.03 263)",
+          "oklch(27% 0.04 263)",
+          "oklch(40% 0.05 263)",
+          "oklch(53% 0.05 263)",
+          "oklch(66% 0.04 263)",
+          "oklch(78% 0.035 263)",
+          "oklch(88% 0.025 263)",
+          "oklch(95% 0.015 263)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "note": "Page ground and header ground. The header is the same colour as the page; only its hairline separates it. Dark counterpart #0f1115 (Ink Ground).",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(27% 0 0)",
+          "oklch(39% 0 0)",
+          "oklch(51% 0 0)",
+          "oklch(63% 0 0)",
+          "oklch(75% 0 0)",
+          "oklch(87% 0 0)",
+          "oklch(100% 0 0)"
+        ]
+      },
+      "pale-field": {
+        "role": "neutral",
+        "displayName": "Pale Field",
+        "canonical": "#f4f6f9",
+        "note": "The one secondary surface: code chips, print hint, empty portrait box. A field, not an elevation. Dark counterpart #171a20 (Raised Ink).",
+        "tonalRamp": [
+          "oklch(15% 0.008 258)",
+          "oklch(27% 0.008 258)",
+          "oklch(39% 0.008 258)",
+          "oklch(51% 0.008 258)",
+          "oklch(63% 0.008 258)",
+          "oklch(76% 0.007 258)",
+          "oklch(88% 0.006 258)",
+          "oklch(97% 0.004 258)"
+        ]
+      },
+      "near-black-ink": {
+        "role": "neutral",
+        "displayName": "Near-Black Ink",
+        "canonical": "#111318",
+        "note": "All headings, body copy, field values, chip text. Dark counterpart #e6e8ec (Paper Text).",
+        "tonalRamp": [
+          "oklch(15% 0.01 265)",
+          "oklch(26% 0.01 265)",
+          "oklch(37% 0.01 265)",
+          "oklch(48% 0.01 265)",
+          "oklch(59% 0.01 265)",
+          "oklch(70% 0.008 265)",
+          "oklch(84% 0.005 265)",
+          "oklch(95% 0.003 265)"
+        ]
+      },
+      "blue-grey-annotation": {
+        "role": "neutral",
+        "displayName": "Blue-Grey Annotation",
+        "canonical": "#5b6472",
+        "note": "Every secondary string: uppercase labels, date rulers, role lines, list markers, footer, idle nav anchors. Blue-tinted toward the accent, never neutral grey. Dark counterpart #a0a8b6.",
+        "tonalRamp": [
+          "oklch(15% 0.02 258)",
+          "oklch(26% 0.023 258)",
+          "oklch(37% 0.025 258)",
+          "oklch(48% 0.025 258)",
+          "oklch(60% 0.023 258)",
+          "oklch(71% 0.02 258)",
+          "oklch(84% 0.014 258)",
+          "oklch(95% 0.007 258)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e1e5eb",
+        "note": "Every 1px rule in the system: section tops, entry tops, field separators, header edge, nested-engagement indent, chip border, portrait border. Dark counterpart #2a303a.",
+        "tonalRamp": [
+          "oklch(15% 0.012 258)",
+          "oklch(27% 0.012 258)",
+          "oklch(39% 0.012 258)",
+          "oklch(51% 0.012 258)",
+          "oklch(64% 0.011 258)",
+          "oklch(76% 0.01 258)",
+          "oklch(86% 0.008 258)",
+          "oklch(95% 0.005 258)"
+        ]
+      },
+      "control-hairline": {
+        "role": "neutral",
+        "displayName": "Control Hairline",
+        "canonical": "#8a939f",
+        "note": "Interactive outlines only (ghost button, theme toggle, status token). 3.1:1 against its ground, meeting the non-text contrast floor. Never used for text or a content rule. Dark counterpart #5a6474.",
+        "tonalRamp": [
+          "oklch(15% 0.018 258)",
+          "oklch(27% 0.02 258)",
+          "oklch(39% 0.022 258)",
+          "oklch(51% 0.023 258)",
+          "oklch(64% 0.022 258)",
+          "oklch(76% 0.018 258)",
+          "oklch(87% 0.012 258)",
+          "oklch(95% 0.006 258)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name, once per page. Clamped 2rem to 3rem, tightened to -0.02em, balanced wrapping."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles, on a baseline flex row beside the hover-revealed # anchor."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Employer, project and nested engagement entry names."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The positioning statement in the title block only, capped at 34em; 1.125rem below 640px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All prose and bullets, capped at 68ch. Tabular numerals throughout."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Role lines, engagement dates, footer, CV contact line, print hint."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "The only uppercase in the system: field labels, date ruler, contact labels, skill-group leads."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Button and nav-anchor labels."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Real technology names and status annotations only. Small chips 0.75rem; status tokens 0.6875rem/500; CV tech line 0.8125rem."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "motion-fast",
+        "value": "150ms",
+        "purpose": "State transitions: link colour, button background/border/colour, theme-toggle border, heading-anchor opacity."
+      },
+      {
+        "name": "motion-base",
+        "value": "220ms",
+        "purpose": "The sliding nav indicator's transform."
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "The only easing curve in the system, for every transition."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } *, *::before, *::after { transition-duration: 0s !important; animation-duration: 0s !important } }",
+        "purpose": "Collapses all motion and smooth scrolling; the nav indicator then swaps instantly instead of sliding."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "640px",
+        "purpose": "Padding tightens to --space-4, lead drops to 1.125rem, field and contact rows stack label over value."
+      },
+      {
+        "name": "stacked",
+        "value": "900px",
+        "purpose": "Header wraps and grows to 6rem, nav scrolls horizontally under a right-edge mask, title block collapses to text plus a 96px portrait, skills/projects/timeline become one column."
+      },
+      {
+        "name": "cv-centred",
+        "value": "52rem",
+        "purpose": "The CV print hint centres instead of hugging the left gutter."
+      }
+    ],
+    "layout": [
+      {
+        "name": "content-max",
+        "value": "72rem",
+        "purpose": "Maximum width of the centred column on index.html."
+      },
+      {
+        "name": "measure",
+        "value": "68ch",
+        "purpose": "Maximum paragraph width."
+      },
+      {
+        "name": "cv-column",
+        "value": "48rem",
+        "purpose": "CV reading column, capped independently of --content-max."
+      },
+      {
+        "name": "header-height",
+        "value": "3.5rem (6rem below 900px)",
+        "purpose": "Sticky header height; scroll-padding-top tracks it."
+      }
+    ],
+    "print": [
+      {
+        "name": "page",
+        "value": "@page { size: A4; margin: 16mm 18mm }",
+        "purpose": "cv.html print target; css/print.css is loaded media=\"print\" only."
+      },
+      {
+        "name": "ink",
+        "value": "#000 on #fff, 10.5pt/1.4 body, 20pt h1, 12.5pt h2",
+        "purpose": "Print converts the world honestly rather than re-designing it."
+      },
+      {
+        "name": "breaks",
+        "value": "break-inside: avoid on .cv-entry; break-after: avoid on h2/h3/h4",
+        "purpose": "Keeps entries and their headings together across the two printed pages."
+      },
+      {
+        "name": "link-expansion",
+        "value": "a[href^=\"http\"]::after { content: \" (\" attr(href) \")\" }",
+        "purpose": "Prints the destination of every external link except on the contact line, which already shows readable URLs."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action that matters most on a surface (LinkedIn in the title block).",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">LinkedIn</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1rem; font-family: var(--font-body, \"Source Sans 3\", \"Segoe UI\", sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: var(--accent, #1f5fbf); color: var(--accent-contrast, #ffffff); border: 1px solid var(--accent, #1f5fbf); border-radius: var(--radius, 6px); transition: background-color 150ms cubic-bezier(0.2,0.8,0.2,1), border-color 150ms cubic-bezier(0.2,0.8,0.2,1), color 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-btn-primary:hover { filter: brightness(1.08); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #1f5fbf); outline-offset: 3px; border-radius: var(--radius-sm, 4px); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "The paired alternative action (View CV). Outlined in the accent, filled with the blue wash on hover.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">View CV</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1rem; font-family: var(--font-body, \"Source Sans 3\", \"Segoe UI\", sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: transparent; color: var(--accent, #1f5fbf); border: 1px solid var(--accent, #1f5fbf); border-radius: var(--radius, 6px); transition: background-color 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-btn-secondary:hover { background: var(--accent-soft, #e6eefb); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--focus, #1f5fbf); outline-offset: 3px; border-radius: var(--radius-sm, 4px); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Header-level navigation (CV, back to Portfolio) that must not compete with the brand. Neutral outline until hovered.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">CV</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.375rem 0.875rem; font-family: var(--font-body, \"Source Sans 3\", \"Segoe UI\", sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: transparent; color: var(--text, #111318); border: 1px solid var(--border-strong, #8a939f); border-radius: var(--radius, 6px); transition: border-color 150ms cubic-bezier(0.2,0.8,0.2,1), color 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-btn-ghost:hover { border-color: var(--accent, #1f5fbf); color: var(--accent, #1f5fbf); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--focus, #1f5fbf); outline-offset: 3px; border-radius: var(--radius-sm, 4px); }"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "theme-toggle",
+      "description": "44x44 square control holding an 18px inline stroked SVG. Ships hidden and is revealed by js/theme.js, so a no-JS visitor never sees a dead control.",
+      "html": "<button class=\"ds-theme-toggle\" type=\"button\" aria-pressed=\"false\" aria-label=\"Dark theme\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"/></svg></button>",
+      "css": ".ds-theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; padding: 0; background: var(--bg, #ffffff); color: var(--text, #111318); border: 1px solid var(--border-strong, #8a939f); border-radius: var(--radius, 6px); cursor: pointer; transition: border-color 150ms cubic-bezier(0.2,0.8,0.2,1), color 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-theme-toggle svg { width: 1.125rem; height: 1.125rem; } .ds-theme-toggle:hover { border-color: var(--accent, #1f5fbf); color: var(--accent, #1f5fbf); } .ds-theme-toggle:focus-visible { outline: 2px solid var(--focus, #1f5fbf); outline-offset: 3px; border-radius: var(--radius-sm, 4px); }"
+    },
+    {
+      "name": "Section Nav with Sliding Indicator",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky header nav. A single 2px accent indicator slides under the most-visible section's anchor using transform only; the per-link underline yields to it when it exists.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Sections\"><ul class=\"ds-nav__list\"><li><a class=\"ds-nav__link\" href=\"#about\">About</a></li><li><a class=\"ds-nav__link\" href=\"#skills\" aria-current=\"true\">Skills</a></li><li><a class=\"ds-nav__link\" href=\"#experience\">Experience</a></li><li><a class=\"ds-nav__link\" href=\"#projects\">Projects</a></li></ul><span class=\"ds-nav__indicator\" aria-hidden=\"true\"></span></nav>",
+      "css": ".ds-nav { position: relative; border-bottom: 1px solid var(--border, #e1e5eb); background: var(--bg, #ffffff); } .ds-nav__list { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0 1.5rem; overflow-x: auto; scrollbar-width: none; } .ds-nav__list::-webkit-scrollbar { display: none; } .ds-nav__link { display: inline-block; padding: 1rem 0; color: var(--text-muted, #5b6472); font-family: var(--font-body, \"Source Sans 3\", \"Segoe UI\", sans-serif); font-size: 0.9375rem; font-weight: 600; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; } .ds-nav__link:hover { color: var(--text, #111318); } .ds-nav__link[aria-current=\"true\"] { color: var(--text, #111318); } .ds-nav__link:focus-visible { outline: 2px solid var(--focus, #1f5fbf); outline-offset: 3px; border-radius: var(--radius-sm, 4px); } .ds-nav__indicator { position: absolute; left: 1.5rem; bottom: -1px; height: 2px; width: 100px; background: var(--accent, #1f5fbf); transform: translateX(89px) scaleX(0.42); transform-origin: 0 0; transition: transform 220ms cubic-bezier(0.2,0.8,0.2,1); pointer-events: none; }"
+    },
+    {
+      "name": "Code Chip",
+      "kind": "chip",
+      "refersTo": "code-chip",
+      "description": "Holds a real technology, product or language name and nothing else. Never a filter, never selectable.",
+      "html": "<ul class=\"ds-tags\"><li>Java</li><li>Spring Boot</li><li>GraphQL</li><li>Docker</li><li>CI/CD</li></ul>",
+      "css": ".ds-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; } .ds-tags li { padding: 0.125rem 0.5rem; font-family: var(--font-code, \"Source Code Pro\", ui-monospace, Menlo, monospace); font-size: 0.8125rem; background: var(--bg-elevated, #f4f6f9); color: var(--text, #111318); border: 1px solid var(--border, #e1e5eb); border-radius: var(--radius-sm, 4px); white-space: nowrap; }"
+    },
+    {
+      "name": "Status Token",
+      "kind": "chip",
+      "refersTo": "status-core",
+      "description": "The typed stability annotation of a reference page, set inline after a heading. Core is the only chromatic variant.",
+      "html": "<h3 class=\"ds-status-head\">Backend Engineering <span class=\"ds-status ds-status--core\">Core</span></h3><h3 class=\"ds-status-head\">Cloud &amp; Architecture <span class=\"ds-status ds-status--growing\">Growing</span></h3><h3 class=\"ds-status-head\">Certifications <span class=\"ds-status ds-status--done\">Completed</span></h3>",
+      "css": ".ds-status-head { font-family: var(--font-heading, \"Source Sans 3\", \"Segoe UI\", sans-serif); font-size: 1.0625rem; font-weight: 600; line-height: 1.2; color: var(--text, #111318); margin: 0 0 0.5rem; } .ds-status { display: inline-block; vertical-align: 0.15em; margin-left: 0.5rem; padding: 0.05rem 0.45rem; font-family: var(--font-code, \"Source Code Pro\", ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.02em; line-height: 1.5; border: 1px solid var(--border-strong, #8a939f); border-radius: var(--radius-sm, 4px); color: var(--text-muted, #5b6472); white-space: nowrap; } .ds-status--core { color: var(--accent, #1f5fbf); border-color: var(--accent, #1f5fbf); } .ds-status--growing { color: var(--text, #111318); } .ds-status--done { color: var(--text-muted, #5b6472); }"
+    },
+    {
+      "name": "Field Rows",
+      "kind": "custom",
+      "refersTo": "field-row",
+      "description": "The system's signature structure: label/value rows with a 7rem uppercase label ruler, hairline above and below every row. Stacks below 640px.",
+      "html": "<dl class=\"ds-fields\"><dt>Role</dt><dd>Software Engineer at MaibornWolff</dd><dt>Availability</dt><dd>Based in Tunis · Open to remote, part-time roles</dd><dt>Focus</dt><dd>Java backend · Azure platform · AI-assisted development</dd></dl>",
+      "css": ".ds-fields { display: grid; grid-template-columns: 7rem minmax(0, 1fr); column-gap: 1rem; margin: 0; max-width: 40rem; border-top: 1px solid var(--border, #e1e5eb); font-family: var(--font-body, \"Source Sans 3\", \"Segoe UI\", sans-serif); font-size: 1.0625rem; color: var(--text, #111318); } .ds-fields dt, .ds-fields dd { margin: 0; padding: 0.75rem 0; border-bottom: 1px solid var(--border, #e1e5eb); } .ds-fields dt { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted, #5b6472); padding-top: calc(0.75rem + 0.2em); } .ds-fields dd { font-weight: 600; } .ds-fields dd:last-of-type { font-weight: 400; } @media (max-width: 640px) { .ds-fields { grid-template-columns: 1fr; } .ds-fields dt { padding-bottom: 0; border-bottom: 0; } .ds-fields dd { padding-top: 0.25rem; } }"
+    },
+    {
+      "name": "Hairline Entry",
+      "kind": "card",
+      "refersTo": "entry",
+      "description": "A project or experience entry. Opens on a 1px hairline and carries no other frame: not a card, no radius, no fill, no shadow.",
+      "html": "<article class=\"ds-entry\"><h3>Techem WebPortal</h3><p class=\"ds-entry__role\">Backend Engineer · MaibornWolff, 2024 – present</p><p class=\"ds-entry__body\">Customer web portal for Techem, developed by an agile, cross-functional team.</p><ul class=\"ds-entry__tags\"><li>Java</li><li>Spring Boot</li><li>GraphQL</li></ul><ul class=\"ds-entry__bullets\"><li>Backend features and maintenance.</li><li>Release testing, onboarding and knowledge sharing beyond the core role.</li></ul></article>",
+      "css": ".ds-entry { border-top: 1px solid var(--border, #e1e5eb); padding-top: 1rem; max-width: 34rem; font-family: var(--font-body, \"Source Sans 3\", \"Segoe UI\", sans-serif); font-size: 1.0625rem; line-height: 1.6; color: var(--text, #111318); } .ds-entry h3 { font-size: 1.125rem; font-weight: 600; line-height: 1.2; margin: 0 0 0.25rem; } .ds-entry__role { display: block; margin: 0 0 0.75rem; font-size: 0.875rem; color: var(--text-muted, #5b6472); } .ds-entry__body { margin: 0 0 0.75rem; } .ds-entry__tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 0.75rem; padding: 0; } .ds-entry__tags li { padding: 0.125rem 0.5rem; font-family: var(--font-code, \"Source Code Pro\", ui-monospace, Menlo, monospace); font-size: 0.75rem; background: var(--bg-elevated, #f4f6f9); border: 1px solid var(--border, #e1e5eb); border-radius: var(--radius-sm, 4px); white-space: nowrap; } .ds-entry__bullets { margin: 0; padding-left: 1.25rem; } .ds-entry__bullets li { margin: 0 0 0.5rem; } .ds-entry__bullets li::marker { color: var(--text-muted, #5b6472); }"
+    },
+    {
+      "name": "Skill Row",
+      "kind": "custom",
+      "refersTo": "skill-row",
+      "description": "A typed reference table row: group name in a 19rem ruler column, technologies as comma-separated Source Code Pro rather than a pill cloud. The chip styling is deliberately stripped here.",
+      "html": "<div class=\"ds-skill-groups\"><article class=\"ds-skill-group ds-skill-group--primary\"><h3>Backend Engineering</h3><ul class=\"ds-skill-tags\"><li>Java</li><li>Spring Boot</li><li>Quarkus</li><li>REST APIs</li><li>GraphQL</li><li>MySQL / SQL</li></ul></article><article class=\"ds-skill-group\"><h3>DevOps / Infrastructure as Code</h3><ul class=\"ds-skill-tags\"><li>Docker</li><li>Kubernetes</li><li>Terraform</li><li>OpenTofu</li><li>GitHub Actions</li></ul></article></div>",
+      "css": ".ds-skill-groups { border-top: 1px solid var(--border, #e1e5eb); font-family: var(--font-body, \"Source Sans 3\", \"Segoe UI\", sans-serif); color: var(--text, #111318); } .ds-skill-group { display: grid; grid-template-columns: 19rem minmax(0, 1fr); gap: 0.5rem 1.5rem; padding: 1rem 0; border-bottom: 1px solid var(--border, #e1e5eb); } .ds-skill-group > h3 { margin: 0; align-self: start; font-size: 1.0625rem; font-weight: 600; line-height: 1.2; } .ds-skill-tags { list-style: none; display: block; margin: 0; padding: 0; line-height: 1.7; } .ds-skill-tags li { display: inline; font-family: var(--font-code, \"Source Code Pro\", ui-monospace, Menlo, monospace); font-size: 0.875rem; } .ds-skill-tags li::after { content: \", \"; color: var(--text-muted, #5b6472); } .ds-skill-tags li:last-child::after { content: \"\"; } .ds-skill-group--primary .ds-skill-tags li { font-weight: 500; } @media (max-width: 900px) { .ds-skill-group { grid-template-columns: 1fr; gap: 0.5rem; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Reference Page",
+    "overview": "A person's profile written like the reference documentation of a well-built service. The page behaves the way good API docs behave: a stable index across the top, precise entries underneath, one link colour that means \"you can act here\", and monospace only where there is actually code. Nothing is sold; everything is stated and dated. The visual work is done by hairlines, an 8px module and a disciplined type ramp — never by a panel, a glow or a second hue.\n\nDensity is documentary rather than airy: entries sit close together, separated by a single 1px rule, with generous vertical air only between top-level sections (--space-7, 48px). Text is the material. The one photograph on the site is treated as a field value — a 240px square with a hairline border and the same 6px radius as a button — not as a hero image. Both themes ship as the same page with ten custom properties swapped: paper-and-ink by day, ink-and-paper by night, with identical geometry.\n\nTwo refusals are structural, not stylistic. It refuses the dark terminal hero with glowing skill cards: there are no cards, no glow, and the skills read as a typed reference table of comma-separated technologies. And it refuses the marketing landing page: no kicker above the headline, no slogan, no gradient, no shadow. Calm credibility over spectacle — craft has to show in the typography, the spacing and the detail, because there is nothing else in the room.\n\n(North star, overview voice and colour names are derived from PRODUCT.md's brand commitments and the direction contract's OWN-WORLD block, not confirmed with the user in this pass.)",
+    "keyCharacteristics": [
+      "Paper ground and near-black ink, one blue, nothing else chromatic",
+      "Entries open on a 1px hairline; no card ever closes a box around content",
+      "Source Sans 3 for every word; Source Code Pro only for real technology names and status annotations",
+      "Label/value field rows with 0.75rem uppercase tracked labels as the signature structure",
+      "Flat by rule: --shadow: none, depth carried by hairlines and one pale field",
+      "8px module, 72rem content maximum, 68ch prose measure",
+      "Dark theme is a token swap, not a second design"
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "The accent is the only chromatic colour in the system. It marks links, the primary action, the current section, and focus — nothing decorative. If a new element is blue for any reason other than \"you can act here\" or \"you are here\", it is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tinted Annotation Rule",
+        "body": "Secondary text is never neutral grey. --text-muted is blue-grey tinted toward the accent in both themes; a #666-class grey anywhere in this system is a defect.",
+        "section": "colors"
+      },
+      {
+        "name": "The Same-Geometry Rule",
+        "body": "Dark theme swaps ten custom properties (--bg, --bg-elevated, --text, --text-muted, --accent, --accent-contrast, --accent-soft, --border, --border-strong, --focus) and color-scheme. No size, weight, radius, border-width or spacing value differs between themes. A new colour must be added to both blocks in the same commit.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Face Rule",
+        "body": "Source Sans 3 sets every word a human wrote. Source Code Pro appears only on strings that are literals — technology names, status annotations, the CV tech line. Prose never goes monospace for emphasis, and a chip never holds a phrase that is not a real product or language name.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Uppercase Rule",
+        "body": "Uppercase exists at exactly one specification — 0.75rem / 600 / 0.06em / --text-muted — and only as a field label or column lead beside its value. Headings, buttons and body text are never uppercased, and no uppercase line is ever placed above a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The 68ch Rule",
+        "body": "Paragraphs are capped at --measure (68ch) by default; the lead statement is capped tighter at 34em and the hero field block at 40rem. A full-width paragraph is a defect, not a layout choice.",
+        "section": "typography"
+      },
+      {
+        "name": "The 8px Module Rule",
+        "body": "Every gap, pad and offset is a --space-* token. An arbitrary pixel value in a new rule is a bug unless it is a deliberate optical correction and says so in a comment.",
+        "section": "layout"
+      },
+      {
+        "name": "The Hairline Entry Rule",
+        "body": "A new entry opens with a 1px --border rule across its top and carries no other frame. Sections, timeline items, project entries, skill rows, field rows and contact rows all obey this. Nothing in this system is boxed on four sides except a control.",
+        "section": "layout"
+      },
+      {
+        "name": "The Ruler Column Rule",
+        "body": "Structured data is a two-column grid with the label, date or group name in a fixed-width left ruler and the content in minmax(0, 1fr) beside it. Below 900px the ruler stacks above its content rather than shrinking.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Rule",
+        "body": "No box-shadow, no filter: drop-shadow, no gradient, no blur, in either theme and in any state. If an element needs to separate from its ground, it gets a hairline or the pale field. --shadow: none is normative, not a placeholder waiting to be filled in.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Two-Radius Rule",
+        "body": "6px for controls, 4px for chips and focus rings, 0 for content. A third radius, a pill, or a circle requires a reason the page can state.",
+        "section": "shapes"
+      },
+      {
+        "name": "The 44px Target Rule",
+        "body": "Every button and the theme toggle stand at least 2.75rem (44px) tall regardless of their label size. Density never comes out of the touch target.",
+        "section": "components"
+      },
+      {
+        "name": "The Progressive Control Rule",
+        "body": "Any control that needs JavaScript ships hidden and is revealed by its script; any enhancement that needs an API ships as a no-op when the API is missing. The page is fully readable and navigable with scripts off.",
+        "section": "components"
+      },
+      {
+        "name": "The Transform-Only Motion Rule",
+        "body": "Animated properties are limited to transform, opacity, color, background-color and border-color, at 150ms (--motion-fast) for state and 220ms (--motion-base) for the indicator, always on cubic-bezier(0.2, 0.8, 0.2, 1). Under prefers-reduced-motion: reduce all durations collapse to 0s and smooth scrolling is turned off; the indicator then swaps instantly instead of sliding.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do open every new entry with a 1px --border hairline on its top edge, and let the page ground show through.",
+      "Do build structured data as a ruler grid: a fixed label column (7rem / 10rem / 19rem) beside minmax(0, 1fr), stacking below 900px.",
+      "Do take every colour from the ten theme custom properties, and add any new one to :root, [data-theme=\"dark\"] and the prefers-color-scheme block together.",
+      "Do reserve Source Code Pro for real technology names and status annotations, set as 0.8125rem chips on --bg-elevated with a 4px radius.",
+      "Do cap prose at --measure (68ch) and the page at --content-max (72rem).",
+      "Do give every interactive element a 44px minimum height and the global 2px --focus ring at 3px offset.",
+      "Do keep motion to --motion-fast / --motion-base on cubic-bezier(0.2, 0.8, 0.2, 1), animating transform and colour only, and let the reduced-motion block zero it.",
+      "Do use the uppercase label ramp (0.75rem / 600 / 0.06em / muted) only as a label beside or above its own value."
+    ],
+    "donts": [
+      "Don't add a shadow, gradient, blur or drop-shadow in any state or either theme — --shadow: none is the rule, not a default.",
+      "Don't introduce a second accent hue, or use the accent for anything that is not a link, the primary action, the current section, focus, or the Core status.",
+      "Don't close a box around content: no four-sided borders, no filled panels, no radius on sections, entries, timeline items or project blocks.",
+      "Don't set prose in Source Code Pro, and don't put a phrase that is not a real product, language or tool name inside a chip.",
+      "Don't place a kicker or eyebrow line above a heading; the heading is the entry point and the label ramp belongs beside a value, not above a title.",
+      "Don't use a coloured or thick vertical bar as decoration — the only vertical rule in this system is the 1px --border line that indents a nested engagement.",
+      "Don't use a text character or icon font as an icon; icons are inline stroked SVG at 1.125rem with currentColor. (The # heading anchor is a documentation link affordance, not an icon.)",
+      "Don't uppercase a heading, a button label or body text.",
+      "Don't let the content column exceed 72rem, or a paragraph run the full width of the grid.",
+      "Don't ship a control that only works with JavaScript without hiding it until its script reveals it."
+    ]
+  }
+}
