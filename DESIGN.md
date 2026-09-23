@@ -314,7 +314,7 @@ A pill-radius chip on the accent-soft tint with accent text and a 0.5rem accent 
 A two-column `<dl>` on a white sheet: uppercase tracked labels left, semibold values right-aligned, each row divided by a hairline and the last row's divider removed. The final value is accent-coloured. Below 900px it becomes a full-width single column with labels above values, left-aligned.
 
 ### Folder Tabs and Panel (signature)
-The structural signature. A horizontally scrollable row of tabs sits on the section ground in a low-opacity ink wash; the selected tab switches to the sheet colour, gains accent text, grows 0.2rem of top padding and throws an upward shadow so it fuses into the panel below. The panel is a white sheet with its top-left corner squared off to complete the folder silhouette. Inside: a near-display panel title, a semibold subtitle, a muted meta line, a body paragraph, a "What I did" label under a hairline rule, a three-column note grid with left-edge dividers, a row of chips, and a fact strip separated by hairlines. Progressive enhancement is part of the component: the markup ships without tab semantics, the tab row is hidden by default and shown only when JavaScript adds `role="tablist"` and the ARIA wiring, and without JavaScript the panels simply stack as separate sheets, each with a full 12px radius.
+The structural signature. A horizontally scrollable row of tabs sits on the section ground in a low-opacity ink wash, each tab holding the same 2.75rem minimum height as every other control; the selected tab switches to the sheet colour, gains accent text, grows 0.2rem of top padding and throws an upward shadow so it fuses into the panel below. The panel is a white sheet with its top-left corner squared off to complete the folder silhouette. Inside: a near-display panel title, a semibold subtitle, a muted meta line, a body paragraph, a "What I did" label under a hairline rule, a three-column note grid with left-edge dividers, a row of chips, and a fact strip separated by hairlines. Progressive enhancement is part of the component: the markup ships without tab semantics, the tab row is hidden by default and shown only when JavaScript adds `role="tablist"` and the ARIA wiring, and without JavaScript the panels simply stack as separate sheets, each with a full 12px radius.
 
 ### Chips and Status Tokens
 - **Chips:** Source Code Pro at 0.8125rem (0.75rem in the small variant) on the butter-raised tint with a hairline border and a 6px radius; inline, wrapping, never interactive.
@@ -348,7 +348,13 @@ A 2.75rem circle on the sheet colour with a strong hairline border, holding a su
 The same tokens on a single 48rem sheet: a header block with the name, a muted title line, a small contact line and a bold availability line, then hairline-divided entries with a flex head (role left, dates right) and nested entries indented. Print is a separate stylesheet loaded at `media="print"`: A4 with 16mm/18mm margins, header and toggle and print hint removed, the sheet flattened to plain paper in black on white at 10.5pt, headings ruled and kept with their content, entries protected from breaking, and external links expanded to show their URL after the text — except in the contact line, which already shows readable URLs.
 
 ### Motion
-One authored entrance: sections tagged `data-reveal` fade up 14px over 500ms on the shared ease-out curve, once, then stop being observed. It is added by JavaScript only, so nothing is ever hidden without JS, and it is skipped entirely when reduced motion is requested. Everything else is state feedback: 150ms colour and border transitions, a 220ms nav indicator slide, and a 150ms chevron rotation. Under `prefers-reduced-motion: reduce` all transitions and animations are forced to zero and smooth scrolling is disabled.
+One authored entrance: sections tagged `data-reveal` fade up 14px over 500ms on the shared ease-out curve, once, then stop being observed. It is added by JavaScript only, so nothing is ever hidden without JS, and it is never initialised at all when reduced motion is requested. Everything else is state feedback: 150ms colour and border transitions, a 220ms nav indicator slide, and a 150ms chevron rotation.
+
+Under `prefers-reduced-motion: reduce` the suppression is scoped rather than blanket: smooth scrolling is disabled, the reveal is forced to its visible end state with no transition, and the nav indicator and note chevron stop animating — but colour and border transitions are deliberately kept, so a hover or a press still acknowledges itself. A print media rule pins the reveal to its visible state as well, so a printed page never loses a section.
+
+**The Scoped Stillness Rule.** Reduced motion removes movement, not feedback. Switch off transforms, entrances and sliding indicators; leave colour and border transitions alone.
+
+**The Print-Safe State Rule.** Any element that starts hidden or displaced must be pinned to its resolved state under `@media print`. A section that only appears after a scroll event does not exist on paper.
 
 ## Do's and Don'ts
 
@@ -358,7 +364,8 @@ One authored entrance: sections tagged `data-reveal` fade up 14px over 500ms on 
 - **Do** alternate section tone with `.section--alt` full-bleed, and put new content in the section grid's middle column at the 76rem cap.
 - **Do** lift content on the single sheet shadow (`0 12px 32px rgba(56, 42, 12, 0.14)`) and let the dark theme resolve it to a hairline ring.
 - **Do** spend the 8px module: 4rem section padding, 2rem sheet padding, 1.5rem between grouped blocks.
-- **Do** ship every enhancement as an enhancement — tabs, the nav indicator, the reveal and the toggle each have a defined no-JS state.
+- **Do** ship every enhancement as an enhancement — tabs, the nav indicator, the reveal and the toggle each have a defined no-JS state, and a defined print and reduced-motion state.
+- **Do** give every interactive control a 2.75rem minimum target (buttons, icon links, the toggle, folder tabs).
 - **Do** keep text within the 68ch measure and hairlines at 1px.
 - **Do** use the accent-contrast token on any filled accent surface instead of hard-coding white.
 
@@ -369,6 +376,6 @@ One authored entrance: sections tagged `data-reveal` fade up 14px over 500ms on 
 - **Don't** set body copy, headings, dates or labels in Source Code Pro — chips and status tokens only.
 - **Don't** put Sand Border Strong (`#8f8058`) under text; it is a control outline, not a text or divider colour.
 - **Don't** add a radius outside 12 / 8 / 6 / 999 (the folder tab's 10px top corners are the one fused exception).
-- **Don't** add a second authored motion, or any motion that survives `prefers-reduced-motion: reduce`.
+- **Don't** add a second authored motion, or any transform-based motion that is not switched off under `prefers-reduced-motion: reduce`.
 - **Don't** ship a component whose content only exists once JavaScript runs.
 - **Don't** add photography, logos, testimonials or metric callouts; this world carries none.

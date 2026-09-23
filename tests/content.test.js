@@ -129,31 +129,33 @@ test('cv.html: nested engagements are h4 under the h3 employer entry', () => {
 });
 
 // Finish-review fixes (2026-09-23)
-test('index.html: hero is a pill, two-line name, role line, statement, two actions and a facts card', () => {
+test('index.html: hero is a two-line name, role, statement, actions and a green facts panel', () => {
   const html = readHtml('index.html');
-  assert.match(html, /<p class="pill"><span class="pill__dot" aria-hidden="true"><\/span>Based in Tunis · Open to remote, part-time roles<\/p>/);
+  assert.doesNotMatch(html, /class="pill"/, 'no availability pill; availability lives in the panel');
   assert.match(html, /<h1 id="hero-title">Nawres <span class="accent">Ben Rhouma\.<\/span><\/h1>/);
   assert.match(html, /<p class="hero__role">Software Engineer at MaibornWolff<\/p>/);
   assert.match(html, /<a class="button button--primary" href="#work">View work<\/a>/);
   assert.match(html, /<a class="button button--outline" href="mailto:benrhoumanawres7@gmail\.com">Get in touch<\/a>/);
-  assert.match(html, /<dl class="facts-card">[\s\S]*<dt>Location<\/dt>\s*<dd>Tunis, Tunisia<\/dd>[\s\S]*<dt>Open to<\/dt>\s*<dd>Remote · part-time<\/dd>/);
-  assert.match(html, /<section id="work" class="section section--work" aria-labelledby="work-title" data-reveal>/);
-  assert.doesNotMatch(html, /button--mail/, 'no icon-only mail button any more');
+  assert.match(html, /<aside class="panel-green" aria-label="At a glance">/);
+  assert.match(html, /<dl class="glance">[\s\S]*<dt>Based in<\/dt>\s*<dd>Tunis, Tunisia<\/dd>[\s\S]*<dt>Open to<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>/);
+  assert.match(html, /<div class="panel-green__links">[\s\S]*iconlink[\s\S]*<\/div>/, 'GitHub and LinkedIn live in the panel');
+  assert.match(html, /<section id="work" class="section section--work" aria-labelledby="work-title">/);
+  assert.doesNotMatch(html, /facts-card/);
 });
 
 test('index.html: section headings are two-tone with the accent on the closing words', () => {
   const html = readHtml('index.html');
-  for (const [id, text] of [['about', 'growing outward.'], ['work', 'Selected work.'], ['contact', 'reliable.']]) {
+  for (const [id, text] of [['about', 'growing outward.'], ['work', 'in production.'], ['contact', 'reliable.']]) {
     assert.match(html, new RegExp(`<h2 id="${id}-title">[^<]*<span class="accent">${text.replace('.', '\\.')}</span>`), `${id} heading`);
   }
 });
 
-test('index.html: About keeps the Role / Availability / Focus field rows', () => {
+test('index.html: About is prose only; availability is stated once outside contact', () => {
   const html = readHtml('index.html');
-  const about = html.slice(html.indexOf('<section id="about"'), html.indexOf('<section id="skills"'));
-  assert.match(about, /<dl class="fields">/);
-  assert.match(about, /<dt>Role<\/dt>\s*<dd>Software Engineer at MaibornWolff<\/dd>/);
-  assert.match(about, /<dt>Availability<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>/);
+  const about = html.slice(html.indexOf('<section id="about"'), html.indexOf('<section id="work"'));
+  assert.doesNotMatch(about, /<dl class="fields">/);
+  const main = html.slice(html.indexOf('<main'), html.indexOf('<section id="contact"'));
+  assert.equal((main.match(/Open to remote, part-time roles/g) || []).length, 1, 'availability said once before the contact section');
 });
 
 test('index.html: selected-work tabs ship as plain markup; ARIA is added by JS', () => {
@@ -169,11 +171,20 @@ test('index.html: selected-work tabs ship as plain markup; ARIA is added by JS',
   assert.match(html, /<script src="js\/tabs\.js" defer><\/script>/);
 });
 
-test('index.html: project notes are native expandable entries with real headings', () => {
+test('index.html: projects are a compact grid with real headings, not an accordion', () => {
   const html = readHtml('index.html');
-  const notes = [...html.matchAll(/<details class="note">\s*<summary><h3 class="note__heading">/g)];
-  assert.equal(notes.length, 4, 'every note summary carries an h3 so heading navigation reaches the projects');
-  assert.match(html, /<h3 class="note__heading"><span class="note__title">TravelEase<\/span>/);
+  assert.doesNotMatch(html, /<details class="note">/);
+  const cards = [...html.matchAll(/<article class="project">\s*<h3>/g)];
+  assert.equal(cards.length, 4);
+  assert.match(html, /<article class="project">\s*<h3>TravelEase<\/h3>/);
+  assert.match(html, /<h2 id="projects-title">Other things I <span class="accent">built\.<\/span>/);
+});
+
+test('index.html: only the work sheet reveals; What-I-did columns carry drawn icons', () => {
+  const html = readHtml('index.html');
+  assert.equal((html.match(/data-reveal/g) || []).length, 1, 'one authored motion, on one element');
+  assert.match(html, /<div class="work" data-reveal>/);
+  assert.ok((html.match(/<svg class="col__icon"/g) || []).length >= 9, 'three drawn icons per panel');
 });
 
 test('index.html: no invented numbers in the work sheet', () => {

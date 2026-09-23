@@ -37,7 +37,7 @@ test('styles.css never transitions layout properties', () => {
 test('styles.css styles the essentials', () => {
   const s = css();
   for (const sel of ['.skip-link', '.site-header', '.site-nav__link[aria-current="true"]', '.theme-toggle',
-    '.skill-group--primary', '.timeline', '.note', '.contact__list', '.print-hint', ':focus-visible']) {
+    '.skill-group--primary', '.timeline', '.project', '.contact__list', '.print-hint', ':focus-visible']) {
     assert.ok(s.includes(sel), `selector ${sel} missing`);
   }
   assert.match(s, /html\s*{[^}]*scroll-behavior:\s*smooth/);
@@ -62,9 +62,11 @@ test('mix world: forest accent, alternating section tones, facts card, pill, ver
   assert.match(s, /--alt:\s*#/);
   assert.match(s, /\.section--alt\s*{[^}]*background:\s*var\(--alt\)/);
   assert.match(s, /\.section\s*{[^}]*grid-template-columns:\s*minmax\(var\(--space-6\), 1fr\) minmax\(0, var\(--content-max\)\) minmax\(var\(--space-6\), 1fr\)/, 'full-bleed sections with centred content');
-  assert.match(s, /\.facts-card\s*{/);
-  assert.match(s, /\.pill\s*{/);
-  assert.match(s, /\.pill__dot\s*{/);
+  assert.match(s, /\.panel-green\s*{[^}]*background:\s*var\(--accent\)/, 'the accent becomes a surface');
+  assert.match(s, /\.glance\s*{/);
+  assert.match(s, /\.hero__text > h1 > \.accent\s*{[^}]*display:\s*block/, 'colour break coincides with the line break');
+  assert.match(s, /\.project\s*{/);
+  assert.doesNotMatch(s, /\.pill\s*{|\.facts-card/);
   assert.match(s, /\.timeline::before\s*{/, 'vertical timeline line');
   assert.match(s, /\.reveal\s*{[^}]*opacity:\s*0/);
   assert.match(s, /\.reveal\.is-visible\s*{[^}]*opacity:\s*1/);
@@ -95,12 +97,12 @@ test('redesign world: butter ground, sheets lifted by shadow alone, Gabarito dis
   assert.match(s, /\.tabs__list\s*{/);
   assert.match(s, /\.tab\[aria-selected="true"\]/);
   assert.match(s, /\.panel\[hidden\]\s*{[^}]*display:\s*none/);
-  assert.match(s, /\.note\s*{/);
   assert.match(s, /\.fields\s*{/);
   assert.match(s, /\.skill-group\s*{[^}]*grid-template-columns:\s*19rem/);
   assert.match(s, /\.status\s*{/);
   const narrow = s.match(/@media \(max-width: 900px\)\s*{([\s\S]*?)\n}\n/);
   assert.ok(narrow, 'narrow media block');
   assert.match(narrow[1], /\.hero__inner\s*{[^}]*grid-template-columns:\s*minmax\(0, 1fr\)/);
+  assert.match(s.slice(0, 200), /forest green/i, 'stylesheet header describes the shipped world');
   assert.doesNotMatch(s, /hero__photo/, 'no photo rules remain');
 });

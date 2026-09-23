@@ -4,50 +4,313 @@
   "title": "Design System: Nawres Ben Rhouma — Portfolio",
   "extensions": {
     "colorMeta": {
-      "butter-ground": { "role": "neutral", "displayName": "Butter Ground", "canonical": "#fffcf2", "darkValue": "#1b170f", "purpose": "The page itself: near-white with a warm tint, never pure white.", "tonalRamp": ["oklch(15% 0.02 90)", "oklch(25% 0.02 90)", "oklch(35% 0.022 90)", "oklch(50% 0.024 90)", "oklch(65% 0.024 90)", "oklch(80% 0.02 90)", "oklch(90% 0.016 90)", "oklch(99% 0.012 90)"] },
-      "warm-band": { "role": "neutral", "displayName": "Warm Band", "canonical": "#f6f2e6", "darkValue": "#201d17", "purpose": "The alternate section tone, applied full-bleed to .section--alt.", "tonalRamp": ["oklch(15% 0.016 88)", "oklch(25% 0.018 88)", "oklch(35% 0.02 88)", "oklch(50% 0.022 88)", "oklch(65% 0.022 88)", "oklch(80% 0.018 88)", "oklch(90% 0.014 88)", "oklch(96% 0.012 88)"] },
-      "sheet-white": { "role": "neutral", "displayName": "Sheet White", "canonical": "#ffffff", "darkValue": "#332c1e", "purpose": "The lifted content surface: panels, cards, timeline bodies, note sheets, the CV page.", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(50% 0 0)", "oklch(64% 0 0)", "oklch(78% 0 0)", "oklch(90% 0 0)", "oklch(100% 0 0)"] },
-      "espresso-ink": { "role": "neutral", "displayName": "Espresso Ink", "canonical": "#2b2417", "darkValue": "#f2e9d3", "purpose": "All primary text, the brand mark, and the secondary button's ground.", "tonalRamp": ["oklch(15% 0.018 80)", "oklch(25% 0.022 80)", "oklch(35% 0.024 80)", "oklch(45% 0.026 80)", "oklch(58% 0.026 80)", "oklch(72% 0.022 80)", "oklch(85% 0.018 80)", "oklch(95% 0.012 80)"] },
-      "bark-muted": { "role": "neutral", "displayName": "Bark Muted", "canonical": "#5b4e35", "darkValue": "#cbbd9c", "purpose": "Labels, dates, meta lines, nav links at rest, secondary prose.", "tonalRamp": ["oklch(15% 0.02 82)", "oklch(25% 0.026 82)", "oklch(36% 0.032 82)", "oklch(46% 0.036 82)", "oklch(60% 0.036 82)", "oklch(74% 0.03 82)", "oklch(86% 0.024 82)", "oklch(95% 0.014 82)"] },
-      "sand-border": { "role": "neutral", "displayName": "Sand Border", "canonical": "#e8dcb6", "darkValue": "#4a4130", "purpose": "Hairlines: field rows, section rules, the header underline, column dividers.", "tonalRamp": ["oklch(15% 0.02 92)", "oklch(26% 0.028 92)", "oklch(38% 0.036 92)", "oklch(50% 0.044 92)", "oklch(64% 0.05 92)", "oklch(78% 0.05 92)", "oklch(89% 0.042 92)", "oklch(96% 0.022 92)"] },
-      "sand-border-strong": { "role": "neutral", "displayName": "Sand Border Strong", "canonical": "#8f8058", "darkValue": "#8f8160", "purpose": "Control outlines only; roughly 3.5:1 on the butter ground, so never used under text.", "tonalRamp": ["oklch(15% 0.024 90)", "oklch(26% 0.034 90)", "oklch(38% 0.044 90)", "oklch(50% 0.05 90)", "oklch(60% 0.052 90)", "oklch(74% 0.048 90)", "oklch(86% 0.038 90)", "oklch(95% 0.02 90)"] },
-      "forest-accent": { "role": "primary", "displayName": "Forest Green", "canonical": "#2f6b3a", "darkValue": "#86cf8f", "purpose": "The only accent: the closing words of the name and of every heading, links, the primary button, the pill, timeline and bullet markers, the selected folder tab, the focus ring.", "tonalRamp": ["oklch(20% 0.05 150)", "oklch(30% 0.07 150)", "oklch(38% 0.085 150)", "oklch(45% 0.09 150)", "oklch(56% 0.10 150)", "oklch(68% 0.10 150)", "oklch(80% 0.075 150)", "oklch(93% 0.035 150)"] },
-      "forest-action-hover": { "role": "primary", "displayName": "Deep Forest", "canonical": "#245530", "darkValue": "#86cf8f", "purpose": "Hover state of the filled primary button in light mode.", "tonalRamp": ["oklch(18% 0.045 150)", "oklch(26% 0.062 150)", "oklch(33% 0.075 150)", "oklch(39% 0.082 150)", "oklch(50% 0.095 150)", "oklch(63% 0.10 150)", "oklch(77% 0.08 150)", "oklch(92% 0.038 150)"] },
-      "forest-soft": { "role": "primary", "displayName": "Forest Soft", "canonical": "#e6f0e6", "darkValue": "#24352a", "purpose": "The accent's only tinted surface: the availability pill and the selection highlight.", "tonalRamp": ["oklch(18% 0.014 150)", "oklch(28% 0.018 150)", "oklch(40% 0.022 150)", "oklch(52% 0.024 150)", "oklch(66% 0.024 150)", "oklch(80% 0.022 150)", "oklch(90% 0.018 150)", "oklch(96% 0.012 150)"] },
-      "mint-action-dark": { "role": "primary", "displayName": "Mint Action", "canonical": "#5fae6c", "purpose": "Dark mode only: the filled primary button, one step below the mint accent so it does not flare on the dark ground.", "tonalRamp": ["oklch(20% 0.05 150)", "oklch(30% 0.07 150)", "oklch(42% 0.09 150)", "oklch(54% 0.10 150)", "oklch(66% 0.11 150)", "oklch(76% 0.10 150)", "oklch(86% 0.07 150)", "oklch(95% 0.03 150)"] }
+      "butter-ground": {
+        "role": "neutral",
+        "displayName": "Butter Ground",
+        "canonical": "#fffcf2",
+        "darkValue": "#1b170f",
+        "purpose": "The page itself: near-white with a warm tint, never pure white.",
+        "tonalRamp": [
+          "oklch(15% 0.02 90)",
+          "oklch(25% 0.02 90)",
+          "oklch(35% 0.022 90)",
+          "oklch(50% 0.024 90)",
+          "oklch(65% 0.024 90)",
+          "oklch(80% 0.02 90)",
+          "oklch(90% 0.016 90)",
+          "oklch(99% 0.012 90)"
+        ]
+      },
+      "warm-band": {
+        "role": "neutral",
+        "displayName": "Warm Band",
+        "canonical": "#f6f2e6",
+        "darkValue": "#201d17",
+        "purpose": "The alternate section tone, applied full-bleed to .section--alt.",
+        "tonalRamp": [
+          "oklch(15% 0.016 88)",
+          "oklch(25% 0.018 88)",
+          "oklch(35% 0.02 88)",
+          "oklch(50% 0.022 88)",
+          "oklch(65% 0.022 88)",
+          "oklch(80% 0.018 88)",
+          "oklch(90% 0.014 88)",
+          "oklch(96% 0.012 88)"
+        ]
+      },
+      "sheet-white": {
+        "role": "neutral",
+        "displayName": "Sheet White",
+        "canonical": "#ffffff",
+        "darkValue": "#332c1e",
+        "purpose": "The lifted content surface: panels, cards, timeline bodies, note sheets, the CV page.",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(50% 0 0)",
+          "oklch(64% 0 0)",
+          "oklch(78% 0 0)",
+          "oklch(90% 0 0)",
+          "oklch(100% 0 0)"
+        ]
+      },
+      "espresso-ink": {
+        "role": "neutral",
+        "displayName": "Espresso Ink",
+        "canonical": "#2b2417",
+        "darkValue": "#f2e9d3",
+        "purpose": "All primary text, the brand mark, and the secondary button's ground.",
+        "tonalRamp": [
+          "oklch(15% 0.018 80)",
+          "oklch(25% 0.022 80)",
+          "oklch(35% 0.024 80)",
+          "oklch(45% 0.026 80)",
+          "oklch(58% 0.026 80)",
+          "oklch(72% 0.022 80)",
+          "oklch(85% 0.018 80)",
+          "oklch(95% 0.012 80)"
+        ]
+      },
+      "bark-muted": {
+        "role": "neutral",
+        "displayName": "Bark Muted",
+        "canonical": "#5b4e35",
+        "darkValue": "#cbbd9c",
+        "purpose": "Labels, dates, meta lines, nav links at rest, secondary prose.",
+        "tonalRamp": [
+          "oklch(15% 0.02 82)",
+          "oklch(25% 0.026 82)",
+          "oklch(36% 0.032 82)",
+          "oklch(46% 0.036 82)",
+          "oklch(60% 0.036 82)",
+          "oklch(74% 0.03 82)",
+          "oklch(86% 0.024 82)",
+          "oklch(95% 0.014 82)"
+        ]
+      },
+      "sand-border": {
+        "role": "neutral",
+        "displayName": "Sand Border",
+        "canonical": "#e8dcb6",
+        "darkValue": "#4a4130",
+        "purpose": "Hairlines: field rows, section rules, the header underline, column dividers.",
+        "tonalRamp": [
+          "oklch(15% 0.02 92)",
+          "oklch(26% 0.028 92)",
+          "oklch(38% 0.036 92)",
+          "oklch(50% 0.044 92)",
+          "oklch(64% 0.05 92)",
+          "oklch(78% 0.05 92)",
+          "oklch(89% 0.042 92)",
+          "oklch(96% 0.022 92)"
+        ]
+      },
+      "sand-border-strong": {
+        "role": "neutral",
+        "displayName": "Sand Border Strong",
+        "canonical": "#8f8058",
+        "darkValue": "#8f8160",
+        "purpose": "Control outlines only; roughly 3.5:1 on the butter ground, so never used under text.",
+        "tonalRamp": [
+          "oklch(15% 0.024 90)",
+          "oklch(26% 0.034 90)",
+          "oklch(38% 0.044 90)",
+          "oklch(50% 0.05 90)",
+          "oklch(60% 0.052 90)",
+          "oklch(74% 0.048 90)",
+          "oklch(86% 0.038 90)",
+          "oklch(95% 0.02 90)"
+        ]
+      },
+      "forest-accent": {
+        "role": "primary",
+        "displayName": "Forest Green",
+        "canonical": "#2f6b3a",
+        "darkValue": "#86cf8f",
+        "purpose": "The only accent: the closing words of the name and of every heading, links, the primary button, the pill, timeline and bullet markers, the selected folder tab, the focus ring.",
+        "tonalRamp": [
+          "oklch(20% 0.05 150)",
+          "oklch(30% 0.07 150)",
+          "oklch(38% 0.085 150)",
+          "oklch(45% 0.09 150)",
+          "oklch(56% 0.10 150)",
+          "oklch(68% 0.10 150)",
+          "oklch(80% 0.075 150)",
+          "oklch(93% 0.035 150)"
+        ]
+      },
+      "forest-action-hover": {
+        "role": "primary",
+        "displayName": "Deep Forest",
+        "canonical": "#245530",
+        "darkValue": "#86cf8f",
+        "purpose": "Hover state of the filled primary button in light mode.",
+        "tonalRamp": [
+          "oklch(18% 0.045 150)",
+          "oklch(26% 0.062 150)",
+          "oklch(33% 0.075 150)",
+          "oklch(39% 0.082 150)",
+          "oklch(50% 0.095 150)",
+          "oklch(63% 0.10 150)",
+          "oklch(77% 0.08 150)",
+          "oklch(92% 0.038 150)"
+        ]
+      },
+      "forest-soft": {
+        "role": "primary",
+        "displayName": "Forest Soft",
+        "canonical": "#e6f0e6",
+        "darkValue": "#24352a",
+        "purpose": "The accent's only tinted surface: the availability pill and the selection highlight.",
+        "tonalRamp": [
+          "oklch(18% 0.014 150)",
+          "oklch(28% 0.018 150)",
+          "oklch(40% 0.022 150)",
+          "oklch(52% 0.024 150)",
+          "oklch(66% 0.024 150)",
+          "oklch(80% 0.022 150)",
+          "oklch(90% 0.018 150)",
+          "oklch(96% 0.012 150)"
+        ]
+      },
+      "mint-action-dark": {
+        "role": "primary",
+        "displayName": "Mint Action",
+        "canonical": "#5fae6c",
+        "purpose": "Dark mode only: the filled primary button, one step below the mint accent so it does not flare on the dark ground.",
+        "tonalRamp": [
+          "oklch(20% 0.05 150)",
+          "oklch(30% 0.07 150)",
+          "oklch(42% 0.09 150)",
+          "oklch(54% 0.10 150)",
+          "oklch(66% 0.11 150)",
+          "oklch(76% 0.10 150)",
+          "oklch(86% 0.07 150)",
+          "oklch(95% 0.03 150)"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The hero name only, set two-tone with the surname in the accent and a full stop." },
-      "panel-title": { "displayName": "Panel Title", "purpose": "The project name inside a folder panel; near-display scale, because the work sheet is the page's second hero." },
-      "headline": { "displayName": "Headline", "purpose": "Section h2: two clauses, the second in an accent span, ending in a full stop, followed by a hover-revealed # anchor." },
-      "title": { "displayName": "Title", "purpose": "h3: timeline roles, skill groups, learning columns, note titles." },
-      "body": { "displayName": "Body", "purpose": "All prose, capped at a 68ch measure (62ch in About and Education). Steps to 1.25rem for the hero statement and the contact lead." },
-      "small": { "displayName": "Small", "purpose": "Meta lines, dates, notes, footer, print hint." },
-      "label": { "displayName": "Label", "purpose": "Uppercase tracked labels on field rows, contact rows, facts-card terms and timeline dates." },
-      "role-line": { "displayName": "Role Line", "purpose": "The hero role directly under the name; the widest tracking on the page, used once." },
-      "code": { "displayName": "Code", "purpose": "Technology chips and status tokens only." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero name only, set two-tone with the surname in the accent and a full stop."
+      },
+      "panel-title": {
+        "displayName": "Panel Title",
+        "purpose": "The project name inside a folder panel; near-display scale, because the work sheet is the page's second hero."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2: two clauses, the second in an accent span, ending in a full stop, followed by a hover-revealed # anchor."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "h3: timeline roles, skill groups, learning columns, note titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All prose, capped at a 68ch measure (62ch in About and Education). Steps to 1.25rem for the hero statement and the contact lead."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Meta lines, dates, notes, footer, print hint."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase tracked labels on field rows, contact rows, facts-card terms and timeline dates."
+      },
+      "role-line": {
+        "displayName": "Role Line",
+        "purpose": "The hero role directly under the name; the widest tracking on the page, used once."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Technology chips and status tokens only."
+      }
     },
     "shadows": [
-      { "name": "sheet-lift", "value": "0 12px 32px rgba(56, 42, 12, 0.14)", "purpose": "The only elevation: white sheets lifted off the butter page. One altitude, never raised on hover." },
-      { "name": "sheet-lift-dark", "value": "0 0 0 1px var(--border)", "purpose": "The same token resolved in dark mode as a hairline ring; dark-on-dark drop shadows read as smudge." },
-      { "name": "folder-fuse", "value": "0 -8px 20px rgba(56, 42, 12, 0.08)", "purpose": "Thrown upward by the selected folder tab so tab and panel read as one continuous sheet." },
-      { "name": "timeline-marker-ring", "value": "0 0 0 4px var(--bg)", "purpose": "Rings the accent disc in the current section ground so the marker sits on the rail, not beside it. Uses var(--alt) inside .section--alt." }
+      {
+        "name": "sheet-lift",
+        "value": "0 12px 32px rgba(56, 42, 12, 0.14)",
+        "purpose": "The only elevation: white sheets lifted off the butter page. One altitude, never raised on hover."
+      },
+      {
+        "name": "sheet-lift-dark",
+        "value": "0 0 0 1px var(--border)",
+        "purpose": "The same token resolved in dark mode as a hairline ring; dark-on-dark drop shadows read as smudge."
+      },
+      {
+        "name": "folder-fuse",
+        "value": "0 -8px 20px rgba(56, 42, 12, 0.08)",
+        "purpose": "Thrown upward by the selected folder tab so tab and panel read as one continuous sheet."
+      },
+      {
+        "name": "timeline-marker-ring",
+        "value": "0 0 0 4px var(--bg)",
+        "purpose": "Rings the accent disc in the current section ground so the marker sits on the rail, not beside it. Uses var(--alt) inside .section--alt."
+      }
     ],
     "motion": [
-      { "name": "ease-out", "value": "cubic-bezier(0.2, 0.8, 0.2, 1)", "purpose": "The single easing curve for every transition on the site." },
-      { "name": "motion-fast", "value": "150ms", "purpose": "Colour, border and chevron state feedback." },
-      { "name": "motion-base", "value": "220ms", "purpose": "The sliding nav indicator (transform only, no layout)." },
-      { "name": "reveal", "value": "500ms", "purpose": "The one authored entrance: sections fade up 14px once as they enter. JS-only, skipped under prefers-reduced-motion." }
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "The single easing curve for every transition on the site."
+      },
+      {
+        "name": "motion-fast",
+        "value": "150ms",
+        "purpose": "Colour, border and chevron state feedback."
+      },
+      {
+        "name": "motion-base",
+        "value": "220ms",
+        "purpose": "The sliding nav indicator (transform only, no layout)."
+      },
+      {
+        "name": "reveal",
+        "value": "500ms",
+        "purpose": "The one authored entrance: sections fade up 14px once as they enter. JS-only; never initialised under prefers-reduced-motion, and pinned to its visible state under @media print."
+      },
+      {
+        "name": "reduced-motion-scope",
+        "value": "scoped, not blanket",
+        "purpose": "prefers-reduced-motion disables smooth scroll, the reveal, the nav indicator slide and the chevron rotation, but keeps colour and border transitions so state changes still acknowledge the action."
+      }
     ],
     "breakpoints": [
-      { "name": "hero-stack", "value": "1100px", "purpose": "Hero drops from 7:5 to a single column." },
-      { "name": "wrap", "value": "900px", "purpose": "Header wraps to 6.5rem with the nav as a masked scroll strip; facts card, panel grid and skill rows go single-column; dividers rotate from left edges to top edges." },
-      { "name": "narrow", "value": "640px", "purpose": "Section gutters drop to 1rem, section padding to 3rem, field and contact rows stack." }
+      {
+        "name": "hero-stack",
+        "value": "1100px",
+        "purpose": "Hero drops from 7:5 to a single column."
+      },
+      {
+        "name": "wrap",
+        "value": "900px",
+        "purpose": "Header wraps to 6.5rem with the nav as a masked scroll strip; facts card, panel grid and skill rows go single-column; dividers rotate from left edges to top edges."
+      },
+      {
+        "name": "narrow",
+        "value": "640px",
+        "purpose": "Section gutters drop to 1rem, section padding to 3rem, field and contact rows stack."
+      }
     ],
     "layout": [
-      { "name": "content-max", "value": "76rem", "purpose": "The centre column of the full-bleed three-column section grid." },
-      { "name": "measure", "value": "68ch", "purpose": "Paragraph cap; About and Education tighten to 62ch." },
-      { "name": "header-height", "value": "4rem", "purpose": "Sticky header height, kept in sync with scroll-padding-top; 6.5rem below 900px." }
+      {
+        "name": "content-max",
+        "value": "76rem",
+        "purpose": "The centre column of the full-bleed three-column section grid."
+      },
+      {
+        "name": "measure",
+        "value": "68ch",
+        "purpose": "Paragraph cap; About and Education tighten to 62ch."
+      },
+      {
+        "name": "header-height",
+        "value": "4rem",
+        "purpose": "Sticky header height, kept in sync with scroll-padding-top; 6.5rem below 900px."
+      }
     ]
   },
   "components": [
@@ -95,9 +358,9 @@
       "name": "Folder Tabs and Panel",
       "kind": "custom",
       "refersTo": "tab",
-      "description": "The structural signature: the selected tab takes the sheet colour and fuses into the panel below, whose top-left corner is squared. Tab semantics and the visible tab row are added by JavaScript; without it the panels stack as separate sheets.",
+      "description": "The structural signature: the selected tab takes the sheet colour and fuses into the panel below, whose top-left corner is squared. Every tab holds the 2.75rem minimum target. Tab semantics and the visible tab row are added by JavaScript; without it the panels stack as separate sheets.",
       "html": "<div class=\"ds-tabs\"><div class=\"ds-tabs__list ds-tabs__list--enhanced\" role=\"tablist\" aria-label=\"Selected work\"><button class=\"ds-tab\" type=\"button\" role=\"tab\" aria-selected=\"true\">Techem WebPortal</button><button class=\"ds-tab\" type=\"button\" role=\"tab\" aria-selected=\"false\">Copilot Studio pilot</button></div><article class=\"ds-panel\"><h3 class=\"ds-panel__title\">Techem WebPortal</h3><p class=\"ds-panel__meta\">Backend Engineer · MaibornWolff · Feb 2024 – present</p></article></div>",
-      "css": ".ds-tabs__list { display: none; align-items: flex-end; gap: 0.25rem; padding: 0 1rem 0 0; overflow-x: auto; scrollbar-width: none; } .ds-tabs__list--enhanced { display: flex; } .ds-tab { flex: none; padding: 0.75rem 1.125rem; background: rgba(43, 36, 23, 0.08); border: 0; border-radius: 10px 10px 0 0; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; color: var(--text-muted, #5b4e35); cursor: pointer; white-space: nowrap; transition: color 150ms ease, background-color 150ms ease; } .ds-tab:hover { color: var(--text, #2b2417); background: rgba(43, 36, 23, 0.14); } .ds-tab[aria-selected=\"true\"] { color: var(--accent, #2f6b3a); background: var(--sheet, #fff); padding-top: 0.95rem; box-shadow: 0 -8px 20px rgba(56, 42, 12, 0.08); } .ds-tab:focus-visible { outline: 2px solid var(--focus, #2f6b3a); outline-offset: 3px; } .ds-panel { padding: 2rem; background: var(--sheet, #fff); border-radius: 0 12px 12px 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); } .ds-panel__title { font-family: var(--font-heading, Gabarito, sans-serif); font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5rem; color: var(--text, #2b2417); } .ds-panel__meta { margin: 0; font-family: var(--font-body, sans-serif); font-size: 0.875rem; color: var(--text-muted, #5b4e35); }"
+      "css": ".ds-tabs__list { display: none; align-items: flex-end; gap: 0.25rem; padding: 0 1rem 0 0; overflow-x: auto; scrollbar-width: none; } .ds-tabs__list--enhanced { display: flex; } .ds-tab { flex: none; min-height: 2.75rem; padding: 0.75rem 1.125rem; background: rgba(43, 36, 23, 0.08); border: 0; border-radius: 10px 10px 0 0; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; color: var(--text-muted, #5b4e35); cursor: pointer; white-space: nowrap; transition: color 150ms ease, background-color 150ms ease; } .ds-tab:hover { color: var(--text, #2b2417); background: rgba(43, 36, 23, 0.14); } .ds-tab[aria-selected=\"true\"] { color: var(--accent, #2f6b3a); background: var(--sheet, #fff); padding-top: 0.95rem; box-shadow: 0 -8px 20px rgba(56, 42, 12, 0.08); } .ds-tab:focus-visible { outline: 2px solid var(--focus, #2f6b3a); outline-offset: 3px; } .ds-panel { padding: 2rem; background: var(--sheet, #fff); border-radius: 0 12px 12px 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); } .ds-panel__title { font-family: var(--font-heading, Gabarito, sans-serif); font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5rem; color: var(--text, #2b2417); } .ds-panel__meta { margin: 0; font-family: var(--font-body, sans-serif); font-size: 0.875rem; color: var(--text-muted, #5b4e35); }"
     },
     {
       "name": "Technology Chip",
@@ -153,17 +416,71 @@
       "One authored entrance motion, JS-only and reduced-motion aware; every surface works with JavaScript off"
     ],
     "rules": [
-      { "name": "The Green Full Stop Rule", "body": "The accent is reserved for the ending: the surname and its period, the second clause of every h2, and the small terminal signals (timeline dots, list markers, the selected tab, the last facts value). It never tints a large surface, never appears twice in the same role on one screen, and never acquires a companion hue.", "section": "colors" },
-      { "name": "The Hairline Two-Tier Rule", "body": "Content separation uses Sand Border; interactive outlines use Sand Border Strong. Never put Sand Border Strong under text or Sand Border around a control.", "section": "colors" },
-      { "name": "The Warm White Rule", "body": "There is no pure white ground. White appears only as a sheet lifted off the butter page; if a surface is the page itself, it is tinted.", "section": "colors" },
-      { "name": "The Two-Tone Heading Rule", "body": "Every h1 and h2 is written as two clauses: a plain first half in ink and a closing half in the accent, terminated by a full stop. Headings are statements, not labels.", "section": "typography" },
-      { "name": "The Mono Reserve Rule", "body": "Source Code Pro is permitted in exactly two places: technology chips and status tokens. Prose, headings, dates and labels never use it.", "section": "typography" },
-      { "name": "The Balanced Measure Rule", "body": "Headings carry text-wrap: balance; paragraphs carry a 68ch cap (62ch inside About and Education). Nothing on the page runs the full 76rem as text.", "section": "typography" },
-      { "name": "The Alternating Ground Rule", "body": "Section tone alternates via .section--alt across the full bleed. Never tint only the content column; never run two alternate sections back to back.", "section": "layout" },
-      { "name": "The Edge-to-Center Rule", "body": "Content lives in the middle column of the section grid at a 76rem cap. New sections adopt the grid rather than inventing their own container.", "section": "layout" },
-      { "name": "The One Elevation Rule", "body": "There is a single shadow token and a single altitude. Hover never raises a surface; state is shown in colour and border, never in lift.", "section": "elevation" },
-      { "name": "The Dark Hairline Rule", "body": "In dark mode, elevation is a 1px ring, not a shadow. Do not port a light-mode drop shadow into the dark palette.", "section": "elevation" },
-      { "name": "The Four Radii Rule", "body": "12 / 8 / 6 / 999. Any new corner picks one of them; nothing on this page is square except a table edge or a fused tab corner.", "section": "shapes" }
+      {
+        "name": "The Green Full Stop Rule",
+        "body": "The accent is reserved for the ending: the surname and its period, the second clause of every h2, and the small terminal signals (timeline dots, list markers, the selected tab, the last facts value). It never tints a large surface, never appears twice in the same role on one screen, and never acquires a companion hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Hairline Two-Tier Rule",
+        "body": "Content separation uses Sand Border; interactive outlines use Sand Border Strong. Never put Sand Border Strong under text or Sand Border around a control.",
+        "section": "colors"
+      },
+      {
+        "name": "The Warm White Rule",
+        "body": "There is no pure white ground. White appears only as a sheet lifted off the butter page; if a surface is the page itself, it is tinted.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Tone Heading Rule",
+        "body": "Every h1 and h2 is written as two clauses: a plain first half in ink and a closing half in the accent, terminated by a full stop. Headings are statements, not labels.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Reserve Rule",
+        "body": "Source Code Pro is permitted in exactly two places: technology chips and status tokens. Prose, headings, dates and labels never use it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Balanced Measure Rule",
+        "body": "Headings carry text-wrap: balance; paragraphs carry a 68ch cap (62ch inside About and Education). Nothing on the page runs the full 76rem as text.",
+        "section": "typography"
+      },
+      {
+        "name": "The Alternating Ground Rule",
+        "body": "Section tone alternates via .section--alt across the full bleed. Never tint only the content column; never run two alternate sections back to back.",
+        "section": "layout"
+      },
+      {
+        "name": "The Edge-to-Center Rule",
+        "body": "Content lives in the middle column of the section grid at a 76rem cap. New sections adopt the grid rather than inventing their own container.",
+        "section": "layout"
+      },
+      {
+        "name": "The One Elevation Rule",
+        "body": "There is a single shadow token and a single altitude. Hover never raises a surface; state is shown in colour and border, never in lift.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Dark Hairline Rule",
+        "body": "In dark mode, elevation is a 1px ring, not a shadow. Do not port a light-mode drop shadow into the dark palette.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Four Radii Rule",
+        "body": "12 / 8 / 6 / 999. Any new corner picks one of them; nothing on this page is square except a table edge or a fused tab corner.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Scoped Stillness Rule",
+        "body": "Reduced motion removes movement, not feedback. Switch off transforms, entrances and sliding indicators; leave colour and border transitions alone.",
+        "section": "components"
+      },
+      {
+        "name": "The Print-Safe State Rule",
+        "body": "Any element that starts hidden or displaced must be pinned to its resolved state under @media print. A section that only appears after a scroll event does not exist on paper.",
+        "section": "components"
+      }
     ],
     "dos": [
       "Do keep the accent on endings — the closing clause, the terminal marker, the selected state — per The Green Full Stop Rule.",
@@ -171,7 +488,8 @@
       "Do alternate section tone with .section--alt full-bleed, and put new content in the section grid's middle column at the 76rem cap.",
       "Do lift content on the single sheet shadow (0 12px 32px rgba(56, 42, 12, 0.14)) and let the dark theme resolve it to a hairline ring.",
       "Do spend the 8px module: 4rem section padding, 2rem sheet padding, 1.5rem between grouped blocks.",
-      "Do ship every enhancement as an enhancement — tabs, the nav indicator, the reveal and the toggle each have a defined no-JS state.",
+      "Do ship every enhancement as an enhancement — tabs, the nav indicator, the reveal and the toggle each have a defined no-JS state, and a defined print and reduced-motion state.",
+      "Do give every interactive control a 2.75rem minimum target (buttons, icon links, the toggle, folder tabs).",
       "Do keep text within the 68ch measure and hairlines at 1px.",
       "Do use the accent-contrast token on any filled accent surface instead of hard-coding white."
     ],
@@ -182,7 +500,7 @@
       "Don't set body copy, headings, dates or labels in Source Code Pro — chips and status tokens only.",
       "Don't put Sand Border Strong (#8f8058) under text; it is a control outline, not a text or divider colour.",
       "Don't add a radius outside 12 / 8 / 6 / 999 (the folder tab's 10px top corners are the one fused exception).",
-      "Don't add a second authored motion, or any motion that survives prefers-reduced-motion: reduce.",
+      "Don't add a second authored motion, or any transform-based motion that is not switched off under prefers-reduced-motion: reduce.",
       "Don't ship a component whose content only exists once JavaScript runs.",
       "Don't add photography, logos, testimonials or metric callouts; this world carries none."
     ]
