@@ -168,3 +168,13 @@ test('plan document contains no broken node --test invocations', () => {
   const plan = readFile('docs/superpowers/plans/2026-09-23-portfolio-site.md');
   assert.doesNotMatch(plan, /node --test[a-z]/, 'node --test glued to a filename');
 });
+
+test('cv.html: indexable by search engines (user decision 2026-09-23)', () => {
+  assert.doesNotMatch(readHtml('cv.html'), /<meta name="robots" content="noindex">/);
+});
+
+test('index.html: hero uses the real photo with responsive sources', () => {
+  const html = readHtml('index.html');
+  assert.match(html, /<img class="hero__photo" src="assets\/photo-480\.jpg" srcset="assets\/photo-480\.jpg 480w, assets\/photo-768\.jpg 768w" sizes="[^"]+" width="480" height="480" alt="Portrait of Nawres Ben Rhouma" loading="eager" decoding="async">/);
+  assert.doesNotMatch(html, /photo-placeholder/);
+});
