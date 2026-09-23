@@ -512,6 +512,7 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 }
 .fields dd { font-weight: 600; }
 .fields dd:last-of-type { font-weight: 400; }
+.about { max-width: calc(var(--measure) + 2 * var(--space-6)); }
 .about__text { max-width: var(--measure); }
 .education { max-width: 62ch; }
 
