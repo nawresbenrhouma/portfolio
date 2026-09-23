@@ -1,0 +1,143 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned Bardo Tesserae. Keep it, take an alternate, or re-roll. No image generation is available in this session, so the build is code-led either way.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Bardo Tesserae",
+      "kicker": "THE ROLL",
+      "lineage": "Roman-African floor mosaics of the Bardo Museum, Tunis: limestone and basalt tesserae, an emblema panel at the centre, geometric border bands",
+      "thesis": "A profile assembled from small, exact, verifiable units, the way a Tunis mosaic builds a whole picture from stone squares; it refuses the dark terminal-styled developer landing page with glowing skill cards.",
+      "palette": ["#F1EEE6", "#1C1B18", "#1D4F91", "#5E5A52"],
+      "materials": ["pale limestone ground", "basalt ink", "one smalti-blue glass accent", "2px grout gaps on an 8px tessera module"],
+      "viewport": "Left: name in Marcellus inscriptional capitals over the positioning statement in Public Sans, the availability line and two actions (LinkedIn, View CV). Right: the portrait set as the emblema, a square panel inside a hand-authored SVG tessera border. Above: a sticky nav strip that is itself a thin geometric border band; skills, when reached, are square tiles set tight in a grouted grid, backend tiles filled blue, growth tiles outlined, learning tiles hatched.",
+      "risk": "Reads as museum or heritage costume if tesserae leak beyond the three places they belong (emblema border, skill tiles, section rules), and Roman capitals can feel pompous to a tech lead; type is set restrained to hold it.",
+      "raised": [
+        { "from": "Edo woodblock registration", "raise": "Registration: every block, tile, rule and image snaps to one 8px module; nothing sits off-grid." },
+        { "from": "Futurist bolted book", "raise": "Type commitment: the scale takes real steps (display 3.5rem to body 1.0625rem, weight contrast obvious), never a timid hierarchy." },
+        { "from": "ASCII live scene", "raise": "One grid is the entire composition: photo, tiles and columns are sized in module multiples." },
+        { "from": "VU-meter bridge", "raise": "Exactly one accent: smalti blue appears only on actions, the current nav item and core-skill tiles; nothing else is coloured." },
+        { "from": "Tensegrity column", "raise": "Named states: skill tiles carry three distinct states (core / growing / learning) legible without colour, by fill, outline and hatch." },
+        { "from": "Coiled earth tower", "raise": "Courses: the experience timeline reads as stacked horizontal courses against a fixed date ruler, body measure held at 65 to 72ch." }
+      ],
+      "wireframe": { "cols": 12, "rows": 10, "regions": [
+        { "label": "nav band", "x": 0, "y": 0, "w": 12, "h": 1, "accent": true },
+        { "label": "name + statement", "x": 0, "y": 2, "w": 6, "h": 4 },
+        { "label": "availability + actions", "x": 0, "y": 6, "w": 6, "h": 2 },
+        { "label": "emblema portrait", "x": 8, "y": 2, "w": 4, "h": 6, "accent": true }
+      ] }
+    },
+    {
+      "id": "model-pick",
+      "label": "API Reference",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "API reference documentation: the two-pane reference pages tech leads read every day",
+      "thesis": "The profile written like the reference page for a well-designed service: a stable index, precise entries, code only where there is code.",
+      "palette": ["#FFFFFF", "#111318", "#1F5FBF", "#6B7280"],
+      "materials": ["white paper ground", "ink", "one link blue", "monospace reserved for real technology names"],
+      "viewport": "Top: a slim docs-style nav with section anchors and a search-less index. Below: name and one-line description as the page title block, the positioning statement as the summary, availability as a labelled field, then the first entries (Backend, Cloud) as reference blocks with tags rendered as code.",
+      "risk": "Familiar by design; this is where most developer portfolios land, and it will look competent rather than memorable.",
+      "wireframe": { "cols": 12, "rows": 10, "regions": [
+        { "label": "docs nav", "x": 0, "y": 0, "w": 12, "h": 1 },
+        { "label": "title block", "x": 0, "y": 2, "w": 8, "h": 3, "accent": true },
+        { "label": "summary + fields", "x": 0, "y": 5, "w": 8, "h": 3 },
+        { "label": "portrait", "x": 9, "y": 2, "w": 3, "h": 3 }
+      ] }
+    },
+    {
+      "id": "challenger-tensegrity",
+      "label": "Tensegrity Column",
+      "verdict": "competitive",
+      "lineage": "kinetic tensegrity sculpture: carbon rods held apart by red cord",
+      "thesis": "Skills drawn as a force network: Java backend as the compression core, cloud and AI as the tension members pulling it outward.",
+      "palette": ["#E9E9E6", "#141414", "#C8102E", "#9A9A96"],
+      "materials": ["pale concrete ground", "carbon-black rods", "red cord accent", "engineering leader-line labels"],
+      "viewport": "A single force diagram fills the first screen: the backend node at centre, cloud, DevOps and AI nodes held in tension around it, name and availability pinned to nodes with leader lines.",
+      "case": "Fuses well on clarity: it literally draws the backend-core-growing-outward mechanism. Loses on audience identification: recruiters do not read force diagrams, and the red cord fights the calm brief.",
+      "risk": "Reads as a data-viz demo rather than a person; the diagram must stay legible on a phone.",
+      "hero": "https://impeccable.style/worlds/cards/kinetic-sculpture-automata-tensegrity-breathing-column-hero.webp"
+    },
+    {
+      "id": "challenger-ukiyoe",
+      "label": "Edo Block Registration",
+      "verdict": "declined",
+      "lineage": "Edo woodblock printing, one registered colour block at a time",
+      "thesis": "The page prints itself in layers: keyline first, then each skill area drops its colour in.",
+      "palette": ["#EFE4CC", "#1B2B4B", "#C63A2F", "#5A3A22"],
+      "materials": ["kozo paper", "mineral indigo", "safflower red", "keyblock line"],
+      "viewport": "A keyline-only page that fills with colour blocks as you scroll.",
+      "case": "Layered reveal hides content from a one-minute reader; the Edo world does not belong to a recruiter.",
+      "kept": "Registration to one keyline grid.",
+      "risk": "Decorative and slow.",
+      "hero": "https://impeccable.style/worlds/cards/graphic-worlds-publishing-ukiyoe-block-registration-hero.webp"
+    },
+    {
+      "id": "challenger-futurist",
+      "label": "Futurist Bolted Book",
+      "verdict": "declined",
+      "lineage": "machine-bound futurist book, wood type at 15 to 45 degrees",
+      "thesis": "Every section a typographic collision at engine speed.",
+      "palette": ["#F3ECD9", "#111111", "#D0261B", "#B8B8B8"],
+      "materials": ["cream stock", "wood-type black", "mechanical red", "aluminium bolts"],
+      "viewport": "Name in wood type slammed across the fold at 30 degrees.",
+      "case": "Loud by definition; the brief forbids flashy, and rotated type destroys scan speed.",
+      "kept": "A type scale that takes real steps.",
+      "risk": "Unreadable on a phone.",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-futurist-bolted-book-hero.webp"
+    },
+    {
+      "id": "challenger-ascii",
+      "label": "ASCII Live Scene",
+      "verdict": "declined",
+      "lineage": "live scenes rendered as glyph density on a phosphor grid",
+      "thesis": "The portrait and page rendered as a live character grid.",
+      "palette": ["#000000", "#33FF66", "#FFB000", "#0A0A0A"],
+      "materials": ["phosphor on black", "one monospace grid"],
+      "viewport": "A glyph-rendered portrait beside a monospace column of facts.",
+      "case": "The dark terminal is the category rut this brief rejects; novelty over credibility.",
+      "kept": "One grid is the whole composition.",
+      "risk": "Reads as a demo.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-ascii-live-scene-render-hero.webp"
+    },
+    {
+      "id": "challenger-vu",
+      "label": "VU-Meter Bridge",
+      "verdict": "declined",
+      "lineage": "a row of VU meters across a recording desk",
+      "thesis": "Skills as a row of identical meters, needles leaning toward the red.",
+      "palette": ["#F2E8D0", "#1A1A1A", "#B3231C", "#5C4A3A"],
+      "materials": ["ivory meter faces", "glass", "walnut and steel"],
+      "viewport": "A meter bridge across the fold, one needle per skill area.",
+      "case": "Audio instruments have no link to the audience; rating skills with needles overstates and gamifies.",
+      "kept": "Exactly one accent colour, used once.",
+      "risk": "Gimmick.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-vu-meter-bridge-hero.webp"
+    },
+    {
+      "id": "challenger-coil",
+      "label": "Coiled Earth Tower",
+      "verdict": "declined",
+      "lineage": "a coiled clay tower built course by course",
+      "thesis": "The career as ascending courses of clay.",
+      "palette": ["#B5623A", "#6B3E2A", "#F0E6D8", "#3A2A22"],
+      "materials": ["terracotta bands", "slip-white seams", "damp dark ring"],
+      "viewport": "Horizontal courses stacked to the fold, newest course on top.",
+      "case": "Terracotta and umber fight the calm brief; recruiters do not identify with ceramics.",
+      "kept": "Stacked courses with a fixed ruler and a held measure.",
+      "risk": "Heavy and warm in the wrong way.",
+      "hero": "https://impeccable.style/worlds/cards/clay-ceramics-fracture-coiled-earth-tower-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": false },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "The developer portfolio recruiters already know: hero, skill cards, project cards, contact, executed impeccably.",
+    "palette": ["#0F172A", "#F8FAFC", "#3B82F6", "#94A3B8"],
+    "materials": ["dark slate ground", "rounded cards", "one blue", "Inter"],
+    "viewport": "Name and a one-line tagline centred over a row of skill cards with icons.",
+    "risk": "Indistinguishable from the competition by design."
+  },
+  "steer": true
+}
