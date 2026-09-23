@@ -39,3 +39,11 @@ test('dark tokens: text and accent pairs meet AA on every surface they sit on', 
   }
   assert.ok(ratio(t['accent-contrast'], t.action) >= 4.5, 'button label on action');
 });
+
+test('dark palette is identical in the toggle block and the no-JS system-preference block', () => {
+  const css = readFile('css/styles.css');
+  const grab = (re) => Object.fromEntries([...css.match(re)[1].matchAll(/--([a-z-]+):\s*([^;]+);/g)].map((m) => [m[1], m[2].trim()]));
+  const toggle = grab(/\[data-theme="dark"\]\s*{([\s\S]*?)}/);
+  const system = grab(/:root:not\(\[data-theme="light"\]\)\s*{([\s\S]*?)}/);
+  assert.deepEqual(system, toggle, 'the two dark token blocks drifted apart');
+});

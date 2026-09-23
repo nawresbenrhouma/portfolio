@@ -45,12 +45,12 @@ Visitors arrive from LinkedIn, a CV link, or an application email. Reading happe
 - Voice: confident, precise, warm; credible and calm. Not salesy, not playful, not informal, no emoji, no hype words.
 - Must not look like a generic developer-portfolio template.
 - Must not imply lead, architect or senior scope.
-- Photo: a real portrait supplied by Nawres at assets/photo.jpg (pending; placeholder until then).
+- Photo: a real portrait supplied by Nawres, shipped as assets/photo-480.jpg and assets/photo-768.jpg (original kept at docs/photo-original.jpg, not deployed).
 
 ## Evidence on Hand
 
 - Profile brief with employers, projects, dates, skills, certifications (captured in the spec).
-- Portrait photo: pending from Nawres.
+- Portrait photo: supplied (assets/photo-480.jpg, assets/photo-768.jpg).
 - No testimonials, metrics, logos, or client quotes exist; none may be invented. Client names (Techem, Beiersdorf) are factual project references, not endorsements.
 
 ## Product Principles

@@ -161,16 +161,18 @@ test('index.html: selected-work tabs ship as plain markup; ARIA is added by JS',
   assert.match(html, /<script src="js\/tabs\.js" defer><\/script>/);
 });
 
-test('index.html: project notes are native expandable entries', () => {
+test('index.html: project notes are native expandable entries with real headings', () => {
   const html = readHtml('index.html');
-  const notes = [...html.matchAll(/<details class="note">\s*<summary>/g)];
-  assert.equal(notes.length, 4);
-  assert.match(html, /<details class="note" open>|<details class="note">\s*<summary><span class="note__title">Techem WebPortal<\/span>/);
+  const notes = [...html.matchAll(/<details class="note">\s*<summary><h3 class="note__heading">/g)];
+  assert.equal(notes.length, 4, 'every note summary carries an h3 so heading navigation reaches the projects');
+  assert.match(html, /<h3 class="note__heading"><span class="note__title">TravelEase<\/span>/);
 });
 
 test('index.html: no invented numbers in the work sheet', () => {
   const html = readHtml('index.html');
-  const work = html.slice(html.indexOf('class="sheet work"'), html.indexOf('<section id="about"'));
+  const start = html.indexOf('<section class="work"');
+  const work = html.slice(start, html.indexOf('<section id="about"'));
+  assert.ok(start > 0 && work.length > 500, 'work section not found: the guard would assert nothing');
   assert.doesNotMatch(work, /\b\d{2,3}(,\d{3})?\s*(users|services|microservices|%|engineers)\b/i);
 });
 

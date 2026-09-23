@@ -613,10 +613,7 @@ code { font-family: var(--font-code); font-size: 0.9em; }
   box-shadow: var(--shadow);
 }
 .note > summary {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--space-1) var(--space-4);
+  display: block;
   padding: var(--space-4) var(--space-6);
   padding-right: 3.25rem;
   cursor: pointer;
@@ -637,6 +634,15 @@ code { font-family: var(--font-code); font-size: 0.9em; }
   transition: transform var(--motion-fast) var(--ease-out);
 }
 .note[open] > summary::after { transform: translateY(-30%) rotate(-135deg); }
+.note__heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-4);
+  margin: 0;
+  font: inherit;
+  letter-spacing: 0;
+}
 .note__title { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; }
 .note__meta { font-size: var(--text-small); color: var(--text-muted); }
 .note__body { padding: 0 var(--space-6) var(--space-5); }
