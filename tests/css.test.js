@@ -35,3 +35,15 @@ test('styles.css styles the essentials', () => {
   assert.match(s, /html\s*{[^}]*scroll-behavior:\s*smooth/);
   assert.match(s, /\.site-header\s*{[^}]*position:\s*sticky/);
 });
+
+test('print.css hides chrome, keeps entries together, shows link URLs, sets A4', () => {
+  const p = readFile('css/print.css');
+  assert.match(p, /@page\s*{[^}]*size:\s*A4/);
+  for (const sel of ['.site-header', '.print-hint', '.theme-toggle']) {
+    assert.match(p, new RegExp(`${sel.replace('.', '\\.')}[^{]*{[^}]*display:\\s*none`), `${sel} not hidden in print`);
+  }
+  assert.match(p, /\.cv-entry\s*{[^}]*break-inside:\s*avoid/);
+  assert.match(p, /h2,?\s*h3[^{]*{[^}]*break-after:\s*avoid/);
+  assert.match(p, /a\[href\^="http"\]::after\s*{[^}]*content:\s*" \(" attr\(href\) "\)"/);
+  assert.match(p, /(color|background)[^;]*:\s*(#000|black|#fff|white|none)/);
+});
