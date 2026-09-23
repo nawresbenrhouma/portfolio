@@ -57,7 +57,7 @@ test('initTheme applies theme, reveals toggle, and toggling flips and persists',
   assert.equal(doc.documentElement.getAttribute('data-theme'), 'dark');
   assert.equal(store.theme, 'dark');
   assert.equal(doc._button.attrs['aria-pressed'], 'true');
-  assert.equal(doc._button.attrs['aria-label'], 'Switch to light theme');
+  assert.equal(doc._button.attrs['aria-label'], undefined, 'label is static in HTML; only aria-pressed changes');
   doc._button.click();
   assert.equal(doc.documentElement.getAttribute('data-theme'), 'light');
   assert.equal(store.theme, 'light');

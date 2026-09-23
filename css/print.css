@@ -14,8 +14,8 @@ body.cv {
 .cv__header { border-bottom: 1px solid #000; padding-bottom: 4mm; margin-bottom: 5mm; }
 h1 { font-size: 20pt; margin: 0 0 2mm; }
 h2 { font-size: 12.5pt; margin: 6mm 0 2mm; border-bottom: 1px solid #999; padding-bottom: 1mm; }
-h3 { font-size: 11pt; margin: 3mm 0 1mm; }
-h2, h3 { break-after: avoid; }
+h3, h4 { font-size: 11pt; margin: 3mm 0 1mm; }
+h2, h3, h4 { break-after: avoid; }
 .cv-section { break-inside: auto; padding-top: 0; }
 .cv-entry { break-inside: avoid; margin-bottom: 3mm; padding: 2mm 0; border-top: 0; }
 .cv-entry__head { display: flex; justify-content: space-between; gap: 4mm; align-items: baseline; margin-bottom: 1mm; }

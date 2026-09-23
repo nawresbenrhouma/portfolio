@@ -52,3 +52,12 @@ test('print.css hides chrome, keeps entries together, shows link URLs, sets A4',
   assert.match(p, /a\[href\^="http"\]::after\s*{[^}]*content:\s*" \(" attr\(href\) "\)"/);
   assert.match(p, /(color|background)[^;]*:\s*(#000|black|#fff|white|none)/);
 });
+
+test('controls use a 3:1 outline token, separators keep the hairline', () => {
+  const s = css();
+  assert.match(s, /:root\s*{[^}]*--border-strong\s*:/);
+  assert.match(s, /\[data-theme="dark"\]\s*{[^}]*--border-strong\s*:/);
+  assert.match(s, /\.theme-toggle\s*{[^}]*border:\s*1px solid var\(--border-strong\)/);
+  assert.match(s, /\.button--ghost\s*{[^}]*border-color:\s*var\(--border-strong\)/);
+  assert.match(s, /\.print-hint\s*{[^}]*margin:[^;]*var\(--space-5\)[^;]*var\(--space-5\)/);
+});

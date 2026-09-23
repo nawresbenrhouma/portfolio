@@ -24,7 +24,6 @@
     var button = doc.querySelector('[data-theme-toggle]');
     if (button) {
       button.setAttribute('aria-pressed', String(theme === 'dark'));
-      button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     }
   }
 

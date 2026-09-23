@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Screenshot a page with real device emulation through the Chrome DevTools
 // protocol and report horizontal overflow. No dependencies (Node >= 22).
-//   node scripts/shot.js <url> <out.png> <width> [--dark] [--scroll=<y>]  (scroll = viewport-only capture)
+//   node scripts/shot.js <url> <out.png> <width> [--dark] [--nojs] [--scroll=<y>]  (scroll = viewport-only capture)
 const { spawn } = require('node:child_process');
 const http = require('node:http');
 const fs = require('node:fs');
@@ -16,6 +16,7 @@ if (!url || !out || !widthArg) {
 }
 const width = Number(widthArg);
 const dark = flags.includes('--dark');
+const nojs = flags.includes('--nojs');
 const scrollArg = flags.find((f) => f.startsWith('--scroll='));
 const scrollY = scrollArg ? Number(scrollArg.split('=')[1]) : 0;
 const port = 9300 + Math.floor(Math.random() * 500);
@@ -46,15 +47,16 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await send('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 2, mobile });
   if (dark) await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: 'dark' }] });
   await send('Page.enable');
+  if (nojs) await send('Emulation.setScriptExecutionDisabled', { value: true });
   await send('Page.navigate', { url });
   await sleep(1800);
   if (scrollY) { await send('Runtime.evaluate', { expression: `window.scrollTo(0, ${scrollY})` }); await sleep(600); }
-  const ev = await send('Runtime.evaluate', { expression: 'JSON.stringify({sw:document.documentElement.scrollWidth,iw:window.innerWidth,h:document.documentElement.scrollHeight})', returnByValue: true });
-  const { sw, iw, h } = JSON.parse(ev.result.result.value);
+  const ev = await send('Runtime.evaluate', { expression: 'JSON.stringify({sw:document.documentElement.scrollWidth,iw:window.innerWidth,h:document.documentElement.scrollHeight,bg:getComputedStyle(document.body).backgroundColor,theme:document.documentElement.getAttribute("data-theme")})', returnByValue: true });
+  const { sw, iw, h, bg, theme } = JSON.parse(ev.result.result.value);
   if (!scrollY) { await send('Emulation.setDeviceMetricsOverride', { width, height: Math.min(h, 16000), deviceScaleFactor: 2, mobile }); await sleep(400); }
   const shot = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: !scrollY });
   fs.writeFileSync(out, Buffer.from(shot.result.data, 'base64'));
-  console.log(`${out}: width=${width} scrollWidth=${sw} innerWidth=${iw} height=${h} ${sw > iw ? 'OVERFLOW' : 'ok'}`);
+  console.log(`${out}: width=${width} scrollWidth=${sw} innerWidth=${iw} height=${h} bg=${bg} data-theme=${theme} ${sw > iw ? 'OVERFLOW' : 'ok'}`);
   ws.close();
   await new Promise((r) => { chrome.on('exit', r); chrome.kill(); });
   fs.rmSync(profile, { recursive: true, force: true });

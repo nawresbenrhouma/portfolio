@@ -106,3 +106,24 @@ test('index.html: Open Graph and canonical tags', () => {
   assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
   assert.ok(require('node:fs').existsSync(require('node:path').resolve(__dirname, '../assets/og.png')), 'assets/og.png missing');
 });
+
+// Findings from the technical audit (2026-09-23)
+test('no-JS dark path: <html> carries no hard-coded data-theme', () => {
+  for (const page of ['index.html', 'cv.html']) {
+    assert.match(readHtml(page), /<html lang="en">/, `${page}: <html> must not preset data-theme`);
+  }
+});
+
+test('index.html: skip link lands on main content, heading anchors have unique names', () => {
+  const html = readHtml('index.html');
+  assert.match(html, /<a class="skip-link" href="#top">/);
+  const labels = [...html.matchAll(/class="heading-anchor"[^>]*aria-label="([^"]+)"/g)].map((m) => m[1]);
+  assert.ok(labels.length >= 7);
+  assert.equal(new Set(labels).size, labels.length, 'duplicate heading-anchor labels');
+});
+
+test('cv.html: nested engagements are h4 under the h3 employer entry', () => {
+  const html = readHtml('cv.html');
+  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Techem WebPortal/);
+  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Beiersdorf/);
+});
