@@ -20,6 +20,8 @@ Pushing to `main` runs `.github/workflows/deploy.yml`, which publishes the
 repo to GitHub Pages at https://benrhoumanawres7-ai.github.io/portfolio/.
 In the repo settings, Pages → Source must be "GitHub Actions".
 
+Live: https://benrhoumanawres7-ai.github.io/portfolio/
+
 ## Design context
 
 `PRODUCT.md` and `DESIGN.md` are maintained by the impeccable skill and
