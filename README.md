@@ -17,10 +17,10 @@ No build step. Plain HTML, CSS and JavaScript.
 ## Deploy
 
 Pushing to `main` runs `.github/workflows/deploy.yml`, which publishes the
-repo to GitHub Pages at https://benrhoumanawres7-ai.github.io/portfolio/.
+repo to GitHub Pages at https://nawresbenrhouma.github.io/portfolio/.
 In the repo settings, Pages → Source must be "GitHub Actions".
 
-Live: https://benrhoumanawres7-ai.github.io/portfolio/
+Live: https://nawresbenrhouma.github.io/portfolio/
 
 ## Design context
 

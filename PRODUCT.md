@@ -33,7 +33,7 @@ Visitors arrive from LinkedIn, a CV link, or an application email. Reading happe
 - Two surfaces: `index.html` (sections: hero, about, skills, experience, projects, certifications & learning, education, contact; sticky section navigation) and `cv.html` (print target).
 - Dark/light toggle, persisted per browser; page fully usable without JavaScript.
 - Only permitted external resources: Google Fonts. No analytics, no contact form, no PDF files.
-- All URLs relative; site lives at https://benrhoumanawres7-ai.github.io/portfolio/.
+- All URLs relative; site lives at https://nawresbenrhouma.github.io/portfolio/.
 - Content facts are fixed in the design spec (docs/superpowers/specs/2026-09-23-portfolio-site-design.md). No new claims, employers, dates or skills.
 - Language: English. The word "Junior" never appears; the public title is "Software Engineer at MaibornWolff".
 - Skills hierarchy is fixed: Backend Engineering → Cloud & Architecture → DevOps / Infrastructure as Code → AI-Assisted Development.

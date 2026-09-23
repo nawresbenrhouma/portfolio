@@ -13,12 +13,12 @@
 ## Global Constraints
 
 - No build step and no runtime npm dependencies. `npx` may be used for dev-time checks only; there is no `package.json` with dependencies.
-- All URLs in HTML/CSS are relative (`css/styles.css`, `#skills`, `cv.html`, `assets/photo.jpg`). Never a leading `/`. Site must work at `https://benrhoumanawres7-ai.github.io/portfolio/`.
+- All URLs in HTML/CSS are relative (`css/styles.css`, `#skills`, `cv.html`, `assets/photo.jpg`). Never a leading `/`. Site must work at `https://nawresbenrhouma.github.io/portfolio/`.
 - No PDF files are shipped or referenced. The CV is `cv.html`, printed by the visitor.
 - Content language is English. The word "Junior" appears nowhere in shipped HTML.
 - Public title is exactly "Software Engineer at MaibornWolff". Positioning statement is exactly: "Backend Software Engineer with Java expertise, expanding into Cloud & Platform Engineering and AI-assisted development."
 - Availability line in hero is exactly: "Based in Tunis · Open to remote, part-time roles".
-- Contact values: email `benrhoumanawres7@gmail.com`, LinkedIn `https://www.linkedin.com/in/nawres-ben-rhouma21/`, GitHub `https://github.com/benrhoumanawres7-ai`, location "Tunis, Tunisia · remote".
+- Contact values: email `benrhoumanawres7@gmail.com`, LinkedIn `https://www.linkedin.com/in/nawres-ben-rhouma21/`, GitHub `https://github.com/nawresbenrhouma`, location "Tunis, Tunisia · remote".
 - Only permitted external resources: `fonts.googleapis.com` / `fonts.gstatic.com` if DESIGN.md chooses a Google Font. No other external scripts, styles, images or fetches.
 - Pages must be complete and readable with JavaScript disabled. JS only enhances (theme toggle, active nav link).
 - Commits in this repo use the personal identity `Nawres Ben Rhouma <benrhoumanawres7@gmail.com>` (set in Task 1). Every commit message ends with the line `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`.
@@ -228,7 +228,7 @@ No build step. Plain HTML, CSS and JavaScript.
 ## Deploy
 
 Pushing to `main` runs `.github/workflows/deploy.yml`, which publishes the
-repo to GitHub Pages at https://benrhoumanawres7-ai.github.io/portfolio/.
+repo to GitHub Pages at https://nawresbenrhouma.github.io/portfolio/.
 In the repo settings, Pages → Source must be "GitHub Actions".
 
 ## Design context
@@ -272,7 +272,7 @@ const REQUIRED_INDEX = [
   'Based in Tunis · Open to remote, part-time roles',
   'mailto:benrhoumanawres7@gmail.com',
   'https://www.linkedin.com/in/nawres-ben-rhouma21/',
-  'https://github.com/benrhoumanawres7-ai',
+  'https://github.com/nawresbenrhouma',
   'Tunis, Tunisia · remote',
   'Techem WebPortal',
   'Beiersdorf',
@@ -587,7 +587,7 @@ Expected: FAIL with `ENOENT` for index.html.
       <ul class="contact__list">
         <li><span class="contact__label">Email</span> <a href="mailto:benrhoumanawres7@gmail.com">benrhoumanawres7@gmail.com</a></li>
         <li><span class="contact__label">LinkedIn</span> <a href="https://www.linkedin.com/in/nawres-ben-rhouma21/" rel="me noopener">linkedin.com/in/nawres-ben-rhouma21</a></li>
-        <li><span class="contact__label">GitHub</span> <a href="https://github.com/benrhoumanawres7-ai" rel="me noopener">github.com/benrhoumanawres7-ai</a></li>
+        <li><span class="contact__label">GitHub</span> <a href="https://github.com/nawresbenrhouma" rel="me noopener">github.com/nawresbenrhouma</a></li>
         <li><span class="contact__label">Location</span> Tunis, Tunisia · remote</li>
       </ul>
     </section>
@@ -659,7 +659,7 @@ test('cv.html: required facts and structure present', () => {
     'Software Engineer at MaibornWolff',
     'benrhoumanawres7@gmail.com',
     'linkedin.com/in/nawres-ben-rhouma21',
-    'github.com/benrhoumanawres7-ai',
+    'github.com/nawresbenrhouma',
     'Tunis, Tunisia · remote',
     'Open to remote, part-time roles',
     'Techem WebPortal',
@@ -726,7 +726,7 @@ Expected: cv tests FAIL with ENOENT.
       <p class="cv__contact">
         <a href="mailto:benrhoumanawres7@gmail.com">benrhoumanawres7@gmail.com</a> ·
         <a href="https://www.linkedin.com/in/nawres-ben-rhouma21/">linkedin.com/in/nawres-ben-rhouma21</a> ·
-        <a href="https://github.com/benrhoumanawres7-ai">github.com/benrhoumanawres7-ai</a> ·
+        <a href="https://github.com/nawresbenrhouma">github.com/nawresbenrhouma</a> ·
         Tunis, Tunisia · remote
       </p>
       <p class="cv__availability">Open to remote, part-time roles</p>
@@ -1450,7 +1450,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Modify: `assets/favicon.svg` (colours from DESIGN.md), `index.html` `<head>` (Open Graph tags), `tests/content.test.js` (OG test)
 
 **Interfaces:**
-- Produces: `assets/og.png` 1200×630 referenced by `<meta property="og:image">` with an absolute URL (allowed exception: Open Graph requires absolute URLs; the content test permits `https://benrhoumanawres7-ai.github.io/portfolio/` only in `og:` and `canonical` meta).
+- Produces: `assets/og.png` 1200×630 referenced by `<meta property="og:image">` with an absolute URL (allowed exception: Open Graph requires absolute URLs; the content test permits `https://nawresbenrhouma.github.io/portfolio/` only in `og:` and `canonical` meta).
 
 - [ ] **Step 1: Add the failing OG test**
 
@@ -1458,7 +1458,7 @@ Append to `tests/content.test.js`:
 ```js
 test('index.html: Open Graph and canonical tags', () => {
   const html = readHtml('index.html');
-  const base = 'https://benrhoumanawres7-ai.github.io/portfolio/';
+  const base = 'https://nawresbenrhouma.github.io/portfolio/';
   assert.match(html, new RegExp(`<link rel="canonical" href="${base}">`));
   assert.match(html, /<meta property="og:title" content="Nawres Ben Rhouma · Backend Software Engineer">/);
   assert.match(html, /<meta property="og:description" content="[^"]+">/);
@@ -1477,12 +1477,12 @@ Expected: the OG test FAILS.
 
 Insert into `index.html` `<head>` directly after the `<meta name="description" …>` line:
 ```html
-  <link rel="canonical" href="https://benrhoumanawres7-ai.github.io/portfolio/">
+  <link rel="canonical" href="https://nawresbenrhouma.github.io/portfolio/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Nawres Ben Rhouma · Backend Software Engineer">
   <meta property="og:description" content="Java backend engineer expanding into Cloud & Platform Engineering and AI-assisted development. Based in Tunis, open to remote, part-time roles.">
-  <meta property="og:url" content="https://benrhoumanawres7-ai.github.io/portfolio/">
-  <meta property="og:image" content="https://benrhoumanawres7-ai.github.io/portfolio/assets/og.png">
+  <meta property="og:url" content="https://nawresbenrhouma.github.io/portfolio/">
+  <meta property="og:image" content="https://nawresbenrhouma.github.io/portfolio/assets/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
@@ -1729,20 +1729,20 @@ Look at `.qa/index-1440-light.png` and `.qa/index-390-light.png` once to confirm
 ```
 ! gh auth login --hostname github.com --web
 ```
-choosing the `benrhoumanawres7-ai` account, then the executor continues; or
+choosing the `nawresbenrhouma` account, then the executor continues; or
 
-(b) the executor creates the repo and pushes only after `gh auth status` shows `benrhoumanawres7-ai` as the active account:
+(b) the executor creates the repo and pushes only after `gh auth status` shows `nawresbenrhouma` as the active account:
 ```bash
 gh auth status 2>&1 | grep -q "Active account: true" && gh api user --jq .login
-# must print: benrhoumanawres7-ai
-gh repo create benrhoumanawres7-ai/portfolio --public --source=. --remote=origin --push
+# must print: nawresbenrhouma
+gh repo create nawresbenrhouma/portfolio --public --source=. --remote=origin --push
 ```
 
 - [ ] **Step 6: Enable Pages via Actions**
 
 ```bash
-gh api -X POST repos/benrhoumanawres7-ai/portfolio/pages -f build_type=workflow 2>/dev/null \
-  || gh api -X PUT repos/benrhoumanawres7-ai/portfolio/pages -f build_type=workflow
+gh api -X POST repos/nawresbenrhouma/portfolio/pages -f build_type=workflow 2>/dev/null \
+  || gh api -X PUT repos/nawresbenrhouma/portfolio/pages -f build_type=workflow
 gh run watch --exit-status
 ```
 Expected: the `Deploy to GitHub Pages` run finishes green (test job then deploy job).
@@ -1750,16 +1750,16 @@ Expected: the `Deploy to GitHub Pages` run finishes green (test job then deploy 
 - [ ] **Step 7: Verify the live site**
 
 ```bash
-curl -s -o /dev/null -w "%{http_code}\n" https://benrhoumanawres7-ai.github.io/portfolio/
-curl -s -o /dev/null -w "%{http_code}\n" https://benrhoumanawres7-ai.github.io/portfolio/cv.html
-curl -s -o /dev/null -w "%{http_code}\n" https://benrhoumanawres7-ai.github.io/portfolio/css/styles.css
-curl -s -o /dev/null -w "%{http_code}\n" https://benrhoumanawres7-ai.github.io/portfolio/assets/og.png
+curl -s -o /dev/null -w "%{http_code}\n" https://nawresbenrhouma.github.io/portfolio/
+curl -s -o /dev/null -w "%{http_code}\n" https://nawresbenrhouma.github.io/portfolio/cv.html
+curl -s -o /dev/null -w "%{http_code}\n" https://nawresbenrhouma.github.io/portfolio/css/styles.css
+curl -s -o /dev/null -w "%{http_code}\n" https://nawresbenrhouma.github.io/portfolio/assets/og.png
 ```
 Expected: four lines of `200` (Pages can take a minute after the run; retry once). Then a headless screenshot of the live URL at 1440 and 390 and a Read of both images to confirm styling loaded at the subpath.
 
 - [ ] **Step 8: Update README status and commit**
 
-Add to `README.md` under Deploy: `Live: https://benrhoumanawres7-ai.github.io/portfolio/`. Commit:
+Add to `README.md` under Deploy: `Live: https://nawresbenrhouma.github.io/portfolio/`. Commit:
 ```bash
 git add README.md
 git commit -m "Record live URL

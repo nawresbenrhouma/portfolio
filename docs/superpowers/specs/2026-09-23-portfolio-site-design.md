@@ -99,7 +99,7 @@ Learning · Education · Contact. Plus a theme toggle and a "CV" link.
    opportunities"), then:
    - Email: benrhoumanawres7@gmail.com (mailto link)
    - LinkedIn: https://www.linkedin.com/in/nawres-ben-rhouma21/
-   - GitHub: https://github.com/benrhoumanawres7-ai
+   - GitHub: https://github.com/nawresbenrhouma
    - Location: Tunis, Tunisia · remote
 
 Footer: name, year, "Built with plain HTML, CSS and JS."
@@ -153,9 +153,9 @@ Decisions:
 - `.github/workflows/deploy.yml` uses `actions/configure-pages`,
   `actions/upload-pages-artifact` (whole repo minus `docs/` is fine) and
   `actions/deploy-pages` on push to `main`.
-- Nawres creates the GitHub repo `benrhoumanawres7-ai/portfolio` and
+- Nawres creates the GitHub repo `nawresbenrhouma/portfolio` and
   enables Pages with source "GitHub Actions". The resulting URL is
-  `https://benrhoumanawres7-ai.github.io/portfolio/`.
+  `https://nawresbenrhouma.github.io/portfolio/`.
 
 ## 8. Verification
 

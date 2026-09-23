@@ -9,7 +9,7 @@ const REQUIRED_INDEX = [
   'Based in Tunis · Open to remote, part-time roles',
   'mailto:benrhoumanawres7@gmail.com',
   'https://www.linkedin.com/in/nawres-ben-rhouma21/',
-  'https://github.com/benrhoumanawres7-ai',
+  'https://github.com/nawresbenrhouma',
   'Tunis, Tunisia · remote',
   'Techem WebPortal',
   'Beiersdorf',
@@ -80,7 +80,7 @@ test('cv.html: required facts and structure present', () => {
     'Software Engineer at MaibornWolff',
     'benrhoumanawres7@gmail.com',
     'linkedin.com/in/nawres-ben-rhouma21',
-    'github.com/benrhoumanawres7-ai',
+    'github.com/nawresbenrhouma',
     'Tunis, Tunisia · remote',
     'Open to remote, part-time roles',
     'Techem WebPortal',
@@ -98,7 +98,7 @@ test('cv.html: required facts and structure present', () => {
 
 test('index.html: Open Graph and canonical tags', () => {
   const html = readHtml('index.html');
-  const base = 'https://benrhoumanawres7-ai.github.io/portfolio/';
+  const base = 'https://nawresbenrhouma.github.io/portfolio/';
   assert.match(html, new RegExp(`<link rel="canonical" href="${base}">`));
   assert.match(html, /<meta property="og:title" content="Nawres Ben Rhouma · Backend Software Engineer">/);
   assert.match(html, /<meta property="og:description" content="[^"]+">/);
