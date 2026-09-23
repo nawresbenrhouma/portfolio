@@ -148,16 +148,16 @@ test('index.html: About keeps the Role / Availability / Focus field rows', () =>
   assert.match(about, /<dt>Availability<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>/);
 });
 
-test('index.html: selected-work tabs are accessible and stack without JS', () => {
+test('index.html: selected-work tabs ship as plain markup; ARIA is added by JS', () => {
   const html = readHtml('index.html');
-  const tabs = [...html.matchAll(/<button class="tab" role="tab" id="tab-([a-z]+)" aria-controls="panel-\1"[^>]*>([^<]+)<\/button>/g)];
+  const tabs = [...html.matchAll(/<button class="tab" type="button" id="tab-([a-z]+)" data-panel="panel-\1">([^<]+)<\/button>/g)];
   assert.deepEqual(tabs.map((m) => m[1]), ['techem', 'copilot', 'consommi']);
   assert.deepEqual(tabs.map((m) => m[2]), ['Techem WebPortal', 'Copilot Studio pilot', 'Consommi Tounsi']);
-  assert.match(html, /<div class="tabs__list" role="tablist" aria-label="Selected work">/);
+  assert.match(html, /<div class="tabs__list" data-tablist-label="Selected work">/);
   for (const id of ['techem', 'copilot', 'consommi']) {
-    assert.match(html, new RegExp(`<article class="panel" role="tabpanel" id="panel-${id}" aria-labelledby="tab-${id}">`), `panel ${id}`);
+    assert.match(html, new RegExp(`<article class="panel" id="panel-${id}">`), `panel ${id}`);
   }
-  assert.doesNotMatch(html.slice(0, html.indexOf('</main>')), /role="tabpanel"[^>]*\shidden/, 'panels are visible without JS');
+  assert.doesNotMatch(html, /role="tab(list|panel)?"|aria-selected|aria-controls/, 'no static tab ARIA: it is inert without JS');
   assert.match(html, /<script src="js\/tabs\.js" defer><\/script>/);
 });
 

@@ -18,9 +18,10 @@ function el(attrs = {}) {
 
 function fakeDoc() {
   const ids = ['techem', 'copilot', 'consommi'];
-  const buttons = ids.map((id, i) => el({ id: `tab-${id}`, 'aria-controls': `panel-${id}`, offsetLeft: i * 100 }));
+  const buttons = ids.map((id, i) => el({ id: `tab-${id}`, 'data-panel': `panel-${id}`, offsetLeft: i * 100 }));
   const panels = ids.map((id) => el({ id: `panel-${id}` }));
-  const list = { children: [], appendChild(x) { this.children.push(x); }, classList: { add() {} } };
+  const list = { attrs: { 'data-tablist-label': 'Selected work' }, children: [], appendChild(x) { this.children.push(x); }, classList: { add() {} },
+    getAttribute(k) { return this.attrs[k] || null; }, setAttribute(k, v) { this.attrs[k] = String(v); } };
   return {
     querySelector(sel) { return sel === '.tabs__list' ? list : null; },
     querySelectorAll(sel) { return sel === '.tab' ? buttons : sel === '.panel' ? panels : []; },
@@ -29,6 +30,17 @@ function fakeDoc() {
     _buttons: buttons, _panels: panels, _list: list,
   };
 }
+
+test('initTabs adds the ARIA tab roles that the markup deliberately omits', () => {
+  const doc = fakeDoc();
+  tabs.initTabs(doc);
+  assert.equal(doc._list.getAttribute('role'), 'tablist');
+  assert.equal(doc._list.getAttribute('aria-label'), 'Selected work');
+  assert.equal(doc._buttons[1].getAttribute('role'), 'tab');
+  assert.equal(doc._buttons[1].getAttribute('aria-controls'), 'panel-copilot');
+  assert.equal(doc._panels[1].getAttribute('role'), 'tabpanel');
+  assert.equal(doc._panels[1].getAttribute('aria-labelledby'), 'tab-copilot');
+});
 
 test('initTabs selects the first tab and hides the other panels', () => {
   const doc = fakeDoc();
@@ -40,14 +52,13 @@ test('initTabs selects the first tab and hides the other panels', () => {
   assert.deepEqual(doc._panels.map((p) => p.hidden), [false, true, true]);
 });
 
-test('clicking a tab shows its panel and moves the indicator', () => {
+test('clicking a tab shows its panel', () => {
   const doc = fakeDoc();
   tabs.initTabs(doc);
   doc._buttons[2].fire('click');
   assert.deepEqual(doc._panels.map((p) => p.hidden), [true, true, false]);
   assert.equal(doc._buttons[2].getAttribute('aria-selected'), 'true');
-  const indicator = doc._list.children[0];
-  assert.equal(indicator.style.transform, 'translateX(200px) scaleX(0.8)');
+  assert.equal(doc._list.children.length, 0, 'folder tabs need no sliding indicator');
 });
 
 test('arrow keys move between tabs and wrap; Home/End jump', () => {

@@ -70,6 +70,9 @@ test('redesign world: butter ground, sheets lifted by shadow alone, Gabarito dis
   const sheet = s.match(/\.sheet\s*{[^}]*}/)[0];
   assert.match(sheet, /box-shadow:\s*var\(--shadow\)/);
   assert.doesNotMatch(sheet, /\bborder:/, 'elevation declared once: no hairline under the shadow');
+  assert.match(s, /\.tabs__list\s*{[^}]*display:\s*none/, 'tab row hidden without JS');
+  assert.match(s, /\.tabs__list--enhanced\s*{[^}]*display:\s*flex/);
+  assert.match(s, /\.tab\[aria-selected="true"\]\s*{[^}]*background:\s*var\(--sheet\)/, 'selected folder tab fuses into the sheet');
   assert.match(s, /\.tabs__list\s*{/);
   assert.match(s, /\.tab\[aria-selected="true"\]/);
   assert.match(s, /\.panel\[hidden\]\s*{[^}]*display:\s*none/);

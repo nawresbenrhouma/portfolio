@@ -18,7 +18,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@700;800&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@700;800&family=Source+Code+Pro:wght@400&family=Source+Sans+3:wght@400;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <script>
     (function () {
@@ -76,13 +76,13 @@
         <section class="sheet work" aria-labelledby="work-title">
           <h2 id="work-title" class="visually-hidden">Selected work</h2>
           <div class="tabs">
-            <div class="tabs__list" role="tablist" aria-label="Selected work">
-              <button class="tab" role="tab" id="tab-techem" aria-controls="panel-techem" aria-selected="true" type="button">Techem WebPortal</button>
-              <button class="tab" role="tab" id="tab-copilot" aria-controls="panel-copilot" aria-selected="false" type="button">Copilot Studio pilot</button>
-              <button class="tab" role="tab" id="tab-consommi" aria-controls="panel-consommi" aria-selected="false" type="button">Consommi Tounsi</button>
+            <div class="tabs__list" data-tablist-label="Selected work">
+              <button class="tab" type="button" id="tab-techem" data-panel="panel-techem">Techem WebPortal</button>
+              <button class="tab" type="button" id="tab-copilot" data-panel="panel-copilot">Copilot Studio pilot</button>
+              <button class="tab" type="button" id="tab-consommi" data-panel="panel-consommi">Consommi Tounsi</button>
             </div>
 
-            <article class="panel" role="tabpanel" id="panel-techem" aria-labelledby="tab-techem">
+            <article class="panel" id="panel-techem">
               <h3 class="panel__title">Techem WebPortal</h3>
               <p class="panel__subtitle">Backend for a customer web portal, built by an agile, cross-functional team</p>
               <p class="panel__meta">Backend Engineer · MaibornWolff · Feb 2024 – present</p>
@@ -91,26 +91,26 @@
               <div class="panel__grid">
                 <div class="col">
                   <p class="col__title">Backend</p>
-                  <p class="col__note">Features and maintenance of the Spring Boot services and the GraphQL API.</p>
-                  <ul class="tags tags--small"><li>Java</li><li>Spring Boot</li><li>GraphQL</li><li>Docker</li><li>CI/CD</li></ul>
+                  <p class="col__note">Features and maintenance of the Spring Boot services and the GraphQL API, plus Claude Code experiments on older repositories.</p>
                 </div>
                 <div class="col">
                   <p class="col__title">Quality &amp; releases</p>
-                  <p class="col__note">Supported release testing before production deployments and volunteered to test features alongside the testers.</p>
+                  <p class="col__note">Release testing before production deployments, and volunteering to test features alongside the team's testers.</p>
                 </div>
                 <div class="col">
                   <p class="col__title">Team</p>
-                  <p class="col__note">Onboarded a backend colleague, hosted retrospectives and knowledge-sharing sessions, supported the Product Owner, covered frontend tasks when needed, and tried Claude Code on older repositories.</p>
+                  <p class="col__note">Onboarding a backend colleague, hosting retrospectives and knowledge sharing, supporting the Product Owner and covering frontend when needed.</p>
                 </div>
               </div>
+              <ul class="tags tags--small panel__stack"><li>Java</li><li>Spring Boot</li><li>GraphQL</li><li>Docker</li><li>CI/CD</li></ul>
               <ul class="panel__facts">
-                <li>In production since Feb 2024</li>
+                <li>Live since Feb 2024</li>
                 <li>Java · Spring Boot · GraphQL</li>
-                <li>Co-presented at a JAT event</li>
+                <li>Presented at a JAT event</li>
               </ul>
             </article>
 
-            <article class="panel" role="tabpanel" id="panel-copilot" aria-labelledby="tab-copilot">
+            <article class="panel" id="panel-copilot">
               <h3 class="panel__title">Copilot Studio pilot</h3>
               <p class="panel__subtitle">Microsoft Copilot Studio and Power Platform pilot for AI workflow automation</p>
               <p class="panel__meta">Engineer · Beiersdorf Shared Services · Mar 2026 – May 2026</p>
@@ -120,7 +120,6 @@
                 <div class="col">
                   <p class="col__title">Learning fast</p>
                   <p class="col__note">Copilot Studio, Power Automate and Power Platform training, applied immediately on the project.</p>
-                  <ul class="tags tags--small"><li>Copilot Studio</li><li>Power Automate</li><li>Power Platform</li></ul>
                 </div>
                 <div class="col">
                   <p class="col__title">Documentation</p>
@@ -131,14 +130,15 @@
                   <p class="col__note">Deployments for team members and joining colleagues' meetings to help them deliver.</p>
                 </div>
               </div>
+              <ul class="tags tags--small panel__stack"><li>Copilot Studio</li><li>Power Automate</li><li>Power Platform</li></ul>
               <ul class="panel__facts">
-                <li>Full-time, Mar – May 2026</li>
-                <li>New stack, productive within weeks</li>
+                <li>Mar – May 2026, full-time</li>
+                <li>New stack in weeks</li>
                 <li>Owned the documentation</li>
               </ul>
             </article>
 
-            <article class="panel" role="tabpanel" id="panel-consommi" aria-labelledby="tab-consommi">
+            <article class="panel" id="panel-consommi">
               <h3 class="panel__title">Consommi Tounsi</h3>
               <p class="panel__subtitle">E-commerce platform supporting local commerce in Tunisia</p>
               <p class="panel__meta">Architecture, backend, frontend, deployment · ESPRIT academic project</p>
@@ -147,8 +147,7 @@
               <div class="panel__grid">
                 <div class="col">
                   <p class="col__title">Architecture</p>
-                  <p class="col__note">Designed the application architecture and the data model.</p>
-                  <ul class="tags tags--small"><li>Spring Boot</li><li>Angular</li><li>MySQL</li></ul>
+                  <p class="col__note">Designed the application architecture and the relational data model behind it.</p>
                 </div>
                 <div class="col">
                   <p class="col__title">Backend &amp; frontend</p>
@@ -157,13 +156,13 @@
                 <div class="col">
                   <p class="col__title">Deployment</p>
                   <p class="col__note">Containerised with Docker and deployed to Kubernetes on Azure.</p>
-                  <ul class="tags tags--small"><li>Docker</li><li>Kubernetes</li><li>AKS</li></ul>
                 </div>
               </div>
+              <ul class="tags tags--small panel__stack"><li>Spring Boot</li><li>Angular</li><li>MySQL</li><li>Docker</li><li>Kubernetes</li><li>AKS</li></ul>
               <ul class="panel__facts">
                 <li>ESPRIT academic project</li>
                 <li>Spring Boot · Angular · MySQL</li>
-                <li>Deployed to Azure Kubernetes Service</li>
+                <li>Deployed on AKS</li>
               </ul>
             </article>
           </div>
@@ -174,6 +173,7 @@
     <section id="about" class="section" aria-labelledby="about-title">
       <h2 id="about-title">About <a class="heading-anchor" href="#about" aria-label="Link to About">#</a></h2>
       <div class="sheet sheet--pad about">
+      <div class="about__grid">
       <dl class="fields">
         <dt>Role</dt>
         <dd>Software Engineer at MaibornWolff</dd>
@@ -182,9 +182,12 @@
         <dt>Focus</dt>
         <dd>Java backend · Azure platform · AI-assisted development</dd>
       </dl>
+      <div class="about__text">
       <p>I build backend services in Java: Spring Boot and Quarkus, REST and GraphQL APIs, relational data models, and the CI/CD and container setup that gets them into production. Since November 2022 I have worked at MaibornWolff, mostly on the Techem WebPortal within an agile, cross-functional team.</p>
       <p>From that backend core I keep widening the circle: Azure platform engineering, Infrastructure as Code with Terraform and OpenTofu, Kubernetes, and AI-assisted development with tools like Claude Code and Microsoft Copilot Studio.</p>
       <p>I am curious, proactive and pragmatic. I volunteer for testing, onboarding, documentation and knowledge sharing, prefer maintainable solutions over clever ones, and like breaking big problems into small, shippable steps.</p>
+      </div>
+      </div>
       </div>
     </section>
 
@@ -328,7 +331,7 @@
 
     <section id="learning" class="section" aria-labelledby="learning-title">
       <h2 id="learning-title">Certifications &amp; Learning <a class="heading-anchor" href="#learning" aria-label="Link to Certifications & Learning">#</a></h2>
-      <div class="sheet sheet--pad learning">
+      <div class="learning">
         <div class="learning__column">
           <h3>Certifications and training <span class="status status--done">Completed</span></h3>
           <ul class="bullets">
@@ -353,7 +356,7 @@
 
     <section id="education" class="section" aria-labelledby="education-title">
       <h2 id="education-title">Education <a class="heading-anchor" href="#education" aria-label="Link to Education">#</a></h2>
-      <div class="sheet sheet--pad">
+      <div class="education">
       <p><strong>Master's degree in Cloud Computing</strong> · ESPRIT, Tunis · 2022</p>
       <p>Foundations in software engineering, cloud computing, distributed systems, databases, containerisation, deployment and modern software architecture.</p>
       </div>
@@ -361,7 +364,7 @@
 
     <section id="contact" class="section" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact <a class="heading-anchor" href="#contact" aria-label="Link to Contact">#</a></h2>
-      <div class="sheet sheet--pad contact">
+      <div class="sheet sheet--pad sheet--narrow contact">
       <p class="contact__lead">Open to remote, part-time opportunities.</p>
       <div class="contact__actions">
         <a class="button button--primary" href="mailto:benrhoumanawres7@gmail.com">Get in touch</a>

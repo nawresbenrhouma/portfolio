@@ -10,11 +10,20 @@
     var panels = Array.prototype.slice.call(doc.querySelectorAll('.panel'));
     if (!list || !tabs.length) return null;
 
-    var indicator = doc.createElement('span');
-    indicator.className = 'tabs__indicator';
-    indicator.setAttribute('aria-hidden', 'true');
-    list.appendChild(indicator);
+    // The markup ships without tab semantics: without JavaScript the panels
+    // simply stack, and announcing "tabs" that do nothing would mislead.
+    list.setAttribute('role', 'tablist');
+    list.setAttribute('aria-label', list.getAttribute('data-tablist-label') || 'Tabs');
     list.classList.add('tabs__list--enhanced');
+    tabs.forEach(function (tab) {
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-controls', tab.getAttribute('data-panel'));
+      var panel = doc.getElementById(tab.getAttribute('data-panel'));
+      if (panel) {
+        panel.setAttribute('role', 'tabpanel');
+        panel.setAttribute('aria-labelledby', tab.getAttribute('id'));
+      }
+    });
 
     function panelFor(tab) { return doc.getElementById(tab.getAttribute('aria-controls')); }
 
@@ -26,9 +35,7 @@
         var panel = panelFor(tab);
         if (panel) panel.hidden = !active;
       });
-      var tab = tabs[index];
-      indicator.style.transform = 'translateX(' + tab.offsetLeft + 'px) scaleX(' + (tab.offsetWidth / 100) + ')';
-      if (focus) tab.focus();
+      if (focus) tabs[index].focus();
     }
 
     tabs.forEach(function (tab, i) {
@@ -53,11 +60,5 @@
     module.exports = { initTabs: initTabs };
   } else {
     initTabs(root.document);
-    if (root.addEventListener) {
-      root.addEventListener('resize', function () {
-        var current = root.document.querySelector('.tab[aria-selected="true"]');
-        if (current) current.click();
-      }, { passive: true });
-    }
   }
 })(typeof window !== 'undefined' ? window : globalThis);
