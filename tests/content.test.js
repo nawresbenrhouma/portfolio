@@ -72,3 +72,26 @@ test('index.html: enhancement hooks present', () => {
   assert.match(html, /<link rel="stylesheet" href="css\/styles\.css">/);
   assert.match(html, /<img[^>]*class="hero__photo"[^>]*alt="Portrait of Nawres Ben Rhouma"/);
 });
+
+test('cv.html: required facts and structure present', () => {
+  const html = readHtml('cv.html');
+  for (const s of [
+    'Nawres Ben Rhouma',
+    'Software Engineer at MaibornWolff',
+    'benrhoumanawres7@gmail.com',
+    'linkedin.com/in/nawres-ben-rhouma21',
+    'github.com/benrhoumanawres7-ai',
+    'Tunis, Tunisia · remote',
+    'Open to remote, part-time roles',
+    'Techem WebPortal',
+    'Beiersdorf',
+    'Consommi Tounsi',
+    'TravelEase',
+    'AZ-900',
+    'ESPRIT',
+  ]) assert.ok(html.includes(s), `missing: ${s}`);
+  assert.match(html, /<link rel="stylesheet" href="css\/print\.css" media="print">/);
+  assert.match(html, /<p class="print-hint">/);
+  assert.ok((html.match(/class="cv-entry\b/g) || []).length >= 5, 'at least five cv-entry articles');
+  assert.match(html, /<a class="button button--ghost" href="index\.html">/);
+});
