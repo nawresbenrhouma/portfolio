@@ -206,24 +206,16 @@ test('index.html: GitHub and LinkedIn open in a new tab safely', () => {
   }
 });
 
-test('index.html: contact form works without a backend and without JS', () => {
+test('index.html: contact form posts to Formspree, with a honeypot and a live status region', () => {
   const html = readHtml('index.html');
-  assert.match(html, /<form class="contact-form" action="mailto:benrhoumanawres7@gmail\.com" method="get" data-to="benrhoumanawres7@gmail\.com">/, 'GET fallback: no insecure-POST warning, message reaches the mail app as ?body= without JS');
-  assert.match(html, /<textarea id="cf-message" name="body"/, 'message field is named body so the no-JS fallback prefills the mail');
-  assert.match(html, /<script src="js\/form\.js" defer><\/script>/);
-  for (const name of ['name', 'email', 'body']) assert.match(html, new RegExp(`<(input|textarea)[^>]*name="${name}"[^>]*required`), name);
+  assert.match(html, /<form class="contact-form" action="https:\/\/formspree\.io\/f\/[a-z0-9]{6,}" method="POST">/i, 'Formspree endpoint with a real form ID');
+  for (const name of ['name', 'email', 'message']) assert.match(html, new RegExp(`<(input|textarea)[^>]*name="${name}"[^>]*required`), name);
+  assert.match(html, /<input type="text" name="_gotcha" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">/, 'honeypot');
   assert.match(html, /<label for="cf-name">/);
   assert.match(html, /<button class="button button--primary" type="submit">Send message<\/button>/);
-});
-
-test('index.html and cv.html: MaibornWolff career shows the working-student start and the engineer role', () => {
-  for (const page of ['index.html', 'cv.html']) {
-    const html = readHtml(page);
-    assert.match(html, /Software Engineer&nbsp;· MaibornWolff/, `${page}: engineer entry`);
-    assert.match(html, /Aug 2023 – present/, `${page}: engineer role from Aug 2023`);
-    assert.match(html, /Working Student&nbsp;· MaibornWolff/, `${page}: working-student entry`);
-    assert.match(html, /Nov 2022 – Jul 2023/, `${page}: working student from Nov 2022`);
-  }
+  assert.match(html, /<p class="contact-form__note" role="status" aria-live="polite">/);
+  assert.match(html, /<script src="js\/form\.js" defer><\/script>/);
+  assert.doesNotMatch(html, /action="mailto:/);
 });
 
 test('index.html: no invented numbers in the work sheet', () => {

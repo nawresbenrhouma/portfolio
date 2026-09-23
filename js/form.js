@@ -1,39 +1,57 @@
-// Contact form. Safari refuses a POSTed mailto: form, so on submit we compose
-// a mailto: URL with subject and body and open it. Without JavaScript the
-// form falls back to a GET to the same address, which mail apps read as
-// ?body=…, so the message still arrives prefilled.
+// Contact form via Formspree. On submit we POST JSON to the form's endpoint
+// (the <form action>) and show the result inline, so the visitor never leaves
+// the page or opens a mail app. Without JavaScript the browser posts the form
+// to Formspree normally and lands on Formspree's thank-you page.
 (function (root) {
   'use strict';
-
-  function buildMailto(to, fields) {
-    var subject = 'Portfolio message from ' + fields.name;
-    var body = fields.message + '\n\nFrom: ' + fields.name + ' <' + fields.email + '>';
-    return 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  }
+  var FALLBACK = 'benrhoumanawres7@gmail.com';
 
   function initForm(doc, env) {
     var formEl = doc.querySelector('.contact-form');
     if (!formEl) return null;
-    var to = formEl.dataset.to;
+    var note = formEl.querySelector('.contact-form__note');
+    var button = formEl.querySelector('button[type="submit"]');
+
+    function say(text, kind) {
+      if (!note) return;
+      note.textContent = text;
+      note.setAttribute('data-kind', kind);
+    }
+
     formEl.addEventListener('submit', function (ev) {
-      if (formEl.checkValidity && !formEl.checkValidity()) return;
+      if (formEl.checkValidity && !formEl.checkValidity()) return undefined;
       ev.preventDefault();
       var f = formEl.elements;
-      var href = buildMailto(to, {
-        name: f.namedItem('name').value.trim(),
-        email: f.namedItem('email').value.trim(),
-        message: f.namedItem('body').value.trim(),
+      var value = function (n) { var el = f.namedItem(n); return el ? String(el.value).trim() : ''; };
+      var payload = {
+        name: value('name'),
+        email: value('email'),
+        message: value('message'),
+        _gotcha: value('_gotcha'),
+        _subject: 'Portfolio message from ' + value('name'),
+      };
+      if (button) { button.disabled = true; }
+      say('Sending…', 'pending');
+      return env.fetch(formEl.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      }).then(function (res) {
+        if (!res.ok) throw new Error('Formspree responded ' + (res.status || 'with an error'));
+        say('Thanks, ' + payload.name + '. Your message is in my inbox and I will reply by email.', 'success');
+        formEl.reset();
+      }).catch(function () {
+        say('Sorry, the message could not be sent. Please write to ' + FALLBACK + ' directly.', 'error');
+      }).then(function () {
+        if (button) { button.disabled = false; }
       });
-      env.navigate(href);
-      var note = formEl.querySelector('.contact-form__note');
-      if (note) note.textContent = 'Your email app should now be open with the message ready to send. If nothing happened, write to ' + to + ' directly.';
     });
     return formEl;
   }
 
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { buildMailto: buildMailto, initForm: initForm };
+    module.exports = { initForm: initForm };
   } else {
-    initForm(root.document, { navigate: function (href) { root.location.href = href; } });
+    initForm(root.document, { fetch: root.fetch.bind(root) });
   }
 })(typeof window !== 'undefined' ? window : globalThis);

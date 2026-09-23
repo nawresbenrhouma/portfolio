@@ -397,7 +397,7 @@
       <div class="sheet sheet--pad contact">
       <div class="contact__intro">
       <p class="contact__lead">Open to remote, part-time opportunities. Write to me here or by email.</p>
-      <form class="contact-form" action="mailto:benrhoumanawres7@gmail.com" method="get" data-to="benrhoumanawres7@gmail.com">
+      <form class="contact-form" action="https://formspree.io/f/moevwban" method="POST">
         <div class="field">
           <label for="cf-name">Your name</label>
           <input id="cf-name" name="name" type="text" autocomplete="name" required>
@@ -408,10 +408,11 @@
         </div>
         <div class="field">
           <label for="cf-message">Message</label>
-          <textarea id="cf-message" name="body" rows="5" required></textarea>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
         </div>
+        <input type="text" name="_gotcha" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="button button--primary" type="submit">Send message</button>
-        <p class="contact-form__note">Sending opens your email app with the message ready to go.</p>
+        <p class="contact-form__note" role="status" aria-live="polite">Messages go straight to my inbox. I usually reply within a day.</p>
       </form>
       </div>
       <ul class="contact__list">

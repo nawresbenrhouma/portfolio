@@ -17,7 +17,7 @@ No build step. Plain HTML, CSS and JavaScript.
 
 ## Contact form
 
-The form posts to a `mailto:` address, so it opens the visitor's email app with the message prefilled and needs no backend. To receive submissions directly instead, create a free Formspree form and change the form's `action` to its endpoint.
+The form posts to Formspree (https://formspree.io), which emails each submission to the address configured in the Formspree dashboard. `js/form.js` submits with fetch and shows the result inline; without JavaScript the browser posts the form and lands on Formspree's thank-you page. The endpoint is the form's `action` in `index.html` (`https://formspree.io/f/<form id>`). The `_gotcha` field is Formspree's honeypot for spam.
 
 ## Deploy
 
