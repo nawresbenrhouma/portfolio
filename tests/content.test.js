@@ -137,7 +137,7 @@ test('index.html: hero carries the statement, availability row, actions and the 
   assert.match(html, /<a class="button button--secondary" href="cv\.html">View CV<\/a>/);
   assert.match(html, /<a class="button button--primary button--mail" href="mailto:benrhoumanawres7@gmail\.com" aria-label="Get in touch by email">/);
   assert.match(html, /<span class="button__label">Get in touch<\/span>/);
-  assert.match(html, /<section class="sheet work" aria-labelledby="work-title">/);
+  assert.match(html, /<section class="work" aria-labelledby="work-title">/);
 });
 
 test('index.html: About keeps the Role / Availability / Focus field rows', () => {
