@@ -98,7 +98,6 @@ test('redesign world: butter ground, sheets lifted by shadow alone, Gabarito dis
   assert.match(s, /\.tabs__list\s*{/);
   assert.match(s, /\.tab\[aria-selected="true"\]/);
   assert.match(s, /\.panel\[hidden\]\s*{[^}]*display:\s*none/);
-  assert.match(s, /\.fields\s*{/);
   assert.match(s, /\.skill-group\s*{[^}]*grid-template-columns:\s*19rem/);
   assert.match(s, /\.status\s*{/);
   const narrow = s.match(/@media \(max-width: 900px\)\s*{([\s\S]*?)\n}\n/);

@@ -216,7 +216,7 @@ A near-white page that behaves like good paper: butter-tinted, quiet, and genero
 
 Once, and only once, that green stops being ink and becomes a surface. In the hero's right column a solid green panel holds four at-a-glance facts in Gabarito over small tracked labels, with the profile links on a translucent hairline footer. It is the page's single loud object, and its weight is what lets the rest of the page stay pale. The name beside it is set so that its colour change *is* its line break — "Nawres" in ink, "Ben Rhouma." in green on the next line — so the split reads as a typographic decision rather than a highlight.
 
-The density is document-like without being a document. Headings are Gabarito at 800, tracked tight, so they read as built rather than typed; body text is Source Sans 3 at 1.0625rem on a 1.6 line, and the About prose runs in two CSS columns so the biography reads as a printed page. Source Code Pro appears only where content is literally a token — a technology chip, a status marker. What the world refuses is equally load-bearing: no photography, no logos, no invented metrics, no second hue, and no motion beyond a single authored entrance.
+The density is document-like without being a document. Headings are Gabarito at 800, tracked tight, so they read as built rather than typed; body text is Source Sans 3 at 1.0625rem on a 1.6 line, and the About sheet is sized to its own measure rather than to the grid, so the biography reads as one column of a printed page. Source Code Pro appears only where content is literally a token — a technology chip, a status marker. What the world refuses is equally load-bearing: no photography, no logos, no invented metrics, no second hue, and no motion beyond a single authored entrance.
 
 **Key Characteristics:**
 - Butter-tinted near-white ground (#fffcf2) alternating with a warmer tone (#f6f2e6), full-bleed, section by section
@@ -268,8 +268,8 @@ Two warm near-whites, an espresso ink, and a single forest green that never shar
 - **Panel Title** (800, `clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem)`, tracking -0.02em): the project name inside a work panel. Deliberately near-display scale — the folder sheet is the page's second hero.
 - **Headline** (800, 1.75rem, line-height 1.1, tracking -0.02em): section `h2`. Always two clauses, the second wrapped in an accent span, ending in a full stop; a `#` heading anchor follows, invisible until hover or focus.
 - **Title** (700, 1.25rem, tracking -0.01em): `h3` — timeline roles, project cards, skill groups, learning columns.
-- **Glance Value** (Gabarito 700, 1.25rem, line-height 1.25): the four values on the green panel. The only place display type is used at body scale, which is what makes the panel read as a summary rather than a list.
-- **Body** (400, 1.0625rem, line-height 1.6): all prose, capped at a 68ch measure — except inside the two-column About, where the column width sets the measure instead.
+- **Glance Value** (Gabarito 700, 1.25rem, line-height 1.25): the three values on the green panel. The only place display type is used at body scale, which is what makes the panel read as a summary rather than a list.
+- **Body** (400, 1.0625rem, line-height 1.6): all prose, capped at a 68ch measure. The About sheet takes the same cap plus its own 2rem padding on each side, so the sheet ends where the text ends.
 - **Small** (400, 0.875rem): meta lines, dates, project meta, footer, the print hint.
 - **Label** (600, 0.75rem, 0.06em, uppercase): contact labels and timeline dates. The glance panel's terms track slightly wider (0.08em) and sit at 80% opacity on the green.
 - **Role Line** (600, 0.75rem, 0.12em, uppercase): the hero role directly under the name — the widest tracking on the page, used once.
@@ -281,7 +281,7 @@ Two warm near-whites, an espresso ink, and a single forest green that never shar
 
 **The Mono Reserve Rule.** Source Code Pro is permitted in exactly two places: technology chips and status tokens. Prose, headings, dates and labels never use it.
 
-**The Balanced Measure Rule.** Headings carry `text-wrap: balance`; paragraphs carry a 68ch cap (62ch in Education). The two-column About drops the cap because the column already sets the measure — nothing else may.
+**The Balanced Measure Rule.** Headings carry `text-wrap: balance`; paragraphs carry a 68ch cap (62ch in Education). Where a sheet holds nothing but prose, the sheet is sized to that measure plus its padding rather than stretched to the grid — a full-width sheet around a 68ch column is a box, not a layout.
 
 ## Layout
 
@@ -289,16 +289,16 @@ The page is a stack of full-bleed sections, each a three-column grid — a flexi
 
 Spacing is an 8px module (0.25 / 0.5 / 0.75 / 1 / 1.5 / 2 / 3 / 4rem). Section padding is 4rem vertical, dropping to 3rem below 640px. Sheets pad at 2rem, tightening to 1.5rem/1rem on narrow screens. A sticky header 4rem tall pins the brand, eight section anchors, the View CV button and the theme toggle; `scroll-padding-top` is kept in sync with it.
 
-Two multi-column blocks carry real content rather than boxes: the About prose runs in two CSS columns with a 3rem gutter and paragraphs protected from breaking across them, and the projects grid runs two equal columns of cards at a 1.5rem gap. Both collapse to one column at 900px.
+One multi-column block carries real content rather than boxes: the projects grid runs two equal columns of cards at a 1.5rem gap, collapsing to one at 900px. The About sheet takes the opposite approach — it is capped at the 68ch measure plus its own padding, so a prose-only sheet never stretches to the full 76rem.
 
-Three breakpoints, each doing one job. At 1100px the hero collapses to a single column and the green panel takes the full width under the name. At 900px the header wraps — the nav becomes a masked horizontal scroll strip on its own row and the header grows to 6.5rem — About goes to one column, the projects grid goes to one column, the panel and skill grids go single-column, divider borders rotate from left edges to top edges, and the timeline rail tightens. At 640px the section gutters drop to 1rem and the contact rows stack.
+Three breakpoints, each doing one job. At 1100px the hero collapses to a single column and the green panel takes the full width under the name. At 900px the header wraps — the nav becomes a masked horizontal scroll strip on its own row and the header grows to 6.5rem — the projects grid goes to one column, the panel and skill grids go single-column, divider borders rotate from left edges to top edges, and the timeline rail tightens. At 640px the section gutters drop to 1rem and the contact rows stack.
 
 ### Named Rules
 **The Alternating Ground Rule.** Section tone alternates via `.section--alt` across the full bleed. Never tint only the content column; never run two alternate sections back to back.
 
 **The Edge-to-Center Rule.** Content lives in the middle column of the section grid at a 76rem cap. New sections adopt the grid rather than inventing their own container.
 
-**The One Collapse Rule.** Every multi-column block collapses at 900px — prose columns, the project grid, the panel's three notes, the skill rows. Do not introduce a block with its own breakpoint.
+**The One Collapse Rule.** Every multi-column block collapses at 900px — the project grid, the panel's three notes, the skill rows, the contact split. Do not introduce a block with its own breakpoint.
 
 ## Elevation & Depth
 
@@ -338,7 +338,7 @@ For each component: a short character line, then shape, colour assignment, state
 - **Focus:** the global 2px accent outline, offset 3px, 6px radius. No button defines its own focus style.
 
 ### At-a-Glance Panel (signature)
-The page's single loud object and the hero's right column: a solid accent-filled `<aside>` at 12px radius and 2rem padding, lifted on the standard sheet shadow. Inside, a `<dl>` of four stacked pairs at a 1rem gap — an uppercase tracked term at 0.75rem/0.08em held at 80% opacity, and a Gabarito 700 value at 1.25rem directly under it — followed by a links footer separated by a 28%-white hairline, carrying the GitHub and LinkedIn icon links. On the panel, links take the contrast colour and answer hover with an underline instead of a colour change, because there is no second colour available on a filled surface. In dark mode the panel's text and links switch to the page ground colour and the divider becomes 30% of the dark ink. Below 1100px it sits full width beneath the name.
+The page's single loud object and the hero's right column: a solid accent-filled `<aside>` at 12px radius and 2rem padding, lifted on the standard sheet shadow. Inside, a `<dl>` of three stacked pairs at a 1rem gap — an uppercase tracked term at 0.75rem/0.08em held at 80% opacity, and a Gabarito 700 value at 1.25rem directly under it (Availability, Working on, Since) — followed by a links footer separated by a 28%-white hairline, carrying the GitHub and LinkedIn icon links. On the panel, links take the contrast colour and answer hover with an underline instead of a colour change, because there is no second colour available on a filled surface. In dark mode the panel's text and links switch to the page ground colour and the divider becomes 30% of the dark ink. Below 1100px it sits full width beneath the name.
 
 ### Icon Links
 Inline SVG (currentColor, 20px) plus a label in semibold ink, 2.75rem tall, no underline; on the page ground hover turns the pair accent, inside the green panel it underlines instead.
@@ -357,7 +357,7 @@ A two-column grid of compact white sheets at 1.5rem gap, each padded 1.5rem × 2
 - **Status tokens:** pill-radius outlines at 0.6875rem monospace with no fill, attached inline to a heading. Three states: core (accent text and border), growing (ink text on the strong hairline), done (muted). They label honesty about depth — never used as a badge or a count.
 
 ### About Prose
-No boxes, no field rows: three paragraphs on a padded white sheet, set in two CSS columns with a 3rem gutter and `break-inside: avoid`, so the biography reads as a printed page. The 68ch cap is lifted here because the column width already sets the measure. One column below 900px.
+No boxes, no field rows: three paragraphs on a padded white sheet. The sheet itself is capped at the measure plus its own padding (`calc(68ch + 2 × 2rem)`) and the prose at the measure, so the card ends where the reading line ends instead of stretching to the 76rem grid. It needs no breakpoint of its own.
 
 ### Skills Table
 Full-width rows on a sheet: a 19rem heading column and a free-flowing list column, divided by hairlines, first row unpadded and last row undivided. Inside a skill group the chip styling is deliberately dropped — items become plain inline text separated by muted commas, so a long skill list reads as a sentence rather than a wall of boxes.
@@ -400,7 +400,7 @@ Under `prefers-reduced-motion: reduce` the suppression is scoped rather than bla
 - **Do** alternate section tone with `.section--alt` full-bleed, and put new content in the section grid's middle column at the 76rem cap.
 - **Do** lift every surface — white or green — on the single sheet shadow (`0 12px 32px rgba(56, 42, 12, 0.14)`), and let the dark theme resolve it to a hairline ring.
 - **Do** spend the 8px module: 4rem section padding, 2rem sheet padding, 1.5rem between grouped blocks.
-- **Do** collapse every multi-column block at 900px.
+- **Do** collapse every multi-column block at 900px, and size a prose-only sheet to its measure instead of to the grid.
 - **Do** draw icons as 2px single-stroke lines beside a real word, hidden from assistive technology.
 - **Do** ship every enhancement as an enhancement — tabs, the nav indicator, the reveal and the toggle each have a defined no-JS state, and a defined print and reduced-motion state.
 - **Do** give every interactive control a 2.75rem minimum target (buttons, icon links, the toggle, folder tabs).

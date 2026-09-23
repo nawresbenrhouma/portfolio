@@ -174,7 +174,6 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 }
 .skip-link:focus { top: var(--space-3); }
 
-.field__label,
 .contact__label,
 .timeline__dates {
   font-size: var(--text-label);
@@ -475,7 +474,6 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 }
 .section > * { grid-column: 2; }
 .section--alt { background: var(--alt); }
-.section--work { padding-top: var(--space-8); }
 .section > h2 {
   display: block;
   margin-bottom: var(--space-5);
@@ -493,25 +491,6 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .heading-anchor:focus-visible { opacity: 1; }
 .heading-anchor:hover { color: var(--accent); }
 
-/* Field rows (About, Contact) */
-.fields {
-  display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr);
-  column-gap: var(--space-4);
-  margin: 0 0 var(--space-5);
-  border-top: 1px solid var(--border);
-}
-.fields dt, .fields dd { margin: 0; padding: var(--space-3) 0; border-bottom: 1px solid var(--border); }
-.fields dt {
-  font-size: var(--text-label);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  padding-top: calc(var(--space-3) + 0.2em);
-}
-.fields dd { font-weight: 600; }
-.fields dd:last-of-type { font-weight: 400; }
 .about { max-width: calc(var(--measure) + 2 * var(--space-6)); }
 .about__text { max-width: var(--measure); }
 .education { max-width: 62ch; }
@@ -758,7 +737,6 @@ code { font-family: var(--font-code); font-size: 0.9em; }
   .timeline__item::before { left: -1.5rem; width: 0.75rem; height: 0.75rem; }
   .timeline__body { padding: var(--space-4); }
   .learning { grid-template-columns: 1fr; }
-  .about__grid { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
   .sheet--pad { padding: var(--space-5) var(--space-4); }
 }
@@ -769,9 +747,6 @@ code { font-family: var(--font-code); font-size: 0.9em; }
   .section { padding-top: var(--space-7); }
   .hero__statement { font-size: 1.125rem; }
   .contact__list li { grid-template-columns: 1fr; gap: var(--space-1); }
-  .fields { grid-template-columns: 1fr; }
-  .fields dt { padding-bottom: 0; border-bottom: 0; }
-  .fields dd { padding-top: var(--space-1); }
   .cv-entry--nested { margin-left: var(--space-3); }
   .cv-skills { grid-template-columns: 1fr; }
   .cv-skills dd { margin-bottom: var(--space-2); }
