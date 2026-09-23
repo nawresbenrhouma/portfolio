@@ -2,7 +2,7 @@
 
 Date: 2026-09-23
 Owner: Nawres Ben Rhouma
-Status: awaiting review
+Status: approved with inputs pending (photo, education confirmation)
 
 ## 1. Purpose
 
@@ -51,7 +51,9 @@ Learning · Education · Contact. Plus a theme toggle and a "CV" link.
 
 1. **Hero** — name, title "Software Engineer at MaibornWolff", the
    positioning statement above, photo, two calls to action: LinkedIn and
-   View CV. Location shown here.
+   View CV. Availability line shown here: "Based in Tunis · Open to remote,
+   part-time roles". Remote and part-time availability is a primary message
+   for the target audience and must be visible in the first viewport.
 2. **About** — 3–4 sentences: Java backend core, growth into cloud/platform
    and AI-assisted development, working style (curious, proactive,
    collaborative, pragmatic, MVP-oriented).
@@ -90,10 +92,15 @@ Learning · Education · Contact. Plus a theme toggle and a "CV" link.
    MaibornWolff Agentic AI training, Agentic Coding School. In progress:
    CKA and CKAD preparation, Terraform/OpenTofu, Azure Landing Zones and
    Verified Modules, Azure networking and governance.
-7. **Education** — Master's degree in Cloud Computing. Institution and
-   years to be confirmed by Nawres.
-8. **Contact** — email (mailto), LinkedIn, GitHub, location. Exact values
-   supplied by Nawres before implementation.
+7. **Education** — Master's degree in Cloud Computing, ESPRIT (Tunis),
+   graduated 2022. Assumed from the profile brief (ESPRIT academic project,
+   MaibornWolff start Nov 2022); Nawres confirms before launch.
+8. **Contact** — heading restates availability ("Open to remote, part-time
+   opportunities"), then:
+   - Email: benrhoumanawres7@gmail.com (mailto link)
+   - LinkedIn: https://www.linkedin.com/in/nawres-ben-rhouma21/
+   - GitHub: https://github.com/benrhoumanawres7-ai
+   - Location: Tunis, Tunisia · remote
 
 Footer: name, year, "Built with plain HTML, CSS and JS."
 
@@ -146,9 +153,9 @@ Decisions:
 - `.github/workflows/deploy.yml` uses `actions/configure-pages`,
   `actions/upload-pages-artifact` (whole repo minus `docs/` is fine) and
   `actions/deploy-pages` on push to `main`.
-- Nawres creates the GitHub repo named `portfolio` and enables Pages with
-  source "GitHub Actions". The resulting URL is
-  `https://<github-username>.github.io/portfolio/`.
+- Nawres creates the GitHub repo `benrhoumanawres7-ai/portfolio` and
+  enables Pages with source "GitHub Actions". The resulting URL is
+  `https://benrhoumanawres7-ai.github.io/portfolio/`.
 
 ## 8. Verification
 
@@ -165,6 +172,7 @@ Decisions:
 
 ## 9. Open inputs from Nawres
 
-- Public email, LinkedIn URL, GitHub username, location string.
-- Photo file.
-- Master's institution and graduation year.
+- Photo file: to be placed at `assets/photo.jpg` (or .png). Until it
+  arrives, the hero uses a neutral placeholder with the same dimensions
+  and the build is not considered launch-ready.
+- Confirmation of ESPRIT and 2022 for the Master's degree.
