@@ -31,7 +31,7 @@ for (const page of ['index.html', 'cv.html']) {
     // Only loaded resources count: scripts, stylesheets and preconnects. Canonical / Open Graph URLs are metadata.
     const external = [...html.matchAll(/<(?:script[^>]*\ssrc|link[^>]*rel="(?:stylesheet|preconnect)"[^>]*\shref)="(https?:[^"]+)"/g)].map((m) => m[1]);
     for (const url of external) {
-      assert.match(url, /^https:\/\/fonts\.g(oogleapis|static)\.com\//, `unexpected external resource ${url}`);
+      assert.match(url, /^https:\/\/fonts\.g(oogleapis|static)\.com(\/|$)/, `unexpected external resource ${url}`);
     }
     assert.match(html, /<html lang="en"/);
   });

@@ -7,6 +7,9 @@
   <meta name="description" content="Backend Software Engineer with Java expertise, expanding into Cloud & Platform Engineering and AI-assisted development. Based in Tunis, open to remote, part-time roles.">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <script>
     (function () {
@@ -39,7 +42,8 @@
     <div class="site-header__actions">
       <a class="button button--ghost" href="cv.html">CV</a>
       <button class="theme-toggle" type="button" data-theme-toggle hidden aria-pressed="false" aria-label="Switch to dark theme">
-        <span class="theme-toggle__icon" aria-hidden="true"></span>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
     </div>
   </header>
@@ -47,10 +51,10 @@
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__text">
-        <p class="hero__eyebrow">Software Engineer at MaibornWolff</p>
         <h1 id="hero-title">Nawres Ben Rhouma</h1>
+        <p class="hero__role">Software Engineer at MaibornWolff</p>
         <p class="hero__statement">Backend Software Engineer with Java expertise, expanding into Cloud &amp; Platform Engineering and AI-assisted development.</p>
-        <p class="hero__availability">Based in Tunis · Open to remote, part-time roles</p>
+        <p class="hero__availability"><span class="field__label">Availability</span> <span>Based in Tunis · Open to remote, part-time roles</span></p>
         <div class="hero__actions">
           <a class="button button--primary" href="https://www.linkedin.com/in/nawres-ben-rhouma21/" rel="me noopener">LinkedIn</a>
           <a class="button button--secondary" href="cv.html">View CV</a>
@@ -60,14 +64,14 @@
     </section>
 
     <section id="about" class="section" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
+      <h2 id="about-title">About <a class="heading-anchor" href="#about" aria-label="Link to this section">#</a></h2>
       <p>I build backend services in Java: Spring Boot and Quarkus, REST and GraphQL APIs, relational data models, and the CI/CD and container setup that gets them into production. Since November 2022 I have worked at MaibornWolff, mostly on the Techem WebPortal within an agile, cross-functional team.</p>
       <p>From that backend core I keep widening the circle: Azure platform engineering, Infrastructure as Code with Terraform and OpenTofu, Kubernetes, and AI-assisted development with tools like Claude Code and Microsoft Copilot Studio.</p>
       <p>I am curious, proactive and pragmatic. I volunteer for testing, onboarding, documentation and knowledge sharing, prefer maintainable solutions over clever ones, and like breaking big problems into small, shippable steps.</p>
     </section>
 
     <section id="skills" class="section" aria-labelledby="skills-title">
-      <h2 id="skills-title">Skills</h2>
+      <h2 id="skills-title">Skills <a class="heading-anchor" href="#skills" aria-label="Link to this section">#</a></h2>
       <div class="skill-groups">
         <article class="skill-group skill-group--primary">
           <h3>Backend Engineering</h3>
@@ -102,7 +106,7 @@
     </section>
 
     <section id="experience" class="section" aria-labelledby="experience-title">
-      <h2 id="experience-title">Experience</h2>
+      <h2 id="experience-title">Experience <a class="heading-anchor" href="#experience" aria-label="Link to this section">#</a></h2>
       <ol class="timeline">
         <li class="timeline__item">
           <div class="timeline__meta">
@@ -154,7 +158,7 @@
     </section>
 
     <section id="projects" class="section" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
+      <h2 id="projects-title">Projects <a class="heading-anchor" href="#projects" aria-label="Link to this section">#</a></h2>
       <div class="cards">
         <article class="card">
           <h3>Techem WebPortal</h3>
@@ -203,7 +207,7 @@
     </section>
 
     <section id="learning" class="section" aria-labelledby="learning-title">
-      <h2 id="learning-title">Certifications &amp; Learning</h2>
+      <h2 id="learning-title">Certifications &amp; Learning <a class="heading-anchor" href="#learning" aria-label="Link to this section">#</a></h2>
       <div class="learning">
         <div class="learning__column">
           <h3>Completed</h3>
@@ -228,13 +232,13 @@
     </section>
 
     <section id="education" class="section" aria-labelledby="education-title">
-      <h2 id="education-title">Education</h2>
+      <h2 id="education-title">Education <a class="heading-anchor" href="#education" aria-label="Link to this section">#</a></h2>
       <p><strong>Master's degree in Cloud Computing</strong> · ESPRIT, Tunis · 2022</p>
       <p>Foundations in software engineering, cloud computing, distributed systems, databases, containerisation, deployment and modern software architecture.</p>
     </section>
 
     <section id="contact" class="section" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
+      <h2 id="contact-title">Contact <a class="heading-anchor" href="#contact" aria-label="Link to this section">#</a></h2>
       <p class="contact__lead">Open to remote, part-time opportunities.</p>
       <ul class="contact__list">
         <li><span class="contact__label">Email</span> <a href="mailto:benrhoumanawres7@gmail.com">benrhoumanawres7@gmail.com</a></li>
