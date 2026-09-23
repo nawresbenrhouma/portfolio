@@ -61,3 +61,15 @@ test('controls use a 3:1 outline token, separators keep the hairline', () => {
   assert.match(s, /\.button--ghost\s*{[^}]*border-color:\s*var\(--border-strong\)/);
   assert.match(s, /\.print-hint\s*{[^}]*margin:[^;]*var\(--space-5\)[^;]*var\(--space-5\)/);
 });
+
+test('mobile hero keeps the portrait beside the h1 row; skills read as a table', () => {
+  const s = css();
+  const narrow = s.match(/@media \(max-width: 900px\)\s*{([\s\S]*?)\n}\n/);
+  assert.ok(narrow, 'narrow media block');
+  assert.match(narrow[1], /\.hero\s*{[^}]*grid-template-columns:\s*minmax\(0, 1fr\) 6rem/);
+  assert.match(narrow[1], /\.hero__photo\s*{[^}]*grid-row:\s*1/);
+  assert.doesNotMatch(narrow[1], /\.hero__photo\s*{[^}]*order:/);
+  assert.match(s, /\.skill-group\s*{[^}]*grid-template-columns/);
+  assert.match(s, /\.status\s*{/);
+  assert.match(s, /\.hero__fields\s*{/);
+});

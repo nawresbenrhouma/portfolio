@@ -41,6 +41,9 @@
       Object.keys(ratios).forEach(function (id) {
         if (ratios[id] > best) { best = ratios[id]; bestId = id; }
       });
+      // Nothing in the band (page top, before the first section): the first
+      // section is current, so the indicator is visible from the first paint.
+      if (!bestId && sections.length) bestId = sections[0].id;
       links.forEach(function (link) {
         if (bestId && link === byId[bestId]) link.setAttribute('aria-current', 'true');
         else link.removeAttribute('aria-current');

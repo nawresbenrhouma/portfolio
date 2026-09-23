@@ -58,7 +58,7 @@ test('index.html: skill groups in the required order', () => {
   const groups = ['Backend Engineering', 'Cloud &amp; Architecture', 'DevOps / Infrastructure as Code', 'AI-Assisted Development'];
   let last = -1;
   for (const g of groups) {
-    const pos = html.indexOf(`<h3>${g}</h3>`);
+    const pos = html.indexOf(`<h3>${g}`);
     assert.ok(pos > last, `skill group "${g}" missing or out of order`);
     last = pos;
   }
@@ -126,4 +126,28 @@ test('cv.html: nested engagements are h4 under the h3 employer entry', () => {
   const html = readHtml('cv.html');
   assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Techem WebPortal/);
   assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Beiersdorf/);
+});
+
+// Finish-review fixes (2026-09-23)
+test('index.html: hero identity reads as reference field rows', () => {
+  const html = readHtml('index.html');
+  assert.match(html, /<dl class="hero__fields">/);
+  assert.match(html, /<dt>Role<\/dt>\s*<dd>Software Engineer at MaibornWolff<\/dd>/);
+  assert.match(html, /<dt>Availability<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>/);
+  assert.doesNotMatch(html, /hero__role|hero__availability/);
+});
+
+test('index.html: skills are typed rows with status tokens, no relocated eyebrows', () => {
+  const html = readHtml('index.html');
+  assert.doesNotMatch(html, /skill-group__lead/);
+  assert.match(html, /<h3>Backend Engineering <span class="status status--core">Core<\/span><\/h3>/);
+  assert.match(html, /<h3>Cloud &amp; Architecture <span class="status status--growing">Growing<\/span><\/h3>/);
+  assert.match(html, /<h3>AI-Assisted Development <span class="status status--growing">Growing<\/span><\/h3>/);
+  assert.match(html, /<h3>DevOps \/ Infrastructure as Code<\/h3>/);
+});
+
+test('index.html: learning items carry status tokens', () => {
+  const html = readHtml('index.html');
+  assert.match(html, /<h3>Certifications and training <span class="status status--done">Completed<\/span><\/h3>/);
+  assert.match(html, /<h3>Currently learning <span class="status status--growing">In progress<\/span><\/h3>/);
 });
