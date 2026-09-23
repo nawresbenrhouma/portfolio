@@ -20,7 +20,7 @@ const REQUIRED_INDEX = [
   'Master',
 ];
 
-const SECTION_IDS = ['about', 'skills', 'experience', 'projects', 'learning', 'education', 'contact'];
+const SECTION_IDS = ['about', 'work', 'skills', 'experience', 'projects', 'learning', 'education', 'contact'];
 
 for (const page of ['index.html', 'cv.html']) {
   test(`${page}: forbidden content absent`, () => {
@@ -129,14 +129,23 @@ test('cv.html: nested engagements are h4 under the h3 employer entry', () => {
 });
 
 // Finish-review fixes (2026-09-23)
-test('index.html: hero carries the statement, availability row, actions and the work sheet', () => {
+test('index.html: hero is a pill, two-line name, role line, statement, two actions and a facts card', () => {
   const html = readHtml('index.html');
-  assert.match(html, /<h1 id="hero-title">Nawres Ben Rhouma<\/h1>/);
-  assert.match(html, /<p class="hero__availability"><span class="field__label">Availability<\/span> <span>Based in Tunis · Open to remote, part-time roles<\/span><\/p>/);
-  assert.match(html, /<a class="button button--secondary" href="cv\.html">View CV<\/a>/);
-  assert.match(html, /<a class="button button--primary button--mail" href="mailto:benrhoumanawres7@gmail\.com" aria-label="Get in touch by email">/);
-  assert.match(html, /<span class="button__label">Get in touch<\/span>/);
-  assert.match(html, /<section class="work" aria-labelledby="work-title">/);
+  assert.match(html, /<p class="pill"><span class="pill__dot" aria-hidden="true"><\/span>Based in Tunis · Open to remote, part-time roles<\/p>/);
+  assert.match(html, /<h1 id="hero-title">Nawres <span class="accent">Ben Rhouma\.<\/span><\/h1>/);
+  assert.match(html, /<p class="hero__role">Software Engineer at MaibornWolff<\/p>/);
+  assert.match(html, /<a class="button button--primary" href="#work">View work<\/a>/);
+  assert.match(html, /<a class="button button--outline" href="mailto:benrhoumanawres7@gmail\.com">Get in touch<\/a>/);
+  assert.match(html, /<dl class="facts-card">[\s\S]*<dt>Location<\/dt>\s*<dd>Tunis, Tunisia<\/dd>[\s\S]*<dt>Open to<\/dt>\s*<dd>Remote · part-time<\/dd>/);
+  assert.match(html, /<section id="work" class="section section--work" aria-labelledby="work-title" data-reveal>/);
+  assert.doesNotMatch(html, /button--mail/, 'no icon-only mail button any more');
+});
+
+test('index.html: section headings are two-tone with the accent on the closing words', () => {
+  const html = readHtml('index.html');
+  for (const [id, text] of [['about', 'growing outward.'], ['work', 'Selected work.'], ['contact', 'reliable.']]) {
+    assert.match(html, new RegExp(`<h2 id="${id}-title">[^<]*<span class="accent">${text.replace('.', '\\.')}</span>`), `${id} heading`);
+  }
 });
 
 test('index.html: About keeps the Role / Availability / Focus field rows', () => {
@@ -169,8 +178,8 @@ test('index.html: project notes are native expandable entries with real headings
 
 test('index.html: no invented numbers in the work sheet', () => {
   const html = readHtml('index.html');
-  const start = html.indexOf('<section class="work"');
-  const work = html.slice(start, html.indexOf('<section id="about"'));
+  const start = html.indexOf('<section id="work"');
+  const work = html.slice(start, html.indexOf('<section id="skills"'));
   assert.ok(start > 0 && work.length > 500, 'work section not found: the guard would assert nothing');
   assert.doesNotMatch(work, /\b\d{2,3}(,\d{3})?\s*(users|services|microservices|%|engineers)\b/i);
 });

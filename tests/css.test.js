@@ -53,6 +53,22 @@ test('print.css hides chrome, keeps entries together, shows link URLs, sets A4',
   assert.match(p, /(color|background)[^;]*:\s*(#000|black|#fff|white|none)/);
 });
 
+test('mix world: forest accent, alternating section tones, facts card, pill, vertical timeline, reveal', () => {
+  const s = css();
+  assert.match(s, /--accent:\s*#2f6b3a/);
+  assert.match(s, /--alt:\s*#/);
+  assert.match(s, /\.section--alt\s*{[^}]*background:\s*var\(--alt\)/);
+  assert.match(s, /\.section\s*{[^}]*grid-template-columns:\s*minmax\(var\(--space-6\), 1fr\) minmax\(0, var\(--content-max\)\) minmax\(var\(--space-6\), 1fr\)/, 'full-bleed sections with centred content');
+  assert.match(s, /\.facts-card\s*{/);
+  assert.match(s, /\.pill\s*{/);
+  assert.match(s, /\.pill__dot\s*{/);
+  assert.match(s, /\.timeline::before\s*{/, 'vertical timeline line');
+  assert.match(s, /\.reveal\s*{[^}]*opacity:\s*0/);
+  assert.match(s, /\.reveal\.is-visible\s*{[^}]*opacity:\s*1/);
+  assert.match(s, /\.accent\s*{[^}]*color:\s*var\(--accent\)/);
+  assert.doesNotMatch(s, /\.button--mail/);
+});
+
 test('controls use a 3:1 outline token, separators keep the hairline', () => {
   const s = css();
   assert.match(s, /:root\s*{[^}]*--border-strong\s*:/);
@@ -82,6 +98,6 @@ test('redesign world: butter ground, sheets lifted by shadow alone, Gabarito dis
   assert.match(s, /\.status\s*{/);
   const narrow = s.match(/@media \(max-width: 900px\)\s*{([\s\S]*?)\n}\n/);
   assert.ok(narrow, 'narrow media block');
-  assert.match(narrow[1], /\.hero__inner\s*{[^}]*grid-template-columns:\s*1fr/);
+  assert.match(narrow[1], /\.hero__inner\s*{[^}]*grid-template-columns:\s*minmax\(0, 1fr\)/);
   assert.doesNotMatch(s, /hero__photo/, 'no photo rules remain');
 });
