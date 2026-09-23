@@ -10,7 +10,7 @@ colors:
   bark-muted: "#5b4e35"
   forest-accent: "#7a5a00"
   forest-action: "#7a5a00"
-  forest-action-hover: "#f2c41f"
+  forest-action-hover: "#ffe97a"
   accent-contrast: "#ffffff"
   forest-soft: "#fbf0c4"
   sand-border: "#e8dcb6"
@@ -23,7 +23,7 @@ colors:
   cream-ink-dark: "#f2e9d3"
   bark-muted-dark: "#cbbd9c"
   light butter-accent-dark: "#f0cf5a"
-  light butter-action-dark: "#f2c41f"
+  light butter-action-dark: "#ffe97a"
   light butter-action-hover-dark: "#f0cf5a"
   accent-contrast-dark: "#1b170f"
   light butter-soft-dark: "#3a3115"
@@ -232,7 +232,7 @@ Two warm near-whites, an espresso ink, and a single butter yellow that never sha
 
 ### Primary
 - **Forest Green** (`#7a5a00`): the only accent. As ink it lands on the closing words of the name and of every section heading, on links, on timeline and bullet markers, on the drawn column icons, on the selected folder tab's label and on the focus ring. As a surface it appears exactly once, filling the hero's at-a-glance panel. In dark it becomes **Mint** (`#f0cf5a`) so it can carry text weight on a dark ground.
-- **Forest Action** (`#7a5a00` → hover `#f2c41f`): the filled primary button. Dark ships a separate, slightly lighter **Mint Action** (`#f2c41f`) whose hover resolves up to the full light butter, because the light green would flare against the dark ground.
+- **Forest Action** (`#7a5a00` → hover `#ffe97a`): the filled primary button. Dark ships a separate, slightly lighter **Mint Action** (`#ffe97a`) whose hover resolves up to the full light butter, because the light green would flare against the dark ground.
 - **Accent Contrast** (`#ffffff` light / `#1b170f` dark): everything set on the butter panel — labels, values, links, its hairline divider at 28% white. Never hand-pick a white here; in dark the panel's text switches to the page ground colour so it stays legible on light butter.
 - **Forest Soft** (`#fbf0c4` light / `#3a3115` dark): reduced to a single job — the text selection highlight.
 
@@ -331,7 +331,7 @@ For each component: a short character line, then shape, colour assignment, state
 
 ### Buttons
 - **Shape:** gently curved (8px radius), 2.75rem minimum height, 0.5rem × 1.125rem padding, 0.9375rem semibold body type, 150ms colour transitions.
-- **Primary:** butter yellow fill with accent-contrast text and a matching border; hover deepens to `#f2c41f` (dark: light butter action lifting to full light butter). Used once per section at most — "View work", "Get in touch".
+- **Primary:** butter yellow fill with accent-contrast text and a matching border; hover deepens to `#ffe97a` (dark: light butter action lifting to full light butter). Used once per section at most — "View work", "Get in touch".
 - **Secondary:** inverted — espresso ink fill, page-coloured text; hover softens to the muted ink. Used for the CV link in the contact sheet.
 - **Outline:** transparent with a Sand Border Strong outline and ink text; hover swaps both border and text to the accent. The hero's second action.
 - **Ghost:** the outline treatment at a tighter 0.375rem × 0.875rem — the header's View CV and the CV page's back link.

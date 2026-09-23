@@ -13,11 +13,11 @@
   --text-muted: #5b4e35;
   --alt: #f6f2e6;
   --accent: #7a5a00;
-  --action: #ffd23f;
-  --action-hover: #f2c41f;
+  --action: #fff0a6;
+  --action-hover: #ffe97a;
   --accent-contrast: #2b2417;
   --accent-soft: #fbf0c4;
-  --panel-rule: rgba(43, 36, 23, 0.25);
+  --panel-rule: rgba(43, 36, 23, 0.18);
   --border: #e8dcb6;
   --border-strong: #8f8058; /* 3.5:1 on the butter ground: control outlines only */
   --focus: #7a5a00;

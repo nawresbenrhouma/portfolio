@@ -160,7 +160,7 @@
       "forest-action-hover": {
         "role": "primary",
         "displayName": "Deep Forest",
-        "canonical": "#f2c41f",
+        "canonical": "#ffe97a",
         "purpose": "Hover state of the filled primary button in light mode.",
         "tonalRamp": [
           "oklch(18% 0.045 150)",
@@ -194,7 +194,7 @@
       "light butter-action-dark": {
         "role": "primary",
         "displayName": "Mint Action",
-        "canonical": "#f2c41f",
+        "canonical": "#ffe97a",
         "purpose": "Dark mode only: the filled primary button, one step below the light butter accent so it does not flare on the dark ground.",
         "tonalRamp": [
           "oklch(20% 0.05 150)",
@@ -355,7 +355,7 @@
       "refersTo": "button-primary",
       "description": "The one filled action per section: View work, Get in touch.",
       "html": "<a class=\"ds-btn-primary\" href=\"#work\">View work</a>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.125rem; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: var(--action, #7a5a00); color: var(--accent-contrast, #fff); border: 1px solid var(--action, #7a5a00); border-radius: var(--radius, 8px); transition: background-color 150ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)), border-color 150ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)); } .ds-btn-primary:hover { background: var(--action-hover, #f2c41f); border-color: var(--action-hover, #f2c41f); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #7a5a00); outline-offset: 3px; border-radius: 6px; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.125rem; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: var(--action, #7a5a00); color: var(--accent-contrast, #fff); border: 1px solid var(--action, #7a5a00); border-radius: var(--radius, 8px); transition: background-color 150ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)), border-color 150ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)); } .ds-btn-primary:hover { background: var(--action-hover, #ffe97a); border-color: var(--action-hover, #ffe97a); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #7a5a00); outline-offset: 3px; border-radius: 6px; }"
     },
     {
       "name": "Outline Button",
