@@ -135,7 +135,8 @@ test('index.html: hero carries the statement, availability row, actions and the 
   assert.match(html, /<h1 id="hero-title">Nawres Ben Rhouma<\/h1>/);
   assert.match(html, /<p class="hero__availability"><span class="field__label">Availability<\/span> <span>Based in Tunis · Open to remote, part-time roles<\/span><\/p>/);
   assert.match(html, /<a class="button button--secondary" href="cv\.html">View CV<\/a>/);
-  assert.match(html, /<a class="button button--primary" href="mailto:benrhoumanawres7@gmail\.com">Get in touch<\/a>/);
+  assert.match(html, /<a class="button button--primary button--mail" href="mailto:benrhoumanawres7@gmail\.com" aria-label="Get in touch by email">/);
+  assert.match(html, /<span class="button__label">Get in touch<\/span>/);
   assert.match(html, /<section class="sheet work" aria-labelledby="work-title">/);
 });
 
