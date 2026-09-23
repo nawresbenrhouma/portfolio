@@ -208,8 +208,10 @@ test('index.html: GitHub and LinkedIn open in a new tab safely', () => {
 
 test('index.html: contact form works without a backend and without JS', () => {
   const html = readHtml('index.html');
-  assert.match(html, /<form class="contact-form" action="mailto:benrhoumanawres7@gmail\.com" method="post" enctype="text\/plain">/);
-  for (const name of ['name', 'email', 'message']) assert.match(html, new RegExp(`<(input|textarea)[^>]*name="${name}"[^>]*required`), name);
+  assert.match(html, /<form class="contact-form" action="mailto:benrhoumanawres7@gmail\.com" method="get" data-to="benrhoumanawres7@gmail\.com">/, 'GET fallback: no insecure-POST warning, message reaches the mail app as ?body= without JS');
+  assert.match(html, /<textarea id="cf-message" name="body"/, 'message field is named body so the no-JS fallback prefills the mail');
+  assert.match(html, /<script src="js\/form\.js" defer><\/script>/);
+  for (const name of ['name', 'email', 'body']) assert.match(html, new RegExp(`<(input|textarea)[^>]*name="${name}"[^>]*required`), name);
   assert.match(html, /<label for="cf-name">/);
   assert.match(html, /<button class="button button--primary" type="submit">Send message<\/button>/);
 });
