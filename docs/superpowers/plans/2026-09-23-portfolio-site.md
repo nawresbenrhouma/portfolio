@@ -346,7 +346,7 @@ Expected: FAIL with `ENOENT` for index.html.
 
 `index.html` (complete content; class names are the hooks Task 5 styles):
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
@@ -685,7 +685,7 @@ Expected: cv tests FAIL with ENOENT.
 
 `cv.html`:
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
@@ -1492,7 +1492,7 @@ Insert into `index.html` `<head>` directly after the `<meta name="description" â
 
 `assets/og.html` (uses the same tokens; copy the light-theme values from DESIGN.md into the inline style so the file is self-contained):
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">

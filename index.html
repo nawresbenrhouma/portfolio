@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nawres Ben Rhouma · Backend Software Engineer</title>
+  <meta name="description" content="Backend Software Engineer with Java expertise, expanding into Cloud & Platform Engineering and AI-assisted development. Based in Tunis, open to remote, part-time roles.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { /* keep the default attribute */ }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <header class="site-header">
+    <a class="site-header__brand" href="#top">Nawres Ben Rhouma</a>
+    <nav class="site-nav" aria-label="Sections">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="#about">About</a></li>
+        <li><a class="site-nav__link" href="#skills">Skills</a></li>
+        <li><a class="site-nav__link" href="#experience">Experience</a></li>
+        <li><a class="site-nav__link" href="#projects">Projects</a></li>
+        <li><a class="site-nav__link" href="#learning">Learning</a></li>
+        <li><a class="site-nav__link" href="#education">Education</a></li>
+        <li><a class="site-nav__link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="button button--ghost" href="cv.html">CV</a>
+      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="theme-toggle__icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Software Engineer at MaibornWolff</p>
+        <h1 id="hero-title">Nawres Ben Rhouma</h1>
+        <p class="hero__statement">Backend Software Engineer with Java expertise, expanding into Cloud &amp; Platform Engineering and AI-assisted development.</p>
+        <p class="hero__availability">Based in Tunis · Open to remote, part-time roles</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="https://www.linkedin.com/in/nawres-ben-rhouma21/" rel="me noopener">LinkedIn</a>
+          <a class="button button--secondary" href="cv.html">View CV</a>
+        </div>
+      </div>
+      <img class="hero__photo" src="assets/photo-placeholder.svg" width="480" height="480" alt="Portrait of Nawres Ben Rhouma">
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <p>I build backend services in Java: Spring Boot and Quarkus, REST and GraphQL APIs, relational data models, and the CI/CD and container setup that gets them into production. Since November 2022 I have worked at MaibornWolff, mostly on the Techem WebPortal within an agile, cross-functional team.</p>
+      <p>From that backend core I keep widening the circle: Azure platform engineering, Infrastructure as Code with Terraform and OpenTofu, Kubernetes, and AI-assisted development with tools like Claude Code and Microsoft Copilot Studio.</p>
+      <p>I am curious, proactive and pragmatic. I volunteer for testing, onboarding, documentation and knowledge sharing, prefer maintainable solutions over clever ones, and like breaking big problems into small, shippable steps.</p>
+    </section>
+
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="skill-groups">
+        <article class="skill-group skill-group--primary">
+          <h3>Backend Engineering</h3>
+          <p class="skill-group__lead">Core expertise</p>
+          <ul class="tags">
+            <li>Java</li><li>Spring Boot</li><li>Quarkus</li><li>REST APIs</li><li>GraphQL</li><li>MySQL / SQL</li><li>API design</li><li>Microservice-oriented architecture</li>
+          </ul>
+        </article>
+        <article class="skill-group">
+          <h3>Cloud &amp; Architecture</h3>
+          <p class="skill-group__lead">Growing focus</p>
+          <ul class="tags">
+            <li>Microsoft Azure</li><li>Azure Kubernetes Service</li><li>Azure Landing Zones</li><li>Virtual WAN &amp; hub-and-spoke</li><li>Site-to-Site VPN</li><li>Private Endpoints &amp; Private DNS</li><li>Governance &amp; security</li>
+          </ul>
+        </article>
+        <article class="skill-group">
+          <h3>DevOps / Infrastructure as Code</h3>
+          <p class="skill-group__lead">Daily tooling</p>
+          <ul class="tags">
+            <li>Docker</li><li>Kubernetes</li><li>Terraform</li><li>OpenTofu</li><li>Azure Verified Modules</li><li>GitLab CI/CD</li><li>GitHub Actions</li><li>ArgoCD</li>
+          </ul>
+        </article>
+        <article class="skill-group">
+          <h3>AI-Assisted Development</h3>
+          <p class="skill-group__lead">Modern workflow</p>
+          <ul class="tags">
+            <li>Claude Code</li><li>Agentic coding</li><li>Microsoft Copilot Studio</li><li>Power Automate</li><li>Power Platform</li>
+          </ul>
+        </article>
+      </div>
+      <p class="skills__secondary"><strong>Also:</strong> Angular, TypeScript (learning), Agile / Scrum / Kanban, clean code, documentation, knowledge sharing.</p>
+    </section>
+
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <div class="timeline__meta">
+            <span class="timeline__dates">Nov 2022 – present</span>
+          </div>
+          <div class="timeline__body">
+            <h3>Software Engineer · MaibornWolff</h3>
+            <p>Joined after completing a Master's in Cloud Computing. Grew from a backend-focused role into cloud, DevOps, AI-assisted development and platform engineering across several client projects.</p>
+
+            <article class="engagement">
+              <h4>Techem WebPortal · Backend Engineer <span class="engagement__dates">Feb 2024 – present</span></h4>
+              <ul class="tags tags--small">
+                <li>Java</li><li>Spring Boot</li><li>GraphQL</li><li>Docker</li><li>CI/CD</li>
+              </ul>
+              <ul class="bullets">
+                <li>Backend development and maintenance in an agile, cross-functional team.</li>
+                <li>Supported release testing before major production deployments and volunteered to test features alongside the team's testers.</li>
+                <li>Onboarded a new backend colleague, explaining the project infrastructure and context.</li>
+                <li>Hosted retrospectives and knowledge-sharing sessions; supported the Product Owner with Scrum meetings when needed.</li>
+                <li>Took over frontend tasks when the frontend colleagues were overloaded.</li>
+                <li>Experimented with Claude Code to improve readability and quality in older repositories.</li>
+                <li>Co-presented the project at a JAT event, well received by MaibornWolff and Techem leadership.</li>
+              </ul>
+            </article>
+
+            <article class="engagement">
+              <h4>Beiersdorf Shared Services · Copilot Studio pilot <span class="engagement__dates">Mar 2026 – May 2026</span></h4>
+              <ul class="tags tags--small">
+                <li>Microsoft Copilot Studio</li><li>Power Automate</li><li>Power Platform</li>
+              </ul>
+              <ul class="bullets">
+                <li>Joined full-time without prior hands-on experience in the stack; completed training and became productive within a short timeframe.</li>
+                <li>Took ownership of the documentation process: step-by-step guides, version comparisons, maintainability.</li>
+                <li>Supported deployments and joined colleagues' meetings to help them deliver.</li>
+              </ul>
+            </article>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <div class="timeline__meta">
+            <span class="timeline__dates">Jul 2021 – Aug 2021</span>
+          </div>
+          <div class="timeline__body">
+            <h3>Immersion Intern · Dotcom</h3>
+            <p>Contributed to TravelEase, a transportation application for transfers between traveller destinations, developing key features in Java with MySQL.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Techem WebPortal</h3>
+          <p class="card__role">Backend Engineer · MaibornWolff, 2024 – present</p>
+          <p>Customer web portal for Techem, developed by an agile, cross-functional team.</p>
+          <ul class="tags tags--small"><li>Java</li><li>Spring Boot</li><li>GraphQL</li><li>Docker</li><li>CI/CD</li></ul>
+          <ul class="bullets">
+            <li>Backend features and maintenance.</li>
+            <li>Release testing, onboarding and knowledge sharing beyond the core role.</li>
+            <li>Presented the project at a JAT event.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Copilot Studio Pilot</h3>
+          <p class="card__role">Engineer · Beiersdorf Shared Services, 2026</p>
+          <p>Pilot of Microsoft Copilot Studio and Power Platform for AI workflow automation.</p>
+          <ul class="tags tags--small"><li>Copilot Studio</li><li>Power Automate</li><li>Power Platform</li></ul>
+          <ul class="bullets">
+            <li>Learned the stack from scratch and delivered within weeks.</li>
+            <li>Owned the documentation and step-by-step guides.</li>
+            <li>Supported deployments for the team.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Consommi Tounsi</h3>
+          <p class="card__role">Architecture, backend, frontend, deployment · ESPRIT academic project</p>
+          <p>E-commerce platform to support local commerce in Tunisia by showcasing Tunisian projects and businesses.</p>
+          <ul class="tags tags--small"><li>Spring Boot</li><li>Angular</li><li>MySQL</li><li>Docker</li><li>Kubernetes</li><li>AKS</li></ul>
+          <ul class="bullets">
+            <li>Designed the application architecture.</li>
+            <li>Implemented backend and frontend features.</li>
+            <li>Containerised and deployed to Azure Kubernetes Service.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>TravelEase</h3>
+          <p class="card__role">Developer · Dotcom internship, 2021</p>
+          <p>Transportation application that facilitates transfers between destinations for travellers.</p>
+          <ul class="tags tags--small"><li>Java</li><li>MySQL</li></ul>
+          <ul class="bullets">
+            <li>Developed key application features.</li>
+            <li>First professional Java backend experience.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="learning" class="section" aria-labelledby="learning-title">
+      <h2 id="learning-title">Certifications &amp; Learning</h2>
+      <div class="learning">
+        <div class="learning__column">
+          <h3>Completed</h3>
+          <ul class="bullets">
+            <li>Microsoft Azure Fundamentals (AZ-900)</li>
+            <li>Microsoft Copilot Studio &amp; Power Platform training</li>
+            <li>Microsoft Agent Academy</li>
+            <li>MaibornWolff Agentic AI training</li>
+            <li>Agentic Coding School</li>
+          </ul>
+        </div>
+        <div class="learning__column">
+          <h3>In progress</h3>
+          <ul class="bullets">
+            <li>CKA and CKAD preparation</li>
+            <li>Terraform / OpenTofu</li>
+            <li>Azure Landing Zones and Azure Verified Modules</li>
+            <li>Azure networking, governance and security</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <p><strong>Master's degree in Cloud Computing</strong> · ESPRIT, Tunis · 2022</p>
+      <p>Foundations in software engineering, cloud computing, distributed systems, databases, containerisation, deployment and modern software architecture.</p>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p class="contact__lead">Open to remote, part-time opportunities.</p>
+      <ul class="contact__list">
+        <li><span class="contact__label">Email</span> <a href="mailto:benrhoumanawres7@gmail.com">benrhoumanawres7@gmail.com</a></li>
+        <li><span class="contact__label">LinkedIn</span> <a href="https://www.linkedin.com/in/nawres-ben-rhouma21/" rel="me noopener">linkedin.com/in/nawres-ben-rhouma21</a></li>
+        <li><span class="contact__label">GitHub</span> <a href="https://github.com/benrhoumanawres7-ai" rel="me noopener">github.com/benrhoumanawres7-ai</a></li>
+        <li><span class="contact__label">Location</span> Tunis, Tunisia · remote</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Nawres Ben Rhouma · Built with plain HTML, CSS and JS.</p>
+  </footer>
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/nav.js" defer></script>
+</body>
+</html>
