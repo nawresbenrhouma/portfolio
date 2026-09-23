@@ -25,7 +25,13 @@ test('styles.css reduced-motion block removes motion but keeps colour feedback; 
   assert.match(block[1], /scroll-behavior:\s*auto/);
   assert.match(block[1], /\.reveal[^{]*{[^}]*(transition:\s*none|opacity:\s*1)/, 'reveal disabled under reduced motion');
   assert.doesNotMatch(block[1], /\*,\s*\*::before,\s*\*::after\s*{[^}]*transition-duration:\s*0s/, 'no blanket transition kill');
-  assert.match(s, /@media print\s*{[^}]*\.reveal\s*{[^}]*opacity:\s*1/, 'print shows every section');
+  const print = s.match(/@media print\s*{([\s\S]*?)\n}\n/);
+  assert.ok(print, 'print block');
+  assert.match(print[1], /\.reveal\s*{[^}]*opacity:\s*1/, 'print shows every section');
+  assert.match(print[1], /\.panel-green\s*{[^}]*color:\s*#000/, 'green panel prints in ink, not white on white');
+  assert.match(print[1], /\.button\s*{[^}]*color:\s*#000/);
+  assert.match(s, /\.tabs__list--enhanced ~ \.panel \+ \.panel\s*{[^}]*margin-top:\s*0/, 'selected tab 2 or 3 stays fused to the tab row');
+  assert.match(s, /\.glance dt\s*{[^}]*opacity:\s*0\.85/);
   assert.match(s, /\.tab\s*{[^}]*min-height:\s*2\.75rem/, 'tabs are 44px tall');
 });
 

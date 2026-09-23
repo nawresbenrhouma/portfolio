@@ -147,7 +147,7 @@ test('index.html: hero is a two-line name, role, statement, actions and a green 
 test('index.html: section headings are two-tone with the accent on the closing words', () => {
   const html = readHtml('index.html');
   for (const [id, text] of [['about', 'growing outward.'], ['work', 'up close.'], ['contact', 'reliable.']]) {
-    assert.match(html, new RegExp(`<h2 id="${id}-title">[^<]*<span class="accent">${text.replace('.', '\\.')}</span>`), `${id} heading`);
+    assert.match(html, new RegExp(`<h2><span id="${id}-title">[^<]*<span class="accent">${text.replace('.', '\\.')}</span>`), `${id} heading`);
   }
 });
 
@@ -178,12 +178,13 @@ test('index.html: projects are a compact grid with real headings, not an accordi
   const cards = [...html.matchAll(/<article class="project">\s*<h3>/g)];
   assert.equal(cards.length, 4);
   assert.match(html, /<article class="project">\s*<h3>TravelEase<\/h3>/);
-  assert.match(html, /<h2 id="projects-title">Other things I <span class="accent">built\.<\/span>/);
+  assert.doesNotMatch(html, /Copilot Studio Pilot/, 'consistent casing: pilot');
+  assert.match(html, /<h2><span id="projects-title">Other things I <span class="accent">built\.<\/span>/);
 });
 
 test('index.html: only the work sheet reveals; What-I-did columns carry drawn icons', () => {
   const html = readHtml('index.html');
-  assert.equal((html.match(/data-reveal/g) || []).length, 1, 'one authored motion, on one element');
+  assert.equal((html.match(/ data-reveal>/g) || []).length, 1, 'one authored motion, on one element');
   assert.match(html, /<div class="work" data-reveal>/);
   assert.ok((html.match(/<svg class="col__icon"/g) || []).length >= 9, 'three drawn icons per panel');
 });
@@ -193,6 +194,7 @@ test('index.html: no invented numbers in the work sheet', () => {
   const start = html.indexOf('<section id="work"');
   const work = html.slice(start, html.indexOf('<section id="skills"'));
   assert.ok(start > 0 && work.length > 500, 'work section not found: the guard would assert nothing');
+  assert.doesNotMatch(work, /Live since/, 'no production-date claim about the client system');
   assert.doesNotMatch(work, /\b\d{2,3}(,\d{3})?\s*(users|services|microservices|%|engineers)\b/i);
 });
 
