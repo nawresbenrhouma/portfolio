@@ -26,6 +26,11 @@ test('styles.css contains a reduced-motion block that disables transitions and s
   assert.match(block[1], /transition(-duration)?:\s*(none|0s|0ms)/);
 });
 
+test('styles.css never transitions layout properties', () => {
+  const s = css();
+  assert.doesNotMatch(s, /transition:[^;]*\b(width|height|top|left|margin|padding)\b/, 'layout property in a transition');
+});
+
 test('styles.css styles the essentials', () => {
   const s = css();
   for (const sel of ['.skip-link', '.site-header', '.site-nav__link[aria-current="true"]', '.theme-toggle', '.hero__photo',

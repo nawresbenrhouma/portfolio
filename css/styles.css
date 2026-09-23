@@ -151,8 +151,7 @@ code, .tags li {
 .field__label,
 .skill-group__lead,
 .contact__label,
-.timeline__dates,
-.card__role {
+.timeline__dates {
   font-size: var(--text-label);
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -216,10 +215,11 @@ code, .tags li {
   left: 0;
   bottom: -1px;
   height: 2px;
-  width: 0;
+  width: 100px;
   background: var(--accent);
-  transform-origin: left;
-  transition: transform var(--motion-base) var(--ease-out), width var(--motion-base) var(--ease-out);
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: transform var(--motion-base) var(--ease-out);
   pointer-events: none;
 }
 .site-nav--has-indicator .site-nav__link[aria-current="true"] { border-bottom-color: transparent; }
@@ -425,7 +425,7 @@ main { display: block; }
   padding-top: var(--space-4);
 }
 .card > h3 { margin-bottom: var(--space-1); }
-.card__role { display: block; margin-bottom: var(--space-3); }
+.card__role { display: block; margin-bottom: var(--space-3); font-size: var(--text-small); color: var(--text-muted); }
 .card > p { margin-bottom: var(--space-3); }
 .card .tags { margin-bottom: var(--space-3); }
 

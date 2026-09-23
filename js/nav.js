@@ -27,9 +27,9 @@
 
     function moveIndicator(link) {
       if (!indicator) return;
-      if (!link) { indicator.style.width = '0px'; return; }
-      indicator.style.transform = 'translateX(' + link.offsetLeft + 'px)';
-      indicator.style.width = link.offsetWidth + 'px';
+      // The indicator is 100px wide in CSS; only transform animates (no layout).
+      if (!link) { indicator.style.transform = 'scaleX(0)'; return; }
+      indicator.style.transform = 'translateX(' + link.offsetLeft + 'px) scaleX(' + (link.offsetWidth / 100) + ')';
     }
 
     var ratios = {};

@@ -71,10 +71,10 @@ test('a sliding indicator is added to the nav and follows the active link', () =
   const indicator = doc._nav.children[0];
   assert.equal(indicator.className, 'site-nav__indicator');
   FakeIO.last.trigger([{ target: doc._sections[1], isIntersecting: true, intersectionRatio: 0.8 }]);
-  assert.equal(indicator.style.transform, 'translateX(100px)');
-  assert.equal(indicator.style.width, '80px');
+  assert.equal(indicator.style.transform, 'translateX(100px) scaleX(0.8)', 'transform-only, no width animation');
+  assert.equal(indicator.style.width, undefined, 'width is never written from JS');
   FakeIO.last.trigger([{ target: doc._sections[1], isIntersecting: false, intersectionRatio: 0 }]);
-  assert.equal(indicator.style.width, '0px', 'no active section hides the indicator');
+  assert.equal(indicator.style.transform, 'scaleX(0)', 'no active section collapses the indicator');
 });
 
 test('no IntersectionObserver: returns null and touches nothing', () => {
