@@ -95,3 +95,14 @@ test('cv.html: required facts and structure present', () => {
   assert.ok((html.match(/class="cv-entry\b/g) || []).length >= 5, 'at least five cv-entry articles');
   assert.match(html, /<a class="button button--ghost" href="index\.html">/);
 });
+
+test('index.html: Open Graph and canonical tags', () => {
+  const html = readHtml('index.html');
+  const base = 'https://benrhoumanawres7-ai.github.io/portfolio/';
+  assert.match(html, new RegExp(`<link rel="canonical" href="${base}">`));
+  assert.match(html, /<meta property="og:title" content="Nawres Ben Rhouma · Backend Software Engineer">/);
+  assert.match(html, /<meta property="og:description" content="[^"]+">/);
+  assert.match(html, new RegExp(`<meta property="og:image" content="${base}assets/og.png">`));
+  assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
+  assert.ok(require('node:fs').existsSync(require('node:path').resolve(__dirname, '../assets/og.png')), 'assets/og.png missing');
+});
