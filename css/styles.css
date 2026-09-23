@@ -456,7 +456,11 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .col + .col { border-left: 1px solid var(--border); padding-left: var(--space-5); }
 .col__title { display: flex; align-items: center; gap: var(--space-2); font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; margin-bottom: var(--space-1); }
 .col__icon { flex: none; color: var(--accent); }
-.col__note { font-size: var(--text-small); color: var(--text-muted); margin-bottom: var(--space-3); }
+.col__intent { font-size: var(--text-small); color: var(--text-muted); margin-bottom: var(--space-3); }
+.col__list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); font-size: var(--text-small); }
+.col__list li { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: var(--space-3); align-items: baseline; }
+.col__list strong { font-weight: 600; color: var(--text); }
+.col__list span { color: var(--text-muted); }
 .panel__facts {
   list-style: none;
   display: flex;
@@ -605,18 +609,6 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .bullets li { margin: 0 0 var(--space-2); }
 .bullets li::marker { color: var(--accent); }
 
-/* Projects: a compact grid of entries on sheets */
-.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
-.project {
-  background: var(--sheet);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  padding: var(--space-5) var(--space-6);
-}
-.project > h3 { margin-bottom: var(--space-1); }
-.project__meta { font-size: var(--text-small); color: var(--text-muted); margin-bottom: var(--space-3); }
-.project > p:not(.project__meta) { margin-bottom: var(--space-3); }
-
 /* Learning: two columns on the page ground, no sheet */
 .learning { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); }
 .learning__column { border-top: 2px solid var(--text); padding-top: var(--space-4); }
@@ -756,11 +748,11 @@ code { font-family: var(--font-code); font-size: 0.9em; }
   .section { grid-template-columns: minmax(var(--space-4), 1fr) minmax(0, var(--content-max)) minmax(var(--space-4), 1fr); }
   .site-footer { padding-inline: var(--space-4); }
   .hero__inner { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
-  .projects { grid-template-columns: 1fr; }
     .tabs__list { padding: 0 var(--space-3) 0 0; gap: var(--space-1); -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); }
   .panel { padding: var(--space-4); }
   .tab { padding: 0.72rem 0.9rem; font-size: 0.875rem; }
   .panel__grid { grid-template-columns: 1fr; }
+  .col__list li { grid-template-columns: 7rem minmax(0, 1fr); }
   .panel__facts { flex-direction: column; gap: var(--space-3); }
   .panel__facts li { white-space: normal; }
   .col + .col { border-left: 0; padding-left: 0; border-top: 1px solid var(--border); padding-top: var(--space-4); }

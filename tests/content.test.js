@@ -12,22 +12,22 @@ const REQUIRED_INDEX = [
   'https://github.com/nawresbenrhouma',
   'Tunis, Tunisia · remote',
   'T WebPortal',
-  'Beiersdorf',
+  'Copilot Studio pilot',
   'Travel App',
-  'MSR PolyCTRL',
+  'Industrial control platform',
   'TravelEase',
   'AZ-900',
   'ESPRIT',
   'Master',
 ];
 
-const SECTION_IDS = ['about', 'work', 'skills', 'experience', 'projects', 'learning', 'education', 'contact'];
+const SECTION_IDS = ['about', 'work', 'skills', 'experience', 'learning', 'education', 'contact'];
 
 for (const page of ['index.html', 'cv.html']) {
   test(`${page}: forbidden content absent`, () => {
     const html = readHtml(page);
     assert.doesNotMatch(html, /junior/i, 'the word Junior must not appear');
-    assert.doesNotMatch(html, /Techem/, 'client name is not published');
+    assert.doesNotMatch(html, /Techem|Beiersdorf|MSR-Electronic|MSR PolyCTRL|PolyCTRL/, 'customer names are not published');
     assert.doesNotMatch(html, /\s(href|src)="\/(?!\/)/, 'no root-relative URLs');
     // Only loaded resources count: scripts, stylesheets and preconnects. Canonical / Open Graph URLs are metadata.
     const external = [...html.matchAll(/<(?:script[^>]*\ssrc|link[^>]*rel="(?:stylesheet|preconnect)"[^>]*\shref)="(https?:[^"]+)"/g)].map((m) => m[1]);
@@ -76,7 +76,7 @@ test('index.html: enhancement hooks present', () => {
 
 test('cv.html: required facts and structure present', () => {
   const html = readHtml('cv.html');
-  assert.doesNotMatch(html, /Techem/, 'client name is not published');
+  assert.doesNotMatch(html, /Techem|Beiersdorf|MSR-Electronic|PolyCTRL/, 'customer names are not published');
   for (const s of [
     'Nawres Ben Rhouma',
     'Software Engineer at MaibornWolff',
@@ -87,8 +87,8 @@ test('cv.html: required facts and structure present', () => {
     'Open to remote, part-time roles',
     'T WebPortal',
     'Travel App',
-    'MSR PolyCTRL',
-    'Beiersdorf',
+    'Industrial control platform',
+    'Copilot Studio pilot',
     'Consommi Tounsi',
     'TravelEase',
     'AZ-900',
@@ -129,8 +129,8 @@ test('index.html: skip link lands on main content, heading anchors have unique n
 test('cv.html: nested engagements are h4 under the h3 employer entry', () => {
   const html = readHtml('cv.html');
   assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>T WebPortal/);
-  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>MSR PolyCTRL/);
-  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Beiersdorf/);
+  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Industrial control platform/);
+  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Copilot Studio pilot/);
 });
 
 // Finish-review fixes (2026-09-23)
@@ -169,24 +169,48 @@ test('index.html: About is prose only; availability is stated once outside conta
 test('index.html: selected-work tabs ship as plain markup; ARIA is added by JS', () => {
   const html = readHtml('index.html');
   const tabs = [...html.matchAll(/<button class="tab" type="button" id="tab-([a-z]+)" data-panel="panel-\1">([^<]+)<\/button>/g)];
-  assert.deepEqual(tabs.map((m) => m[1]), ['webportal', 'travelapp', 'msr', 'copilot']);
-  assert.deepEqual(tabs.map((m) => m[2]), ['T WebPortal', 'Travel App', 'MSR PolyCTRL', 'Copilot Studio pilot']);
+  assert.deepEqual(tabs.map((m) => m[1]), ['webportal', 'travelapp', 'industrial', 'copilot']);
+  assert.deepEqual(tabs.map((m) => m[2]), ['T WebPortal', 'Travel App', 'Industrial control platform', 'Copilot Studio pilot']);
   assert.match(html, /<div class="tabs__list" data-tablist-label="Selected work">/);
-  for (const id of ['webportal', 'travelapp', 'msr', 'copilot']) {
+  for (const id of ['webportal', 'travelapp', 'industrial', 'copilot']) {
     assert.match(html, new RegExp(`<article class="panel" id="panel-${id}">`), `panel ${id}`);
   }
   assert.doesNotMatch(html, /role="tab(list|panel)?"|aria-selected|aria-controls/, 'no static tab ARIA: it is inert without JS');
   assert.match(html, /<script src="js\/tabs\.js" defer><\/script>/);
 });
 
-test('index.html: projects are a compact grid with real headings, not an accordion', () => {
+test('index.html: no projects section; the work tabs carry the projects', () => {
   const html = readHtml('index.html');
-  assert.doesNotMatch(html, /<details class="note">/);
-  const cards = [...html.matchAll(/<article class="project">\s*<h3>([^<]+)<\/h3>/g)].map((m) => m[1]);
-  assert.deepEqual(cards, ['TravelEase', 'Cloud IaaS with CloudStack'], 'grid holds only projects the tabs do not cover');
-  assert.doesNotMatch(html, /Consommi Tounsi/, 'Consommi Tounsi stays on the CV only');
-  assert.doesNotMatch(html, /Copilot Studio Pilot/, 'consistent casing: pilot');
-  assert.match(html, /<h2><span id="projects-title">Other things I <span class="accent">built\.<\/span>/);
+  assert.doesNotMatch(html, /id="projects"|class="projects"|Other things I/);
+  assert.doesNotMatch(html, /href="#projects"/);
+});
+
+test('index.html: section headings are two-tone with the accent on the closing words', () => {
+  const html = readHtml('index.html');
+  for (const [id, text] of [['about', 'growing outward.'], ['work', 'up close.'], ['contact', 'reliable.']]) {
+    assert.match(html, new RegExp(`<h2><span id="${id}-title">[^<]*<span class="accent">${text.replace('.', '\\.')}</span>`), `${id} heading`);
+  }
+});
+
+test('index.html: About is prose only; availability is stated once outside contact', () => {
+  const html = readHtml('index.html');
+  const about = html.slice(html.indexOf('<section id="about"'), html.indexOf('<section id="work"'));
+  assert.doesNotMatch(about, /<dl class="fields">/);
+  const main = html.slice(html.indexOf('<main'), html.indexOf('<section id="contact"'));
+  assert.equal((main.match(/Open to remote, part-time roles/g) || []).length, 1, 'availability said once before the contact section');
+});
+
+test('index.html: selected-work tabs ship as plain markup; ARIA is added by JS', () => {
+  const html = readHtml('index.html');
+  const tabs = [...html.matchAll(/<button class="tab" type="button" id="tab-([a-z]+)" data-panel="panel-\1">([^<]+)<\/button>/g)];
+  assert.deepEqual(tabs.map((m) => m[1]), ['webportal', 'travelapp', 'industrial', 'copilot']);
+  assert.deepEqual(tabs.map((m) => m[2]), ['T WebPortal', 'Travel App', 'Industrial control platform', 'Copilot Studio pilot']);
+  assert.match(html, /<div class="tabs__list" data-tablist-label="Selected work">/);
+  for (const id of ['webportal', 'travelapp', 'industrial', 'copilot']) {
+    assert.match(html, new RegExp(`<article class="panel" id="panel-${id}">`), `panel ${id}`);
+  }
+  assert.doesNotMatch(html, /role="tab(list|panel)?"|aria-selected|aria-controls/, 'no static tab ARIA: it is inert without JS');
+  assert.match(html, /<script src="js\/tabs\.js" defer><\/script>/);
 });
 
 test('index.html: only the work sheet reveals; What-I-did columns carry drawn icons', () => {
@@ -194,6 +218,8 @@ test('index.html: only the work sheet reveals; What-I-did columns carry drawn ic
   assert.equal((html.match(/ data-reveal>/g) || []).length, 1, 'one authored motion, on one element');
   assert.match(html, /<div class="work" data-reveal>/);
   assert.ok((html.match(/<svg class="col__icon"/g) || []).length >= 12, 'three drawn icons per panel');
+  assert.equal((html.match(/<h4 class="panel__label">What I built<\/h4>/g) || []).length, 4, 'block named What I built');
+  assert.ok((html.match(/<p class="col__intent">/g) || []).length >= 12, 'each column has a one-line intent');
 });
 
 test('index.html: GitHub and LinkedIn open in a new tab safely', () => {

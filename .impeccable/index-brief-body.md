@@ -26,3 +26,5 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 
 Round 3 (2026-09-23, user): header brand is a monogram "NB." so the name is not shown twice; a native mailto contact form at the end; GitHub/LinkedIn open in a new tab; "Download CV" links assets/Nawres_Ben_Rhouma_CV.pdf (generated from cv.html by scripts/build-cv-pdf.sh); the client behind the portal is not named ("T WebPortal"); Consommi Tounsi lives on the CV only; the MaibornWolff Travel App and the current MSR PolyCTRL engagement are work tabs; projects grid holds TravelEase and the 3S IaaS internship.
+
+Round 4 (2026-09-24, user): the "Other things I built" projects grid is removed (nav has seven anchors again); the work sheet block is "What I built" with domain columns (Services / Delivery / Team practice, etc.), a one-line intent and technology → outcome pairs, after the reference's register; customer names are never published (T WebPortal, "consumer-goods shared services", "industrial electronics manufacturer"; test-guarded on both pages).

@@ -43,7 +43,7 @@ test('styles.css never transitions layout properties', () => {
 test('styles.css styles the essentials', () => {
   const s = css();
   for (const sel of ['.skip-link', '.site-header', '.site-nav__link[aria-current="true"]', '.theme-toggle',
-    '.skill-group--primary', '.timeline', '.project', '.contact__list', '.print-hint', ':focus-visible']) {
+    '.skill-group--primary', '.timeline', '.contact__list', '.print-hint', ':focus-visible']) {
     assert.ok(s.includes(sel), `selector ${sel} missing`);
   }
   assert.match(s, /html\s*{[^}]*scroll-behavior:\s*smooth/);
@@ -73,7 +73,6 @@ test('mix world: forest accent, alternating section tones, facts card, pill, ver
   assert.match(s, /\.panel-green\s*{[^}]*background:\s*var\(--action\)/, 'the butter becomes a surface');
   assert.match(s, /\.glance\s*{/);
   assert.match(s, /\.hero__text > h1 > \.accent\s*{[^}]*display:\s*block/, 'colour break coincides with the line break');
-  assert.match(s, /\.project\s*{/);
   assert.doesNotMatch(s.match(/\.about__text\s*{[^}]*}/)[0], /columns:/, 'About is single-column prose');
   assert.doesNotMatch(s, /\.pill\s*{|\.facts-card/);
   assert.match(s, /\.timeline::before\s*{/, 'vertical timeline line');
