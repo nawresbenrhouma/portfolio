@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Screenshot a page with real device emulation through the Chrome DevTools
 // protocol and report horizontal overflow. No dependencies (Node >= 22).
-//   node scripts/shot.js <url> <out.png> <width> [--dark]
+//   node scripts/shot.js <url> <out.png> <width> [--dark] [--scroll=<y>]  (scroll = viewport-only capture)
 const { spawn } = require('node:child_process');
 const http = require('node:http');
 const fs = require('node:fs');
@@ -16,6 +16,8 @@ if (!url || !out || !widthArg) {
 }
 const width = Number(widthArg);
 const dark = flags.includes('--dark');
+const scrollArg = flags.find((f) => f.startsWith('--scroll='));
+const scrollY = scrollArg ? Number(scrollArg.split('=')[1]) : 0;
 const port = 9300 + Math.floor(Math.random() * 500);
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'shot-'));
 const chrome = spawn(CHROME, ['--headless=new', '--disable-gpu', '--no-first-run', '--hide-scrollbars',
@@ -46,11 +48,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await send('Page.enable');
   await send('Page.navigate', { url });
   await sleep(1800);
+  if (scrollY) { await send('Runtime.evaluate', { expression: `window.scrollTo(0, ${scrollY})` }); await sleep(600); }
   const ev = await send('Runtime.evaluate', { expression: 'JSON.stringify({sw:document.documentElement.scrollWidth,iw:window.innerWidth,h:document.documentElement.scrollHeight})', returnByValue: true });
   const { sw, iw, h } = JSON.parse(ev.result.result.value);
-  await send('Emulation.setDeviceMetricsOverride', { width, height: Math.min(h, 16000), deviceScaleFactor: 2, mobile });
-  await sleep(400);
-  const shot = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
+  if (!scrollY) { await send('Emulation.setDeviceMetricsOverride', { width, height: Math.min(h, 16000), deviceScaleFactor: 2, mobile }); await sleep(400); }
+  const shot = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: !scrollY });
   fs.writeFileSync(out, Buffer.from(shot.result.data, 'base64'));
   console.log(`${out}: width=${width} scrollWidth=${sw} innerWidth=${iw} height=${h} ${sw > iw ? 'OVERFLOW' : 'ok'}`);
   ws.close();
