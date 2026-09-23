@@ -3,7 +3,7 @@ name: Nawres Ben Rhouma — Portfolio
 description: A calm near-white page with a touch of butter, where the work sits on a white sheet with folder tabs, set in Gabarito with one terracotta accent.
 colors:
   butter-page: "#fffcf2"
-  deep-butter-band: "#faf3db"
+  deep-butter-band: "#fffcf2"
   warm-sheet: "#ffffff"
   butter-chip: "#f7f0da"
   espresso-ink: "#2b2417"
@@ -227,7 +227,7 @@ A single warm family — butter, espresso and terracotta — split across a ligh
 
 ### Neutral
 - **Butter Page** (`#fffcf2`): the page ground, everywhere below the hero band. `#1b170f` in dark.
-- **Deep Butter Band** (`#faf3db`): the sticky header and the hero band — one step deeper so the first viewport reads as a tinted plate the sheet floats on. `#221c12` in dark.
+- **Deep Butter Band** (`#fffcf2`): the sticky header and the hero band — one step deeper so the first viewport reads as a tinted plate the sheet floats on. `#221c12` in dark.
 - **Warm Sheet** (`#ffffff`): every sheet, panel, note, theme toggle and CV page. Off-white, never pure white. `#332c1e` in dark.
 - **Butter Chip** (`#f7f0da`): the fill behind code chips only. `#3f3727` in dark.
 - **Espresso Ink** (`#2b2417`): all body and heading text. **Cream** (`#f2e9d3`) in dark.
