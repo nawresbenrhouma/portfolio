@@ -144,7 +144,7 @@ test('index.html: hero is a two-line name, role, statement, actions and a green 
   assert.ok(require('node:fs').existsSync(require('node:path').resolve(__dirname, '../assets/Nawres_Ben_Rhouma_CV.pdf')), 'CV PDF ships');
   assert.match(html, /<a class="site-header__brand" href="#top" aria-label="Nawres Ben Rhouma, home">NB\.<\/a>/, 'header shows a monogram, not the full name twice');
   assert.match(html, /<aside class="panel-green" aria-label="At a glance">/);
-  assert.match(html, /<dl class="glance">\s*<dt>Availability<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>\s*<dt>Working on<\/dt>\s*<dd>Software development · Azure platform · AI-assisted development<\/dd>/);
+  assert.match(html, /<dl class="glance">\s*<dt>Availability<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>\s*<dt>Working on<\/dt>\s*<dd>Software development · Azure platform · AI-assisted development<\/dd>\s*<\/dl>/, 'two pairs only, no Since');
   assert.doesNotMatch(html.slice(html.indexOf('<dl class="glance">'), html.indexOf('</dl>', html.indexOf('<dl class="glance">'))), /Tunis, Tunisia/, 'location is stated once in the panel');
   assert.match(html, /<div class="panel-green__links">[\s\S]*iconlink[\s\S]*<\/div>/, 'GitHub and LinkedIn live in the panel');
   assert.match(html, /<section id="work" class="section section--work" aria-labelledby="work-title">/);

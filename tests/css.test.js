@@ -65,7 +65,7 @@ test('print.css hides chrome, keeps entries together, shows link URLs, sets A4',
 test('mix world: forest accent, alternating section tones, facts card, pill, vertical timeline, reveal', () => {
   const s = css();
   assert.match(s, /--accent:\s*#7a5a00/, 'deep butter for text');
-  assert.match(s, /--action:\s*#f3d35f/, 'butter fill for buttons and the panel');
+  assert.match(s, /--action:\s*#ffd23f/, 'bright butter fill for buttons and the panel');
   assert.match(s, /\.contact-form\s*{/);
   assert.match(s, /--alt:\s*#/);
   assert.match(s, /\.section--alt\s*{[^}]*background:\s*var\(--alt\)/);
