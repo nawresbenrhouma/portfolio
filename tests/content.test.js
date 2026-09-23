@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { readHtml } = require('./helpers');
+const { readHtml, readFile } = require('./helpers');
 
 const REQUIRED_INDEX = [
   'Nawres Ben Rhouma',
@@ -150,4 +150,21 @@ test('index.html: learning items carry status tokens', () => {
   const html = readHtml('index.html');
   assert.match(html, /<h3>Certifications and training <span class="status status--done">Completed<\/span><\/h3>/);
   assert.match(html, /<h3>Currently learning <span class="status status--growing">In progress<\/span><\/h3>/);
+});
+
+// Whole-branch review fixes (2026-09-23)
+test('index.html: skip link target is focusable', () => {
+  assert.match(readHtml('index.html'), /<main id="top" tabindex="-1">/);
+});
+
+test('deploy workflow publishes only the site files', () => {
+  const yml = readFile('.github/workflows/deploy.yml');
+  assert.match(yml, /path:\s*_site/);
+  assert.match(yml, /cp -r index\.html cv\.html css js assets \.nojekyll _site\//);
+  assert.doesNotMatch(yml, /path:\s*\.\s*$/m);
+});
+
+test('plan document contains no broken node --test invocations', () => {
+  const plan = readFile('docs/superpowers/plans/2026-09-23-portfolio-site.md');
+  assert.doesNotMatch(plan, /node --test[a-z]/, 'node --test glued to a filename');
 });

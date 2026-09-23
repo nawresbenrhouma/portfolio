@@ -20,6 +20,8 @@ function fakeDoc(ids, { withNav = true } = {}) {
   const links = ids.map(fakeLink);
   const sections = ids.map((id) => ({ id }));
   const classes = new Set();
+  const listListeners = {};
+  const list = { scrollLeft: 0, addEventListener(type, fn) { listListeners[type] = fn; }, _fire(type) { listListeners[type] && listListeners[type](); } };
   const navEl = withNav ? {
     children: [],
     classList: { add: (c) => classes.add(c), contains: (c) => classes.has(c) },
@@ -27,13 +29,19 @@ function fakeDoc(ids, { withNav = true } = {}) {
   } : null;
   return {
     querySelectorAll(sel) { return sel === 'a.site-nav__link[href^="#"]' ? links : sections; },
-    querySelector(sel) { return sel === '.site-nav' ? navEl : null; },
+    querySelector(sel) { return sel === '.site-nav' ? navEl : sel === '.site-nav__list' ? list : null; },
     getElementById(id) { return sections.find((s) => s.id === id) || null; },
     createElement() { return { className: '', style: {}, setAttribute() {} }; },
     _links: links,
     _sections: sections,
     _nav: navEl,
+    _list: list,
   };
+}
+
+function fakeWin() {
+  const listeners = {};
+  return { addEventListener(type, fn) { listeners[type] = fn; }, _fire(type) { listeners[type] && listeners[type](); } };
 }
 
 class FakeIO {
@@ -86,6 +94,21 @@ test('on load with no section in the band, the first section is current', () => 
     { target: doc._sections[1], isIntersecting: false, intersectionRatio: 0 },
   ]);
   assert.equal(doc._links[0].getAttribute('aria-current'), 'true');
+});
+
+test('indicator subtracts the nav strip scroll offset and follows scroll and resize', () => {
+  const doc = fakeDoc(['about', 'skills']);
+  const win = fakeWin();
+  nav.createSectionObserver(doc, FakeIO, win);
+  const indicator = doc._nav.children[0];
+  FakeIO.last.trigger([{ target: doc._sections[1], isIntersecting: true, intersectionRatio: 0.8 }]);
+  assert.equal(indicator.style.transform, 'translateX(100px) scaleX(0.8)');
+  doc._list.scrollLeft = 40;
+  doc._list._fire('scroll');
+  assert.equal(indicator.style.transform, 'translateX(60px) scaleX(0.8)', 'scrolled strip: indicator moves with the links');
+  doc._links[1].offsetLeft = 130;
+  win._fire('resize');
+  assert.equal(indicator.style.transform, 'translateX(90px) scaleX(0.8)', 'resize re-measures the active link');
 });
 
 test('no IntersectionObserver: returns null and touches nothing', () => {

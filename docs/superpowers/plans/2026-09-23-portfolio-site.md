@@ -339,7 +339,7 @@ test('index.html: enhancement hooks present', () => {
 
 - [ ] **Step 2: Run the test to verify it fails**
 
-Run: `node --testcontent.test.js`
+Run: `node --test tests/content.test.js`
 Expected: FAIL with `ENOENT` for index.html.
 
 - [ ] **Step 3: Write index.html**
@@ -612,7 +612,7 @@ Expected: FAIL with `ENOENT` for index.html.
 
 - [ ] **Step 5: Run content and link tests**
 
-Run: `node --testcontent.test.js tests/links.test.js`
+Run: `node --test tests/content.test.js tests/links.test.js`
 Expected: index tests PASS; the two `cv.html` tests FAIL with ENOENT (Task 3 fixes that). Also the links test will fail on `css/styles.css`, `js/theme.js`, `js/nav.js` not existing. Create empty stand-ins now so the harness is green between tasks:
 
 ```bash
@@ -678,7 +678,7 @@ test('cv.html: required facts and structure present', () => {
 
 - [ ] **Step 2: Run to verify it fails**
 
-Run: `node --testcontent.test.js`
+Run: `node --test tests/content.test.js`
 Expected: cv tests FAIL with ENOENT.
 
 - [ ] **Step 3: Write cv.html and the print.css stub**
@@ -1030,7 +1030,7 @@ test('toggle still works for the session when storage throws', () => {
 
 - [ ] **Step 3: Run both tests to verify they fail**
 
-Run: `node --testcss.test.js tests/theme.test.js`
+Run: `node --test tests/css.test.js tests/theme.test.js`
 Expected: FAIL (tokens missing; `theme.resolveTheme is not a function`).
 
 - [ ] **Step 4: Write js/theme.js**
@@ -1164,7 +1164,7 @@ Every `…` above is a required value from DESIGN.md; none may remain in the com
 
 - [ ] **Step 6: Run the tests until they pass**
 
-Run: `node --testcss.test.js tests/theme.test.js`
+Run: `node --test tests/css.test.js tests/theme.test.js`
 Expected: all PASS.
 
 - [ ] **Step 7: Full check and visual sanity**
@@ -1270,7 +1270,7 @@ test('index.html works without JS: every nav link is a plain anchor to an existi
 
 - [ ] **Step 2: Run to verify it fails**
 
-Run: `node --testnav.test.js`
+Run: `node --test tests/nav.test.js`
 Expected: FAIL, `nav.createSectionObserver is not a function`.
 
 - [ ] **Step 3: Write js/nav.js**
@@ -1367,7 +1367,7 @@ test('print.css hides chrome, keeps entries together, shows link URLs, sets A4',
 
 - [ ] **Step 2: Run to verify it fails**
 
-Run: `node --testcss.test.js`
+Run: `node --test tests/css.test.js`
 Expected: the new test FAILS (stub file).
 
 - [ ] **Step 3: Write css/print.css**
@@ -1429,7 +1429,7 @@ Then `chmod +x scripts/print-check.sh`.
 
 - [ ] **Step 5: Run the tests and the print check**
 
-Run: `node --testcss.test.js && scripts/print-check.sh`
+Run: `node --test tests/css.test.js && scripts/print-check.sh`
 Expected: tests PASS; output `pages: 1` or `pages: 2`. If `mdls` returns `(null)` (Spotlight not indexed yet), fall back to `python3 -c "import re,sys;print(len(re.findall(rb'/Type\s*/Page[^s]', open('.qa/cv.pdf','rb').read())))"`. Open `.qa/cv.pdf` with the Read tool and confirm: no nav, no hint, entries not split across pages, URLs visible after links.
 
 - [ ] **Step 6: Commit**
@@ -1470,7 +1470,7 @@ test('index.html: Open Graph and canonical tags', () => {
 
 - [ ] **Step 2: Run to verify it fails**
 
-Run: `node --testcontent.test.js`
+Run: `node --test tests/content.test.js`
 Expected: the OG test FAILS.
 
 - [ ] **Step 3: Add the head tags**
@@ -1682,7 +1682,7 @@ test('index.html: hero uses the real photo with responsive sources', () => {
   assert.match(html, /<img class="hero__photo" src="assets\/photo-480\.jpg" srcset="assets\/photo-480\.jpg 480w, assets\/photo-960\.jpg 960w" sizes="[^"]+" width="480" height="480" alt="Portrait of Nawres Ben Rhouma" loading="eager" decoding="async">/);
 });
 ```
-Run: `node --testcontent.test.js` → this test FAILS.
+Run: `node --test tests/content.test.js` → this test FAILS.
 
 - [ ] **Step 2: Produce square, resized variants**
 

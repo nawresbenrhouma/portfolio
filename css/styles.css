@@ -608,3 +608,5 @@ main { display: block; }
   .cv-skills { grid-template-columns: 1fr; }
   .cv-skills dd { margin-bottom: var(--space-2); }
 }
+
+main:focus { outline: none; }

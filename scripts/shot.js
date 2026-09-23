@@ -17,6 +17,7 @@ if (!url || !out || !widthArg) {
 const width = Number(widthArg);
 const dark = flags.includes('--dark');
 const nojs = flags.includes('--nojs');
+const printMedia = flags.includes('--print');
 const scrollArg = flags.find((f) => f.startsWith('--scroll='));
 const scrollY = scrollArg ? Number(scrollArg.split('=')[1]) : 0;
 const port = 9300 + Math.floor(Math.random() * 500);
@@ -46,6 +47,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const mobile = width < 800;
   await send('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 2, mobile });
   if (dark) await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: 'dark' }] });
+  if (printMedia) await send('Emulation.setEmulatedMedia', { media: 'print' });
   await send('Page.enable');
   if (nojs) await send('Emulation.setScriptExecutionDisabled', { value: true });
   await send('Page.navigate', { url });
@@ -54,6 +56,15 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const ev = await send('Runtime.evaluate', { expression: 'JSON.stringify({sw:document.documentElement.scrollWidth,iw:window.innerWidth,h:document.documentElement.scrollHeight,bg:getComputedStyle(document.body).backgroundColor,theme:document.documentElement.getAttribute("data-theme")})', returnByValue: true });
   const { sw, iw, h, bg, theme } = JSON.parse(ev.result.result.value);
   if (!scrollY) { await send('Emulation.setDeviceMetricsOverride', { width, height: Math.min(h, 16000), deviceScaleFactor: 2, mobile }); await sleep(400); }
+  if (printMedia) {
+    const probe = await send('Runtime.evaluate', { returnByValue: true, expression: `JSON.stringify({
+      h2: parseFloat(getComputedStyle(document.querySelector('.cv-section > h2')).fontSize),
+      h3: parseFloat(getComputedStyle(document.querySelector('.cv-entry h3')).fontSize),
+      h4: parseFloat(getComputedStyle(document.querySelector('.cv-entry--nested h4')).fontSize),
+      pMax: getComputedStyle(document.querySelector('.cv__main p')).maxWidth,
+    })` });
+    console.log('print-probe ' + probe.result.result.value);
+  }
   const shot = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: !scrollY });
   fs.writeFileSync(out, Buffer.from(shot.result.data, 'base64'));
   console.log(`${out}: width=${width} scrollWidth=${sw} innerWidth=${iw} height=${h} bg=${bg} data-theme=${theme} ${sw > iw ? 'OVERFLOW' : 'ok'}`);

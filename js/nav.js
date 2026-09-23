@@ -4,7 +4,7 @@
 (function (root) {
   'use strict';
 
-  function createSectionObserver(doc, IO) {
+  function createSectionObserver(doc, IO, win) {
     if (typeof IO !== 'function') return null;
     var links = Array.prototype.slice.call(doc.querySelectorAll('a.site-nav__link[href^="#"]'));
     var byId = {};
@@ -16,7 +16,9 @@
     });
 
     var navEl = doc.querySelector('.site-nav');
+    var navList = doc.querySelector('.site-nav__list');
     var indicator = null;
+    var activeLink = null;
     if (navEl) {
       indicator = doc.createElement('span');
       indicator.className = 'site-nav__indicator';
@@ -26,11 +28,18 @@
     }
 
     function moveIndicator(link) {
+      activeLink = link;
       if (!indicator) return;
       // The indicator is 100px wide in CSS; only transform animates (no layout).
       if (!link) { indicator.style.transform = 'scaleX(0)'; return; }
-      indicator.style.transform = 'translateX(' + link.offsetLeft + 'px) scaleX(' + (link.offsetWidth / 100) + ')';
+      // The list is the horizontal scroll container on narrow screens, so the
+      // link's layout offset is corrected by the strip's current scroll.
+      var scrolled = navList ? navList.scrollLeft : 0;
+      indicator.style.transform = 'translateX(' + (link.offsetLeft - scrolled) + 'px) scaleX(' + (link.offsetWidth / 100) + ')';
     }
+    function reposition() { moveIndicator(activeLink); }
+    if (navList && navList.addEventListener) navList.addEventListener('scroll', reposition, { passive: true });
+    if (win && win.addEventListener) win.addEventListener('resize', reposition, { passive: true });
 
     var ratios = {};
     var observer = new IO(function (entries) {
@@ -57,6 +66,6 @@
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = { createSectionObserver: createSectionObserver };
   } else {
-    createSectionObserver(root.document, root.IntersectionObserver);
+    createSectionObserver(root.document, root.IntersectionObserver, root);
   }
 })(typeof window !== 'undefined' ? window : globalThis);

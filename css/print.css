@@ -12,9 +12,12 @@ body.cv {
 }
 .cv__main { max-width: none; margin: 0; padding: 0; box-shadow: none; background: none; }
 .cv__header { border-bottom: 1px solid #000; padding-bottom: 4mm; margin-bottom: 5mm; }
+/* Selectors match or beat the screen stylesheet's class rules; element-level
+   rules alone lose to `.cv-entry--nested h4`, `.cv-section > h2` and friends. */
+.cv__main p { max-width: none; }
 h1 { font-size: 20pt; margin: 0 0 2mm; }
-h2 { font-size: 12.5pt; margin: 6mm 0 2mm; border-bottom: 1px solid #999; padding-bottom: 1mm; }
-h3, h4 { font-size: 11pt; margin: 3mm 0 1mm; }
+h2, .cv-section > h2 { font-size: 12.5pt; margin: 6mm 0 2mm; border-bottom: 1px solid #999; padding-bottom: 1mm; }
+h3, h4, .cv-entry h3, .cv-entry--nested h4 { font-size: 11pt; font-weight: 700; margin: 3mm 0 1mm; }
 h2, h3, h4 { break-after: avoid; }
 .cv-section { break-inside: auto; padding-top: 0; }
 .cv-entry { break-inside: avoid; margin-bottom: 3mm; padding: 2mm 0; border-top: 0; }
@@ -24,8 +27,8 @@ h2, h3, h4 { break-after: avoid; }
 .cv-entry__tech { color: #333; font-size: 9pt; }
 .cv__title { color: #222; font-size: 11pt; margin: 1mm 0 2mm; }
 .cv__contact { font-size: 9.5pt; }
-ul { margin: 1mm 0 2mm; padding-left: 5mm; }
-li { margin: 0 0 0.6mm; }
+ul, .cv-entry ul { margin: 1mm 0 2mm; padding-left: 5mm; }
+li, .cv-entry li { margin: 0 0 0.6mm; }
 .cv-skills { display: grid; grid-template-columns: 30mm 1fr; column-gap: 3mm; row-gap: 1mm; margin: 0; }
 .cv-skills dt { font-weight: 700; } .cv-skills dd { margin: 0; }
 a { color: #000; text-decoration: none; }

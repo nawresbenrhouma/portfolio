@@ -16,5 +16,15 @@ if ! [[ "$PAGES" =~ ^[0-9]+$ ]]; then
 fi
 echo "pages: $PAGES"
 [ "$PAGES" -le 2 ] || { echo "cv.html prints to more than 2 pages"; exit 1; }
+# Typography under print media: nested h4 <= h3 < h2, and paragraphs run the full column.
+PROBE=$(node scripts/shot.js http://localhost:8089/cv.html .qa/cv-print-media.png 800 --print --scroll=1 | grep print-probe | sed 's/print-probe //')
+echo "print typography: $PROBE"
+python3 - "$PROBE" <<'PY'
+import json, sys
+d = json.loads(sys.argv[1])
+ok = d['h4'] <= d['h3'] < d['h2'] and d['pMax'] == 'none'
+print('print typography ok' if ok else 'print typography WRONG: nested h4 must be <= h3 < h2 and p max-width none')
+sys.exit(0 if ok else 1)
+PY
 # Render pages to PNG for visual inspection (macOS PDFKit via swift).
 swift scripts/pdf2png.swift .qa/cv.pdf .qa/cv >/dev/null 2>&1 && echo "rendered .qa/cv-page*.png" || echo "page render skipped (swift unavailable)"
