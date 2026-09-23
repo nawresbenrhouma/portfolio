@@ -1,11 +1,11 @@
 ---
 name: Nawres Ben Rhouma — Portfolio
-description: A calm butter page where the work sits on a white sheet with folder tabs, set in Gabarito with one terracotta accent.
+description: A calm near-white page with a touch of butter, where the work sits on a white sheet with folder tabs, set in Gabarito with one terracotta accent.
 colors:
-  butter-page: "#fbf3d6"
-  deep-butter-band: "#f4e7b8"
-  warm-sheet: "#fffdf8"
-  butter-chip: "#f6efd8"
+  butter-page: "#fffcf2"
+  deep-butter-band: "#faf3db"
+  warm-sheet: "#ffffff"
+  butter-chip: "#f7f0da"
   espresso-ink: "#2b2417"
   warm-brown-grey: "#5b4e35"
   terracotta: "#a4441f"
@@ -226,10 +226,10 @@ A single warm family — butter, espresso and terracotta — split across a ligh
 - **Espresso Ink** (`#2b2417`): doubles as the secondary button's fill — "View CV" is espresso with butter text, a dark solid that reads as weight rather than as a second colour. In dark the same rule inverts to cream-on-roast automatically.
 
 ### Neutral
-- **Butter Page** (`#fbf3d6`): the page ground, everywhere below the hero band. `#1b170f` in dark.
-- **Deep Butter Band** (`#f4e7b8`): the sticky header and the hero band — one step deeper so the first viewport reads as a tinted plate the sheet floats on. `#221c12` in dark.
-- **Warm Sheet** (`#fffdf8`): every sheet, panel, note, theme toggle and CV page. Off-white, never pure white. `#332c1e` in dark.
-- **Butter Chip** (`#f6efd8`): the fill behind code chips only. `#3f3727` in dark.
+- **Butter Page** (`#fffcf2`): the page ground, everywhere below the hero band. `#1b170f` in dark.
+- **Deep Butter Band** (`#faf3db`): the sticky header and the hero band — one step deeper so the first viewport reads as a tinted plate the sheet floats on. `#221c12` in dark.
+- **Warm Sheet** (`#ffffff`): every sheet, panel, note, theme toggle and CV page. Off-white, never pure white. `#332c1e` in dark.
+- **Butter Chip** (`#f7f0da`): the fill behind code chips only. `#3f3727` in dark.
 - **Espresso Ink** (`#2b2417`): all body and heading text. **Cream** (`#f2e9d3`) in dark.
 - **Warm Brown-Grey** (`#5b4e35`): muted text — labels, dates, meta lines, unselected tabs and nav links, footer. **Warm Sand** (`#cbbd9c`) in dark.
 - **Butter Hairline** (`#e8dcb6`): every rule *inside* content — field rows, timeline separators, fact strips, column dividers, the footer top edge. It is also the dark theme's sheet edge. `#4a4130` in dark.

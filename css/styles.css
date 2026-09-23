@@ -5,10 +5,10 @@
 
 /* 1. Tokens */
 :root {
-  --bg: #fbf3d6;
-  --band: #f4e7b8;
-  --sheet: #fffdf8;
-  --bg-elevated: #f6efd8;
+  --bg: #fffcf2;
+  --band: #faf3db;
+  --sheet: #ffffff;
+  --bg-elevated: #f7f0da;
   --text: #2b2417;
   --text-muted: #5b4e35;
   --accent: #a4441f;
