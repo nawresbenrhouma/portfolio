@@ -214,6 +214,16 @@ test('index.html: contact form works without a backend and without JS', () => {
   assert.match(html, /<button class="button button--primary" type="submit">Send message<\/button>/);
 });
 
+test('index.html and cv.html: MaibornWolff career shows the working-student start and the engineer role', () => {
+  for (const page of ['index.html', 'cv.html']) {
+    const html = readHtml(page);
+    assert.match(html, /Software Engineer&nbsp;· MaibornWolff/, `${page}: engineer entry`);
+    assert.match(html, /Aug 2023 – present/, `${page}: engineer role from Aug 2023`);
+    assert.match(html, /Working Student&nbsp;· MaibornWolff/, `${page}: working-student entry`);
+    assert.match(html, /Nov 2022 – Jul 2023/, `${page}: working student from Nov 2022`);
+  }
+});
+
 test('index.html: no invented numbers in the work sheet', () => {
   const html = readHtml('index.html');
   const start = html.indexOf('<section id="work"');

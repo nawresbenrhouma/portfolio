@@ -1,5 +1,5 @@
 /* Print layout for cv.html. Loaded with media="print" only. */
-@page { size: A4; margin: 16mm 18mm; }
+@page { size: A4; margin: 13mm 16mm; }
 
 .site-header, .print-hint, .theme-toggle { display: none !important; }
 
@@ -7,8 +7,8 @@ html { scroll-behavior: auto; }
 body.cv {
   background: #fff;
   color: #000;
-  font-size: 10.5pt;
-  line-height: 1.4;
+  font-size: 10pt;
+  line-height: 1.35;
 }
 .cv__main { max-width: none; margin: 0; padding: 0; box-shadow: none; background: none; }
 .cv__header { border-bottom: 1px solid #000; padding-bottom: 4mm; margin-bottom: 5mm; }
@@ -16,11 +16,11 @@ body.cv {
    rules alone lose to `.cv-entry--nested h4`, `.cv-section > h2` and friends. */
 .cv__main p { max-width: none; }
 h1 { font-size: 20pt; margin: 0 0 2mm; }
-h2, .cv-section > h2 { font-size: 12.5pt; margin: 6mm 0 2mm; border-bottom: 1px solid #999; padding-bottom: 1mm; }
+h2, .cv-section > h2 { font-size: 12.5pt; margin: 4.5mm 0 1.5mm; border-bottom: 1px solid #999; padding-bottom: 1mm; }
 h3, h4, .cv-entry h3, .cv-entry--nested h4 { font-size: 11pt; font-weight: 700; margin: 3mm 0 1mm; }
 h2, h3, h4 { break-after: avoid; }
 .cv-section { break-inside: auto; padding-top: 0; }
-.cv-entry { break-inside: avoid; margin-bottom: 3mm; padding: 2mm 0; border-top: 0; }
+.cv-entry { break-inside: avoid; margin-bottom: 2mm; padding: 1.5mm 0; border-top: 0; }
 .cv-entry__head { display: flex; justify-content: space-between; gap: 4mm; align-items: baseline; margin-bottom: 1mm; }
 .cv-entry__dates { white-space: nowrap; color: #333; font-size: 9.5pt; }
 .cv-entry--nested { margin-left: 5mm; }
