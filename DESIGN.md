@@ -1,41 +1,43 @@
 ---
 name: Nawres Ben Rhouma — Portfolio
-description: A calm near-white page with a touch of butter, where the work sits on a white sheet with folder tabs, set in Gabarito with one terracotta accent.
+description: A near-white butter page where a two-tone name, a facts card and a folder-tabbed work sheet do the talking, with one forest green accent.
 colors:
-  butter-page: "#fffcf2"
-  deep-butter-band: "#fffcf2"
-  warm-sheet: "#ffffff"
-  butter-chip: "#f7f0da"
+  butter-ground: "#fffcf2"
+  warm-band: "#f6f2e6"
+  sheet-white: "#ffffff"
+  butter-raised: "#f7f0da"
   espresso-ink: "#2b2417"
-  warm-brown-grey: "#5b4e35"
-  terracotta: "#a4441f"
-  terracotta-fill: "#c4532b"
-  burnt-terracotta: "#8f3a1a"
-  terracotta-contrast: "#ffffff"
-  terracotta-wash: "#f7e3d5"
-  butter-hairline: "#e8dcb6"
-  control-hairline: "#8f8058"
-  focus-terracotta: "#b8471f"
-  roasted-ground-dark: "#1b170f"
-  roasted-band-dark: "#221c12"
-  roasted-sheet-dark: "#332c1e"
-  roasted-chip-dark: "#3f3727"
-  cream-dark: "#f2e9d3"
-  warm-sand-dark: "#cbbd9c"
-  lit-terracotta-dark: "#eb8d63"
-  lit-terracotta-fill-dark: "#d9703f"
-  lit-terracotta-contrast-dark: "#1b170f"
-  terracotta-wash-dark: "#4a3120"
-  roasted-hairline-dark: "#4a4130"
-  control-hairline-dark: "#8f8160"
+  bark-muted: "#5b4e35"
+  forest-accent: "#2f6b3a"
+  forest-action: "#2f6b3a"
+  forest-action-hover: "#245530"
+  accent-contrast: "#ffffff"
+  forest-soft: "#e6f0e6"
+  sand-border: "#e8dcb6"
+  sand-border-strong: "#8f8058"
+  focus-forest: "#2f6b3a"
+  butter-ground-dark: "#1b170f"
+  warm-band-dark: "#201d17"
+  sheet-dark: "#332c1e"
+  butter-raised-dark: "#3f3727"
+  cream-ink-dark: "#f2e9d3"
+  bark-muted-dark: "#cbbd9c"
+  mint-accent-dark: "#86cf8f"
+  mint-action-dark: "#5fae6c"
+  mint-action-hover-dark: "#86cf8f"
+  accent-contrast-dark: "#1b170f"
+  mint-soft-dark: "#24352a"
+  border-dark: "#4a4130"
+  border-strong-dark: "#8f8160"
+  focus-mint-dark: "#86cf8f"
 typography:
   display:
     fontFamily: "Gabarito, Source Sans 3, Segoe UI, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(2.25rem, 1.7rem + 2.2vw, 3rem)"
+    fontSize: "clamp(3rem, 2rem + 3.6vw, 5rem)"
     fontWeight: 800
-    lineHeight: 1.02
-    letterSpacing: "-0.03em"
-  case-title:
+    lineHeight: 0.98
+    letterSpacing: "-0.04em"
+  panel-title:
     fontFamily: "Gabarito, Source Sans 3, Segoe UI, Helvetica Neue, Arial, sans-serif"
     fontSize: "clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem)"
     fontWeight: 800
@@ -53,48 +55,41 @@ typography:
     fontWeight: 700
     lineHeight: 1.1
     letterSpacing: "-0.01em"
-  subtitle:
-    fontFamily: "Source Sans 3, Segoe UI, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.125rem"
-    fontWeight: 600
-    lineHeight: 1.3
   body:
     fontFamily: "Source Sans 3, Segoe UI, Helvetica Neue, Arial, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.6
+    letterSpacing: "normal"
   small:
     fontFamily: "Source Sans 3, Segoe UI, Helvetica Neue, Arial, sans-serif"
     fontSize: "0.875rem"
     fontWeight: 400
     lineHeight: 1.6
-  control:
-    fontFamily: "Source Sans 3, Segoe UI, Helvetica Neue, Arial, sans-serif"
-    fontSize: "0.9375rem"
-    fontWeight: 600
-    lineHeight: 1.2
+    letterSpacing: "normal"
   label:
     fontFamily: "Source Sans 3, Segoe UI, Helvetica Neue, Arial, sans-serif"
     fontSize: "0.75rem"
     fontWeight: 600
     lineHeight: 1.6
     letterSpacing: "0.06em"
-  chip:
+  role-line:
+    fontFamily: "Source Sans 3, Segoe UI, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 600
+    lineHeight: 1.6
+    letterSpacing: "0.12em"
+  code:
     fontFamily: "Source Code Pro, ui-monospace, SF Mono, Menlo, Consolas, monospace"
     fontSize: "0.8125rem"
     fontWeight: 400
     lineHeight: 1.6
-  status:
-    fontFamily: "Source Code Pro, ui-monospace, SF Mono, Menlo, Consolas, monospace"
-    fontSize: "0.6875rem"
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "0.02em"
+    letterSpacing: "normal"
 rounded:
-  chip: "6px"
-  control: "8px"
-  tab-top: "10px 10px 0 0"
   sheet: "12px"
+  control: "8px"
+  sm: "6px"
+  folder-tab: "10px 10px 0 0"
   pill: "999px"
 spacing:
   1: "0.25rem"
@@ -106,302 +101,274 @@ spacing:
   7: "3rem"
   8: "4rem"
 components:
-  sheet:
-    backgroundColor: "{colors.warm-sheet}"
-    rounded: "{rounded.sheet}"
-    padding: "2rem"
-  panel:
-    backgroundColor: "{colors.warm-sheet}"
-    rounded: "0 12px 12px 12px"
-    padding: "2rem"
   button-primary:
-    backgroundColor: "{colors.terracotta-fill}"
-    textColor: "{colors.terracotta-contrast}"
-    typography: "{typography.control}"
+    backgroundColor: "{colors.forest-action}"
+    textColor: "{colors.accent-contrast}"
     rounded: "{rounded.control}"
     padding: "0.5rem 1.125rem"
     height: "2.75rem"
   button-primary-hover:
-    backgroundColor: "{colors.burnt-terracotta}"
-    textColor: "{colors.terracotta-contrast}"
+    backgroundColor: "{colors.forest-action-hover}"
+    textColor: "{colors.accent-contrast}"
   button-secondary:
     backgroundColor: "{colors.espresso-ink}"
-    textColor: "{colors.butter-page}"
-    typography: "{typography.control}"
+    textColor: "{colors.butter-ground}"
     rounded: "{rounded.control}"
     padding: "0.5rem 1.125rem"
     height: "2.75rem"
-  button-secondary-hover:
-    backgroundColor: "{colors.warm-brown-grey}"
-    textColor: "{colors.butter-page}"
+  button-outline:
+    backgroundColor: "transparent"
+    textColor: "{colors.espresso-ink}"
+    rounded: "{rounded.control}"
+    padding: "0.5rem 1.125rem"
+    height: "2.75rem"
+  button-outline-hover:
+    backgroundColor: "transparent"
+    textColor: "{colors.forest-accent}"
   button-ghost:
     backgroundColor: "transparent"
     textColor: "{colors.espresso-ink}"
-    typography: "{typography.control}"
     rounded: "{rounded.control}"
     padding: "0.375rem 0.875rem"
     height: "2.75rem"
-  button-ghost-hover:
-    textColor: "{colors.terracotta}"
-  button-mail-compact:
-    backgroundColor: "{colors.terracotta-fill}"
-    textColor: "{colors.terracotta-contrast}"
+  pill:
+    backgroundColor: "{colors.forest-soft}"
+    textColor: "{colors.forest-accent}"
     rounded: "{rounded.pill}"
-    padding: "0"
-    width: "2.75rem"
-    height: "2.75rem"
+    padding: "0.35rem 0.9rem"
+    typography: "{typography.small}"
   theme-toggle:
-    backgroundColor: "{colors.warm-sheet}"
+    backgroundColor: "{colors.sheet-white}"
     textColor: "{colors.espresso-ink}"
     rounded: "{rounded.pill}"
-    padding: "0"
-    width: "2.75rem"
     height: "2.75rem"
+    width: "2.75rem"
   tab:
     backgroundColor: "rgba(43, 36, 23, 0.08)"
-    textColor: "{colors.warm-brown-grey}"
-    typography: "{typography.control}"
-    rounded: "{rounded.tab-top}"
+    textColor: "{colors.bark-muted}"
+    rounded: "{rounded.folder-tab}"
     padding: "0.75rem 1.125rem"
   tab-selected:
-    backgroundColor: "{colors.warm-sheet}"
-    textColor: "{colors.terracotta}"
-    typography: "{typography.control}"
-    rounded: "{rounded.tab-top}"
+    backgroundColor: "{colors.sheet-white}"
+    textColor: "{colors.forest-accent}"
+    rounded: "{rounded.folder-tab}"
     padding: "0.95rem 1.125rem 0.75rem"
-  chip:
-    backgroundColor: "{colors.butter-chip}"
+  sheet:
+    backgroundColor: "{colors.sheet-white}"
     textColor: "{colors.espresso-ink}"
-    typography: "{typography.chip}"
-    rounded: "{rounded.chip}"
+    rounded: "{rounded.sheet}"
+    padding: "2rem"
+  panel:
+    backgroundColor: "{colors.sheet-white}"
+    textColor: "{colors.espresso-ink}"
+    rounded: "0 12px 12px 12px"
+    padding: "2rem"
+  facts-card:
+    backgroundColor: "{colors.sheet-white}"
+    textColor: "{colors.espresso-ink}"
+    rounded: "{rounded.sheet}"
+    padding: "1rem 1.5rem"
+  chip:
+    backgroundColor: "{colors.butter-raised}"
+    textColor: "{colors.espresso-ink}"
+    rounded: "{rounded.sm}"
     padding: "0.125rem 0.5rem"
-  status-token:
+    typography: "{typography.code}"
+  status:
     backgroundColor: "transparent"
-    textColor: "{colors.warm-brown-grey}"
-    typography: "{typography.status}"
+    textColor: "{colors.bark-muted}"
     rounded: "{rounded.pill}"
     padding: "0.05rem 0.5rem"
-  status-token-core:
-    textColor: "{colors.terracotta}"
-  nav-link:
+  status-core:
     backgroundColor: "transparent"
-    textColor: "{colors.warm-brown-grey}"
-    typography: "{typography.control}"
-  nav-link-current:
-    textColor: "{colors.espresso-ink}"
+    textColor: "{colors.forest-accent}"
+    rounded: "{rounded.pill}"
+    padding: "0.05rem 0.5rem"
 ---
 
 # Design System: Nawres Ben Rhouma — Portfolio
 
 ## Overview
 
-**Creative North Star: "The Butter Sheet"** *(derived from the direction contract)*
+**Creative North Star: "The Green Full Stop"** *(derived from the direction contract; no user was available to confirm)*
 
-A butter-yellow page, warm enough to read as paper rather than as a screen, with the work laid on a white sheet that sits on top of it. The sheet is the event: it carries folder tabs that rise from its top edge, and the selected tab fuses into the sheet the way a tab fuses into a file folder. Everything else — the identity fields, the skills table, the dated timeline, the expandable project notes — either sits on another sheet or lies directly on the butter ground. Depth in this world is one soft drop of warm shadow under a sheet; there is no second layer, no glass, no gradient.
+A near-white page that behaves like good paper: butter-tinted, quiet, and generous with air. Everything structural is achieved by tone and edge rather than by decoration — the ground alternates between two warm near-whites section by section, and pure white sheets float on top of it carrying the content that needs to be read closely. The one thing that raises its voice is forest green, and it is spent almost entirely on endings: the surname and its full stop, the second clause of every section heading, the timeline markers, the selected folder tab. The name ends in green; so does the page's argument.
 
-The tone is calm credibility, not spectacle. The heavy Gabarito headline and the single terracotta accent do the shouting; the rest is warm brown ink on butter at a comfortable 1.0625rem with a 68ch measure. Motion is short (150ms and 220ms) and confined to colour, opacity and one sliding nav underline that animates transform only. One chromatic voice runs the whole surface: terracotta on links, the primary action, the selected tab, the current nav item, the hero rule, list markers and the focus ring. Nothing else is coloured.
+The density is document-like without being a document. Headings are set in Gabarito at 800 and tracked tight, so they read as built rather than typed; body text is Source Sans 3 at 1.0625rem on a 1.6 line, capped at a 68ch measure so no line becomes a scanning chore. Source Code Pro appears only where content is literally a token — a technology chip, a status marker — which keeps the monospace signal honest.
 
-The confirmed anti-references are two: the plain black-on-white document look this build replaced, and the dark terminal developer-portfolio template. The system also has to stay recognisably its own against the colleague's reference site that inspired the composition — the composition system carries over, the palette and display face do not.
+What the world refuses is equally load-bearing. It refuses the plain-document look (hence the sheets, the alternating ground, the folder tabs) and it refuses the copy of either reference that seeded it (hence the butter tint, Gabarito, and green in place of the references' orange and blue). It carries no photography and no invented metrics; credibility comes from typography, spacing and detail rather than from imagery or numbers.
 
 **Key Characteristics:**
-- Butter ground, deeper butter band, warm off-white sheets — three tones of the same warmth.
-- One accent hue (terracotta), used on roughly a tenth of any screen.
-- Gabarito 800 headlines set tight (-0.03em at display size) against a calm Source Sans 3 body.
-- Sheets lifted by a single soft warm shadow in light, by a 1px hairline ring in dark — never both.
-- Folder tabs on the featured-work sheet as the structural signature.
-- 8px spacing module; 76rem content width; 68ch measure.
-- Full parity across light, dark, print, no-JavaScript and 320px.
+- Butter-tinted near-white ground (#fffcf2) alternating with a warmer tone (#f6f2e6), full-bleed, section by section
+- Pure white sheets on a single soft offset shadow in light; a hairline ring in dark
+- One accent, forest green (#2f6b3a) in light and mint (#86cf8f) in dark, spent on endings
+- Gabarito 700/800 display and headings; Source Sans 3 body; Source Code Pro only in chips and status tokens
+- 8px module, 76rem content maximum, 68ch measure
+- One authored entrance motion, JS-only and reduced-motion aware; every surface works with JavaScript off
 
 ## Colors
 
-A single warm family — butter, espresso and terracotta — split across a light and a dark theme that share role names and geometry, so every component is written once.
+Two warm near-whites, an espresso ink, and a single forest green that never shares the stage with a second hue.
 
 ### Primary
-- **Terracotta** (`#a4441f`): the only chromatic voice, at text weight. Links, the selected folder tab's label, the current nav item's underline, the 4rem hero rule, bullet markers, the `Core` status token, and every hover that promotes a control. Lifts to **Lit Terracotta** (`#eb8d63`) in dark.
-- **Terracotta Fill** (`#c4532b`): the same hue one step heavier, used *only* as a background behind white — the "Get in touch" button and the favicon rule. Hovers to **Burnt Terracotta** (`#8f3a1a`). In dark the fill is `#d9703f` hovering up to `#eb8d63`.
-- **Terracotta Wash** (`#f7e3d5`): text selection only. `#4a3120` in dark.
-- **Focus Terracotta** (`#b8471f`): the 2px focus-visible outline, offset 3px. `#eb8d63` in dark.
-
-### Secondary
-- **Espresso Ink** (`#2b2417`): doubles as the secondary button's fill — "View CV" is espresso with butter text, a dark solid that reads as weight rather than as a second colour. In dark the same rule inverts to cream-on-roast automatically.
+- **Forest Green** (`#2f6b3a`): the only accent. It lands on the closing words of the name and of every section heading, on links, on the primary button, on the availability pill and its dot, on timeline markers, on bullet markers, on the selected folder tab's label, on the last value in the facts card, and on the focus ring. In dark it becomes **Mint** (`#86cf8f`) so it can carry text weight on a dark ground.
+- **Forest Action** (`#2f6b3a` → hover `#245530`): the filled primary button. Dark ships a separate, slightly lighter **Mint Action** (`#5fae6c`) whose hover resolves up to the full mint, because the light green would flare against the dark ground.
+- **Forest Soft** (`#e6f0e6`): the accent's only tinted surface — the availability pill, and the selection highlight. Dark uses **Mint Soft** (`#24352a`).
+- **Accent Contrast** (`#ffffff` light / `#1b170f` dark): text on any filled accent surface. Never hand-pick a white here; the token flips with the theme.
 
 ### Neutral
-- **Butter Page** (`#fffcf2`): the page ground, everywhere below the hero band. `#1b170f` in dark.
-- **Deep Butter Band** (`#fffcf2`): the sticky header and the hero band — one step deeper so the first viewport reads as a tinted plate the sheet floats on. `#221c12` in dark.
-- **Warm Sheet** (`#ffffff`): every sheet, panel, note, theme toggle and CV page. Off-white, never pure white. `#332c1e` in dark.
-- **Butter Chip** (`#f7f0da`): the fill behind code chips only. `#3f3727` in dark.
-- **Espresso Ink** (`#2b2417`): all body and heading text. **Cream** (`#f2e9d3`) in dark.
-- **Warm Brown-Grey** (`#5b4e35`): muted text — labels, dates, meta lines, unselected tabs and nav links, footer. **Warm Sand** (`#cbbd9c`) in dark.
-- **Butter Hairline** (`#e8dcb6`): every rule *inside* content — field rows, timeline separators, fact strips, column dividers, the footer top edge. It is also the dark theme's sheet edge. `#4a4130` in dark.
-- **Control Hairline** (`#8f8058`): 3.5:1 against the butter ground; outlines of interactive controls only — theme toggle, ghost button, status tokens, skip link, scrollbar. `#8f8160` in dark.
+- **Butter Ground** (`#fffcf2` light / `#1b170f` dark): the page. Near-white with a warm tint, never pure white.
+- **Warm Band** (`#f6f2e6` light / `#201d17` dark): the alternate section tone. Applied full-bleed to `.section--alt`, so section rhythm is legible from the scrollbar alone.
+- **Sheet White** (`#ffffff` light / `#332c1e` dark): the lifted content surface — panels, cards, the timeline bodies, the note sheets, the CV page.
+- **Butter Raised** (`#f7f0da` light / `#3f3727` dark): the one small tinted fill, used for technology chips.
+- **Espresso Ink** (`#2b2417` light / `#f2e9d3` dark): all primary text, the brand mark, and the secondary (inverted) button's ground.
+- **Bark Muted** (`#5b4e35` light / `#cbbd9c` dark): labels, dates, meta lines, nav links at rest, secondary prose.
+- **Sand Border** (`#e8dcb6` light / `#4a4130` dark): hairlines — field rows, section rules, the header underline, column dividers.
+- **Sand Border Strong** (`#8f8058` light / `#8f8160` dark): control outlines only. It sits around 3.5:1 on the butter ground, which is enough for a non-text UI boundary and not enough for text.
 
 ### Named Rules
+**The Green Full Stop Rule.** The accent is reserved for the ending: the surname and its period, the second clause of every `h2`, and the small terminal signals (timeline dots, list markers, the selected tab, the last facts value). It never tints a large surface, never appears twice in the same role on one screen, and never acquires a companion hue.
 
-**The One Terracotta Rule.** There is exactly one chromatic hue on this site. If a new element needs colour to be understood, it does not need colour — it needs weight, a hairline, or a label.
+**The Hairline Two-Tier Rule.** Content separation uses Sand Border; interactive outlines use Sand Border Strong. Never put Sand Border Strong under text or Sand Border around a control.
 
-**The Two Terracottas Rule.** `#a4441f` is terracotta *as text on butter*; `#c4532b` is terracotta *as a fill behind white*. They are not interchangeable and neither may be substituted for the other to "match" — the split exists so both directions clear WCAG AA.
-
-**The Strong Hairline Is For Controls Rule.** `#8f8058` outlines things you can operate. `#e8dcb6` rules things you read. A content divider never uses the strong hairline; a control outline never uses the soft one.
+**The Warm White Rule.** There is no pure white ground. White appears only as a sheet lifted off the butter page; if a surface is the page itself, it is tinted.
 
 ## Typography
 
-**Display Font:** Gabarito (700/800, with Source Sans 3 and Segoe UI as fallbacks)
-**Body Font:** Source Sans 3 (400/600/700, with Segoe UI and Helvetica Neue as fallbacks)
-**Label/Mono Font:** Source Code Pro (400, with ui-monospace and SF Mono as fallbacks)
+**Display Font:** Gabarito (700/800, with Source Sans 3 and the system sans as fallback)
+**Body Font:** Source Sans 3 (400/600/700, with Segoe UI / Helvetica Neue / Arial)
+**Label/Mono Font:** Source Code Pro (400, with ui-monospace / SF Mono / Menlo / Consolas)
 
-**Character:** Gabarito is a geometric grotesque with wide, confident bowls; at 800 and -0.03em it gives the name and the case title real physical weight without turning ornamental. Source Sans 3 underneath is quiet, humanist and unfussy — it carries long paragraphs and dense skill lists without competing. Source Code Pro appears only where the string is literally a machine name.
+**Character:** Gabarito's slightly condensed, geometric caps give the name and headings an engineered confidence at heavy weights and tight tracking; Source Sans 3 underneath is plain, legible and unmannered, so the page reads calm rather than designed-at. Source Code Pro appears in one-word doses only and reads as data, not as decoration.
 
 ### Hierarchy
-- **Display** (Gabarito 800, `clamp(2.25rem, 1.7rem + 2.2vw, 3rem)`, line-height 1.02, -0.03em): the page `h1` and the CV name. Once per page.
-- **Case Title** (Gabarito 800, `clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem)`, -0.02em): the selected-work panel title — deliberately one step *above* the display size, because the sheet owns the focal event of the first viewport.
-- **Headline** (Gabarito 800, `1.75rem`, line-height 1.1, -0.02em): section `h2`s, set as a baseline-aligned flex row so the `#` anchor can sit beside them.
-- **Title** (Gabarito 700, `1.25rem`, line-height 1.1, -0.01em): `h3` — timeline roles, skill groups, learning columns. Steps down to `1.125rem` where a title sits inside a sheet (skill groups, learning columns, note titles, engagement `h4`s, column titles).
-- **Subtitle** (Source Sans 3 600, `1.125rem`, line-height 1.3): panel subtitles, the hero statement (`1.25rem`, dropping to `1.125rem` below 640px) and the contact lead.
-- **Body** (Source Sans 3 400, `1.0625rem`, line-height 1.6): all prose, capped at a 68ch measure (62ch in the About and Education columns). Tabular numerals are on globally so dates align down the timeline column.
-- **Control** (Source Sans 3 600, `0.9375rem`, line-height 1.2): buttons, nav links, folder tabs, fact strips. `0.875rem` for tabs below 900px.
-- **Small** (Source Sans 3 400, `0.875rem`): meta lines, dates, notes, the footer.
-- **Label** (Source Sans 3 600, `0.75rem`, +0.06em, uppercase): field-row labels, the availability label, timeline date columns, contact row labels.
-- **Chip** (Source Code Pro 400, `0.8125rem`; `0.75rem` in the small variant): technology names.
-- **Status** (Source Code Pro, `0.6875rem`, +0.02em, uppercase-free): the `Core` / `Growing` / `Completed` / `In progress` tokens.
+- **Display** (800, `clamp(3rem, 2rem + 3.6vw, 5rem)`, line-height 0.98, tracking -0.04em): the hero name only. Set in two tones with the surname in the accent, ending in a full stop.
+- **Panel Title** (800, `clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem)`, tracking -0.02em): the project name inside a work panel. Deliberately near-display scale — the folder sheet is the page's second hero.
+- **Headline** (800, 1.75rem, line-height 1.1, tracking -0.02em): section `h2`. Always two clauses, the second wrapped in an accent span, ending in a full stop; a `#` heading anchor follows, invisible until hover or focus.
+- **Title** (700, 1.25rem, tracking -0.01em): `h3` — timeline roles, skill groups, learning columns.
+- **Body** (400, 1.0625rem, line-height 1.6): all prose, capped at a 68ch measure. The hero statement and the contact lead step up to 1.25rem.
+- **Small** (400, 0.875rem): meta lines, dates, notes, footer, the print hint.
+- **Label** (600, 0.75rem, 0.06em, uppercase): field labels, contact labels, timeline dates; facts-card labels track slightly wider (0.08em).
+- **Role Line** (600, 0.75rem, 0.12em, uppercase): the hero role directly under the name — the widest tracking on the page, used once.
 
 ### Named Rules
+**The Two-Tone Heading Rule.** Every `h1` and `h2` is written as two clauses: a plain first half in ink and a closing half in the accent, terminated by a full stop. Headings are statements, not labels.
 
-**The Gabarito-For-Structure Rule.** Gabarito appears only on things that structure the page: the brand, headings, case and note and column titles. It never sets a paragraph, a button, a chip or a label. Buttons and tabs are Source Sans 3 600 — the display face would make a control look like a headline.
+**The Mono Reserve Rule.** Source Code Pro is permitted in exactly two places: technology chips and status tokens. Prose, headings, dates and labels never use it.
 
-**The Mono-Is-A-Name Rule.** Source Code Pro is used where the string *is* a machine name or a machine state: technology chips, the CV tech lines, status tokens. It is never used for emphasis, for numbers, or for "technical feel".
-
-**The Two-Step Headline Rule.** The `h1` is set a step below the case title. The name identifies; the sheet is the event. Any new hero must keep this relationship rather than inflating the `h1`.
-
-**The No-Kicker Rule.** The uppercase tracked label only ever appears as the *left column of a row* — a `dt`, a date column, a contact-row label. It never sits above a heading as an eyebrow or kicker.
+**The Balanced Measure Rule.** Headings carry `text-wrap: balance`; paragraphs carry a 68ch cap (62ch inside About and Education). Nothing on the page runs the full 76rem as text.
 
 ## Layout
 
-A single 76rem content column (`--content-max`), centred, with 2rem side padding that drops to 1rem below 640px. The hero band is the only place with a real grid: 12 columns, the text column spanning 1–5 and the featured-work sheet spanning 6–12, with a 3rem gutter.
+The page is a stack of full-bleed sections, each a three-column grid — a flexible gutter of at least 2rem, a centred content column capped at 76rem, and a matching gutter — so the alternating background tone reaches the viewport edges while the content stays aligned. The hero sits outside that grid on its own padding and splits 7:5 into text and a facts card. The work section narrows its content to 60rem so the tabbed sheet keeps the tab row scannable.
 
-Spacing is an 8px module exposed as eight steps (0.25 / 0.5 / 0.75 / 1 / 1.5 / 2 / 3 / 4rem). Sections are separated by 4rem of top padding (3rem below 640px); sheet padding is 2rem, dropping to 1.5rem/1rem on narrow screens. Prose is capped at 68ch; About and Education narrow further to 62ch.
+Spacing is an 8px module (0.25 / 0.5 / 0.75 / 1 / 1.5 / 2 / 3 / 4rem). Section padding is 4rem vertical, dropping to 3rem below 640px. Sheets pad at 2rem, tightening to 1.5rem/1rem on narrow screens. A sticky header 4rem tall pins the brand, eight section anchors, the View CV button and the theme toggle; `scroll-padding-top` is kept in sync with it.
 
-The layout collapses at three widths:
-- **1100px** — the hero grid unstacks: text and work sheet each take all 12 columns.
-- **900px** — the header wraps to two rows and `--header-height` is redefined from 4rem to 6.5rem, with the nav strip becoming a horizontally scrolling row faded out at its right edge by a mask. The panel's three-column "What I did" breakdown, the fact strip, the skill-group rows, the timeline, the learning columns, the About grid and the Contact grid all go single-column, and their vertical dividers become horizontal ones.
-- **640px** — the mail button collapses to a 2.75rem circular icon, contact rows and field rows stack, and the CV tightens its indents.
+Three breakpoints, each doing one job. At 1100px the hero collapses to a single column. At 900px the header wraps — the nav becomes a masked horizontal scroll strip on its own row and the header grows to 6.5rem — the facts card goes full width with labels above values, the panel and skill grids become single-column, divider borders rotate from left edges to top edges, and the timeline rail tightens. At 640px the section gutters drop to 1rem and field rows stack.
 
-The sticky header offsets anchor scrolling through `scroll-padding-top` (header height + 1rem; a flat 7.5rem below 900px). Every interactive target is at least 2.75rem tall.
+### Named Rules
+**The Alternating Ground Rule.** Section tone alternates via `.section--alt` across the full bleed. Never tint only the content column; never run two alternate sections back to back.
 
-**The 8px Module Rule.** Every margin, padding and gap comes from the eight-step scale. A one-off value is a sign the component is wrong, not the scale.
-
-**The 68ch Measure Rule.** Paragraphs carry `max-width: 68ch` by default, not by opt-in. Widening a column never widens its prose.
+**The Edge-to-Center Rule.** Content lives in the middle column of the section grid at a 76rem cap. New sections adopt the grid rather than inventing their own container.
 
 ## Elevation & Depth
 
-Depth is carried by exactly one device per theme. In light, a sheet is lifted off the butter ground by a single soft warm drop shadow, `0 12px 32px rgba(56, 42, 12, 0.14)` — warm-tinted, never neutral grey, never offset hard. In dark, that same `--shadow` token is redefined as `0 0 0 1px var(--border)`: a 1px hairline ring standing in for the shadow, because a drop shadow on a dark ground reads as smudge rather than lift. Components reference `--shadow` and inherit the right behaviour in both themes without a theme-specific rule.
-
-There is no second elevation level. A sheet is lifted; everything else is flat and separated by hairlines, by the band's tint step, or by whitespace.
+Depth is tonal first and shadowed second. The page ground, the alternate band and the white sheet form a three-step tonal ladder that does most of the structural work; a single soft, warm-tinted drop shadow then lifts sheets off the page. There is exactly one elevation level — nothing is lifted higher than anything else. In dark mode the shadow token is replaced by a 1px hairline ring in the border colour, because a dark-on-dark drop shadow reads as smudge rather than lift.
 
 ### Shadow Vocabulary
-- **Sheet edge** (`box-shadow: 0 0 0 1px var(--border)`, dark): the same surfaces, same token, dark theme.
-- **Tab lift** (`box-shadow: 0 -8px 20px rgba(56, 42, 12, 0.08)`, light only): the one upward-cast shadow in the system, on the selected folder tab, so the tab reads as continuous with the sheet below it. In dark it is replaced by the hairline ring.
+- **Sheet lift** (`box-shadow: 0 12px 32px rgba(56, 42, 12, 0.14)`): every white sheet — hero facts card, work panels, skills and about and contact sheets, timeline bodies, note sheets, the CV page.
+- **Sheet lift, dark** (`box-shadow: 0 0 0 1px var(--border)`): the same token in dark mode, resolved as a hairline ring.
+- **Folder fuse** (`box-shadow: 0 -8px 20px rgba(56, 42, 12, 0.08)`): the selected folder tab only, thrown upward so the tab appears continuous with the sheet below it.
 
 ### Named Rules
+**The One Elevation Rule.** There is a single shadow token and a single altitude. Hover never raises a surface; state is shown in colour and border, never in lift.
 
-**The Elevation Declared Once Rule.** A surface declares its edge *once*: a shadow or a hairline, never both. If a component needs a visible border in light theme, it is not a sheet — it is a notice (like the CV print hint, which is bordered and unlifted).
-
-**The Warm Shadow Rule.** Shadow colour is `rgba(56, 42, 12, …)`, a brown drawn from the ink, never `rgba(0,0,0,…)`. A neutral shadow turns the butter grey.
+**The Dark Hairline Rule.** In dark mode, elevation is a 1px ring, not a shadow. Do not port a light-mode drop shadow into the dark palette.
 
 ## Shapes
 
-Four radii, assigned by function, not by size:
-- **Controls** — **8px** (`--radius`): buttons, the skip link, the print hint, the focus ring's own rounding.
-- **Chips** — **6px** (`--radius-sm`): code chips.
-- **Pills** — **999px**: the theme toggle, the status tokens, and the mail button in its collapsed circular form.
-- **Folder tabs** — **10px on the top corners only** (`10px 10px 0 0`), so the tab's bottom edge can meet the sheet flat.
+Four radii and nothing else: 12px on sheets, cards, panels and note sheets; 8px on buttons, the skip link and the print hint; 6px on chips and the focus ring; 999px on the availability pill, the status tokens and the circular theme toggle. Folder tabs take a 10px top-only radius (`10px 10px 0 0`), and the panel beneath the tab row squares its top-left corner (`0 12px 12px 12px`) so tab and sheet fuse into one silhouette.
 
-Borders are always 1px except the focus outline (2px), the nav underline and indicator (2px), the learning column rules (2px espresso) and the hero rule (4px terracotta, 2px radius).
+Borders are hairlines at 1px in two weights (see The Hairline Two-Tier Rule). Two deliberate exceptions carry meaning: the learning columns open with a 2px rule in full ink, and the vertical timeline rail is a 2px line in the border colour with 1rem accent discs punched through it, each ringed by 4px of the current section ground so the marker reads as sitting on the rail rather than beside it.
 
-**The Folded Corner Rule.** The featured-work panel's top-left corner is square (`border-radius: 0 12px 12px 12px`) because a tab sits on it. When the tab row is absent — no JavaScript, or a stacked second panel — the panel takes the full 12px on all four corners.
+### Named Rules
+**The Four Radii Rule.** 12 / 8 / 6 / 999. Any new corner picks one of them; nothing on this page is square except a table edge or a fused tab corner.
 
 ## Components
 
 ### Buttons
-- **Shape:** gently rounded (8px), minimum height 2.75rem, inline-flex with a 0.5rem gap for an optional icon.
-- **Primary:** terracotta fill (`#c4532b`) with white text and a matching border; padding 0.5rem 1.125rem. Hover darkens the fill to `#8f3a1a`. Used for "Get in touch" only — twice on the page, header and contact sheet.
-- **Secondary:** espresso fill with butter text (inverting to cream-on-roast in dark). Hover lightens to warm brown-grey. Used for "View CV".
-- **Ghost:** transparent with a control hairline border, slightly tighter padding (0.375rem 0.875rem). Hover turns border and text terracotta. Used for the CV page's back link.
-- **Hover / Focus:** 150ms transitions on background, border and text colour only — no lift, no scale. Focus is the global 2px terracotta outline at 3px offset.
-- **Compact mail button:** below 640px the primary mail button collapses to a 2.75rem circle showing only its drawn SVG envelope; the label is visually hidden and the `aria-label` carries the name.
+- **Shape:** gently curved (8px radius), 2.75rem minimum height, 0.5rem × 1.125rem padding, 0.9375rem semibold body type, 150ms colour transitions.
+- **Primary:** forest green fill with accent-contrast text and a matching border; hover deepens to `#245530` (dark: mint action lifting to full mint). Used once per section at most — "View work", "Get in touch".
+- **Secondary:** inverted — espresso ink fill, page-coloured text; hover softens to the muted ink. Used for the CV link in the contact sheet.
+- **Outline:** transparent with a Sand Border Strong outline and ink text; hover swaps both border and text to the accent. The hero's second action.
+- **Ghost:** the outline treatment at a tighter 0.375rem × 0.875rem — the header's View CV and the CV page's back link.
+- **Focus:** the global 2px accent outline, offset 3px, 6px radius. No button defines its own focus style.
 
-### Folder Tabs and Panel Sheet (signature)
-The tab row sits on the hero band, aligned to its bottom edge, gap 0.25rem, scrolling horizontally with a right-edge fade mask on narrow screens. An unselected tab is a translucent ink wash (`rgba(43, 36, 23, 0.08)`, cream-tinted in dark) with muted text; hover deepens the wash. The selected tab takes the sheet's own background, turns its label terracotta, gains 0.2rem of top padding so it stands taller than its siblings, and casts the upward tab lift so it fuses into the panel below.
+### Icon Links
+Inline SVG (currentColor, 20px) plus a label in semibold ink, 2.75rem tall, no underline; hover turns the whole pair accent. GitHub and LinkedIn in the hero.
 
-The panel is a 12px sheet with a square top-left corner and 2rem of padding, containing: the case title, a subtitle, a `role · employer · dates` meta line, one paragraph, a "What I did" label with a hairline under it, a three-column breakdown separated by vertical hairlines, a chip stack, and a three-fact strip above a top hairline with hairline dividers between cells.
+### Availability Pill
+A pill-radius chip on the accent-soft tint with accent text and a 0.5rem accent dot, sitting above the name. It carries location and availability, appears once on the page, and is the only tinted accent surface.
 
-**Progressive enhancement:** the markup ships with no tab semantics. The tab row is `display: none` until JavaScript adds `role="tablist"`, `role="tab"`, `aria-controls`, `aria-selected` and the enhanced class; without JavaScript all three panels simply stack as separate full-radius sheets, 1rem apart. Announcing tabs that cannot be operated would be worse than stacking.
+### Facts Card
+A two-column `<dl>` on a white sheet: uppercase tracked labels left, semibold values right-aligned, each row divided by a hairline and the last row's divider removed. The final value is accent-coloured. Below 900px it becomes a full-width single column with labels above values, left-aligned.
 
-### Chips
-- **Style:** butter-chip fill, 1px butter hairline, 6px radius, Source Code Pro at 0.8125rem (0.75rem small), 0.125rem/0.5rem padding, never wrapping.
-- **Use:** technology names only, in a wrapping 0.5rem-gap row.
-- **Exception:** inside the skills table the same `.tags` list is restyled to flow as comma-separated inline body text at 1rem — a dense list of forty skills as chips would be noise. The chip is for a stack of five, not a taxonomy.
+### Folder Tabs and Panel (signature)
+The structural signature. A horizontally scrollable row of tabs sits on the section ground in a low-opacity ink wash; the selected tab switches to the sheet colour, gains accent text, grows 0.2rem of top padding and throws an upward shadow so it fuses into the panel below. The panel is a white sheet with its top-left corner squared off to complete the folder silhouette. Inside: a near-display panel title, a semibold subtitle, a muted meta line, a body paragraph, a "What I did" label under a hairline rule, a three-column note grid with left-edge dividers, a row of chips, and a fact strip separated by hairlines. Progressive enhancement is part of the component: the markup ships without tab semantics, the tab row is hidden by default and shown only when JavaScript adds `role="tablist"` and the ARIA wiring, and without JavaScript the panels simply stack as separate sheets, each with a full 12px radius.
 
-### Status Tokens
-- **Style:** a pill outline (999px) in the control hairline, no fill, Source Code Pro at 0.6875rem, sitting inline beside an `h3` with a 0.15em baseline nudge.
-- **States:** `Core` takes the terracotta border and label; `Growing` / `In progress` take full-strength ink; `Completed` stays muted. The token is a label on a heading, never a standalone badge.
-
-### Cards / Containers (Sheets)
-- **Corner Style:** 12px.
-- **Background:** warm sheet.
-- **Shadow Strategy:** the single sheet lift; in dark, the hairline ring. See Elevation & Depth.
-- **Border:** none in light.
-- **Internal Padding:** 2rem (`sheet--pad`), 1.5rem/1rem below 900px.
-- **Where sheets are used:** the featured-work panel, About, Skills, project notes, Contact and the CV page. Experience, Learning and Education sit directly on the butter ground with no container — the rhythm of sheet / ground / sheet is what keeps a long page from reading as one slab.
+### Chips and Status Tokens
+- **Chips:** Source Code Pro at 0.8125rem (0.75rem in the small variant) on the butter-raised tint with a hairline border and a 6px radius; inline, wrapping, never interactive.
+- **Status tokens:** pill-radius outlines at 0.6875rem monospace with no fill, attached inline to a heading. Three states: core (accent text and border), growing (ink text on the strong hairline), done (muted). They label honesty about depth — never used as a badge or a count.
 
 ### Field Rows
-- **Style:** a two-column definition list (8rem label column) with a top hairline and a hairline under every row; labels are the uppercase tracked label style, values are Source Sans 3 600 with the last value dropping to 400.
-- **Responsive:** collapses to a single column below 640px (and inside the About sheet at every width), with the label losing its own bottom rule so label and value read as one block.
+A two-column `<dl>` on the page ground: an 8rem label column in uppercase tracked muted type, a value column in semibold, hairlines top and between rows. Below 640px labels stack above values. Used in About and, in a 7rem variant, in the contact list.
+
+### Skills Table
+Full-width rows on a sheet: a 19rem heading column and a free-flowing list column, divided by hairlines, first row unpadded and last row undivided. Inside a skill group the chip styling is deliberately dropped — items become plain inline text separated by muted commas, so a long skill list reads as a sentence rather than a wall of boxes.
 
 ### Timeline
-A dated list with a 10rem left date column set in the label style, hairlines between items (none above the first), and nested "engagement" blocks indented 1rem behind a left hairline. Bullet markers are terracotta. Below 900px the date column moves above its entry.
+An ordered list with a 2px hairline rail and 1rem accent discs, each ringed by 4px of the current ground (the ring colour follows `.section--alt`). Dates sit above the sheet as an uppercase tracked label; the entry body is a white sheet. Nested engagements inside a body indent behind a left hairline with their own heading, date span, chips and bullets. Bullet markers are accent-coloured.
 
-### Project Notes
-Native `<details>` sheets, 0.75rem apart. The summary is a 1rem/2rem flex row carrying a Gabarito title and a muted meta line, with the list marker suppressed and a CSS-drawn chevron (two 2px borders rotated 45°) pinned right, rotating 180° on open at 150ms. The body is padded to match. No JavaScript involved.
+### Note Sheets
+Native `<details>` on white sheets: the summary is a flex heading with a title and a muted meta line, the default marker is suppressed, and a 0.6rem chevron drawn from two borders rotates on open. Body content is bullets plus chips. No JavaScript involved.
+
+### Learning Columns
+Two columns on the bare page ground — no sheet — each opening with a 2px ink rule, a title with a status token, and a bullet list. The only place a 2px rule is used as a heading device.
+
+### Contact Sheet
+A white sheet split 1 : 1.4 — an intro column with a 1.25rem lead and the two actions, and a list column of label/value rows on hairlines with long URLs allowed to break anywhere. Collapses to one column below 900px.
 
 ### Navigation
-- **Style:** the sticky header sits on the deep butter band with a 1px hairline under it, `z-index: 10`, minimum 4rem tall. Links are Source Sans 3 600 at 0.9375rem in muted ink, full-height padded, with a transparent 2px bottom border.
-- **States:** hover brings the text to full ink; the current section gets full ink plus a terracotta underline.
-- **Sliding indicator:** when JavaScript runs, a single 2px terracotta bar 100px wide is appended to the nav and positioned with `transform: translateX(…) scaleX(…)` — transform only, 220ms, `cubic-bezier(0.2, 0.8, 0.2, 1)`, no layout. The per-link border is suppressed once the indicator exists, so only one underline is ever visible. The indicator corrects for the strip's horizontal scroll and repositions on resize. Without `IntersectionObserver` nothing appears and the anchors keep working.
-- **Mobile:** below 900px the nav wraps to its own full-width row below the brand and actions, scrolling horizontally under a right-edge fade mask.
+The sticky header carries the brand in Gabarito 700, eight anchors in muted semibold 0.9375rem, the ghost View CV button and the circular theme toggle. The current section is marked by `aria-current="true"` and a 2px accent underline; when JavaScript is present, a single 100px-wide accent indicator is injected and slid under the active link by transform only (220ms), and the static underline is suppressed so the two never double. Below 900px the nav moves to its own row as a horizontally scrollable strip with a right-edge fade mask, and the indicator corrects for the strip's scroll offset.
 
 ### Theme Toggle
-A 2.75rem circular sheet-coloured button with a control hairline, holding two drawn SVGs (sun and moon) swapped by the `data-theme` attribute. It ships `hidden` and is revealed by JavaScript, so a no-JS visitor never sees a dead control; the theme itself is applied before first paint by an inline head script reading `localStorage` then `prefers-color-scheme`. Hover turns border and icon terracotta. `aria-pressed` tracks the dark state.
+A 2.75rem circle on the sheet colour with a strong hairline border, holding a sun or moon inline SVG; hover turns border and glyph accent. It ships `hidden` and is revealed by JavaScript, carries `aria-pressed`, and the stored theme is applied by an inline head script before first paint so there is no flash.
 
 ### CV Page
-On screen the CV inherits every token and renders as a 48rem sheet with hairline-separated entries, a bordered print-hint notice above it, and a ghost back button in a simplified header. In print (`media="print"` only) the world is dropped entirely: A4 with 16mm/18mm margins, black on white, 10.5pt body, no header, no hint, no toggle, no shadow, `break-inside: avoid` on entries, `break-after: avoid` on headings, and external link targets expanded inline as `(url)` — except in the contact line, which already shows readable URLs. The print sheet has to beat the screen stylesheet's class selectors, so its rules are written at matching specificity.
+The same tokens on a single 48rem sheet: a header block with the name, a muted title line, a small contact line and a bold availability line, then hairline-divided entries with a flex head (role left, dates right) and nested entries indented. Print is a separate stylesheet loaded at `media="print"`: A4 with 16mm/18mm margins, header and toggle and print hint removed, the sheet flattened to plain paper in black on white at 10.5pt, headings ruled and kept with their content, entries protected from breaking, and external links expanded to show their URL after the text — except in the contact line, which already shows readable URLs.
 
 ### Motion
-Two durations and one curve: 150ms for colour and opacity state changes, 220ms for the nav indicator, both on `cubic-bezier(0.2, 0.8, 0.2, 1)`. `prefers-reduced-motion: reduce` sets every transition and animation duration to 0s and turns off smooth scrolling — the indicator still moves, it just arrives instantly.
+One authored entrance: sections tagged `data-reveal` fade up 14px over 500ms on the shared ease-out curve, once, then stop being observed. It is added by JavaScript only, so nothing is ever hidden without JS, and it is skipped entirely when reduced motion is requested. Everything else is state feedback: 150ms colour and border transitions, a 220ms nav indicator slide, and a 150ms chevron rotation. Under `prefers-reduced-motion: reduce` all transitions and animations are forced to zero and smooth scrolling is disabled.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep terracotta to one hue and roughly a tenth of any screen — links, the primary action, the current nav item, the selected tab, the hero rule, list markers, focus.
-- **Do** use `#a4441f` for terracotta *text on butter* and `#c4532b` only as a *fill behind white*.
-- **Do** declare a surface's edge once: the sheet lift in light, the hairline ring in dark, never both.
-- **Do** alternate sheet and bare ground down the page — a long page of nothing but sheets reads as one slab.
-- **Do** set every heading in Gabarito (700/800) and every control, label and paragraph in Source Sans 3.
-- **Do** reserve Source Code Pro for technology names and status tokens.
-- **Do** take every margin, padding and gap from the eight-step 8px scale.
-- **Do** cap prose at 68ch (62ch in the About and Education columns).
-- **Do** ship enhanced behaviour hidden: the tab row is `display: none` and the theme toggle is `hidden` until JavaScript wires them.
-- **Do** draw icons as inline SVG with `aria-hidden="true"` and a text or `aria-label` name beside them.
-- **Do** give interactive targets a minimum height of 2.75rem.
-- **Do** use `--border-strong` for control outlines and `--border` for content rules.
+- **Do** keep the accent on endings — the closing clause, the terminal marker, the selected state — per The Green Full Stop Rule.
+- **Do** write every section heading as two clauses with the second in an accent span and a full stop at the end.
+- **Do** alternate section tone with `.section--alt` full-bleed, and put new content in the section grid's middle column at the 76rem cap.
+- **Do** lift content on the single sheet shadow (`0 12px 32px rgba(56, 42, 12, 0.14)`) and let the dark theme resolve it to a hairline ring.
+- **Do** spend the 8px module: 4rem section padding, 2rem sheet padding, 1.5rem between grouped blocks.
+- **Do** ship every enhancement as an enhancement — tabs, the nav indicator, the reveal and the toggle each have a defined no-JS state.
+- **Do** keep text within the 68ch measure and hairlines at 1px.
+- **Do** use the accent-contrast token on any filled accent surface instead of hard-coding white.
 
 ### Don't:
-- **Don't** introduce a second accent hue, a gradient, a tinted glass surface or a second elevation level.
-- **Don't** use a neutral black shadow — shadow colour is `rgba(56, 42, 12, …)`.
-- **Don't** put a visible border *and* a shadow on the same surface.
-- **Don't** set Gabarito on a paragraph, a button, a chip or a label, and don't inflate the `h1` past the case title.
-- **Don't** place an uppercase tracked label above a heading as a kicker or eyebrow — labels are row labels.
-- **Don't** render a dense taxonomy as chips; chips are for a stack of about five.
-- **Don't** animate layout properties. The nav indicator moves on `transform` only.
-- **Don't** add semantics in markup that JavaScript has to make true — no `role="tab"` on a row that cannot be operated without script.
-- **Don't** let the print stylesheet inherit screen colour, shadow or chrome; print is black on white with no world.
-- **Don't** add an external resource beyond Google Fonts.
+- **Don't** introduce a second accent hue, a gradient, or a tinted accent surface beyond the availability pill.
+- **Don't** use pure white as a page ground, or a shadow anywhere in dark mode.
+- **Don't** raise a surface on hover or add a second elevation level; state is colour and border only.
+- **Don't** set body copy, headings, dates or labels in Source Code Pro — chips and status tokens only.
+- **Don't** put Sand Border Strong (`#8f8058`) under text; it is a control outline, not a text or divider colour.
+- **Don't** add a radius outside 12 / 8 / 6 / 999 (the folder tab's 10px top corners are the one fused exception).
+- **Don't** add a second authored motion, or any motion that survives `prefers-reduced-motion: reduce`.
+- **Don't** ship a component whose content only exists once JavaScript runs.
+- **Don't** add photography, logos, testimonials or metric callouts; this world carries none.

@@ -4,514 +4,50 @@
   "title": "Design System: Nawres Ben Rhouma — Portfolio",
   "extensions": {
     "colorMeta": {
-      "terracotta": {
-        "role": "primary",
-        "displayName": "Terracotta",
-        "canonical": "#a4441f",
-        "note": "The only chromatic voice at text weight: links, the selected folder tab label, the current nav item, the hero rule, bullet markers, the Core status token, promoted hovers. 4.5:1 on the butter ground.",
-        "tonalRamp": [
-          "oklch(15% 0.06 40)",
-          "oklch(26% 0.09 40)",
-          "oklch(36% 0.12 40)",
-          "oklch(45% 0.14 40)",
-          "oklch(56% 0.13 40)",
-          "oklch(68% 0.11 40)",
-          "oklch(82% 0.06 40)",
-          "oklch(95% 0.02 40)"
-        ]
-      },
-      "terracotta-fill": {
-        "role": "primary",
-        "displayName": "Terracotta Fill",
-        "canonical": "#c4532b",
-        "note": "The same hue one step heavier, used only as a background behind white: the Get in touch button, the favicon rule. Never used as text.",
-        "tonalRamp": [
-          "oklch(15% 0.06 40)",
-          "oklch(26% 0.09 40)",
-          "oklch(36% 0.12 40)",
-          "oklch(45% 0.14 40)",
-          "oklch(56% 0.13 40)",
-          "oklch(68% 0.11 40)",
-          "oklch(82% 0.06 40)",
-          "oklch(95% 0.02 40)"
-        ]
-      },
-      "burnt-terracotta": {
-        "role": "primary",
-        "displayName": "Burnt Terracotta",
-        "canonical": "#8f3a1a",
-        "note": "Hover state of the primary fill only.",
-        "tonalRamp": [
-          "oklch(15% 0.06 40)",
-          "oklch(26% 0.09 40)",
-          "oklch(36% 0.12 40)",
-          "oklch(45% 0.14 40)",
-          "oklch(56% 0.13 40)",
-          "oklch(68% 0.11 40)",
-          "oklch(82% 0.06 40)",
-          "oklch(95% 0.02 40)"
-        ]
-      },
-      "terracotta-wash": {
-        "role": "primary",
-        "displayName": "Terracotta Wash",
-        "canonical": "#f7e3d5",
-        "note": "Text selection background only.",
-        "tonalRamp": [
-          "oklch(15% 0.06 40)",
-          "oklch(26% 0.09 40)",
-          "oklch(36% 0.12 40)",
-          "oklch(45% 0.14 40)",
-          "oklch(56% 0.13 40)",
-          "oklch(68% 0.11 40)",
-          "oklch(82% 0.06 40)",
-          "oklch(95% 0.02 40)"
-        ]
-      },
-      "focus-terracotta": {
-        "role": "primary",
-        "displayName": "Focus Terracotta",
-        "canonical": "#b8471f",
-        "note": "The 2px focus-visible outline, offset 3px, rounded 6px.",
-        "tonalRamp": [
-          "oklch(15% 0.06 40)",
-          "oklch(26% 0.09 40)",
-          "oklch(36% 0.12 40)",
-          "oklch(45% 0.14 40)",
-          "oklch(56% 0.13 40)",
-          "oklch(68% 0.11 40)",
-          "oklch(82% 0.06 40)",
-          "oklch(95% 0.02 40)"
-        ]
-      },
-      "espresso-ink": {
-        "role": "secondary",
-        "displayName": "Espresso Ink",
-        "canonical": "#2b2417",
-        "note": "All body and heading text, and the secondary button's fill (View CV) with butter text on it.",
-        "tonalRamp": [
-          "oklch(15% 0.02 75)",
-          "oklch(24% 0.02 75)",
-          "oklch(34% 0.03 75)",
-          "oklch(45% 0.03 75)",
-          "oklch(57% 0.03 75)",
-          "oklch(70% 0.03 75)",
-          "oklch(84% 0.02 75)",
-          "oklch(95% 0.01 75)"
-        ]
-      },
-      "butter-page": {
-        "role": "neutral",
-        "displayName": "Butter Page",
-        "canonical": "#fffcf2",
-        "note": "The page ground everywhere below the hero band.",
-        "tonalRamp": [
-          "oklch(15% 0.03 85)",
-          "oklch(26% 0.04 85)",
-          "oklch(38% 0.05 85)",
-          "oklch(50% 0.06 85)",
-          "oklch(63% 0.07 85)",
-          "oklch(76% 0.07 85)",
-          "oklch(88% 0.06 85)",
-          "oklch(96% 0.04 85)"
-        ]
-      },
-      "deep-butter-band": {
-        "role": "neutral",
-        "displayName": "Deep Butter Band",
-        "canonical": "#fffcf2",
-        "note": "The sticky header and the hero band: one tint step deeper so the first viewport reads as a plate the work sheet floats on.",
-        "tonalRamp": [
-          "oklch(15% 0.03 85)",
-          "oklch(26% 0.04 85)",
-          "oklch(38% 0.05 85)",
-          "oklch(50% 0.06 85)",
-          "oklch(63% 0.07 85)",
-          "oklch(76% 0.07 85)",
-          "oklch(88% 0.06 85)",
-          "oklch(96% 0.04 85)"
-        ]
-      },
-      "warm-sheet": {
-        "role": "neutral",
-        "displayName": "Warm Sheet",
-        "canonical": "#ffffff",
-        "note": "Every sheet, panel, note, theme toggle and the CV page. Off-white, never pure white.",
-        "tonalRamp": [
-          "oklch(15% 0.03 85)",
-          "oklch(26% 0.04 85)",
-          "oklch(38% 0.05 85)",
-          "oklch(50% 0.06 85)",
-          "oklch(63% 0.07 85)",
-          "oklch(76% 0.07 85)",
-          "oklch(88% 0.06 85)",
-          "oklch(96% 0.04 85)"
-        ]
-      },
-      "butter-chip": {
-        "role": "neutral",
-        "displayName": "Butter Chip",
-        "canonical": "#f7f0da",
-        "note": "The fill behind code chips only.",
-        "tonalRamp": [
-          "oklch(15% 0.03 85)",
-          "oklch(26% 0.04 85)",
-          "oklch(38% 0.05 85)",
-          "oklch(50% 0.06 85)",
-          "oklch(63% 0.07 85)",
-          "oklch(76% 0.07 85)",
-          "oklch(88% 0.06 85)",
-          "oklch(96% 0.04 85)"
-        ]
-      },
-      "warm-brown-grey": {
-        "role": "neutral",
-        "displayName": "Warm Brown-Grey",
-        "canonical": "#5b4e35",
-        "note": "Muted text: labels, dates, meta lines, unselected tabs and nav links, the footer.",
-        "tonalRamp": [
-          "oklch(15% 0.02 75)",
-          "oklch(24% 0.02 75)",
-          "oklch(34% 0.03 75)",
-          "oklch(45% 0.03 75)",
-          "oklch(57% 0.03 75)",
-          "oklch(70% 0.03 75)",
-          "oklch(84% 0.02 75)",
-          "oklch(95% 0.01 75)"
-        ]
-      },
-      "butter-hairline": {
-        "role": "neutral",
-        "displayName": "Butter Hairline",
-        "canonical": "#e8dcb6",
-        "note": "Every rule inside content (field rows, timeline, fact strips, column dividers, footer edge), and the dark theme's sheet edge.",
-        "tonalRamp": [
-          "oklch(15% 0.03 85)",
-          "oklch(26% 0.04 85)",
-          "oklch(38% 0.05 85)",
-          "oklch(50% 0.06 85)",
-          "oklch(63% 0.07 85)",
-          "oklch(76% 0.07 85)",
-          "oklch(88% 0.06 85)",
-          "oklch(96% 0.04 85)"
-        ]
-      },
-      "control-hairline": {
-        "role": "neutral",
-        "displayName": "Control Hairline",
-        "canonical": "#8f8058",
-        "note": "3.5:1 on the butter ground. Outlines of operable controls only: theme toggle, ghost button, status tokens, skip link, scrollbar.",
-        "tonalRamp": [
-          "oklch(15% 0.02 75)",
-          "oklch(24% 0.02 75)",
-          "oklch(34% 0.03 75)",
-          "oklch(45% 0.03 75)",
-          "oklch(57% 0.03 75)",
-          "oklch(70% 0.03 75)",
-          "oklch(84% 0.02 75)",
-          "oklch(95% 0.01 75)"
-        ]
-      },
-      "roasted-ground-dark": {
-        "role": "neutral",
-        "displayName": "Roasted Ground (dark)",
-        "canonical": "#1b170f",
-        "note": "Dark-theme page ground. Same role as butter-page.",
-        "tonalRamp": [
-          "oklch(15% 0.02 75)",
-          "oklch(24% 0.02 75)",
-          "oklch(34% 0.03 75)",
-          "oklch(45% 0.03 75)",
-          "oklch(57% 0.03 75)",
-          "oklch(70% 0.03 75)",
-          "oklch(84% 0.02 75)",
-          "oklch(95% 0.01 75)"
-        ]
-      },
-      "roasted-band-dark": {
-        "role": "neutral",
-        "displayName": "Roasted Band (dark)",
-        "canonical": "#221c12",
-        "note": "Dark-theme header and hero band.",
-        "tonalRamp": [
-          "oklch(15% 0.02 75)",
-          "oklch(24% 0.02 75)",
-          "oklch(34% 0.03 75)",
-          "oklch(45% 0.03 75)",
-          "oklch(57% 0.03 75)",
-          "oklch(70% 0.03 75)",
-          "oklch(84% 0.02 75)",
-          "oklch(95% 0.01 75)"
-        ]
-      },
-      "roasted-sheet-dark": {
-        "role": "neutral",
-        "displayName": "Roasted Sheet (dark)",
-        "canonical": "#332c1e",
-        "note": "Dark-theme sheet, edged by a 1px roasted-hairline ring instead of a shadow.",
-        "tonalRamp": [
-          "oklch(15% 0.02 75)",
-          "oklch(24% 0.02 75)",
-          "oklch(34% 0.03 75)",
-          "oklch(45% 0.03 75)",
-          "oklch(57% 0.03 75)",
-          "oklch(70% 0.03 75)",
-          "oklch(84% 0.02 75)",
-          "oklch(95% 0.01 75)"
-        ]
-      },
-      "roasted-chip-dark": {
-        "role": "neutral",
-        "displayName": "Roasted Chip (dark)",
-        "canonical": "#3f3727",
-        "note": "Dark-theme chip fill.",
-        "tonalRamp": [
-          "oklch(15% 0.02 75)",
-          "oklch(24% 0.02 75)",
-          "oklch(34% 0.03 75)",
-          "oklch(45% 0.03 75)",
-          "oklch(57% 0.03 75)",
-          "oklch(70% 0.03 75)",
-          "oklch(84% 0.02 75)",
-          "oklch(95% 0.01 75)"
-        ]
-      },
-      "cream-dark": {
-        "role": "neutral",
-        "displayName": "Cream (dark)",
-        "canonical": "#f2e9d3",
-        "note": "Dark-theme text, and the secondary button's fill inverts to it automatically.",
-        "tonalRamp": [
-          "oklch(15% 0.03 85)",
-          "oklch(26% 0.04 85)",
-          "oklch(38% 0.05 85)",
-          "oklch(50% 0.06 85)",
-          "oklch(63% 0.07 85)",
-          "oklch(76% 0.07 85)",
-          "oklch(88% 0.06 85)",
-          "oklch(96% 0.04 85)"
-        ]
-      },
-      "warm-sand-dark": {
-        "role": "neutral",
-        "displayName": "Warm Sand (dark)",
-        "canonical": "#cbbd9c",
-        "note": "Dark-theme muted text.",
-        "tonalRamp": [
-          "oklch(15% 0.03 85)",
-          "oklch(26% 0.04 85)",
-          "oklch(38% 0.05 85)",
-          "oklch(50% 0.06 85)",
-          "oklch(63% 0.07 85)",
-          "oklch(76% 0.07 85)",
-          "oklch(88% 0.06 85)",
-          "oklch(96% 0.04 85)"
-        ]
-      },
-      "lit-terracotta-dark": {
-        "role": "primary",
-        "displayName": "Lit Terracotta (dark)",
-        "canonical": "#eb8d63",
-        "note": "Dark-theme accent at text weight, and the dark primary hover and focus ring. Same rules as terracotta.",
-        "tonalRamp": [
-          "oklch(15% 0.06 40)",
-          "oklch(26% 0.09 40)",
-          "oklch(36% 0.12 40)",
-          "oklch(45% 0.14 40)",
-          "oklch(56% 0.13 40)",
-          "oklch(68% 0.11 40)",
-          "oklch(82% 0.06 40)",
-          "oklch(95% 0.02 40)"
-        ]
-      },
-      "lit-terracotta-fill-dark": {
-        "role": "primary",
-        "displayName": "Lit Terracotta Fill (dark)",
-        "canonical": "#d9703f",
-        "note": "Dark-theme primary button fill, with the roasted ground as its contrast colour.",
-        "tonalRamp": [
-          "oklch(15% 0.06 40)",
-          "oklch(26% 0.09 40)",
-          "oklch(36% 0.12 40)",
-          "oklch(45% 0.14 40)",
-          "oklch(56% 0.13 40)",
-          "oklch(68% 0.11 40)",
-          "oklch(82% 0.06 40)",
-          "oklch(95% 0.02 40)"
-        ]
-      },
-      "terracotta-wash-dark": {
-        "role": "primary",
-        "displayName": "Terracotta Wash (dark)",
-        "canonical": "#4a3120",
-        "note": "Dark-theme selection background.",
-        "tonalRamp": [
-          "oklch(15% 0.06 40)",
-          "oklch(26% 0.09 40)",
-          "oklch(36% 0.12 40)",
-          "oklch(45% 0.14 40)",
-          "oklch(56% 0.13 40)",
-          "oklch(68% 0.11 40)",
-          "oklch(82% 0.06 40)",
-          "oklch(95% 0.02 40)"
-        ]
-      },
-      "roasted-hairline-dark": {
-        "role": "neutral",
-        "displayName": "Roasted Hairline (dark)",
-        "canonical": "#4a4130",
-        "note": "Dark-theme content rules, and the sheet's edge where the shadow token becomes a hairline ring.",
-        "tonalRamp": [
-          "oklch(15% 0.02 75)",
-          "oklch(24% 0.02 75)",
-          "oklch(34% 0.03 75)",
-          "oklch(45% 0.03 75)",
-          "oklch(57% 0.03 75)",
-          "oklch(70% 0.03 75)",
-          "oklch(84% 0.02 75)",
-          "oklch(95% 0.01 75)"
-        ]
-      },
-      "control-hairline-dark": {
-        "role": "neutral",
-        "displayName": "Control Hairline (dark)",
-        "canonical": "#8f8160",
-        "note": "Dark-theme control outlines.",
-        "tonalRamp": [
-          "oklch(15% 0.02 75)",
-          "oklch(24% 0.02 75)",
-          "oklch(34% 0.03 75)",
-          "oklch(45% 0.03 75)",
-          "oklch(57% 0.03 75)",
-          "oklch(70% 0.03 75)",
-          "oklch(84% 0.02 75)",
-          "oklch(95% 0.01 75)"
-        ]
-      }
+      "butter-ground": { "role": "neutral", "displayName": "Butter Ground", "canonical": "#fffcf2", "darkValue": "#1b170f", "purpose": "The page itself: near-white with a warm tint, never pure white.", "tonalRamp": ["oklch(15% 0.02 90)", "oklch(25% 0.02 90)", "oklch(35% 0.022 90)", "oklch(50% 0.024 90)", "oklch(65% 0.024 90)", "oklch(80% 0.02 90)", "oklch(90% 0.016 90)", "oklch(99% 0.012 90)"] },
+      "warm-band": { "role": "neutral", "displayName": "Warm Band", "canonical": "#f6f2e6", "darkValue": "#201d17", "purpose": "The alternate section tone, applied full-bleed to .section--alt.", "tonalRamp": ["oklch(15% 0.016 88)", "oklch(25% 0.018 88)", "oklch(35% 0.02 88)", "oklch(50% 0.022 88)", "oklch(65% 0.022 88)", "oklch(80% 0.018 88)", "oklch(90% 0.014 88)", "oklch(96% 0.012 88)"] },
+      "sheet-white": { "role": "neutral", "displayName": "Sheet White", "canonical": "#ffffff", "darkValue": "#332c1e", "purpose": "The lifted content surface: panels, cards, timeline bodies, note sheets, the CV page.", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(50% 0 0)", "oklch(64% 0 0)", "oklch(78% 0 0)", "oklch(90% 0 0)", "oklch(100% 0 0)"] },
+      "espresso-ink": { "role": "neutral", "displayName": "Espresso Ink", "canonical": "#2b2417", "darkValue": "#f2e9d3", "purpose": "All primary text, the brand mark, and the secondary button's ground.", "tonalRamp": ["oklch(15% 0.018 80)", "oklch(25% 0.022 80)", "oklch(35% 0.024 80)", "oklch(45% 0.026 80)", "oklch(58% 0.026 80)", "oklch(72% 0.022 80)", "oklch(85% 0.018 80)", "oklch(95% 0.012 80)"] },
+      "bark-muted": { "role": "neutral", "displayName": "Bark Muted", "canonical": "#5b4e35", "darkValue": "#cbbd9c", "purpose": "Labels, dates, meta lines, nav links at rest, secondary prose.", "tonalRamp": ["oklch(15% 0.02 82)", "oklch(25% 0.026 82)", "oklch(36% 0.032 82)", "oklch(46% 0.036 82)", "oklch(60% 0.036 82)", "oklch(74% 0.03 82)", "oklch(86% 0.024 82)", "oklch(95% 0.014 82)"] },
+      "sand-border": { "role": "neutral", "displayName": "Sand Border", "canonical": "#e8dcb6", "darkValue": "#4a4130", "purpose": "Hairlines: field rows, section rules, the header underline, column dividers.", "tonalRamp": ["oklch(15% 0.02 92)", "oklch(26% 0.028 92)", "oklch(38% 0.036 92)", "oklch(50% 0.044 92)", "oklch(64% 0.05 92)", "oklch(78% 0.05 92)", "oklch(89% 0.042 92)", "oklch(96% 0.022 92)"] },
+      "sand-border-strong": { "role": "neutral", "displayName": "Sand Border Strong", "canonical": "#8f8058", "darkValue": "#8f8160", "purpose": "Control outlines only; roughly 3.5:1 on the butter ground, so never used under text.", "tonalRamp": ["oklch(15% 0.024 90)", "oklch(26% 0.034 90)", "oklch(38% 0.044 90)", "oklch(50% 0.05 90)", "oklch(60% 0.052 90)", "oklch(74% 0.048 90)", "oklch(86% 0.038 90)", "oklch(95% 0.02 90)"] },
+      "forest-accent": { "role": "primary", "displayName": "Forest Green", "canonical": "#2f6b3a", "darkValue": "#86cf8f", "purpose": "The only accent: the closing words of the name and of every heading, links, the primary button, the pill, timeline and bullet markers, the selected folder tab, the focus ring.", "tonalRamp": ["oklch(20% 0.05 150)", "oklch(30% 0.07 150)", "oklch(38% 0.085 150)", "oklch(45% 0.09 150)", "oklch(56% 0.10 150)", "oklch(68% 0.10 150)", "oklch(80% 0.075 150)", "oklch(93% 0.035 150)"] },
+      "forest-action-hover": { "role": "primary", "displayName": "Deep Forest", "canonical": "#245530", "darkValue": "#86cf8f", "purpose": "Hover state of the filled primary button in light mode.", "tonalRamp": ["oklch(18% 0.045 150)", "oklch(26% 0.062 150)", "oklch(33% 0.075 150)", "oklch(39% 0.082 150)", "oklch(50% 0.095 150)", "oklch(63% 0.10 150)", "oklch(77% 0.08 150)", "oklch(92% 0.038 150)"] },
+      "forest-soft": { "role": "primary", "displayName": "Forest Soft", "canonical": "#e6f0e6", "darkValue": "#24352a", "purpose": "The accent's only tinted surface: the availability pill and the selection highlight.", "tonalRamp": ["oklch(18% 0.014 150)", "oklch(28% 0.018 150)", "oklch(40% 0.022 150)", "oklch(52% 0.024 150)", "oklch(66% 0.024 150)", "oklch(80% 0.022 150)", "oklch(90% 0.018 150)", "oklch(96% 0.012 150)"] },
+      "mint-action-dark": { "role": "primary", "displayName": "Mint Action", "canonical": "#5fae6c", "purpose": "Dark mode only: the filled primary button, one step below the mint accent so it does not flare on the dark ground.", "tonalRamp": ["oklch(20% 0.05 150)", "oklch(30% 0.07 150)", "oklch(42% 0.09 150)", "oklch(54% 0.10 150)", "oklch(66% 0.11 150)", "oklch(76% 0.10 150)", "oklch(86% 0.07 150)", "oklch(95% 0.03 150)"] }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "The page h1 and the CV name. Gabarito 800 set tight at -0.03em, line-height 1.02. Once per page."
-      },
-      "case-title": {
-        "displayName": "Case Title",
-        "purpose": "The selected-work panel title. Deliberately one step above the display size: the sheet owns the focal event of the first viewport."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Section h2s, set as a baseline-aligned flex row so the # heading anchor sits beside them."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "h3s. Steps down to 1.125rem where the title sits inside a sheet (skill groups, learning columns, note titles, engagement h4s)."
-      },
-      "subtitle": {
-        "displayName": "Subtitle",
-        "purpose": "Panel subtitles, the hero statement (1.25rem, 1.125rem below 640px) and the contact lead."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "All prose at a 68ch measure (62ch in About and Education). Tabular numerals on globally so dates align down the timeline column."
-      },
-      "small": {
-        "displayName": "Small",
-        "purpose": "Meta lines, dates, notes, the footer."
-      },
-      "control": {
-        "displayName": "Control",
-        "purpose": "Buttons, nav links, folder tabs, fact strips. 0.875rem for tabs below 900px. Never the display face."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Uppercase tracked row labels only: dt cells, date columns, contact row labels. Never a kicker above a heading."
-      },
-      "chip": {
-        "displayName": "Chip",
-        "purpose": "Technology names in code chips. Source Code Pro is loaded at 400 only."
-      },
-      "status": {
-        "displayName": "Status",
-        "purpose": "The Core / Growing / Completed / In progress tokens sitting inline beside an h3."
-      }
+      "display": { "displayName": "Display", "purpose": "The hero name only, set two-tone with the surname in the accent and a full stop." },
+      "panel-title": { "displayName": "Panel Title", "purpose": "The project name inside a folder panel; near-display scale, because the work sheet is the page's second hero." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2: two clauses, the second in an accent span, ending in a full stop, followed by a hover-revealed # anchor." },
+      "title": { "displayName": "Title", "purpose": "h3: timeline roles, skill groups, learning columns, note titles." },
+      "body": { "displayName": "Body", "purpose": "All prose, capped at a 68ch measure (62ch in About and Education). Steps to 1.25rem for the hero statement and the contact lead." },
+      "small": { "displayName": "Small", "purpose": "Meta lines, dates, notes, footer, print hint." },
+      "label": { "displayName": "Label", "purpose": "Uppercase tracked labels on field rows, contact rows, facts-card terms and timeline dates." },
+      "role-line": { "displayName": "Role Line", "purpose": "The hero role directly under the name; the widest tracking on the page, used once." },
+      "code": { "displayName": "Code", "purpose": "Technology chips and status tokens only." }
     },
     "shadows": [
-      {
-        "name": "sheet-lift",
-        "value": "0 12px 32px rgba(56, 42, 12, 0.14)",
-        "purpose": "The single elevation in light theme: sheets, panels, project notes, the portrait, the CV page. Warm-tinted brown drawn from the ink, never neutral black."
-      },
-      {
-        "name": "sheet-edge-dark",
-        "value": "0 0 0 1px var(--border)",
-        "purpose": "The same --shadow token redefined in dark theme: a 1px hairline ring stands in for the drop shadow, which would read as smudge on a dark ground."
-      },
-      {
-        "name": "tab-lift",
-        "value": "0 -8px 20px rgba(56, 42, 12, 0.08)",
-        "purpose": "The one upward-cast shadow in the system, on the selected folder tab in light theme, so the tab reads as continuous with the sheet below it. Replaced by the hairline ring in dark."
-      }
+      { "name": "sheet-lift", "value": "0 12px 32px rgba(56, 42, 12, 0.14)", "purpose": "The only elevation: white sheets lifted off the butter page. One altitude, never raised on hover." },
+      { "name": "sheet-lift-dark", "value": "0 0 0 1px var(--border)", "purpose": "The same token resolved in dark mode as a hairline ring; dark-on-dark drop shadows read as smudge." },
+      { "name": "folder-fuse", "value": "0 -8px 20px rgba(56, 42, 12, 0.08)", "purpose": "Thrown upward by the selected folder tab so tab and panel read as one continuous sheet." },
+      { "name": "timeline-marker-ring", "value": "0 0 0 4px var(--bg)", "purpose": "Rings the accent disc in the current section ground so the marker sits on the rail, not beside it. Uses var(--alt) inside .section--alt." }
     ],
     "motion": [
-      {
-        "name": "motion-fast",
-        "value": "150ms",
-        "purpose": "Colour and opacity state changes: buttons, links, tabs, nav links, the theme toggle, the note chevron, the heading anchor."
-      },
-      {
-        "name": "motion-base",
-        "value": "220ms",
-        "purpose": "The sliding nav indicator, the only movement in the system."
-      },
-      {
-        "name": "ease-out",
-        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
-        "purpose": "The single curve. Every transition uses it."
-      },
-      {
-        "name": "reduced-motion",
-        "value": "transition-duration: 0s; animation-duration: 0s; scroll-behavior: auto",
-        "purpose": "Under prefers-reduced-motion: reduce every duration collapses to zero and smooth scrolling is off. The indicator still moves, it just arrives instantly."
-      }
+      { "name": "ease-out", "value": "cubic-bezier(0.2, 0.8, 0.2, 1)", "purpose": "The single easing curve for every transition on the site." },
+      { "name": "motion-fast", "value": "150ms", "purpose": "Colour, border and chevron state feedback." },
+      { "name": "motion-base", "value": "220ms", "purpose": "The sliding nav indicator (transform only, no layout)." },
+      { "name": "reveal", "value": "500ms", "purpose": "The one authored entrance: sections fade up 14px once as they enter. JS-only, skipped under prefers-reduced-motion." }
     ],
     "breakpoints": [
-      {
-        "name": "compact-hero",
-        "value": "1100px",
-        "purpose": "Max-width. The 12-column hero grid unstacks: text column and work sheet each take all 12."
-      },
-      {
-        "name": "stack",
-        "value": "900px",
-        "purpose": "Max-width. Header wraps to two rows and --header-height is redefined 4rem to 6.5rem; nav becomes a masked scrolling strip; panel grid, fact strip, skill rows, timeline, learning, About and Contact all go single-column and their vertical dividers become horizontal."
-      },
-      {
-        "name": "phone",
-        "value": "640px",
-        "purpose": "Max-width. The mail button collapses to a 2.75rem circle, contact and field rows stack, section padding drops to 1rem, the hero statement drops to 1.125rem."
-      },
-      {
-        "name": "hint-centre",
-        "value": "52rem",
-        "purpose": "Min-width. The CV print hint centres itself instead of hanging left."
-      }
+      { "name": "hero-stack", "value": "1100px", "purpose": "Hero drops from 7:5 to a single column." },
+      { "name": "wrap", "value": "900px", "purpose": "Header wraps to 6.5rem with the nav as a masked scroll strip; facts card, panel grid and skill rows go single-column; dividers rotate from left edges to top edges." },
+      { "name": "narrow", "value": "640px", "purpose": "Section gutters drop to 1rem, section padding to 3rem, field and contact rows stack." }
     ],
     "layout": [
-      {
-        "name": "content-max",
-        "value": "76rem",
-        "purpose": "The single centred content column."
-      },
-      {
-        "name": "measure",
-        "value": "68ch",
-        "purpose": "Default paragraph cap, applied by the element rule rather than opt-in. 62ch in the About and Education columns."
-      },
-      {
-        "name": "header-height",
-        "value": "4rem",
-        "purpose": "Sticky header height and the basis of scroll-padding-top. Redefined to 6.5rem below 900px."
-      }
+      { "name": "content-max", "value": "76rem", "purpose": "The centre column of the full-bleed three-column section grid." },
+      { "name": "measure", "value": "68ch", "purpose": "Paragraph cap; About and Education tighten to 62ch." },
+      { "name": "header-height", "value": "4rem", "purpose": "Sticky header height, kept in sync with scroll-padding-top; 6.5rem below 900px." }
     ]
   },
   "components": [
@@ -519,182 +55,136 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Terracotta fill behind white. The Get in touch action only, twice on the page.",
-      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"mailto:hello@example.com\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"m3 7 9 6 9-6\"/></svg><span>Get in touch</span></a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.125rem; font-family: var(--font-body, 'Source Sans 3', Segoe UI, sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; border-radius: var(--radius, 8px); border: 1px solid transparent; transition: background-color 150ms cubic-bezier(0.2,0.8,0.2,1), border-color 150ms cubic-bezier(0.2,0.8,0.2,1), color 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-btn-primary { background: var(--action, #c4532b); color: var(--accent-contrast, #ffffff); border-color: var(--action, #c4532b); } .ds-btn-primary:hover { background: var(--action-hover, #8f3a1a); border-color: var(--action-hover, #8f3a1a); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #b8471f); outline-offset: 3px; border-radius: 6px; }"
+      "description": "The one filled action per section: View work, Get in touch.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#work\">View work</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.125rem; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: var(--action, #2f6b3a); color: var(--accent-contrast, #fff); border: 1px solid var(--action, #2f6b3a); border-radius: var(--radius, 8px); transition: background-color 150ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)), border-color 150ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)); } .ds-btn-primary:hover { background: var(--action-hover, #245530); border-color: var(--action-hover, #245530); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #2f6b3a); outline-offset: 3px; border-radius: 6px; }"
     },
     {
-      "name": "Secondary Button",
+      "name": "Outline Button",
       "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "Espresso fill with butter text, inverting to cream-on-roast in dark. The View CV action.",
-      "html": "<a class=\"ds-btn ds-btn-secondary\" href=\"cv.html\">View CV</a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.125rem; font-family: var(--font-body, 'Source Sans 3', Segoe UI, sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; border-radius: var(--radius, 8px); border: 1px solid transparent; transition: background-color 150ms cubic-bezier(0.2,0.8,0.2,1), border-color 150ms cubic-bezier(0.2,0.8,0.2,1), color 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-btn-secondary { background: var(--text, #2b2417); color: var(--bg, #fffcf2); border-color: var(--text, #2b2417); } .ds-btn-secondary:hover { background: var(--text-muted, #5b4e35); border-color: var(--text-muted, #5b4e35); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--focus, #b8471f); outline-offset: 3px; border-radius: 6px; }"
+      "refersTo": "button-outline",
+      "description": "The quiet second action beside the primary; hover swaps border and text to the accent.",
+      "html": "<a class=\"ds-btn-outline\" href=\"mailto:hello@example.com\">Get in touch</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.125rem; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: transparent; color: var(--text, #2b2417); border: 1px solid var(--border-strong, #8f8058); border-radius: var(--radius, 8px); transition: border-color 150ms ease, color 150ms ease; } .ds-btn-outline:hover { border-color: var(--accent, #2f6b3a); color: var(--accent, #2f6b3a); } .ds-btn-outline:focus-visible { outline: 2px solid var(--focus, #2f6b3a); outline-offset: 3px; border-radius: 6px; }"
     },
     {
-      "name": "Ghost Button",
-      "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "Transparent with a control hairline, tighter padding. Used for the CV page back link.",
-      "html": "<a class=\"ds-btn-ghost\" href=\"index.html\">Back to portfolio</a>",
-      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.375rem 0.875rem; font-family: var(--font-body, 'Source Sans 3', Segoe UI, sans-serif); font-size: 0.9375rem; font-weight: 600; line-height: 1.2; text-decoration: none; background: transparent; color: var(--text, #2b2417); border: 1px solid var(--border-strong, #8f8058); border-radius: var(--radius, 8px); transition: border-color 150ms cubic-bezier(0.2,0.8,0.2,1), color 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-btn-ghost:hover { border-color: var(--accent, #a4441f); color: var(--accent, #a4441f); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--focus, #b8471f); outline-offset: 3px; }"
+      "name": "Availability Pill",
+      "kind": "chip",
+      "refersTo": "pill",
+      "description": "Location and availability above the hero name; the only tinted accent surface on the page.",
+      "html": "<p class=\"ds-pill\"><span class=\"ds-pill__dot\" aria-hidden=\"true\"></span>Based in Tunis · Open to remote, part-time roles</p>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0; padding: 0.35rem 0.9rem; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.875rem; font-weight: 600; color: var(--accent, #2f6b3a); background: var(--accent-soft, #e6f0e6); border-radius: 999px; } .ds-pill__dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--accent, #2f6b3a); }"
     },
     {
-      "name": "Theme Toggle",
-      "kind": "button",
-      "refersTo": "theme-toggle",
-      "description": "A 2.75rem circular sheet-coloured pill holding a drawn sun/moon SVG. Ships hidden and is revealed by JavaScript, so a no-JS visitor never sees a dead control.",
-      "html": "<button class=\"ds-theme-toggle\" type=\"button\" aria-pressed=\"false\" aria-label=\"Dark theme\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"/></svg></button>",
-      "css": ".ds-theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; padding: 0; background: var(--sheet, #ffffff); color: var(--text, #2b2417); border: 1px solid var(--border-strong, #8f8058); border-radius: 999px; cursor: pointer; transition: border-color 150ms cubic-bezier(0.2,0.8,0.2,1), color 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-theme-toggle svg { width: 1.125rem; height: 1.125rem; } .ds-theme-toggle:hover { border-color: var(--accent, #a4441f); color: var(--accent, #a4441f); } .ds-theme-toggle:focus-visible { outline: 2px solid var(--focus, #b8471f); outline-offset: 3px; }"
+      "name": "Two-Tone Heading",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Every section heading: a plain first clause, an accent closing clause, a full stop, and a # anchor that appears on hover or focus.",
+      "html": "<h2 class=\"ds-h2\">Backend first, <span class=\"ds-accent\">growing outward.</span> <a class=\"ds-anchor\" href=\"#about\" aria-label=\"Link to About\">#</a></h2>",
+      "css": ".ds-h2 { font-family: var(--font-heading, Gabarito, sans-serif); font-size: 1.75rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 1.5rem; color: var(--text, #2b2417); text-wrap: balance; } .ds-accent { color: var(--accent, #2f6b3a); } .ds-anchor { margin-left: 0.5rem; font-family: var(--font-body, sans-serif); font-weight: 400; color: var(--text-muted, #5b4e35); text-decoration: none; opacity: 0; transition: opacity 150ms ease; } .ds-h2:hover .ds-anchor, .ds-anchor:focus-visible { opacity: 1; } .ds-anchor:hover { color: var(--accent, #2f6b3a); }"
     },
     {
-      "name": "Folder Tabs + Panel Sheet",
+      "name": "Facts Card",
+      "kind": "card",
+      "refersTo": "facts-card",
+      "description": "The hero's right column: five label/value rows on a white sheet, last value in the accent.",
+      "html": "<dl class=\"ds-facts\"><dt>Location</dt><dd>Tunis, Tunisia</dd><dt>Role</dt><dd>Software Engineer</dd><dt>Open to</dt><dd>Remote · part-time</dd></dl>",
+      "css": ".ds-facts { display: grid; grid-template-columns: auto minmax(0, 1fr); margin: 0; background: var(--sheet, #fff); border-radius: 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); overflow: hidden; font-family: var(--font-body, \"Source Sans 3\", sans-serif); } .ds-facts dt, .ds-facts dd { margin: 0; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border, #e8dcb6); } .ds-facts dt { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted, #5b4e35); padding-top: calc(1rem + 0.25em); } .ds-facts dd { font-weight: 600; text-align: right; color: var(--text, #2b2417); } .ds-facts dt:nth-last-of-type(1), .ds-facts dd:nth-last-of-type(1) { border-bottom: 0; } .ds-facts dd:last-of-type { color: var(--accent, #2f6b3a); }"
+    },
+    {
+      "name": "Folder Tabs and Panel",
       "kind": "custom",
       "refersTo": "tab",
-      "description": "The structural signature: tabs rise from the sheet's top edge and the selected tab fuses into it, keeping the panel's top-left corner square. Tab ARIA is added by JavaScript; without it the row is hidden and panels stack as full-radius sheets.",
-      "html": "<div class=\"ds-tabs\"><div class=\"ds-tabs-list\" role=\"tablist\" aria-label=\"Selected work\"><button class=\"ds-tab\" role=\"tab\" type=\"button\" aria-selected=\"true\">Techem WebPortal</button><button class=\"ds-tab\" role=\"tab\" type=\"button\" aria-selected=\"false\">Copilot Studio pilot</button><button class=\"ds-tab\" role=\"tab\" type=\"button\" aria-selected=\"false\">Consommi Tounsi</button></div><article class=\"ds-panel\" role=\"tabpanel\"><h3 class=\"ds-panel-title\">Techem WebPortal</h3><p class=\"ds-panel-subtitle\">Backend for a customer web portal</p><p class=\"ds-panel-meta\">Backend Engineer · MaibornWolff · Feb 2024 – present</p><p class=\"ds-panel-body\">Java and Spring Boot services behind a GraphQL API, shipped through Docker and CI/CD.</p><ul class=\"ds-panel-facts\"><li>Live since Feb 2024</li><li>Java · Spring Boot · GraphQL</li><li>Presented at a JAT event</li></ul></article></div>",
-      "css": ".ds-tabs { background: var(--band, #fffcf2); padding: 1.5rem; } .ds-tabs-list { display: flex; align-items: flex-end; gap: 0.25rem; overflow-x: auto; scrollbar-width: none; } .ds-tab { flex: none; padding: 0.75rem 1.125rem; background: rgba(43, 36, 23, 0.08); border: 0; border-radius: 10px 10px 0 0; font-family: var(--font-body, 'Source Sans 3', sans-serif); font-size: 0.9375rem; font-weight: 600; color: var(--text-muted, #5b4e35); cursor: pointer; white-space: nowrap; transition: color 150ms cubic-bezier(0.2,0.8,0.2,1), background-color 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-tab:hover { color: var(--text, #2b2417); background: rgba(43, 36, 23, 0.14); } .ds-tab[aria-selected=\"true\"] { color: var(--accent, #a4441f); background: var(--sheet, #ffffff); padding-top: 0.95rem; box-shadow: 0 -8px 20px rgba(56, 42, 12, 0.08); } .ds-tab:focus-visible { outline: 2px solid var(--focus, #b8471f); outline-offset: 3px; } .ds-panel { padding: 2rem; background: var(--sheet, #ffffff); border-radius: 0 12px 12px 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56, 42, 12, 0.14)); color: var(--text, #2b2417); } .ds-panel-title { font-family: var(--font-heading, Gabarito, sans-serif); font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5rem; } .ds-panel-subtitle { font-size: 1.125rem; font-weight: 600; margin: 0 0 0.25rem; } .ds-panel-meta { font-size: 0.875rem; color: var(--text-muted, #5b4e35); margin: 0 0 1rem; } .ds-panel-body { max-width: 68ch; margin: 0 0 1rem; } .ds-panel-facts { list-style: none; display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin: 1.5rem 0 0; padding: 1rem 0 0; border-top: 1px solid var(--border, #e8dcb6); font-weight: 600; font-size: 0.9375rem; } .ds-panel-facts li + li { border-left: 1px solid var(--border, #e8dcb6); padding-left: 1.5rem; }"
+      "description": "The structural signature: the selected tab takes the sheet colour and fuses into the panel below, whose top-left corner is squared. Tab semantics and the visible tab row are added by JavaScript; without it the panels stack as separate sheets.",
+      "html": "<div class=\"ds-tabs\"><div class=\"ds-tabs__list ds-tabs__list--enhanced\" role=\"tablist\" aria-label=\"Selected work\"><button class=\"ds-tab\" type=\"button\" role=\"tab\" aria-selected=\"true\">Techem WebPortal</button><button class=\"ds-tab\" type=\"button\" role=\"tab\" aria-selected=\"false\">Copilot Studio pilot</button></div><article class=\"ds-panel\"><h3 class=\"ds-panel__title\">Techem WebPortal</h3><p class=\"ds-panel__meta\">Backend Engineer · MaibornWolff · Feb 2024 – present</p></article></div>",
+      "css": ".ds-tabs__list { display: none; align-items: flex-end; gap: 0.25rem; padding: 0 1rem 0 0; overflow-x: auto; scrollbar-width: none; } .ds-tabs__list--enhanced { display: flex; } .ds-tab { flex: none; padding: 0.75rem 1.125rem; background: rgba(43, 36, 23, 0.08); border: 0; border-radius: 10px 10px 0 0; font-family: var(--font-body, \"Source Sans 3\", sans-serif); font-size: 0.9375rem; font-weight: 600; color: var(--text-muted, #5b4e35); cursor: pointer; white-space: nowrap; transition: color 150ms ease, background-color 150ms ease; } .ds-tab:hover { color: var(--text, #2b2417); background: rgba(43, 36, 23, 0.14); } .ds-tab[aria-selected=\"true\"] { color: var(--accent, #2f6b3a); background: var(--sheet, #fff); padding-top: 0.95rem; box-shadow: 0 -8px 20px rgba(56, 42, 12, 0.08); } .ds-tab:focus-visible { outline: 2px solid var(--focus, #2f6b3a); outline-offset: 3px; } .ds-panel { padding: 2rem; background: var(--sheet, #fff); border-radius: 0 12px 12px 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); } .ds-panel__title { font-family: var(--font-heading, Gabarito, sans-serif); font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5rem; color: var(--text, #2b2417); } .ds-panel__meta { margin: 0; font-family: var(--font-body, sans-serif); font-size: 0.875rem; color: var(--text-muted, #5b4e35); }"
     },
     {
-      "name": "Code Chip",
+      "name": "Technology Chip",
       "kind": "chip",
       "refersTo": "chip",
-      "description": "Technology names only, in a wrapping row. Inside the skills table the same list is restyled to flow as comma-separated body text, because forty chips would be noise.",
-      "html": "<ul class=\"ds-chips\"><li>Java</li><li>Spring Boot</li><li>GraphQL</li><li>Docker</li><li>CI/CD</li></ul>",
-      "css": ".ds-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; } .ds-chips li { padding: 0.125rem 0.5rem; background: var(--bg-elevated, #f7f0da); border: 1px solid var(--border, #e8dcb6); border-radius: 6px; font-family: var(--font-code, 'Source Code Pro', ui-monospace, monospace); font-size: 0.8125rem; color: var(--text, #2b2417); white-space: nowrap; }"
+      "description": "A one-word technology token in Source Code Pro on the raised butter tint; inline, wrapping, never interactive.",
+      "html": "<ul class=\"ds-tags\"><li>Java</li><li>Spring Boot</li><li>GraphQL</li><li>Docker</li></ul>",
+      "css": ".ds-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; } .ds-tags li { padding: 0.125rem 0.5rem; background: var(--bg-elevated, #f7f0da); border: 1px solid var(--border, #e8dcb6); border-radius: 6px; font-family: var(--font-code, \"Source Code Pro\", monospace); font-size: 0.8125rem; color: var(--text, #2b2417); white-space: nowrap; }"
     },
     {
       "name": "Status Token",
       "kind": "chip",
-      "refersTo": "status-token",
-      "description": "A hairline pill sitting inline beside an h3. Core takes terracotta; Growing takes full ink; Completed stays muted. Never a standalone badge.",
-      "html": "<h3 class=\"ds-status-head\">Backend Engineering <span class=\"ds-status ds-status-core\">Core</span></h3><h3 class=\"ds-status-head\">Cloud &amp; Architecture <span class=\"ds-status ds-status-growing\">Growing</span></h3>",
-      "css": ".ds-status-head { font-family: var(--font-heading, Gabarito, sans-serif); font-size: 1.125rem; font-weight: 700; line-height: 1.1; color: var(--text, #2b2417); margin: 0 0 0.5rem; } .ds-status { display: inline-block; vertical-align: 0.15em; margin-left: 0.5rem; padding: 0.05rem 0.5rem; font-family: var(--font-code, 'Source Code Pro', monospace); font-size: 0.6875rem; letter-spacing: 0.02em; line-height: 1.5; border: 1px solid var(--border-strong, #8f8058); border-radius: 999px; color: var(--text-muted, #5b4e35); white-space: nowrap; } .ds-status-core { color: var(--accent, #a4441f); border-color: var(--accent, #a4441f); } .ds-status-growing { color: var(--text, #2b2417); }"
-    },
-    {
-      "name": "Field Rows",
-      "kind": "input",
-      "refersTo": "sheet",
-      "description": "The identity pattern: a two-column definition list with an 8rem uppercase-tracked label column and a hairline under every row. Collapses to one column below 640px.",
-      "html": "<dl class=\"ds-fields\"><dt>Role</dt><dd>Software Engineer at MaibornWolff</dd><dt>Availability</dt><dd>Based in Tunis · Open to remote, part-time roles</dd><dt>Focus</dt><dd>Java backend · Azure platform · AI-assisted development</dd></dl>",
-      "css": ".ds-fields { display: grid; grid-template-columns: 8rem minmax(0, 1fr); column-gap: 1rem; margin: 0; border-top: 1px solid var(--border, #e8dcb6); color: var(--text, #2b2417); font-family: var(--font-body, 'Source Sans 3', sans-serif); font-size: 1.0625rem; line-height: 1.6; } .ds-fields dt, .ds-fields dd { margin: 0; padding: 0.75rem 0; border-bottom: 1px solid var(--border, #e8dcb6); } .ds-fields dt { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted, #5b4e35); padding-top: calc(0.75rem + 0.2em); } .ds-fields dd { font-weight: 600; } @media (max-width: 640px) { .ds-fields { grid-template-columns: 1fr; } .ds-fields dt { padding-bottom: 0; border-bottom: 0; } .ds-fields dd { padding-top: 0.25rem; } }"
+      "refersTo": "status",
+      "description": "An inline honesty marker attached to a heading: Core in the accent, Growing in ink, Completed muted. Outline only, never filled.",
+      "html": "<h3 class=\"ds-h3\">Backend Engineering <span class=\"ds-status ds-status--core\">Core</span></h3>",
+      "css": ".ds-h3 { font-family: var(--font-heading, Gabarito, sans-serif); font-size: 1.125rem; font-weight: 700; margin: 0; color: var(--text, #2b2417); } .ds-status { display: inline-block; vertical-align: 0.15em; margin-left: 0.5rem; padding: 0.05rem 0.5rem; font-family: var(--font-code, \"Source Code Pro\", monospace); font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.02em; line-height: 1.5; border: 1px solid var(--border-strong, #8f8058); border-radius: 999px; color: var(--text-muted, #5b4e35); white-space: nowrap; } .ds-status--core { color: var(--accent, #2f6b3a); border-color: var(--accent, #2f6b3a); }"
     },
     {
       "name": "Section Navigation",
       "kind": "nav",
-      "refersTo": "nav-link",
-      "description": "Sticky header on the deep butter band with a single terracotta bar that slides under the current section on transform only, 220ms. The per-link border is suppressed once the indicator exists, so only one underline is ever visible.",
-      "html": "<header class=\"ds-header\"><a class=\"ds-brand\" href=\"#top\">Nawres Ben Rhouma</a><nav class=\"ds-nav ds-nav-has-indicator\" aria-label=\"Sections\"><ul class=\"ds-nav-list\"><li><a class=\"ds-nav-link\" href=\"#about\" aria-current=\"true\">About</a></li><li><a class=\"ds-nav-link\" href=\"#skills\">Skills</a></li><li><a class=\"ds-nav-link\" href=\"#experience\">Experience</a></li><li><a class=\"ds-nav-link\" href=\"#contact\">Contact</a></li></ul><span class=\"ds-nav-indicator\" aria-hidden=\"true\"></span></nav></header>",
-      "css": ".ds-header { position: relative; display: flex; align-items: center; gap: 1.5rem; min-height: 4rem; padding: 0 2rem; background: var(--band, #fffcf2); border-bottom: 1px solid var(--border, #e8dcb6); } .ds-brand { font-family: var(--font-display, Gabarito, sans-serif); font-size: 1.125rem; font-weight: 700; color: var(--text, #2b2417); text-decoration: none; white-space: nowrap; } .ds-brand:hover { color: var(--accent, #a4441f); } .ds-nav { flex: 1; min-width: 0; position: relative; } .ds-nav-list { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; } .ds-nav-link { display: inline-block; padding: 1.25rem 0; color: var(--text-muted, #5b4e35); font-family: var(--font-body, 'Source Sans 3', sans-serif); font-size: 0.9375rem; font-weight: 600; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; } .ds-nav-link:hover { color: var(--text, #2b2417); } .ds-nav-link[aria-current=\"true\"] { color: var(--text, #2b2417); border-bottom-color: var(--accent, #a4441f); } .ds-nav-has-indicator .ds-nav-link[aria-current=\"true\"] { border-bottom-color: transparent; } .ds-nav-indicator { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100px; background: var(--accent, #a4441f); transform: translateX(0) scaleX(0.53); transform-origin: 0 0; transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); pointer-events: none; }"
+      "refersTo": null,
+      "description": "Sticky header nav: muted links, aria-current marking the visible section, and a single accent indicator slid under the active link by transform when JavaScript is present.",
+      "html": "<nav class=\"ds-nav ds-nav--has-indicator\" aria-label=\"Sections\"><ul class=\"ds-nav__list\"><li><a class=\"ds-nav__link\" href=\"#about\" aria-current=\"true\">About</a></li><li><a class=\"ds-nav__link\" href=\"#work\">Work</a></li><li><a class=\"ds-nav__link\" href=\"#skills\">Skills</a></li></ul><span class=\"ds-nav__indicator\" aria-hidden=\"true\"></span></nav>",
+      "css": ".ds-nav { position: relative; border-bottom: 1px solid var(--border, #e8dcb6); } .ds-nav__list { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; } .ds-nav__link { display: inline-block; padding: 1.25rem 0; font-family: var(--font-body, sans-serif); font-size: 0.9375rem; font-weight: 600; color: var(--text-muted, #5b4e35); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; } .ds-nav__link:hover { color: var(--text, #2b2417); } .ds-nav__link[aria-current=\"true\"] { color: var(--text, #2b2417); } .ds-nav--has-indicator .ds-nav__link[aria-current=\"true\"] { border-bottom-color: transparent; } .ds-nav__indicator { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100px; background: var(--accent, #2f6b3a); transform: translateX(0) scaleX(0.6); transform-origin: 0 0; transition: transform 220ms var(--ease-out, cubic-bezier(0.2,0.8,0.2,1)); pointer-events: none; } .ds-nav__link:focus-visible { outline: 2px solid var(--focus, #2f6b3a); outline-offset: 3px; border-radius: 6px; }"
     },
     {
-      "name": "Project Note Sheet",
+      "name": "Note Sheet",
       "kind": "card",
-      "refersTo": "sheet",
-      "description": "A native <details> sheet with a CSS-drawn chevron. No JavaScript: the whole expand/collapse is the element's own behaviour.",
-      "html": "<details class=\"ds-note\" open><summary><span class=\"ds-note-title\">Consommi Tounsi</span><span class=\"ds-note-meta\">Architecture, backend, frontend, deployment · ESPRIT academic project</span></summary><div class=\"ds-note-body\"><p>E-commerce platform to support local commerce in Tunisia.</p></div></details>",
-      "css": ".ds-note { background: var(--sheet, #ffffff); border-radius: 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56, 42, 12, 0.14)); color: var(--text, #2b2417); font-family: var(--font-body, 'Source Sans 3', sans-serif); font-size: 1.0625rem; line-height: 1.6; } .ds-note > summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1rem; padding: 1rem 2rem; padding-right: 3.25rem; cursor: pointer; list-style: none; position: relative; } .ds-note > summary::-webkit-details-marker { display: none; } .ds-note > summary::after { content: \"\"; position: absolute; right: 2rem; top: 50%; width: 0.6rem; height: 0.6rem; border-right: 2px solid var(--text-muted, #5b4e35); border-bottom: 2px solid var(--text-muted, #5b4e35); transform: translateY(-70%) rotate(45deg); transition: transform 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-note[open] > summary::after { transform: translateY(-30%) rotate(-135deg); } .ds-note > summary:focus-visible { outline: 2px solid var(--focus, #b8471f); outline-offset: 3px; } .ds-note-title { font-family: var(--font-display, Gabarito, sans-serif); font-size: 1.125rem; font-weight: 700; } .ds-note-meta { font-size: 0.875rem; color: var(--text-muted, #5b4e35); } .ds-note-body { padding: 0 2rem 1.5rem; } .ds-note-body p { margin: 0; max-width: 68ch; }"
+      "refersTo": null,
+      "description": "A native <details> on a white sheet: suppressed marker, a two-part summary heading, and a border-drawn chevron that rotates on open. No JavaScript.",
+      "html": "<details class=\"ds-note\"><summary><span class=\"ds-note__heading\"><span class=\"ds-note__title\">Techem WebPortal</span><span class=\"ds-note__meta\">Backend Engineer · MaibornWolff · 2024 – present</span></span></summary><div class=\"ds-note__body\"><p>Customer web portal, developed by an agile, cross-functional team.</p></div></details>",
+      "css": ".ds-note { background: var(--sheet, #fff); border-radius: 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); font-family: var(--font-body, sans-serif); color: var(--text, #2b2417); } .ds-note > summary { display: block; padding: 1rem 2rem; padding-right: 3.25rem; cursor: pointer; list-style: none; position: relative; } .ds-note > summary::-webkit-details-marker { display: none; } .ds-note > summary::after { content: \"\"; position: absolute; right: 2rem; top: 50%; width: 0.6rem; height: 0.6rem; border-right: 2px solid var(--text-muted, #5b4e35); border-bottom: 2px solid var(--text-muted, #5b4e35); transform: translateY(-70%) rotate(45deg); transition: transform 150ms ease; } .ds-note[open] > summary::after { transform: translateY(-30%) rotate(-135deg); } .ds-note__heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1rem; } .ds-note__title { font-family: var(--font-display, Gabarito, sans-serif); font-size: 1.125rem; font-weight: 700; } .ds-note__meta { font-size: 0.875rem; color: var(--text-muted, #5b4e35); } .ds-note__body { padding: 0 2rem 1.5rem; } .ds-note > summary:focus-visible { outline: 2px solid var(--focus, #2f6b3a); outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Timeline Entry",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "A 2px rail with a 1rem accent disc ringed in the current section ground, an uppercase tracked date above, and the entry body on a white sheet.",
+      "html": "<ol class=\"ds-timeline\"><li class=\"ds-timeline__item\"><span class=\"ds-timeline__dates\">Nov 2022 – present</span><div class=\"ds-timeline__body\"><h3 class=\"ds-h3\">Software Engineer · MaibornWolff</h3><p>Grew from a backend-focused role into cloud, DevOps and platform engineering.</p></div></li></ol>",
+      "css": ".ds-timeline { list-style: none; margin: 0; padding: 0 0 0 2rem; position: relative; font-family: var(--font-body, sans-serif); color: var(--text, #2b2417); } .ds-timeline::before { content: \"\"; position: absolute; left: 0.45rem; top: 0.6rem; bottom: 0.6rem; width: 2px; background: var(--border, #e8dcb6); } .ds-timeline__item { position: relative; padding: 0 0 2rem; } .ds-timeline__item:last-child { padding-bottom: 0; } .ds-timeline__item::before { content: \"\"; position: absolute; left: -2rem; top: 0.35rem; width: 1rem; height: 1rem; border-radius: 50%; background: var(--accent, #2f6b3a); box-shadow: 0 0 0 4px var(--bg, #fffcf2); } .ds-timeline__dates { display: block; margin-bottom: 0.5rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted, #5b4e35); } .ds-timeline__body { background: var(--sheet, #fff); border-radius: 12px; box-shadow: var(--shadow, 0 12px 32px rgba(56,42,12,0.14)); padding: 1.5rem 2rem; }"
     }
   ],
   "narrative": {
-    "northStar": "The Butter Sheet",
-    "overview": "A butter-yellow page, warm enough to read as paper rather than as a screen, with the work laid on a white sheet that sits on top of it. The sheet is the event: it carries folder tabs that rise from its top edge, and the selected tab fuses into the sheet the way a tab fuses into a file folder. Everything else — the identity fields, the skills table, the dated timeline, the expandable project notes — either sits on another sheet or lies directly on the butter ground. Depth in this world is one soft drop of warm shadow under a sheet; there is no second layer, no glass, no gradient.\n\nThe tone is calm credibility, not spectacle. The heavy Gabarito headline and the single terracotta accent do the shouting; the rest is warm brown ink on butter at a comfortable 1.0625rem with a 68ch measure. Motion is short (150ms and 220ms) and confined to colour, opacity and one sliding nav underline that animates transform only. One chromatic voice runs the whole surface: terracotta on links, the primary action, the selected tab, the current nav item, the hero rule, list markers and the focus ring. Nothing else is coloured.\n\nThe confirmed anti-references are two: the plain black-on-white document look this build replaced, and the dark terminal developer-portfolio template. The system also has to stay recognisably its own against the colleague's reference site that inspired the composition — the composition system carries over, the palette and display face do not.",
+    "northStar": "The Green Full Stop",
+    "overview": "A near-white page that behaves like good paper: butter-tinted, quiet, and generous with air. Everything structural is achieved by tone and edge rather than by decoration — the ground alternates between two warm near-whites section by section, and pure white sheets float on top of it carrying the content that needs to be read closely. The one thing that raises its voice is forest green, and it is spent almost entirely on endings: the surname and its full stop, the second clause of every section heading, the timeline markers, the selected folder tab. The name ends in green; so does the page's argument.\n\nThe density is document-like without being a document. Headings are set in Gabarito at 800 and tracked tight, so they read as built rather than typed; body text is Source Sans 3 at 1.0625rem on a 1.6 line, capped at a 68ch measure so no line becomes a scanning chore. Source Code Pro appears only where content is literally a token — a technology chip, a status marker — which keeps the monospace signal honest.\n\nWhat the world refuses is equally load-bearing. It refuses the plain-document look (hence the sheets, the alternating ground, the folder tabs) and it refuses the copy of either reference that seeded it (hence the butter tint, Gabarito, and green in place of the references' orange and blue). It carries no photography and no invented metrics; credibility comes from typography, spacing and detail rather than from imagery or numbers.",
+    "northStarProvenance": "Derived from the direction contract in .impeccable/surfaces/index-html.md and PRODUCT.md; no user was available to confirm the qualitative language.",
     "keyCharacteristics": [
-      "Butter ground, deeper butter band, warm off-white sheets — three tones of the same warmth.",
-      "One accent hue (terracotta), used on roughly a tenth of any screen.",
-      "Gabarito 800 headlines set tight (-0.03em at display size) against a calm Source Sans 3 body.",
-      "Sheets lifted by a single soft warm shadow in light, by a 1px hairline ring in dark — never both.",
-      "Folder tabs on the featured-work sheet as the structural signature.",
-      "8px spacing module; 76rem content width; 68ch measure.",
-      "Full parity across light, dark, print, no-JavaScript and 320px."
+      "Butter-tinted near-white ground (#fffcf2) alternating with a warmer tone (#f6f2e6), full-bleed, section by section",
+      "Pure white sheets on a single soft offset shadow in light; a hairline ring in dark",
+      "One accent, forest green (#2f6b3a) in light and mint (#86cf8f) in dark, spent on endings",
+      "Gabarito 700/800 display and headings; Source Sans 3 body; Source Code Pro only in chips and status tokens",
+      "8px module, 76rem content maximum, 68ch measure",
+      "One authored entrance motion, JS-only and reduced-motion aware; every surface works with JavaScript off"
     ],
     "rules": [
-      {
-        "name": "The One Terracotta Rule",
-        "body": "There is exactly one chromatic hue on this site. If a new element needs colour to be understood, it does not need colour — it needs weight, a hairline, or a label.",
-        "section": "colors"
-      },
-      {
-        "name": "The Two Terracottas Rule",
-        "body": "#a4441f is terracotta as text on butter; #c4532b is terracotta as a fill behind white. They are not interchangeable and neither may be substituted for the other to “match” — the split exists so both directions clear WCAG AA.",
-        "section": "colors"
-      },
-      {
-        "name": "The Strong Hairline Is For Controls Rule",
-        "body": "#8f8058 outlines things you can operate. #e8dcb6 rules things you read. A content divider never uses the strong hairline; a control outline never uses the soft one.",
-        "section": "colors"
-      },
-      {
-        "name": "The Gabarito-For-Structure Rule",
-        "body": "Gabarito appears only on things that structure the page: the brand, headings, case and note and column titles. It never sets a paragraph, a button, a chip or a label. Buttons and tabs are Source Sans 3 600 — the display face would make a control look like a headline.",
-        "section": "typography"
-      },
-      {
-        "name": "The Mono-Is-A-Name Rule",
-        "body": "Source Code Pro is used where the string is a machine name or a machine state: technology chips, the CV tech lines, status tokens. It is never used for emphasis, for numbers, or for “technical feel”.",
-        "section": "typography"
-      },
-      {
-        "name": "The Two-Step Headline Rule",
-        "body": "The h1 is set a step below the case title. The name identifies; the sheet is the event. Any new hero must keep this relationship rather than inflating the h1.",
-        "section": "typography"
-      },
-      {
-        "name": "The No-Kicker Rule",
-        "body": "The uppercase tracked label only ever appears as the left column of a row — a dt, a date column, a contact-row label. It never sits above a heading as an eyebrow or kicker.",
-        "section": "typography"
-      },
-      {
-        "name": "The 8px Module Rule",
-        "body": "Every margin, padding and gap comes from the eight-step scale. A one-off value is a sign the component is wrong, not the scale.",
-        "section": "layout"
-      },
-      {
-        "name": "The 68ch Measure Rule",
-        "body": "Paragraphs carry max-width: 68ch by default, not by opt-in. Widening a column never widens its prose.",
-        "section": "layout"
-      },
-      {
-        "name": "The Elevation Declared Once Rule",
-        "body": "A surface declares its edge once: a shadow or a hairline, never both. If a component needs a visible border in light theme, it is not a sheet — it is a notice (like the CV print hint, which is bordered and unlifted).",
-        "section": "elevation"
-      },
-      {
-        "name": "The Warm Shadow Rule",
-        "body": "Shadow colour is rgba(56, 42, 12, …), a brown drawn from the ink, never rgba(0,0,0,…). A neutral shadow turns the butter grey.",
-        "section": "elevation"
-      },
-      {
-        "name": "The Folded Corner Rule",
-        "body": "The featured-work panel's top-left corner is square (border-radius: 0 12px 12px 12px) because a tab sits on it. When the tab row is absent — no JavaScript, or a stacked second panel — the panel takes the full 12px on all four corners.",
-        "section": "shapes"
-      }
+      { "name": "The Green Full Stop Rule", "body": "The accent is reserved for the ending: the surname and its period, the second clause of every h2, and the small terminal signals (timeline dots, list markers, the selected tab, the last facts value). It never tints a large surface, never appears twice in the same role on one screen, and never acquires a companion hue.", "section": "colors" },
+      { "name": "The Hairline Two-Tier Rule", "body": "Content separation uses Sand Border; interactive outlines use Sand Border Strong. Never put Sand Border Strong under text or Sand Border around a control.", "section": "colors" },
+      { "name": "The Warm White Rule", "body": "There is no pure white ground. White appears only as a sheet lifted off the butter page; if a surface is the page itself, it is tinted.", "section": "colors" },
+      { "name": "The Two-Tone Heading Rule", "body": "Every h1 and h2 is written as two clauses: a plain first half in ink and a closing half in the accent, terminated by a full stop. Headings are statements, not labels.", "section": "typography" },
+      { "name": "The Mono Reserve Rule", "body": "Source Code Pro is permitted in exactly two places: technology chips and status tokens. Prose, headings, dates and labels never use it.", "section": "typography" },
+      { "name": "The Balanced Measure Rule", "body": "Headings carry text-wrap: balance; paragraphs carry a 68ch cap (62ch inside About and Education). Nothing on the page runs the full 76rem as text.", "section": "typography" },
+      { "name": "The Alternating Ground Rule", "body": "Section tone alternates via .section--alt across the full bleed. Never tint only the content column; never run two alternate sections back to back.", "section": "layout" },
+      { "name": "The Edge-to-Center Rule", "body": "Content lives in the middle column of the section grid at a 76rem cap. New sections adopt the grid rather than inventing their own container.", "section": "layout" },
+      { "name": "The One Elevation Rule", "body": "There is a single shadow token and a single altitude. Hover never raises a surface; state is shown in colour and border, never in lift.", "section": "elevation" },
+      { "name": "The Dark Hairline Rule", "body": "In dark mode, elevation is a 1px ring, not a shadow. Do not port a light-mode drop shadow into the dark palette.", "section": "elevation" },
+      { "name": "The Four Radii Rule", "body": "12 / 8 / 6 / 999. Any new corner picks one of them; nothing on this page is square except a table edge or a fused tab corner.", "section": "shapes" }
     ],
     "dos": [
-      "Do keep terracotta to one hue and roughly a tenth of any screen — links, the primary action, the current nav item, the selected tab, the hero rule, list markers, focus.",
-      "Do use #a4441f for terracotta text on butter and #c4532b only as a fill behind white.",
-      "Do declare a surface's edge once: the sheet lift in light, the hairline ring in dark, never both.",
-      "Do alternate sheet and bare ground down the page — a long page of nothing but sheets reads as one slab.",
-      "Do set every heading in Gabarito (700/800) and every control, label and paragraph in Source Sans 3.",
-      "Do reserve Source Code Pro for technology names and status tokens.",
-      "Do take every margin, padding and gap from the eight-step 8px scale.",
-      "Do cap prose at 68ch (62ch in the About and Education columns).",
-      "Do ship enhanced behaviour hidden: the tab row is display: none and the theme toggle is hidden until JavaScript wires them.",
-      "Do draw icons as inline SVG with aria-hidden=\"true\" and a text or aria-label name beside them.",
-      "Do give interactive targets a minimum height of 2.75rem.",
-      "Do use --border-strong for control outlines and --border for content rules."
+      "Do keep the accent on endings — the closing clause, the terminal marker, the selected state — per The Green Full Stop Rule.",
+      "Do write every section heading as two clauses with the second in an accent span and a full stop at the end.",
+      "Do alternate section tone with .section--alt full-bleed, and put new content in the section grid's middle column at the 76rem cap.",
+      "Do lift content on the single sheet shadow (0 12px 32px rgba(56, 42, 12, 0.14)) and let the dark theme resolve it to a hairline ring.",
+      "Do spend the 8px module: 4rem section padding, 2rem sheet padding, 1.5rem between grouped blocks.",
+      "Do ship every enhancement as an enhancement — tabs, the nav indicator, the reveal and the toggle each have a defined no-JS state.",
+      "Do keep text within the 68ch measure and hairlines at 1px.",
+      "Do use the accent-contrast token on any filled accent surface instead of hard-coding white."
     ],
     "donts": [
-      "Don't introduce a second accent hue, a gradient, a tinted glass surface or a second elevation level.",
-      "Don't use a neutral black shadow — shadow colour is rgba(56, 42, 12, …).",
-      "Don't put a visible border and a shadow on the same surface.",
-      "Don't set Gabarito on a paragraph, a button, a chip or a label, and don't inflate the h1 past the case title.",
-      "Don't place an uppercase tracked label above a heading as a kicker or eyebrow — labels are row labels.",
-      "Don't render a dense taxonomy as chips; chips are for a stack of about five.",
-      "Don't animate layout properties. The nav indicator moves on transform only.",
-      "Don't add semantics in markup that JavaScript has to make true — no role=\"tab\" on a row that cannot be operated without script.",
-      "Don't let the print stylesheet inherit screen colour, shadow or chrome; print is black on white with no world.",
-      "Don't add an external resource beyond Google Fonts."
+      "Don't introduce a second accent hue, a gradient, or a tinted accent surface beyond the availability pill.",
+      "Don't use pure white as a page ground, or a shadow anywhere in dark mode.",
+      "Don't raise a surface on hover or add a second elevation level; state is colour and border only.",
+      "Don't set body copy, headings, dates or labels in Source Code Pro — chips and status tokens only.",
+      "Don't put Sand Border Strong (#8f8058) under text; it is a control outline, not a text or divider colour.",
+      "Don't add a radius outside 12 / 8 / 6 / 999 (the folder tab's 10px top corners are the one fused exception).",
+      "Don't add a second authored motion, or any motion that survives prefers-reduced-motion: reduce.",
+      "Don't ship a component whose content only exists once JavaScript runs.",
+      "Don't add photography, logos, testimonials or metric callouts; this world carries none."
     ]
   }
 }

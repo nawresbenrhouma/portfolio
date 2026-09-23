@@ -6,7 +6,6 @@
 /* 1. Tokens */
 :root {
   --bg: #fffcf2;
-  --band: #fffcf2;
   --sheet: #ffffff;
   --bg-elevated: #f7f0da;
   --text: #2b2417;
@@ -58,7 +57,6 @@
 
 [data-theme="dark"] {
   --bg: #1b170f;
-  --band: #221c12;
   --sheet: #332c1e;
   --bg-elevated: #3f3727;
   --text: #f2e9d3;
@@ -79,7 +77,6 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #1b170f;
-    --band: #221c12;
     --sheet: #332c1e;
     --bg-elevated: #3f3727;
     --text: #f2e9d3;
@@ -152,7 +149,6 @@ a:hover { text-decoration-thickness: 2px; }
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
-main:focus { outline: none; }
 
 .visually-hidden {
   position: absolute;
@@ -414,6 +410,7 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .tabs__list::-webkit-scrollbar { display: none; }
 .tab {
   flex: none;
+  min-height: 2.75rem;
   padding: 0.75rem 1.125rem;
   background: rgba(43, 36, 23, 0.08);
   border: 0;
@@ -491,7 +488,6 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .section > * { grid-column: 2; }
 .section--alt { background: var(--alt); }
 .section--work { padding-top: var(--space-8); }
-.section--work .work { max-width: 60rem; width: 100%; }
 .section > h2 {
   display: block;
   margin-bottom: var(--space-5);
@@ -533,7 +529,6 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .about__grid .fields dt { padding-bottom: 0; border-bottom: 0; }
 .about__grid .fields dd { padding-top: var(--space-1); }
 .about__text p { max-width: 62ch; }
-.sheet--narrow { max-width: 48rem; }
 .education { max-width: 62ch; }
 
 /* Status tokens */
@@ -767,7 +762,14 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 /* 10. Motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition-duration: 0s !important; animation-duration: 0s !important; }
+  /* Motion off, colour feedback kept: state changes still acknowledge the action. */
+  .reveal { transition: none; opacity: 1; transform: none; }
+  .site-nav__indicator, .note > summary::after { transition: none; }
+  .pill__dot { animation: none; }
+}
+
+@media print {
+  .reveal { opacity: 1; transform: none; }
 }
 
 /* 11. Narrow screens */
@@ -794,7 +796,7 @@ code { font-family: var(--font-code); font-size: 0.9em; }
     .hero__actions { margin-bottom: 0; }
   .tabs__list { padding: 0 var(--space-3) 0 0; gap: var(--space-1); -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); }
   .panel { padding: var(--space-4); }
-  .tab { padding: 0.65rem 0.9rem; font-size: 0.875rem; }
+  .tab { padding: 0.72rem 0.9rem; font-size: 0.875rem; }
   .panel__grid { grid-template-columns: 1fr; }
   .panel__facts { flex-direction: column; gap: var(--space-3); }
   .panel__facts li { white-space: normal; }

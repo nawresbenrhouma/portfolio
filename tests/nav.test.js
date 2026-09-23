@@ -41,7 +41,14 @@ function fakeDoc(ids, { withNav = true } = {}) {
 
 function fakeWin() {
   const listeners = {};
-  return { addEventListener(type, fn) { listeners[type] = fn; }, _fire(type) { listeners[type] && listeners[type](); } };
+  const frames = [];
+  return {
+    addEventListener(type, fn) { listeners[type] = fn; },
+    requestAnimationFrame(fn) { frames.push(fn); return frames.length; },
+    _fire(type) { listeners[type] && listeners[type](); },
+    _flush() { const f = frames.splice(0); f.forEach((fn) => fn()); },
+    _pending: () => frames.length,
+  };
 }
 
 class FakeIO {
@@ -105,9 +112,13 @@ test('indicator subtracts the nav strip scroll offset and follows scroll and res
   assert.equal(indicator.style.transform, 'translateX(100px) scaleX(0.8)');
   doc._list.scrollLeft = 40;
   doc._list._fire('scroll');
+  doc._list._fire('scroll');
+  assert.equal(win._pending(), 1, 'layout reads are batched into one animation frame');
+  win._flush();
   assert.equal(indicator.style.transform, 'translateX(60px) scaleX(0.8)', 'scrolled strip: indicator moves with the links');
   doc._links[1].offsetLeft = 130;
   win._fire('resize');
+  win._flush();
   assert.equal(indicator.style.transform, 'translateX(90px) scaleX(0.8)', 'resize re-measures the active link');
 });
 

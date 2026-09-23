@@ -7,7 +7,7 @@ const css = () => readFile('css/styles.css');
 test('styles.css defines all required tokens on :root', () => {
   const s = css();
   for (const t of ['--bg', '--bg-elevated', '--text', '--text-muted', '--accent', '--accent-contrast', '--border', '--focus',
-    '--space-1', '--space-8', '--radius', '--shadow', '--content-max', '--motion-fast', '--motion-base', '--font-body', '--font-heading', '--font-display', '--band', '--sheet', '--border-strong']) {
+    '--space-1', '--space-8', '--radius', '--shadow', '--content-max', '--motion-fast', '--motion-base', '--font-body', '--font-heading', '--font-display', '--sheet', '--border-strong']) {
     assert.match(s, new RegExp(`:root\\s*{[^}]*${t}\\s*:`), `${t} missing on :root`);
   }
 });
@@ -18,12 +18,15 @@ test('styles.css overrides colour tokens for dark theme and for system preferenc
   assert.match(s, /@media\s*\(prefers-color-scheme:\s*dark\)\s*{\s*:root:not\(\[data-theme="light"\]\)\s*{[^}]*--bg\s*:/);
 });
 
-test('styles.css contains a reduced-motion block that disables transitions and smooth scroll', () => {
+test('styles.css reduced-motion block removes motion but keeps colour feedback; print shows revealed sections', () => {
   const s = css();
-  const block = s.match(/@media\s*\(prefers-reduced-motion:\s*reduce\)\s*{([\s\S]*?)}\s*}/);
+  const block = s.match(/@media\s*\(prefers-reduced-motion:\s*reduce\)\s*{([\s\S]*?)\n}\n/);
   assert.ok(block, 'reduced-motion media block missing');
   assert.match(block[1], /scroll-behavior:\s*auto/);
-  assert.match(block[1], /transition(-duration)?:\s*(none|0s|0ms)/);
+  assert.match(block[1], /\.reveal[^{]*{[^}]*(transition:\s*none|opacity:\s*1)/, 'reveal disabled under reduced motion');
+  assert.doesNotMatch(block[1], /\*,\s*\*::before,\s*\*::after\s*{[^}]*transition-duration:\s*0s/, 'no blanket transition kill');
+  assert.match(s, /@media print\s*{[^}]*\.reveal\s*{[^}]*opacity:\s*1/, 'print shows every section');
+  assert.match(s, /\.tab\s*{[^}]*min-height:\s*2\.75rem/, 'tabs are 44px tall');
 });
 
 test('styles.css never transitions layout properties', () => {

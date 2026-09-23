@@ -37,7 +37,14 @@
       var scrolled = navList ? navList.scrollLeft : 0;
       indicator.style.transform = 'translateX(' + (link.offsetLeft - scrolled) + 'px) scaleX(' + (link.offsetWidth / 100) + ')';
     }
-    function reposition() { moveIndicator(activeLink); }
+    // Scroll and resize fire often; measure once per frame, not per event.
+    var framePending = false;
+    function reposition() {
+      if (framePending) return;
+      framePending = true;
+      var raf = win && win.requestAnimationFrame ? win.requestAnimationFrame.bind(win) : function (fn) { fn(); };
+      raf(function () { framePending = false; moveIndicator(activeLink); });
+    }
     if (navList && navList.addEventListener) navList.addEventListener('scroll', reposition, { passive: true });
     if (win && win.addEventListener) win.addEventListener('resize', reposition, { passive: true });
 

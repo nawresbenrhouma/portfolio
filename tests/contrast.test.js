@@ -20,7 +20,7 @@ function tokens(block) {
 
 test('light tokens: text and accent pairs meet AA on every surface they sit on', () => {
   const t = tokens(/:root\s*{([\s\S]*?)}/);
-  for (const surface of ['bg', 'band', 'sheet', 'bg-elevated']) {
+  for (const surface of ['bg', 'alt', 'sheet', 'bg-elevated']) {
     assert.ok(ratio(t.text, t[surface]) >= 4.5, `text on ${surface}`);
     assert.ok(ratio(t['text-muted'], t[surface]) >= 4.5, `muted on ${surface}`);
     assert.ok(ratio(t.accent, t[surface]) >= 4.5, `accent text on ${surface}: ${ratio(t.accent, t[surface]).toFixed(2)}`);
@@ -31,7 +31,7 @@ test('light tokens: text and accent pairs meet AA on every surface they sit on',
 
 test('dark tokens: text and accent pairs meet AA on every surface they sit on', () => {
   const t = tokens(/\[data-theme="dark"\]\s*{([\s\S]*?)}/);
-  for (const surface of ['bg', 'band', 'sheet', 'bg-elevated']) {
+  for (const surface of ['bg', 'alt', 'sheet', 'bg-elevated']) {
     assert.ok(ratio(t.text, t[surface]) >= 4.5, `text on ${surface}`);
     assert.ok(ratio(t['text-muted'], t[surface]) >= 4.5, `muted on ${surface}`);
     assert.ok(ratio(t.accent, t[surface]) >= 4.5, `accent text on ${surface}`);
