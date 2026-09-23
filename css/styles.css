@@ -512,8 +512,7 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 }
 .fields dd { font-weight: 600; }
 .fields dd:last-of-type { font-weight: 400; }
-.about__text { columns: 2; column-gap: var(--space-7); }
-.about__text p { max-width: none; break-inside: avoid; }
+.about__text { max-width: var(--measure); }
 .education { max-width: 62ch; }
 
 /* Status tokens */
@@ -743,7 +742,6 @@ code { font-family: var(--font-code); font-size: 0.9em; }
   html { scroll-padding-top: 7.5rem; }
   .hero { padding: var(--space-6) var(--space-4); }
   .hero__inner { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
-  .about__text { columns: 1; }
   .projects { grid-template-columns: 1fr; }
     .hero__actions { margin-bottom: 0; }
   .tabs__list { padding: 0 var(--space-3) 0 0; gap: var(--space-1); -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); }

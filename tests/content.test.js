@@ -137,7 +137,8 @@ test('index.html: hero is a two-line name, role, statement, actions and a green 
   assert.match(html, /<a class="button button--primary" href="#work">View work<\/a>/);
   assert.match(html, /<a class="button button--outline" href="mailto:benrhoumanawres7@gmail\.com">Get in touch<\/a>/);
   assert.match(html, /<aside class="panel-green" aria-label="At a glance">/);
-  assert.match(html, /<dl class="glance">[\s\S]*<dt>Based in<\/dt>\s*<dd>Tunis, Tunisia<\/dd>[\s\S]*<dt>Open to<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>/);
+  assert.match(html, /<dl class="glance">\s*<dt>Availability<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>/);
+  assert.doesNotMatch(html.slice(html.indexOf('<dl class="glance">'), html.indexOf('</dl>', html.indexOf('<dl class="glance">'))), /Tunis, Tunisia/, 'location is stated once in the panel');
   assert.match(html, /<div class="panel-green__links">[\s\S]*iconlink[\s\S]*<\/div>/, 'GitHub and LinkedIn live in the panel');
   assert.match(html, /<section id="work" class="section section--work" aria-labelledby="work-title">/);
   assert.doesNotMatch(html, /facts-card/);
@@ -145,7 +146,7 @@ test('index.html: hero is a two-line name, role, statement, actions and a green 
 
 test('index.html: section headings are two-tone with the accent on the closing words', () => {
   const html = readHtml('index.html');
-  for (const [id, text] of [['about', 'growing outward.'], ['work', 'in production.'], ['contact', 'reliable.']]) {
+  for (const [id, text] of [['about', 'growing outward.'], ['work', 'up close.'], ['contact', 'reliable.']]) {
     assert.match(html, new RegExp(`<h2 id="${id}-title">[^<]*<span class="accent">${text.replace('.', '\\.')}</span>`), `${id} heading`);
   }
 });

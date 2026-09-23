@@ -66,6 +66,7 @@ test('mix world: forest accent, alternating section tones, facts card, pill, ver
   assert.match(s, /\.glance\s*{/);
   assert.match(s, /\.hero__text > h1 > \.accent\s*{[^}]*display:\s*block/, 'colour break coincides with the line break');
   assert.match(s, /\.project\s*{/);
+  assert.doesNotMatch(s.match(/\.about__text\s*{[^}]*}/)[0], /columns:/, 'About is single-column prose');
   assert.doesNotMatch(s, /\.pill\s*{|\.facts-card/);
   assert.match(s, /\.timeline::before\s*{/, 'vertical timeline line');
   assert.match(s, /\.reveal\s*{[^}]*opacity:\s*0/);
