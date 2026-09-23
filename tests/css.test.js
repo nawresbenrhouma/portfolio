@@ -67,7 +67,11 @@ test('mobile hero keeps the portrait beside the h1 row; skills read as a table',
   const narrow = s.match(/@media \(max-width: 900px\)\s*{([\s\S]*?)\n}\n/);
   assert.ok(narrow, 'narrow media block');
   assert.match(narrow[1], /\.hero\s*{[^}]*grid-template-columns:\s*minmax\(0, 1fr\) 6rem/);
-  assert.match(narrow[1], /\.hero__photo\s*{[^}]*grid-row:\s*1/);
+  assert.match(narrow[1], /\.hero__text\s*{[^}]*display:\s*contents/, 'hero children become grid items on phones');
+  assert.match(narrow[1], /\.hero__text > h1\s*{[^}]*grid-column:\s*1 \/ -1/, 'h1 spans both columns');
+  assert.match(narrow[1], /\.hero__photo\s*{[^}]*grid-row:\s*2/, 'portrait sits beside the statement');
+  assert.doesNotMatch(s.match(/\.hero__statement\s*{[^}]*}/)[0], /--text-muted/, 'statement is ink, not muted');
+  assert.match(s, /\.skill-group\s*{[^}]*grid-template-columns:\s*19rem/);
   assert.doesNotMatch(narrow[1], /\.hero__photo\s*{[^}]*order:/);
   assert.match(s, /\.skill-group\s*{[^}]*grid-template-columns/);
   assert.match(s, /\.status\s*{/);
