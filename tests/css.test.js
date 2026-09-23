@@ -7,7 +7,7 @@ const css = () => readFile('css/styles.css');
 test('styles.css defines all required tokens on :root', () => {
   const s = css();
   for (const t of ['--bg', '--bg-elevated', '--text', '--text-muted', '--accent', '--accent-contrast', '--border', '--focus',
-    '--space-1', '--space-8', '--radius', '--shadow', '--content-max', '--motion-fast', '--motion-base', '--font-body', '--font-heading']) {
+    '--space-1', '--space-8', '--radius', '--shadow', '--content-max', '--motion-fast', '--motion-base', '--font-body', '--font-heading', '--font-display', '--band', '--sheet', '--border-strong']) {
     assert.match(s, new RegExp(`:root\\s*{[^}]*${t}\\s*:`), `${t} missing on :root`);
   }
 });
@@ -34,7 +34,7 @@ test('styles.css never transitions layout properties', () => {
 test('styles.css styles the essentials', () => {
   const s = css();
   for (const sel of ['.skip-link', '.site-header', '.site-nav__link[aria-current="true"]', '.theme-toggle', '.hero__photo',
-    '.skill-group--primary', '.timeline', '.card', '.contact__list', '.print-hint', ':focus-visible']) {
+    '.skill-group--primary', '.timeline', '.note', '.contact__list', '.print-hint', ':focus-visible']) {
     assert.ok(s.includes(sel), `selector ${sel} missing`);
   }
   assert.match(s, /html\s*{[^}]*scroll-behavior:\s*smooth/);
@@ -62,18 +62,23 @@ test('controls use a 3:1 outline token, separators keep the hairline', () => {
   assert.match(s, /\.print-hint\s*{[^}]*margin:[^;]*var\(--space-5\)[^;]*var\(--space-5\)/);
 });
 
-test('mobile hero keeps the portrait beside the h1 row; skills read as a table', () => {
+
+test('redesign world: butter ground, sheets lifted by shadow alone, Gabarito display, tabs', () => {
   const s = css();
+  assert.match(s, /--font-display:\s*"Gabarito"/);
+  assert.match(s, /--shadow:\s*0 \d+px \d+px/, 'sheet shadow carries an offset and blur');
+  const sheet = s.match(/\.sheet\s*{[^}]*}/)[0];
+  assert.match(sheet, /box-shadow:\s*var\(--shadow\)/);
+  assert.doesNotMatch(sheet, /\bborder:/, 'elevation declared once: no hairline under the shadow');
+  assert.match(s, /\.tabs__list\s*{/);
+  assert.match(s, /\.tab\[aria-selected="true"\]/);
+  assert.match(s, /\.panel\[hidden\]\s*{[^}]*display:\s*none/);
+  assert.match(s, /\.note\s*{/);
+  assert.match(s, /\.fields\s*{/);
+  assert.match(s, /\.skill-group\s*{[^}]*grid-template-columns:\s*19rem/);
+  assert.match(s, /\.status\s*{/);
   const narrow = s.match(/@media \(max-width: 900px\)\s*{([\s\S]*?)\n}\n/);
   assert.ok(narrow, 'narrow media block');
-  assert.match(narrow[1], /\.hero\s*{[^}]*grid-template-columns:\s*minmax\(0, 1fr\) 6rem/);
-  assert.match(narrow[1], /\.hero__text\s*{[^}]*display:\s*contents/, 'hero children become grid items on phones');
-  assert.match(narrow[1], /\.hero__text > h1\s*{[^}]*grid-column:\s*1 \/ -1/, 'h1 spans both columns');
-  assert.match(narrow[1], /\.hero__photo\s*{[^}]*grid-row:\s*2/, 'portrait sits beside the statement');
-  assert.doesNotMatch(s.match(/\.hero__statement\s*{[^}]*}/)[0], /--text-muted/, 'statement is ink, not muted');
-  assert.match(s, /\.skill-group\s*{[^}]*grid-template-columns:\s*19rem/);
-  assert.doesNotMatch(narrow[1], /\.hero__photo\s*{[^}]*order:/);
-  assert.match(s, /\.skill-group\s*{[^}]*grid-template-columns/);
-  assert.match(s, /\.status\s*{/);
-  assert.match(s, /\.hero__fields\s*{/);
+  assert.match(narrow[1], /\.hero__inner\s*{[^}]*grid-template-columns:\s*1fr/);
+  assert.match(narrow[1], /\.hero__photo\s*{[^}]*width:\s*6rem/);
 });

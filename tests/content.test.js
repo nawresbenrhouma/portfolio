@@ -67,6 +67,7 @@ test('index.html: skill groups in the required order', () => {
 test('index.html: enhancement hooks present', () => {
   const html = readHtml('index.html');
   assert.match(html, /<button[^>]*data-theme-toggle[^>]*hidden/);
+  assert.match(html, /<script src="js\/tabs\.js" defer><\/script>/);
   assert.match(html, /<script src="js\/theme\.js" defer><\/script>/);
   assert.match(html, /<script src="js\/nav\.js" defer><\/script>/);
   assert.match(html, /<link rel="stylesheet" href="css\/styles\.css">/);
@@ -129,12 +130,47 @@ test('cv.html: nested engagements are h4 under the h3 employer entry', () => {
 });
 
 // Finish-review fixes (2026-09-23)
-test('index.html: hero identity reads as reference field rows', () => {
+test('index.html: hero carries the statement, availability row, actions and the work sheet', () => {
   const html = readHtml('index.html');
-  assert.match(html, /<dl class="hero__fields">/);
-  assert.match(html, /<dt>Role<\/dt>\s*<dd>Software Engineer at MaibornWolff<\/dd>/);
-  assert.match(html, /<dt>Availability<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>/);
-  assert.doesNotMatch(html, /hero__role|hero__availability/);
+  assert.match(html, /<h1 id="hero-title">Nawres Ben Rhouma<\/h1>/);
+  assert.match(html, /<p class="hero__availability"><span class="field__label">Availability<\/span> <span>Based in Tunis · Open to remote, part-time roles<\/span><\/p>/);
+  assert.match(html, /<a class="button button--secondary" href="cv\.html">View CV<\/a>/);
+  assert.match(html, /<a class="button button--primary" href="mailto:benrhoumanawres7@gmail\.com">Get in touch<\/a>/);
+  assert.match(html, /<section class="sheet work" aria-labelledby="work-title">/);
+});
+
+test('index.html: About keeps the Role / Availability / Focus field rows', () => {
+  const html = readHtml('index.html');
+  const about = html.slice(html.indexOf('<section id="about"'), html.indexOf('<section id="skills"'));
+  assert.match(about, /<dl class="fields">/);
+  assert.match(about, /<dt>Role<\/dt>\s*<dd>Software Engineer at MaibornWolff<\/dd>/);
+  assert.match(about, /<dt>Availability<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>/);
+});
+
+test('index.html: selected-work tabs are accessible and stack without JS', () => {
+  const html = readHtml('index.html');
+  const tabs = [...html.matchAll(/<button class="tab" role="tab" id="tab-([a-z]+)" aria-controls="panel-\1"[^>]*>([^<]+)<\/button>/g)];
+  assert.deepEqual(tabs.map((m) => m[1]), ['techem', 'copilot', 'consommi']);
+  assert.deepEqual(tabs.map((m) => m[2]), ['Techem WebPortal', 'Copilot Studio pilot', 'Consommi Tounsi']);
+  assert.match(html, /<div class="tabs__list" role="tablist" aria-label="Selected work">/);
+  for (const id of ['techem', 'copilot', 'consommi']) {
+    assert.match(html, new RegExp(`<article class="panel" role="tabpanel" id="panel-${id}" aria-labelledby="tab-${id}">`), `panel ${id}`);
+  }
+  assert.doesNotMatch(html.slice(0, html.indexOf('</main>')), /role="tabpanel"[^>]*\shidden/, 'panels are visible without JS');
+  assert.match(html, /<script src="js\/tabs\.js" defer><\/script>/);
+});
+
+test('index.html: project notes are native expandable entries', () => {
+  const html = readHtml('index.html');
+  const notes = [...html.matchAll(/<details class="note">\s*<summary>/g)];
+  assert.equal(notes.length, 4);
+  assert.match(html, /<details class="note" open>|<details class="note">\s*<summary><span class="note__title">Techem WebPortal<\/span>/);
+});
+
+test('index.html: no invented numbers in the work sheet', () => {
+  const html = readHtml('index.html');
+  const work = html.slice(html.indexOf('class="sheet work"'), html.indexOf('<section id="about"'));
+  assert.doesNotMatch(work, /\b\d{2,3}(,\d{3})?\s*(users|services|microservices|%|engineers)\b/i);
 });
 
 test('index.html: skills are typed rows with status tokens, no relocated eyebrows', () => {
