@@ -1723,7 +1723,7 @@ Look at `.qa/index-1440-light.png` and `.qa/index-390-light.png` once to confirm
 
 - [ ] **Step 5: Create the GitHub repo under the personal account**
 
-`gh` on this machine is logged in as the work account `nawresbrh-mw`. Do **not** push with it. Either:
+`gh` on this machine may be logged in as a work account. Do **not** push with it. Either:
 
 (a) Nawres runs in this session:
 ```
