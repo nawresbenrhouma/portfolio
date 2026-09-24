@@ -21,7 +21,7 @@
 - Contact values: email `benrhoumanawres7@gmail.com`, LinkedIn `https://www.linkedin.com/in/nawres-ben-rhouma21/`, GitHub `https://github.com/nawresbenrhouma`, location "Tunis, Tunisia · remote".
 - Only permitted external resources: `fonts.googleapis.com` / `fonts.gstatic.com` if DESIGN.md chooses a Google Font. No other external scripts, styles, images or fetches.
 - Pages must be complete and readable with JavaScript disabled. JS only enhances (theme toggle, active nav link).
-- Commits in this repo use the personal identity `Nawres Ben Rhouma <benrhoumanawres7@gmail.com>` (set in Task 1). Every commit message ends with the line `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`.
+- Commits in this repo use the personal identity `Nawres Ben Rhouma <benrhoumanawres7@gmail.com>` (set in Task 1).
 - Content facts come only from the spec §4 and §5. Do not add claims, employers, dates, or skills not in the spec. Learning items stay under "In progress".
 - Skill order in the Skills section is fixed: Backend Engineering, Cloud & Architecture, DevOps / Infrastructure as Code, AI-Assisted Development.
 
@@ -242,9 +242,7 @@ the look.
 
 ```bash
 git add .gitignore .nojekyll .htmlvalidate.json README.md scripts/check.sh tests/helpers.js tests/links.test.js assets/photo-placeholder.svg
-git commit -m "Scaffold repo, check harness and link test
-
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+git commit -m "Scaffold repo, check harness and link test"
 ```
 
 ---
@@ -632,9 +630,7 @@ Expected: no errors. Fix any reported issue in the markup (not by disabling rule
 
 ```bash
 git add index.html tests/content.test.js assets/favicon.svg css/styles.css js/theme.js js/nav.js
-git commit -m "Add main page content and content tests
-
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+git commit -m "Add main page content and content tests"
 ```
 
 ---
@@ -839,9 +835,7 @@ Expected: all node tests PASS, html-validate reports no errors for both pages.
 
 ```bash
 git add cv.html css/print.css tests/content.test.js
-git commit -m "Add CV page content
-
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+git commit -m "Add CV page content"
 ```
 
 ---
@@ -891,9 +885,7 @@ Expected: every line prints `ok`. Fix DESIGN.md until it does.
 
 ```bash
 git add PRODUCT.md DESIGN.md
-git commit -m "Add product and design context from impeccable
-
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+git commit -m "Add product and design context from impeccable"
 ```
 
 ---
@@ -1184,9 +1176,7 @@ Open `/tmp/desktop.png` with the Read tool and confirm the page is styled (not r
 
 ```bash
 git add css/styles.css js/theme.js tests/css.test.js tests/theme.test.js index.html cv.html
-git commit -m "Style the site from DESIGN.md and add theme toggle
-
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+git commit -m "Style the site from DESIGN.md and add theme toggle"
 ```
 
 ---
@@ -1331,9 +1321,7 @@ Run `python3 -m http.server 8080`, open `http://localhost:8080/`, scroll, confir
 
 ```bash
 git add js/nav.js tests/nav.test.js
-git commit -m "Highlight the active section in the sticky nav
-
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+git commit -m "Highlight the active section in the sticky nav"
 ```
 
 ---
@@ -1436,9 +1424,7 @@ Expected: tests PASS; output `pages: 1` or `pages: 2`. If `mdls` returns `(null)
 
 ```bash
 git add css/print.css scripts/print-check.sh tests/css.test.js
-git commit -m "Add CV print stylesheet and print check
-
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+git commit -m "Add CV print stylesheet and print check"
 ```
 
 ---
@@ -1583,9 +1569,7 @@ Expected: all PASS.
 
 ```bash
 git add index.html assets/og.html assets/og.png assets/favicon.svg .github/workflows/deploy.yml tests/content.test.js
-git commit -m "Add social preview, favicon colours and GitHub Pages workflow
-
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+git commit -m "Add social preview, favicon colours and GitHub Pages workflow"
 ```
 
 ---
@@ -1657,9 +1641,7 @@ Run `scripts/screenshots.sh` again and inspect only the screenshots affected by 
 
 ```bash
 git add scripts/screenshots.sh css/styles.css css/print.css index.html cv.html
-git commit -m "QA round: responsive, theme and accessibility fixes
-
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+git commit -m "QA round: responsive, theme and accessibility fixes"
 ```
 
 ---
@@ -1715,9 +1697,7 @@ Keep `assets/photo-placeholder.svg` in the repo? No: delete it and remove nothin
 scripts/check.sh && scripts/screenshots.sh
 git rm -q assets/photo-placeholder.svg
 git add index.html assets/photo.jpg assets/photo-480.jpg assets/photo-960.jpg tests/content.test.js
-git commit -m "Use the real portrait photo in the hero
-
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+git commit -m "Use the real portrait photo in the hero"
 ```
 Look at `.qa/index-1440-light.png` and `.qa/index-390-light.png` once to confirm the photo renders.
 
@@ -1762,9 +1742,7 @@ Expected: four lines of `200` (Pages can take a minute after the run; retry once
 Add to `README.md` under Deploy: `Live: https://nawresbenrhouma.github.io/portfolio/`. Commit:
 ```bash
 git add README.md
-git commit -m "Record live URL
-
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+git commit -m "Record live URL"
 git push
 ```
 
