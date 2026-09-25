@@ -66,10 +66,17 @@
     }
 
     // Links elsewhere on the page (Experience, Skills) point at a panel. Show it
-    // on click, before the browser follows the link, so the jump lands on a
-    // visible panel even when the hash is already set.
+    // on click, so the jump lands on a visible panel even when the hash is
+    // already set. Where history is available the script does the jump itself:
+    // the native jump, computed while the panels swap, can overshoot on mobile.
     Array.prototype.slice.call(doc.querySelectorAll('a[href^="#panel-"]')).forEach(function (link) {
-      link.addEventListener('click', function () { showPanel(link.getAttribute('href').slice(1), false); });
+      link.addEventListener('click', function (ev) {
+        var href = link.getAttribute('href');
+        var scripted = !!(win && win.history && win.history.pushState);
+        if (!showPanel(href.slice(1), scripted) || !scripted) return;
+        ev.preventDefault();
+        win.history.pushState(null, '', href);
+      });
     });
 
     select(0, false);

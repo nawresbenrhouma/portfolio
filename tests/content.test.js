@@ -122,7 +122,7 @@ test('index.html: skip link lands on main content, heading anchors have unique n
   const html = readHtml('index.html');
   assert.match(html, /<a class="skip-link" href="#top">/);
   const labels = [...html.matchAll(/class="heading-anchor"[^>]*aria-label="([^"]+)"/g)].map((m) => m[1]);
-  assert.ok(labels.length === 6);
+  assert.equal(labels.length, 6);
   assert.equal(new Set(labels).size, labels.length, 'duplicate heading-anchor labels');
 });
 
@@ -367,4 +367,11 @@ test('index.html: About keeps two paragraphs, a lead-in and four How-I-work stre
   const titles = [...about.matchAll(/<h3 class="strengths__title">([^<]+)<\/h3>/g)].map((m) => m[1]);
   assert.deepEqual(titles, ['Release quality', 'Onboarding &amp; documentation', 'Team practice', 'Stepping in']);
   assert.match(about, /<ul class="strengths" aria-label="How I work">/);
+});
+
+test('index.html: facts removed from Experience still appear in the work panels', () => {
+  const html = readHtml('index.html');
+  const work = html.slice(html.indexOf('<section id="work"'), html.indexOf('<section id="skills"'));
+  assert.match(work, /Co-presented at a JAT event, well received by MaibornWolff and client leadership/);
+  assert.match(work, /version comparisons/i);
 });

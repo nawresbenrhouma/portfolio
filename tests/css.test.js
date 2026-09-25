@@ -120,3 +120,7 @@ test('skill meta lines sit in the list column and fall back to one column on nar
   const narrow = s.slice(s.indexOf('@media (max-width: 900px)'), s.indexOf('@media (max-width: 640px)'));
   assert.match(narrow, /\.skill-group > \.skill-group__meta\s*{[^}]*grid-column:\s*auto/);
 });
+
+test('panel jumps leave room for the tab row under the sticky header', () => {
+  assert.match(css(), /\.tabs__list--enhanced ~ \.panel\s*{[^}]*scroll-margin-top:\s*3\.5rem/);
+});

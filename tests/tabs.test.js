@@ -128,3 +128,28 @@ test('showPanel returns false for an unknown panel id', () => {
   assert.equal(api.showPanel('panel-nope', false), false);
   assert.equal(api.showPanel('panel-copilot', false), true);
 });
+
+test('with a window, a panel link click takes over the jump: scrolls the panel into view and records the hash', () => {
+  const link = el({ href: '#panel-copilot' });
+  const doc = fakeDoc([link]);
+  const win = fakeWin('');
+  const pushed = [];
+  win.history = { pushState(state, title, url) { pushed.push(url); } };
+  tabs.initTabs(doc, win);
+  let prevented = false;
+  link.fire('click', { preventDefault() { prevented = true; } });
+  assert.ok(prevented, 'native jump cancelled');
+  assert.equal(doc._panels[1].hidden, false);
+  assert.ok(doc._panels[1].scrolled, 'scrolled by script, honouring scroll-margin');
+  assert.deepEqual(pushed, ['#panel-copilot']);
+});
+
+test('without history.pushState, a panel link click keeps the native jump', () => {
+  const link = el({ href: '#panel-copilot' });
+  const doc = fakeDoc([link]);
+  tabs.initTabs(doc, fakeWin(''));
+  let prevented = false;
+  link.fire('click', { preventDefault() { prevented = true; } });
+  assert.equal(prevented, false);
+  assert.equal(doc._panels[1].hidden, false);
+});
