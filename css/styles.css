@@ -524,7 +524,7 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .strengths li { border-top: 2px solid var(--accent); padding-top: var(--space-3); }
 .strengths__title { font-size: 1.0625rem; margin-bottom: var(--space-1); }
 .strengths p { margin: 0; font-size: var(--text-small); color: var(--text-muted); }
-.education { max-width: 62ch; }
+.education__degree { max-width: 62ch; margin-bottom: var(--space-6); }
 
 /* Status tokens */
 .status {

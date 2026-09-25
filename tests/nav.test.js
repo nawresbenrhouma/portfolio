@@ -132,6 +132,6 @@ test('no IntersectionObserver: returns null and touches nothing', () => {
 test('index.html works without JS: every nav link is a plain anchor to an existing section', () => {
   const html = readHtml('index.html');
   const hrefs = [...html.matchAll(/class="site-nav__link" href="#([^"]+)"/g)].map((m) => m[1]);
-  assert.ok(hrefs.length >= 7);
+  assert.deepEqual(hrefs, ['about', 'work', 'skills', 'experience', 'education', 'contact']);
   for (const id of hrefs) assert.ok(html.includes(`<section id="${id}"`), `#${id} target missing`);
 });

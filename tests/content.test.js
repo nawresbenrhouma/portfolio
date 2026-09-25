@@ -21,7 +21,7 @@ const REQUIRED_INDEX = [
   'Master',
 ];
 
-const SECTION_IDS = ['about', 'work', 'skills', 'experience', 'learning', 'education', 'contact'];
+const SECTION_IDS = ['about', 'work', 'skills', 'experience', 'education', 'contact'];
 
 for (const page of ['index.html', 'cv.html']) {
   test(`${page}: forbidden content absent`, () => {
@@ -122,7 +122,7 @@ test('index.html: skip link lands on main content, heading anchors have unique n
   const html = readHtml('index.html');
   assert.match(html, /<a class="skip-link" href="#top">/);
   const labels = [...html.matchAll(/class="heading-anchor"[^>]*aria-label="([^"]+)"/g)].map((m) => m[1]);
-  assert.ok(labels.length >= 7);
+  assert.ok(labels.length === 6);
   assert.equal(new Set(labels).size, labels.length, 'duplicate heading-anchor labels');
 });
 
@@ -262,10 +262,14 @@ test('index.html: skills are typed rows with status tokens, no relocated eyebrow
   assert.match(html, /<h3>DevOps \/ Infrastructure as Code<\/h3>/);
 });
 
-test('index.html: learning items carry status tokens', () => {
+test('index.html: Education holds the degree and the certification lists with status tokens', () => {
   const html = readHtml('index.html');
-  assert.match(html, /<h3>Certifications and training <span class="status status--done">Completed<\/span><\/h3>/);
-  assert.match(html, /<h3>Currently learning <span class="status status--growing">In progress<\/span><\/h3>/);
+  assert.doesNotMatch(html, /id="learning"|href="#learning"/);
+  const edu = html.slice(html.indexOf('<section id="education"'), html.indexOf('<section id="contact"'));
+  assert.match(edu, /<span id="education-title">Education &amp; <span class="accent">certifications\.<\/span><\/span>/);
+  assert.ok(edu.indexOf('ESPRIT') < edu.indexOf('Certifications and training'), 'degree first');
+  assert.match(edu, /<h3>Certifications and training <span class="status status--done">Completed<\/span><\/h3>/);
+  assert.match(edu, /<h3>Currently learning <span class="status status--growing">In progress<\/span><\/h3>/);
 });
 
 // Whole-branch review fixes (2026-09-23)

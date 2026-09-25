@@ -241,7 +241,7 @@ Two warm near-whites, an espresso ink, and a single butter yellow that never sha
 - **Warm Band** (`#f6f2e6` light / `#201d17` dark): the alternate section tone. Applied full-bleed to `.section--alt`, so section rhythm is legible from the scrollbar alone.
 - **Sheet White** (`#ffffff` light / `#332c1e` dark): the lifted content surface — work panels, project cards, timeline bodies, the about/skills/contact sheets, the CV page.
 - **Butter Raised** (`#f7f0da` light / `#3f3727` dark): the one small tinted fill, used for technology chips.
-- **Espresso Ink** (`#2b2417` light / `#f2e9d3` dark): all primary text, the brand mark, the learning columns' 2px rule, and the secondary (inverted) button's ground.
+- **Espresso Ink** (`#2b2417` light / `#f2e9d3` dark): all primary text, the brand mark, the Education columns' 2px rule, and the secondary (inverted) button's ground.
 - **Bark Muted** (`#5b4e35` light / `#cbbd9c` dark): labels, dates, meta lines, nav links at rest, secondary prose.
 - **Sand Border** (`#e8dcb6` light / `#4a4130` dark): hairlines — section rules, the header underline, column dividers, contact rows.
 - **Sand Border Strong** (`#8f8058` light / `#8f8160` dark): control outlines only. It sits around 3.5:1 on the butter ground, which is enough for a non-text UI boundary and not enough for text.
@@ -267,12 +267,13 @@ Two warm near-whites, an espresso ink, and a single butter yellow that never sha
 - **Display** (800, `clamp(3rem, 2rem + 3.6vw, 5rem)`, line-height 0.98, tracking -0.04em): the hero name only. The accent span is `display: block`, so the second line and the colour change are the same event.
 - **Panel Title** (800, `clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem)`, tracking -0.02em): the project name inside a work panel. Deliberately near-display scale — the folder sheet is the page's second hero.
 - **Headline** (800, 1.75rem, line-height 1.1, tracking -0.02em): section `h2`. Always two clauses, the second wrapped in an accent span, ending in a full stop; a `#` heading anchor follows, invisible until hover or focus.
-- **Title** (700, 1.25rem, tracking -0.01em): `h3` — timeline roles, project cards, skill groups, learning columns.
+- **Title** (700, 1.25rem, tracking -0.01em): `h3` — timeline roles, project cards, skill groups, Education columns, About strengths.
 - **Glance Value** (Gabarito 700, 1.25rem, line-height 1.25): the three values on the butter panel. The only place display type is used at body scale, which is what makes the panel read as a summary rather than a list.
 - **Body** (400, 1.0625rem, line-height 1.6): all prose, capped at a 68ch measure. The About sheet takes the same cap plus its own 2rem padding on each side, so the sheet ends where the text ends.
 - **Small** (400, 0.875rem): meta lines, dates, project meta, footer, the print hint.
 - **Label** (600, 0.75rem, 0.06em, uppercase): contact labels and timeline dates. The glance panel's terms track slightly wider (0.08em) and sit at 80% opacity on the green.
-- **Role Line** (600, 0.75rem, 0.12em, uppercase): the hero role directly under the name — the widest tracking on the page, used once.
+- **Role Line** (600, 0.75rem, 0.12em, uppercase): the hero role as an eyebrow directly above the name — the widest tracking on the page, used once.
+- **Claim** (Gabarito 700, `clamp(1.375rem, 1.1rem + 1vw, 1.75rem)`, tracking -0.01em, balanced): the one-line claim under the name — "Backend services that reach production, and the platform under them." The positioning statement follows it in muted 1.125rem, then the actions.
 
 ### Named Rules
 **The Two-Tone Heading Rule.** Every `h1` and `h2` is written as two clauses: a plain first half in ink and a closing half in the accent, terminated by a full stop. Headings are statements, not labels.
@@ -318,7 +319,7 @@ Depth is tonal first and shadowed second. The page ground, the alternate band an
 
 Four radii and nothing else: 12px on every lifted surface (the butter panel, sheets, work panels, project cards); 8px on buttons, the skip link and the print hint; 6px on chips and the focus ring; 999px on the status tokens and the circular theme toggle. Folder tabs take a 10px top-only radius (`10px 10px 0 0`), and the panel beneath the tab row squares its top-left corner (`0 12px 12px 12px`) so tab and sheet fuse into one silhouette.
 
-Borders are hairlines at 1px in two weights (see The Hairline Two-Tier Rule). Three deliberate exceptions carry meaning: the learning columns open with a 2px rule in full ink; the vertical timeline rail is a 2px line in the border colour with 1rem accent discs punched through it, each ringed by 4px of the current section ground; and the panel's column icons are drawn at 2px stroke so they sit at the same weight as those rules rather than as filled glyphs.
+Borders are hairlines at 1px in two weights (see The Hairline Two-Tier Rule). Four deliberate exceptions carry meaning: the Education columns open with a 2px rule in full ink; the About strengths sit under a 2px accent rule; the vertical timeline rail is a 2px line in the border colour with 1rem accent discs punched through it, each ringed by 4px of the current section ground; and the panel's column icons are drawn at 2px stroke so they sit at the same weight as those rules rather than as filled glyphs.
 
 ### Named Rules
 **The Four Radii Rule.** 12 / 8 / 6 / 999. Any new corner picks one of them; nothing on this page is square except a table edge or a fused tab corner.
@@ -357,22 +358,22 @@ A two-column grid of compact white sheets at 1.5rem gap, each padded 1.5rem × 2
 - **Status tokens:** pill-radius outlines at 0.6875rem monospace with no fill, attached inline to a heading. Three states: core (accent text and border), growing (ink text on the strong hairline), done (muted). They label honesty about depth — never used as a badge or a count.
 
 ### About Prose
-No boxes, no field rows: three paragraphs on a padded white sheet. The sheet itself is capped at the measure plus its own padding (`calc(68ch + 2 × 2rem)`) and the prose at the measure, so the card ends where the reading line ends instead of stretching to the 76rem grid. It needs no breakpoint of its own.
+No boxes, no field rows: two paragraphs and a one-line lead-in on a padded white sheet, followed by the four "How I work" strengths in a 2×2 grid (one column under 900px), each under a 2px accent rule with a title and one muted line. No icons, no cards. The sheet itself is capped at the measure plus its own padding (`calc(68ch + 2 × 2rem)`) and the prose at the measure, so the card ends where the reading line ends instead of stretching to the 76rem grid. The prose needs no breakpoint of its own.
 
 ### Skills Table
-Full-width rows on a sheet: a 19rem heading column and a free-flowing list column, divided by hairlines, first row unpadded and last row undivided. Inside a skill group the chip styling is deliberately dropped — items become plain inline text separated by muted commas, so a long skill list reads as a sentence rather than a wall of boxes.
+Full-width rows on a sheet: a 19rem heading column and a free-flowing list column, divided by hairlines, first row unpadded and last row undivided. Inside a skill group the chip styling is deliberately dropped — items become plain inline text separated by muted commas, so a long skill list reads as a sentence rather than a wall of boxes. Under the list, a small muted "Used in" line links to the projects where the group was used, and groups with training-only items add a "Learning" line, so used and studied are never mixed.
 
 ### Timeline
-An ordered list with a 2px hairline rail and 1rem accent discs, each ringed by 4px of the current ground (the ring colour follows `.section--alt`). Dates sit above the sheet as an uppercase tracked label; the entry body is a white sheet. Nested engagements inside a body indent behind a left hairline with their own heading, date span, chips and bullets. Bullet markers are accent-coloured.
+An ordered list with a 2px hairline rail and 1rem accent discs, each ringed by 4px of the current ground (the ring colour follows `.section--alt`). Dates sit above the sheet as an uppercase tracked label; the entry body is a white sheet. Nested engagements inside a body indent behind a left hairline with their own heading, date span, chips, a one-line summary and a "Details in Selected work" link to the matching panel; project detail lives only in the work sheet. Bullet markers are accent-coloured.
 
-### Learning Columns
-Two columns on the bare page ground — no sheet — each opening with a 2px ink rule, a title with a status token, and a bullet list. The only place a 2px rule is used as a heading device.
+### Education & Certifications
+The degree first, capped at 62ch, then two columns on the bare page ground, no sheet, each opening with a 2px ink rule, a title with a status token and a bullet list. Only the Education section uses a 2px ink rule as a heading device; the About strengths use a 2px accent rule.
 
 ### Contact Sheet
 A white sheet split 1 : 1.4 — an intro column with a 1.25rem lead and the two actions, and a list column of label/value rows on hairlines with long URLs allowed to break anywhere. Collapses to one column below 900px.
 
 ### Navigation
-The sticky header carries the brand in Gabarito 700, eight anchors in muted semibold 0.9375rem, the ghost View CV button and the circular theme toggle. The current section is marked by `aria-current="true"` and a 2px accent underline; when JavaScript is present, a single 100px-wide accent indicator is injected and slid under the active link by transform only (220ms), and the static underline is suppressed so the two never double. Below 900px the nav moves to its own row as a horizontally scrollable strip with a right-edge fade mask, and the indicator corrects for the strip's scroll offset.
+The sticky header carries the brand in Gabarito 700, six anchors (About, Work, Skills, Experience, Education, Contact) in muted semibold 0.9375rem, the ghost View CV button and the circular theme toggle. The current section is marked by `aria-current="true"` and a 2px accent underline; when JavaScript is present, a single 100px-wide accent indicator is injected and slid under the active link by transform only (220ms), and the static underline is suppressed so the two never double. Below 900px the nav moves to its own row as a horizontally scrollable strip with a right-edge fade mask, and the indicator corrects for the strip's scroll offset.
 
 ### Theme Toggle
 A 2.75rem circle on the sheet colour with a strong hairline border, holding a sun or moon inline SVG; hover turns border and glyph accent. It ships `hidden` and is revealed by JavaScript, carries `aria-pressed`, and the stored theme is applied by an inline head script before first paint so there is no flash.
