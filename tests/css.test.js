@@ -113,3 +113,10 @@ test('redesign world: butter ground, sheets lifted by shadow alone, Gabarito dis
   assert.match(s.slice(0, 260), /butter/i, 'stylesheet header describes the shipped world');
   assert.doesNotMatch(s, /hero__photo/, 'no photo rules remain');
 });
+
+test('skill meta lines sit in the list column and fall back to one column on narrow screens', () => {
+  const s = css();
+  assert.match(s, /\.skill-group > \.skill-group__meta\s*{[^}]*grid-column:\s*2/);
+  const narrow = s.slice(s.indexOf('@media (max-width: 900px)'), s.indexOf('@media (max-width: 640px)'));
+  assert.match(narrow, /\.skill-group > \.skill-group__meta\s*{[^}]*grid-column:\s*auto/);
+});

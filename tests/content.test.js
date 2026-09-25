@@ -329,3 +329,27 @@ test('index.html: Experience engagements carry a summary and a link to their pan
   }
   assert.deepEqual(targets.sort(), ['panel-copilot', 'panel-industrial', 'panel-travelapp', 'panel-webportal']);
 });
+
+test('index.html: every skill group says where it was used; training-only items sit on a Learning line', () => {
+  const html = readHtml('index.html');
+  const skills = html.slice(html.indexOf('<section id="skills"'), html.indexOf('<section id="experience"'));
+  const groups = skills.split('<article class="skill-group').slice(1).map((s) => s.slice(0, s.indexOf('</article>')));
+  assert.equal(groups.length, 4);
+  for (const g of groups) {
+    const used = g.match(/<p class="skill-group__meta"><span class="skill-group__label">Used in<\/span>([\s\S]*?)<\/p>/);
+    assert.ok(used, 'Used in line present');
+    const hrefs = [...used[1].matchAll(/href="#([^"]+)"/g)].map((m) => m[1]);
+    assert.ok(hrefs.length >= 1, 'at least one project link');
+    for (const id of hrefs) assert.ok(html.includes(`<article class="panel" id="${id}">`), `#${id} exists`);
+  }
+  const [, cloud, devops] = groups;
+  const list = (g) => g.slice(g.indexOf('<ul class="tags">'), g.indexOf('</ul>'));
+  const learning = (g) => (g.match(/<p class="skill-group__meta skill-group__meta--learning"><span class="skill-group__label">Learning<\/span>([^<]*)<\/p>/) || [])[1] || '';
+  for (const item of ['Azure Landing Zones', 'Governance &amp; security']) {
+    assert.ok(!list(cloud).includes(item) && learning(cloud).includes(item), `${item} is on the Learning line`);
+  }
+  for (const item of ['Terraform', 'OpenTofu', 'Azure Verified Modules']) {
+    assert.ok(!list(devops).includes(item) && learning(devops).includes(item), `${item} is on the Learning line`);
+  }
+  assert.ok(list(devops).includes('Kubernetes'), 'Kubernetes stays: used on AKS');
+});
