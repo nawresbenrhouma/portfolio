@@ -35,13 +35,13 @@ Visitors arrive from LinkedIn, a CV link, or an application email. Reading happe
 - Only permitted external resources: Google Fonts. No analytics, no contact form, no PDF files.
 - All URLs relative; site lives at https://nawresbenrhouma.github.io/portfolio/.
 - Content facts are fixed in the design spec (docs/superpowers/specs/2026-09-23-portfolio-site-design.md). No new claims, employers, dates or skills.
-- Language: English. The word "Junior" never appears; the public title is "Software Engineer at MaibornWolff".
+- Language: English. The word "Junior" never appears; the hero eyebrow reads "Software Engineer" (employer shown in About, Experience and the CV).
 - Skills hierarchy is fixed: Backend Engineering → Cloud & Architecture → DevOps / Infrastructure as Code → AI-Assisted Development.
 - Open decision: none on product truth; visual world decided in new-work.
 
 ## Brand Commitments
 
-- Name: Nawres Ben Rhouma. Title: Software Engineer at MaibornWolff.
+- Name: Nawres Ben Rhouma. Title: Software Engineer (MaibornWolff; the CV page keeps "Software Engineer at MaibornWolff").
 - Voice: confident, precise, warm; credible and calm. Not salesy, not playful, not informal, no emoji, no hype words.
 - Must not look like a generic developer-portfolio template.
 - Must not imply lead, architect or senior scope.

@@ -4,9 +4,8 @@ const { readHtml, readFile } = require('./helpers');
 
 const REQUIRED_INDEX = [
   'Nawres Ben Rhouma',
-  'Software Engineer at MaibornWolff',
   'Backend Software Engineer with Java expertise, expanding into Cloud &amp; Platform Engineering and AI-assisted development.',
-  'Based in Tunis · Open to remote, part-time roles',
+  'Based in Tunis<br>Open to remote, part-time roles',
   'mailto:benrhoumanawres7@gmail.com',
   'https://www.linkedin.com/in/nawres-ben-rhouma21/',
   'https://github.com/nawresbenrhouma',
@@ -138,13 +137,13 @@ test('index.html: hero is a two-line name, role, statement, actions and a green 
   const html = readHtml('index.html');
   assert.doesNotMatch(html, /class="pill"/, 'no availability pill; availability lives in the panel');
   assert.match(html, /<h1 id="hero-title">Nawres <span class="accent">Ben Rhouma\.<\/span><\/h1>/);
-  assert.match(html, /<p class="hero__role">Software Engineer at MaibornWolff<\/p>/);
+  assert.match(html, /<p class="hero__role">Software Engineer<\/p>/);
   assert.match(html, /<a class="button button--primary" href="#work">View work<\/a>/);
   assert.match(html, /<a class="button button--outline" href="assets\/Nawres_Ben_Rhouma_CV\.pdf" download>Download CV<\/a>/);
   assert.ok(require('node:fs').existsSync(require('node:path').resolve(__dirname, '../assets/Nawres_Ben_Rhouma_CV.pdf')), 'CV PDF ships');
   assert.match(html, /<a class="site-header__brand" href="#top" aria-label="Nawres Ben Rhouma, home">NB\.<\/a>/, 'header shows a monogram, not the full name twice');
   assert.match(html, /<aside class="panel-green" aria-label="At a glance">/);
-  assert.match(html, /<dl class="glance">\s*<dt>Availability<\/dt>\s*<dd>Based in Tunis · Open to remote, part-time roles<\/dd>\s*<dt>Working on<\/dt>\s*<dd>Software development · Azure platform · AI-assisted development<\/dd>\s*<\/dl>/, 'two pairs only, no Since');
+  assert.match(html, /<dl class="glance">\s*<dt>Availability<\/dt>\s*<dd>Based in Tunis<br>Open to remote, part-time roles<\/dd>\s*<dt>Working on<\/dt>\s*<dd>Software development · Azure platform · AI-assisted development<\/dd>\s*<\/dl>/, 'two pairs only, no Since');
   assert.doesNotMatch(html.slice(html.indexOf('<dl class="glance">'), html.indexOf('</dl>', html.indexOf('<dl class="glance">'))), /Tunis, Tunisia/, 'location is stated once in the panel');
   assert.match(html, /<div class="panel-green__links">[\s\S]*iconlink[\s\S]*<\/div>/, 'GitHub and LinkedIn live in the panel');
   assert.match(html, /<section id="work" class="section section--work" aria-labelledby="work-title">/);

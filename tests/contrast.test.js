@@ -48,3 +48,11 @@ test('dark palette is identical in the toggle block and the no-JS system-prefere
   const system = grab(/:root:not\(\[data-theme="light"\]\)\s*{([\s\S]*?)}/);
   assert.deepEqual(system, toggle, 'the two dark token blocks drifted apart');
 });
+
+test('dark mode keeps the light-mode butter for filled surfaces (panel, primary button)', () => {
+  const light = tokens(/:root\s*{([\s\S]*?)}/);
+  const dark = tokens(/\[data-theme="dark"\]\s*{([\s\S]*?)}/);
+  assert.equal(dark.action, light.action);
+  assert.equal(dark['action-hover'], light['action-hover']);
+  assert.ok(ratio(dark['accent-contrast'], dark.action) >= 4.5, 'dark ink on the butter panel');
+});

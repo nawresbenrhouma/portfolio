@@ -23,8 +23,8 @@ colors:
   cream-ink-dark: "#f2e9d3"
   bark-muted-dark: "#cbbd9c"
   light butter-accent-dark: "#f0cf5a"
-  light butter-action-dark: "#ffe97a"
-  light butter-action-hover-dark: "#f0cf5a"
+  light butter-action-dark: "#fff0a6"
+  light butter-action-hover-dark: "#ffe97a"
   accent-contrast-dark: "#1b170f"
   light butter-soft-dark: "#3a3115"
   border-dark: "#4a4130"
@@ -231,7 +231,7 @@ The density is document-like without being a document. Headings are Gabarito at 
 Two warm near-whites, an espresso ink, and a single butter yellow that never shares the stage with a second hue.
 
 ### Primary
-- **Forest Green** (`#7a5a00`): the only accent. As ink it lands on the closing words of the name and of every section heading, on links, on timeline and bullet markers, on the drawn column icons, on the selected folder tab's label and on the focus ring. As a surface it appears exactly once, filling the hero's at-a-glance panel. In dark it becomes **Mint** (`#f0cf5a`) so it can carry text weight on a dark ground.
+- **Forest Green** (`#7a5a00`): the only accent. As ink it lands on the closing words of the name and of every section heading, on links, on timeline and bullet markers, on the drawn column icons, on the selected folder tab's label and on the focus ring. As a surface it appears exactly once, filling the hero's at-a-glance panel. In dark it becomes **Mint** (`#f0cf5a`) so it can carry text weight on a dark ground. Filled surfaces (the panel and the primary button) keep the same pastel butter (`#fff0a6`, hover `#ffe97a`) in both themes, with dark ink on top.
 - **Forest Action** (`#7a5a00` → hover `#ffe97a`): the filled primary button. Dark ships a separate, slightly lighter **Mint Action** (`#ffe97a`) whose hover resolves up to the full light butter, because the light green would flare against the dark ground.
 - **Accent Contrast** (`#ffffff` light / `#1b170f` dark): everything set on the butter panel — labels, values, links, its hairline divider at 28% white. Never hand-pick a white here; in dark the panel's text switches to the page ground colour so it stays legible on light butter.
 - **Forest Soft** (`#fbf0c4` light / `#3a3115` dark): reduced to a single job — the text selection highlight.
