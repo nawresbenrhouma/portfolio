@@ -333,7 +333,7 @@ test('index.html: Experience engagements carry a summary; those with a work pane
   assert.match(exp, /<article class="engagement" id="copilot-pilot">/, 'the pilot is a link target in Experience');
 });
 
-test('index.html: every skill group says where it was used; training-only items sit on a Learning line', () => {
+test('index.html: every skill group says where it was used; no Learning lines', () => {
   const html = readHtml('index.html');
   const skills = html.slice(html.indexOf('<section id="skills"'), html.indexOf('<section id="experience"'));
   const groups = skills.split('<article class="skill-group').slice(1).map((s) => s.slice(0, s.indexOf('</article>')));
@@ -345,15 +345,10 @@ test('index.html: every skill group says where it was used; training-only items 
     assert.ok(hrefs.length >= 1, 'at least one project link');
     for (const id of hrefs) assert.ok(html.includes(`id="${id}"`), `#${id} exists`);
   }
-  const [, cloud, devops] = groups;
+  const [, , devops] = groups;
   const list = (g) => g.slice(g.indexOf('<ul class="tags">'), g.indexOf('</ul>'));
-  const learning = (g) => (g.match(/<p class="skill-group__meta skill-group__meta--learning"><span class="skill-group__label">Learning<\/span>([^<]*)<\/p>/) || [])[1] || '';
-  for (const item of ['Azure Landing Zones', 'Governance &amp; security']) {
-    assert.ok(!list(cloud).includes(item) && learning(cloud).includes(item), `${item} is on the Learning line`);
-  }
-  for (const item of ['Terraform', 'OpenTofu', 'Azure Verified Modules']) {
-    assert.ok(!list(devops).includes(item) && learning(devops).includes(item), `${item} is on the Learning line`);
-  }
+  assert.doesNotMatch(skills, /skill-group__meta--learning/, 'no Learning lines (user, 2026-09-25)');
+  assert.doesNotMatch(skills, /GitHub Actions deploy/, 'Used in names projects only');
   assert.ok(list(devops).includes('Kubernetes'), 'Kubernetes stays: used on AKS');
 });
 
