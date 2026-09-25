@@ -13,10 +13,11 @@ function el(attrs = {}) {
     addEventListener(t, fn) { listeners[t] = fn; },
     fire(t, ev = {}) { listeners[t] && listeners[t]({ preventDefault() {}, ...ev }); },
     focus() { this.focused = true; },
+    scrolled: false, scrollIntoView() { this.scrolled = true; },
   };
 }
 
-function fakeDoc() {
+function fakeDoc(links = []) {
   const ids = ['techem', 'copilot', 'consommi'];
   const buttons = ids.map((id, i) => el({ id: `tab-${id}`, 'data-panel': `panel-${id}`, offsetLeft: i * 100 }));
   const panels = ids.map((id) => el({ id: `panel-${id}` }));
@@ -24,7 +25,7 @@ function fakeDoc() {
     getAttribute(k) { return this.attrs[k] || null; }, setAttribute(k, v) { this.attrs[k] = String(v); } };
   return {
     querySelector(sel) { return sel === '.tabs__list' ? list : null; },
-    querySelectorAll(sel) { return sel === '.tab' ? buttons : sel === '.panel' ? panels : []; },
+    querySelectorAll(sel) { return sel === '.tab' ? buttons : sel === '.panel' ? panels : sel === 'a[href^="#panel-"]' ? links : []; },
     getElementById(id) { return [...buttons, ...panels].find((x) => x.attrs.id === id) || null; },
     createElement() { return { className: '', style: {}, setAttribute() {} }; },
     _buttons: buttons, _panels: panels, _list: list,
@@ -79,4 +80,51 @@ test('arrow keys move between tabs and wrap; Home/End jump', () => {
 test('no tabs on the page: initTabs is a no-op', () => {
   const doc = { querySelector() { return null; }, querySelectorAll() { return []; } };
   assert.equal(tabs.initTabs(doc), null);
+});
+
+function fakeWin(hash = '') {
+  const listeners = {};
+  return { location: { hash }, addEventListener(t, fn) { listeners[t] = fn; }, _fire(t) { listeners[t] && listeners[t](); } };
+}
+
+test('loading with a #panel- hash selects that tab and scrolls to it', () => {
+  const doc = fakeDoc();
+  tabs.initTabs(doc, fakeWin('#panel-copilot'));
+  assert.deepEqual(doc._panels.map((p) => p.hidden), [true, false, true]);
+  assert.ok(doc._panels[1].scrolled);
+});
+
+test('an unrelated or unknown hash keeps the first tab and does not scroll', () => {
+  for (const hash of ['#about', '#panel-nope', '']) {
+    const doc = fakeDoc();
+    tabs.initTabs(doc, fakeWin(hash));
+    assert.deepEqual(doc._panels.map((p) => p.hidden), [false, true, true], hash);
+    assert.ok(doc._panels.every((p) => !p.scrolled), hash);
+  }
+});
+
+test('hashchange to a panel selects it (back/forward navigation)', () => {
+  const doc = fakeDoc();
+  const win = fakeWin('');
+  tabs.initTabs(doc, win);
+  win.location.hash = '#panel-consommi';
+  win._fire('hashchange');
+  assert.equal(doc._buttons[2].getAttribute('aria-selected'), 'true');
+  assert.ok(doc._panels[2].scrolled);
+});
+
+test('a link to a panel shows it on click, even when the hash is already set', () => {
+  const link = el({ href: '#panel-copilot' });
+  const doc = fakeDoc([link]);
+  tabs.initTabs(doc, fakeWin('#panel-copilot'));
+  doc._buttons[0].fire('click');
+  assert.equal(doc._panels[1].hidden, true, 'user switched away manually');
+  link.fire('click');
+  assert.equal(doc._panels[1].hidden, false, 'same-hash click still shows the panel');
+});
+
+test('showPanel returns false for an unknown panel id', () => {
+  const api = tabs.initTabs(fakeDoc());
+  assert.equal(api.showPanel('panel-nope', false), false);
+  assert.equal(api.showPanel('panel-copilot', false), true);
 });

@@ -1,10 +1,11 @@
 // Selected-work tabs. Progressive enhancement: without JavaScript every panel
 // is visible and stacked; with it, one panel shows at a time and the tab row
 // follows the WAI-ARIA tabs pattern (arrow keys, Home, End).
+// Links and hashes pointing at #panel-… select the matching tab.
 (function (root) {
   'use strict';
 
-  function initTabs(doc) {
+  function initTabs(doc, win) {
     var list = doc.querySelector('.tabs__list');
     var tabs = Array.prototype.slice.call(doc.querySelectorAll('.tab'));
     var panels = Array.prototype.slice.call(doc.querySelectorAll('.panel'));
@@ -52,13 +53,42 @@
       });
     });
     panels.forEach(function (panel) { panel.setAttribute('tabindex', '0'); });
+
+    function showPanel(id, scroll) {
+      for (var i = 0; i < tabs.length; i++) {
+        if (tabs[i].getAttribute('data-panel') !== id) continue;
+        select(i, false);
+        var panel = panelFor(tabs[i]);
+        if (scroll && panel && panel.scrollIntoView) panel.scrollIntoView();
+        return true;
+      }
+      return false;
+    }
+
+    // Links elsewhere on the page (Experience, Skills) point at a panel. Show it
+    // on click, before the browser follows the link, so the jump lands on a
+    // visible panel even when the hash is already set.
+    Array.prototype.slice.call(doc.querySelectorAll('a[href^="#panel-"]')).forEach(function (link) {
+      link.addEventListener('click', function () { showPanel(link.getAttribute('href').slice(1), false); });
+    });
+
     select(0, false);
-    return { select: select };
+
+    // A shared link or back/forward navigation to #panel-… selects that panel.
+    if (win) {
+      var fromHash = function () {
+        var hash = win.location && win.location.hash;
+        if (hash && hash.indexOf('#panel-') === 0) showPanel(hash.slice(1), true);
+      };
+      fromHash();
+      win.addEventListener('hashchange', fromHash);
+    }
+    return { select: select, showPanel: showPanel };
   }
 
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = { initTabs: initTabs };
   } else {
-    initTabs(root.document);
+    initTabs(root.document, root);
   }
 })(typeof window !== 'undefined' ? window : globalThis);
