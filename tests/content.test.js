@@ -297,3 +297,18 @@ test('index.html: no portrait on the page and no photo files shipped', () => {
     assert.ok(!fs.existsSync(path.resolve(__dirname, '..', f)), `${f} must not exist`);
   }
 });
+
+// v5 (2026-09-25)
+test('index.html: hero reads role, name, claim, statement in that order', () => {
+  const html = readHtml('index.html');
+  const hero = html.slice(html.indexOf('<div class="hero__text">'), html.indexOf('<div class="hero__actions">'));
+  const order = ['<p class="hero__role">', '<h1 id="hero-title">', '<p class="hero__claim">', '<p class="hero__statement">'].map((s) => hero.indexOf(s));
+  assert.ok(order.every((p) => p >= 0), `missing hero part: ${order}`);
+  assert.deepEqual([...order].sort((a, b) => a - b), order, 'hero parts out of order');
+  assert.match(hero, /<p class="hero__claim">Backend services that reach production, and the platform under them\.<\/p>/);
+});
+
+test('styles.css: hero claim is set in the display face', () => {
+  const s = readFile('css/styles.css');
+  assert.match(s, /\.hero__claim\s*{[^}]*font-family:\s*var\(--font-display\)/);
+});
