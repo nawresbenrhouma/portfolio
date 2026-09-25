@@ -353,3 +353,14 @@ test('index.html: every skill group says where it was used; training-only items 
   }
   assert.ok(list(devops).includes('Kubernetes'), 'Kubernetes stays: used on AKS');
 });
+
+test('index.html: About keeps two paragraphs, a lead-in and four How-I-work strengths', () => {
+  const html = readHtml('index.html');
+  const about = html.slice(html.indexOf('<section id="about"'), html.indexOf('<section id="work"'));
+  const text = about.slice(about.indexOf('<div class="about__text">'), about.indexOf('<ul class="strengths"'));
+  assert.equal((text.match(/<p>/g) || []).length, 3, 'two paragraphs plus the lead-in');
+  assert.match(about, /<p>Curious, proactive and pragmatic; I prefer maintainable solutions and small, shippable steps\.<\/p>/);
+  const titles = [...about.matchAll(/<h3 class="strengths__title">([^<]+)<\/h3>/g)].map((m) => m[1]);
+  assert.deepEqual(titles, ['Release quality', 'Onboarding &amp; documentation', 'Team practice', 'Stepping in']);
+  assert.match(about, /<ul class="strengths" aria-label="How I work">/);
+});
