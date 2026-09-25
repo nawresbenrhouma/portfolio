@@ -140,3 +140,12 @@ test('v6 touches: drawn stack, pinned split headings, experience trace, sign-off
   const print = s.match(/@media print\s*{([\s\S]*?)\n}\n/)[1];
   assert.match(print, /\.timeline::after\s*{[^}]*display:\s*none/);
 });
+
+test('role path: a ladder with the current role in the accent colour, on screen and in print', () => {
+  const s = css();
+  assert.match(s, /\.role-path\s*{[^}]*list-style:\s*none/);
+  assert.match(s, /\.role-path li:first-child \.role-path__title\s*{[^}]*color:\s*var\(--accent\)/);
+  const print = require('./helpers').readFile('css/print.css');
+  assert.match(print, /\.role-path\s*{[^}]*list-style:\s*none/);
+  assert.match(print, /\.cv-entry \.role-path li\s*{[^}]*margin:\s*0/, 'print list resets beat the generic .cv-entry li rule');
+});

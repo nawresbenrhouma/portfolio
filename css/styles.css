@@ -683,6 +683,13 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .timeline__dates { display: block; margin-bottom: var(--space-2); }
 .timeline__body { background: var(--sheet); border-radius: var(--radius-lg); box-shadow: var(--shadow); padding: var(--space-5) var(--space-6); }
 .timeline__body > h3 { margin-bottom: var(--space-2); }
+/* Role path: one employer, the steps newest first on a short rail. */
+.role-path { list-style: none; margin: 0 0 var(--space-4); padding: 0 0 0 var(--space-4); border-left: 2px solid var(--border); }
+.role-path li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--space-3); margin: 0; padding: 0.15rem 0; }
+.role-path__title { font-weight: 600; color: var(--text); }
+.role-path__dates { font-size: var(--text-small); color: var(--text-muted); }
+.role-path li:first-child .role-path__title { color: var(--accent); }
+.cv-entry .role-path li { margin: 0; }
 .engagement { margin-top: var(--space-5); padding-left: var(--space-4); border-left: 1px solid var(--border); }
 .engagement > h4 {
   display: flex;

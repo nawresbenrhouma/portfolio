@@ -24,6 +24,11 @@ h2, h3, h4 { break-after: avoid; }
 .cv-entry__head { display: flex; justify-content: space-between; gap: 4mm; align-items: baseline; margin-bottom: 1mm; }
 .cv-entry__dates { white-space: nowrap; color: #333; font-size: 9.5pt; }
 .cv-entry--nested { margin-left: 5mm; }
+/* Long project entries may split between bullets; the heading, tech line and first bullets stay together. */
+.cv-entry--nested { break-inside: auto; }
+.cv-entry__head, .cv-entry__tech { break-after: avoid; }
+.cv-entry li { break-inside: avoid; }
+.cv-entry li:last-child { break-before: avoid; }
 .cv-entry__tech { color: #333; font-size: 9pt; }
 .cv__title { color: #222; font-size: 11pt; margin: 1mm 0 2mm; }
 .cv__contact { font-size: 9.5pt; }
@@ -35,3 +40,8 @@ a { color: #000; text-decoration: none; }
 a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8.5pt; color: #444; }
 .cv__contact a[href^="http"]::after { content: ""; } /* contact line already shows readable URLs */
 .cv__availability { font-weight: 700; }
+/* Role path on paper: one step per line, newest first, dates right-aligned like the entry dates. */
+.role-path { list-style: none; margin: 0 0 1.5mm; padding: 0; border: 0; font-size: 9.5pt; }
+.cv-entry .role-path li { display: flex; justify-content: space-between; gap: 4mm; margin: 0; padding: 0; }
+.role-path__title, .role-path li:first-child .role-path__title { font-weight: 700; color: #000; }
+.role-path__dates { color: #333; font-size: 9.5pt; white-space: nowrap; }

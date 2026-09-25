@@ -399,3 +399,26 @@ test('project descriptions are impersonal: no I / my / me in work panels, Experi
     assert.doesNotMatch(strip(part), /\b(I|my|My|me)\b/, `${name} uses the first person`);
   }
 });
+
+test('index.html and cv.html: MaibornWolff is one entry with a three-step role path (user, 2026-09-25)', () => {
+  const steps = [
+    ['Professional Software Engineer', 'Aug 2026 – present'],
+    ['Software Engineer', 'Aug 2023 – Jul 2026'],
+    ['Working Student', 'Nov 2022 – Jul 2023'],
+  ];
+  for (const page of ['index.html', 'cv.html']) {
+    const html = readHtml(page);
+    assert.doesNotMatch(html, /Working Student&nbsp;· MaibornWolff/, `${page}: no separate working-student entry`);
+    assert.match(html, /<h3>MaibornWolff<\/h3>/, `${page}: one employer entry`);
+    const path = html.match(/<ol class="role-path"[^>]*>([\s\S]*?)<\/ol>/);
+    assert.ok(path, `${page}: role path present`);
+    const items = [...path[1].matchAll(/<li><span class="role-path__title">([^<]+)<\/span> <span class="role-path__dates">([^<]+)<\/span><\/li>/g)].map((m) => [m[1], m[2]]);
+    assert.deepEqual(items, steps, `${page}: newest first`);
+  }
+  const html = readHtml('index.html');
+  const exp = html.slice(html.indexOf('<section id="experience"'), html.indexOf('</section>', html.indexOf('<section id="experience"')));
+  const mw = exp.slice(exp.indexOf('<h3>MaibornWolff</h3>'), exp.indexOf('<li class="timeline__item">', exp.indexOf('<h3>MaibornWolff</h3>')));
+  const order = ['Control Systems Platform', 'Copilot Studio pilot', 'Energy Services Portal', 'Travel App'].map((n) => mw.indexOf(`<h4>${n}`));
+  assert.ok(order.every((p) => p > 0), `all four engagements sit under MaibornWolff: ${order}`);
+  assert.deepEqual([...order].sort((a, b) => a - b), order, 'engagements newest first');
+});
