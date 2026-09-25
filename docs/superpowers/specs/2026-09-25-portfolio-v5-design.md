@@ -46,11 +46,12 @@ claims. Customer names stay out (existing tests keep enforcing it).
 
 ### C. Skills with evidence
 
-- Each skill group gets a `Used in:` line under its chips, with links to the
-  panels, as below. Items only in training get a `learning` chip style
-  (dashed border plus visually hidden text "(learning)").
+- Each skill group gets a `Used in` line under its list, with links to the
+  panels, as below. Items only in training move out of the list onto a
+  separate `Learning` line in the same group (skill rows are inline text,
+  not chips, so a line reads clearer than a chip style).
 
-| Group | Used in | Learning chips |
+| Group | Used in | Learning line |
 |---|---|---|
 | Backend Engineering | T WebPortal (Java, Spring Boot, GraphQL, REST, MySQL) · Travel App (Quarkus) · Industrial control platform (Java) | none |
 | Cloud & Architecture | T WebPortal (Azure) · Travel App (AKS) | Landing Zones, Virtual WAN & hub-and-spoke, S2S VPN, Private Endpoints & DNS, Governance & security |
@@ -94,10 +95,10 @@ claims. Customer names stay out (existing tests keep enforcing it).
 - New tests: hero claim text present; no `<ul class="bullets">` (or
   equivalent) inside Experience's MaibornWolff engagements; each engagement
   links to an existing panel id; each skill group has a `Used in` line
-  whose links resolve; `.strengths` has 4 items; learning chips carry
-  hidden "(learning)" text; tabs.js selects the tab for a `#panel-` hash
+  whose links resolve; `.strengths` has 4 items; training-only items sit on
+  a Learning line, not in the used list; tabs.js selects the tab for a `#panel-` hash
   (unit test in `tests/tabs.test.js`).
 - Run `scripts/check.sh`, `scripts/screenshots.sh` (light, dark, mobile)
   and `scripts/print-check.sh`. Contrast for the new claim, the strengths
-  rule and the dashed chip must pass the existing computed-contrast test.
+  rule and the meta lines must pass the existing computed-contrast test.
 - No push until Nawres reviews the screenshots.
