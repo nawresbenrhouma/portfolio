@@ -312,3 +312,20 @@ test('styles.css: hero claim is set in the display face', () => {
   const s = readFile('css/styles.css');
   assert.match(s, /\.hero__claim\s*{[^}]*font-family:\s*var\(--font-display\)/);
 });
+
+test('index.html: Experience engagements carry a summary and a link to their panel, no repeated bullets', () => {
+  const html = readHtml('index.html');
+  const exp = html.slice(html.indexOf('<section id="experience"'), html.indexOf('</section>', html.indexOf('<section id="experience"')));
+  const engagements = exp.split('<article class="engagement">').slice(1).map((s) => s.slice(0, s.indexOf('</article>')));
+  assert.equal(engagements.length, 4);
+  const targets = [];
+  for (const e of engagements) {
+    assert.doesNotMatch(e, /class="bullets"/, 'detail lives in Selected work');
+    assert.match(e, /<p class="engagement__summary">[^<]{20,}<\/p>/);
+    const m = e.match(/<a class="engagement__more" href="#(panel-[a-z]+)">Details<span class="visually-hidden"> on [^<]+<\/span> in Selected work<span aria-hidden="true"> →<\/span><\/a>/);
+    assert.ok(m, 'details link with a hidden project name');
+    assert.ok(html.includes(`<article class="panel" id="${m[1]}">`), `${m[1]} exists`);
+    targets.push(m[1]);
+  }
+  assert.deepEqual(targets.sort(), ['panel-copilot', 'panel-industrial', 'panel-travelapp', 'panel-webportal']);
+});

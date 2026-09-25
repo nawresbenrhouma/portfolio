@@ -615,6 +615,8 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 }
 .engagement__dates { font-family: var(--font-body); font-size: var(--text-small); font-weight: 400; color: var(--text-muted); }
 .engagement .tags { margin-bottom: var(--space-3); }
+.engagement__summary { max-width: var(--measure); margin-bottom: var(--space-2); }
+.engagement__more { font-size: var(--text-small); font-weight: 600; }
 
 .bullets { margin: 0; padding-left: 1.25rem; max-width: var(--measure); }
 .bullets li { margin: 0 0 var(--space-2); }
