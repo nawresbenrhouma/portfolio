@@ -216,7 +216,7 @@ A near-white page that behaves like good paper: butter-tinted, quiet, and genero
 
 Once, and only once, that green stops being ink and becomes a surface. In the hero's right column a solid butter panel holds four at-a-glance facts in Gabarito over small tracked labels, with the profile links on a translucent hairline footer. It is the page's single loud object, and its weight is what lets the rest of the page stay pale. The name beside it is set so that its colour change *is* its line break — "Nawres" in ink, "Ben Rhouma." in green on the next line — so the split reads as a typographic decision rather than a highlight.
 
-The density is document-like without being a document. Headings are Gabarito at 800, tracked tight, so they read as built rather than typed; body text is Source Sans 3 at 1.0625rem on a 1.6 line, and the About sheet is sized to its own measure rather than to the grid, so the biography reads as one column of a printed page. Source Code Pro appears only where content is literally a token — a technology chip, a status marker. What the world refuses is equally load-bearing: no photography, no logos, no invented metrics, no second hue, and no motion beyond a single authored entrance.
+The density is document-like without being a document. Headings are Gabarito at 800, tracked tight, so they read as built rather than typed; body text is Source Sans 3 at 1.0625rem on a 1.6 line, and the About sheet is sized to its own measure rather than to the grid, so the biography reads as one column of a printed page. Source Code Pro appears only where content is literally a token — a technology chip, a status marker. What the world refuses is equally load-bearing: no photography, no logos, no invented metrics, no second hue, and no motion that does not carry meaning. Three authored moments exist, each tied to the story: the hero stack assembles once, the work sheet fades up, and a butter trace runs down the experience rail as the reader scrolls.
 
 **Key Characteristics:**
 - Butter-tinted near-white ground (#fffcf2) alternating with a warmer tone (#f6f2e6), full-bleed, section by section
@@ -224,7 +224,9 @@ The density is document-like without being a document. Headings are Gabarito at 
 - One accent, butter yellow (#7a5a00) in light and light butter (#f0cf5a) in dark, used as ink everywhere and as a surface exactly once
 - Gabarito 700/800 display and headings; Source Sans 3 body; Source Code Pro only in chips and status tokens
 - 8px module, 76rem content maximum, 68ch measure
-- One authored entrance motion on one element, JS-only, reduced-motion and print safe; every surface works with JavaScript off
+- Three authored moments (stack assembly, work reveal, experience trace), each reduced-motion and print safe; every surface works with JavaScript off
+- A drawn stack in the hero (Services / Platform / Cloud) illustrating the claim "the platform under them"
+- Pinned split headings on wide screens; the last heading is a display-scale sign-off
 
 ## Colors
 
@@ -249,7 +251,7 @@ Two warm near-whites, an espresso ink, and a single butter yellow that never sha
 ### Named Rules
 **The Butter Full Stop Rule.** The accent is reserved for the ending: the surname and its period, the second clause of every `h2`, and the small terminal signals (timeline dots, list markers, column icons, the selected tab). It never appears twice in the same role on one screen and never acquires a companion hue.
 
-**The Accent-as-Surface Rule.** Green fills exactly one object per page — the at-a-glance panel. A second filled green area would turn the accent into a theme colour and cost the first one its weight. Everywhere else the accent is ink, a 1rem marker, or a 2px line.
+**The Accent-as-Surface Rule.** Green fills exactly one object per page — the at-a-glance panel. A second filled green area would turn the accent into a theme colour and cost the first one its weight. Everywhere else the accent is ink, a 1rem marker, or a 2px line. One exception inside a drawing: the Services plate of the hero stack is filled butter, because the drawing's point is which layer is the core; it is geometry at small scale, not a second surface.
 
 **The Hairline Two-Tier Rule.** Content separation uses Sand Border; interactive outlines use Sand Border Strong. Never put Sand Border Strong under text or Sand Border around a control. On the butter panel the divider is neither — it is 28% white (30% of the dark ink in dark mode), because a hairline on a saturated surface must be drawn from that surface's own contrast.
 
@@ -266,8 +268,8 @@ Two warm near-whites, an espresso ink, and a single butter yellow that never sha
 ### Hierarchy
 - **Display** (800, `clamp(3rem, 2rem + 3.6vw, 5rem)`, line-height 0.98, tracking -0.04em): the hero name only. The accent span is `display: block`, so the second line and the colour change are the same event.
 - **Panel Title** (800, `clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem)`, tracking -0.02em): the project name inside a work panel. Deliberately near-display scale — the folder sheet is the page's second hero.
-- **Headline** (800, 1.75rem, line-height 1.1, tracking -0.02em): section `h2`. Always two clauses, the second wrapped in an accent span, ending in a full stop; a `#` heading anchor follows, invisible until hover or focus.
-- **Title** (700, 1.25rem, tracking -0.01em): `h3` — timeline roles, project cards, skill groups, Education columns, About strengths.
+- **Headline** (800, `clamp(1.875rem, 1.4rem + 1vw, 2.25rem)`, line-height 1.1, tracking -0.025em): section `h2`. Always two clauses, the second wrapped in an accent span on its own line, ending in a full stop. No permalink anchor follows it.
+- **Title** (700, 1.25rem, tracking -0.01em): `h3` — timeline roles, project cards, skill groups, Education columns.
 - **Glance Value** (Gabarito 700, 1.25rem, line-height 1.25): the three values on the butter panel. The only place display type is used at body scale, which is what makes the panel read as a summary rather than a list.
 - **Body** (400, 1.0625rem, line-height 1.6): all prose, capped at a 68ch measure. The About sheet takes the same cap plus its own 2rem padding on each side, so the sheet ends where the text ends.
 - **Small** (400, 0.875rem): meta lines, dates, project meta, footer, the print hint.
@@ -280,7 +282,7 @@ Two warm near-whites, an espresso ink, and a single butter yellow that never sha
 
 **The Colour Break Rule.** In the hero the colour change carries the line break. Do not add a `<br>`, and do not tint a word mid-line; if a name or heading must break, break it where the colour changes.
 
-**The Mono Reserve Rule.** Source Code Pro is permitted in exactly two places: technology chips and status tokens. Prose, headings, dates and labels never use it.
+**The Mono Reserve Rule.** Source Code Pro is permitted in exactly two places: technology chips and status tokens. Headings carry no visible permalink. Prose, headings, dates and labels never use it.
 
 **The Balanced Measure Rule.** Headings carry `text-wrap: balance`; paragraphs carry a 68ch cap (62ch in Education). Where a sheet holds nothing but prose, the sheet is sized to that measure plus its padding rather than stretched to the grid — a full-width sheet around a 68ch column is a box, not a layout.
 
@@ -301,6 +303,12 @@ Three breakpoints, each doing one job. At 1100px the hero collapses to a single 
 
 **The One Collapse Rule.** Every multi-column block collapses at 900px — the project grid, the panel's three notes, the skill rows, the contact split. Do not introduce a block with its own breakpoint.
 
+### Pinned Split and Sign-off
+From 1100px up, About, Skills, Experience and Education split into a 19rem heading column and a 57rem content column (76rem total). The heading sticks below the header while its section scrolls past. Selected work stays full-width (it is the page's second hero) and Contact closes on a sign-off: the heading at `clamp(2.75rem, 1.5rem + 5vw, 6rem)`, line-height 0.98. Every section heading breaks at its colour change, like the name. Below 1100px all sections stack as before.
+
+### The Hero Stack
+Three axonometric plates (Services, Platform, Cloud) drawn at 2px in ink, with HTML labels on leader lines. Services is butter with a deep-butter side, Platform is sheet white, Cloud is the alternate band. A 3px accent trace pins through all three and ends in a dot on Cloud. Labels list only skills already on the page. Below 1100px the panel comes first and the drawing follows it; below 640px the sub-labels hide.
+
 ## Elevation & Depth
 
 Depth is tonal first and shadowed second. The page ground, the alternate band and the white sheet form a three-step tonal ladder that does most of the structural work; a single soft, warm-tinted drop shadow then lifts sheets off the page. There is exactly one elevation level — nothing is lifted higher than anything else, and the butter panel is lifted on the same shadow as the white sheets, so it reads as the same kind of object in a different colour. In dark mode the shadow token is replaced by a 1px hairline ring in the border colour, because a dark-on-dark drop shadow reads as smudge rather than lift.
@@ -319,7 +327,7 @@ Depth is tonal first and shadowed second. The page ground, the alternate band an
 
 Four radii and nothing else: 12px on every lifted surface (the butter panel, sheets, work panels, project cards); 8px on buttons, the skip link and the print hint; 6px on chips and the focus ring; 999px on the status tokens and the circular theme toggle. Folder tabs take a 10px top-only radius (`10px 10px 0 0`), and the panel beneath the tab row squares its top-left corner (`0 12px 12px 12px`) so tab and sheet fuse into one silhouette.
 
-Borders are hairlines at 1px in two weights (see The Hairline Two-Tier Rule). Four deliberate exceptions carry meaning: the Education columns open with a 2px rule in full ink; the About strengths sit under a 2px accent rule; the vertical timeline rail is a 2px line in the border colour with 1rem accent discs punched through it, each ringed by 4px of the current section ground; and the panel's column icons are drawn at 2px stroke so they sit at the same weight as those rules rather than as filled glyphs.
+Borders are hairlines at 1px in two weights (see The Hairline Two-Tier Rule). Three deliberate exceptions carry meaning: the Education columns open with a 2px rule in full ink; the vertical timeline rail is a 2px line in the border colour with 1rem accent discs punched through it, each ringed by 4px of the current section ground; and the panel's column icons are drawn at 2px stroke so they sit at the same weight as those rules rather than as filled glyphs.
 
 ### Named Rules
 **The Four Radii Rule.** 12 / 8 / 6 / 999. Any new corner picks one of them; nothing on this page is square except a table edge or a fused tab corner.
@@ -348,7 +356,7 @@ Inline SVG (currentColor, 20px) plus a label in semibold ink, 2.75rem tall, no u
 The structural signature. A horizontally scrollable row of tabs sits on the section ground in a low-opacity ink wash, each tab holding the same 2.75rem minimum target as every other control; the selected tab switches to the sheet colour, gains accent text, grows 0.2rem of top padding and throws an upward shadow so it fuses into the panel below. The panel is a white sheet with its top-left corner squared off to complete the folder silhouette. Inside: a near-display panel title, a semibold subtitle, a muted meta line, a body paragraph, a "What I did" label under a hairline rule, a three-column note grid with left-edge dividers, a row of chips, and a fact strip separated by hairlines. Progressive enhancement is part of the component: the markup ships without tab semantics, the tab row is hidden by default and shown only when JavaScript adds `role="tablist"` and the ARIA wiring, and without JavaScript the panels simply stack as separate sheets, each with a full 12px radius.
 
 ### Column Notes
-Inside a work panel, each of the three notes leads with a flex title row: a 22px single-stroke accent icon at 2px stroke, then the label in Gabarito 700 at 1.125rem, then a muted 0.875rem note beneath. The icon is decorative and hidden from assistive technology; it never replaces the word. Below 900px the three columns stack and their left dividers become top dividers.
+Inside a work panel, the paragraph is followed by a short list of three or four plain bullets (the shared `.bullets` style with accent markers, capped at the measure), then the technology chips. No column grid, icons or "What I built" label: the user replaced them with the list on 2026-09-25 to keep the specifics in about a third of the space.
 
 ### Project Cards
 A two-column grid of compact white sheets at 1.5rem gap, each padded 1.5rem × 2rem: an `h3` title, a muted small meta line, one sentence of description, and a row of small chips. One card is one project — no expansion, no link-out, no image. Collapses to one column at 900px.
@@ -358,7 +366,7 @@ A two-column grid of compact white sheets at 1.5rem gap, each padded 1.5rem × 2
 - **Status tokens:** pill-radius outlines at 0.6875rem monospace with no fill, attached inline to a heading. Three states: core (accent text and border), growing (ink text on the strong hairline), done (muted). They label honesty about depth — never used as a badge or a count.
 
 ### About Prose
-No boxes, no field rows: two paragraphs and a one-line lead-in on a padded white sheet, followed by the four "How I work" strengths in a 2×2 grid (one column under 900px), each under a 2px accent rule with a title and one muted line. No icons, no cards. The sheet itself is capped at the measure plus its own padding (`calc(68ch + 2 × 2rem)`) and the prose at the measure, so the card ends where the reading line ends instead of stretching to the 76rem grid. The prose needs no breakpoint of its own.
+No boxes, no field rows: two paragraphs and a one-line lead-in on a padded white sheet. No icons, no cards, no strengths list (removed by the user, 2026-09-25). The sheet itself is capped at the measure plus its own padding (`calc(68ch + 2 × 2rem)`) and the prose at the measure, so the card ends where the reading line ends instead of stretching to the 76rem grid. The prose needs no breakpoint of its own.
 
 ### Skills Table
 Full-width rows on a sheet: a 19rem heading column and a free-flowing list column, divided by hairlines, first row unpadded and last row undivided. Inside a skill group the chip styling is deliberately dropped — items become plain inline text separated by muted commas, so a long skill list reads as a sentence rather than a wall of boxes. Under the list, a small muted "Used in" line links to the projects where the group was used, and groups with training-only items add a "Learning" line, so used and studied are never mixed.
@@ -382,9 +390,9 @@ A 2.75rem circle on the sheet colour with a strong hairline border, holding a su
 The same tokens on a single 48rem sheet: a header block with the name, a muted title line, a small contact line and a bold availability line, then hairline-divided entries with a flex head (role left, dates right) and nested entries indented. Print is a separate stylesheet loaded at `media="print"`: A4 with 16mm/18mm margins, header and toggle and print hint removed, the sheet flattened to plain paper in black on white at 10.5pt, headings ruled and kept with their content, entries protected from breaking, and external links expanded to show their URL after the text — except in the contact line, which already shows readable URLs.
 
 ### Motion
-One authored entrance, on one element: the work block fades up 14px over 500ms on the shared ease-out curve as it enters, once, and is then unobserved. Nothing else on the page moves on scroll. The class is added by JavaScript only, so nothing is ever hidden without JS, and the observer is never initialised when reduced motion is requested. Everything else is state feedback: 150ms colour and border transitions, a 220ms nav indicator slide, and a 150ms heading-anchor fade.
+One authored entrance, on one element: the work block fades up 14px over 500ms on the shared ease-out curve as it enters, once, and is then unobserved. Two further moments are authored. The hero stack assembles once on load in pure CSS: Cloud, Platform and Services drop 22px into place at 100/260/420ms on an expo ease-out, then the trace draws down and its end dot lands. After it lands, a request dot runs down the trace twice (2.4s each, linear) and each layer's top face lights butter with an accent edge as the dot passes; hovering the drawing replays it in a loop, and hovering a layer or its label lifts that layer 8px (the individual `translate` property, so it composes with the entrance transform) and turns the label accent. It stops after two passes so nothing moves for longer than about five seconds unasked. The experience trace is a scroll-driven animation (`animation-timeline`), used only inside `@supports (animation-timeline: view())`: the rail fills in butter up to the middle of the viewport, and each stop goes from a hollow accent ring to a filled dot (the fill grows from the centre via `background-size`) as the trace reaches it. Keyframes never hold theme colours at rest: a finished or filling animation freezes `var()` in Safari, so the pings are flash-only with no fill-mode and the stops animate size, not colour. Switching theme replays the stack's request pass (js/theme.js). Where it is unsupported the rail stays drawn with every stop lit. The class is added by JavaScript only, so nothing is ever hidden without JS, and the observer is never initialised when reduced motion is requested. Everything else is state feedback: 150ms colour and border transitions, a 220ms nav indicator slide.
 
-Under `prefers-reduced-motion: reduce` the suppression is scoped rather than blanket: smooth scrolling is disabled, the reveal is pinned to its visible end state with no transition, and the nav indicator stops sliding — but colour and border transitions are deliberately kept, so a hover or a press still acknowledges itself. A `@media print` rule pins the reveal to its visible state as well, so a printed page never loses the work block.
+Under `prefers-reduced-motion: reduce` the suppression is scoped rather than blanket: smooth scrolling is disabled, the reveal is pinned to its visible end state with no transition, the stack is drawn fully assembled, the trace is not drawn (stops stay lit), and the nav indicator stops sliding — but colour and border transitions are deliberately kept, so a hover or a press still acknowledges itself. A `@media print` rule pins the reveal to its visible state as well, so a printed page never loses the work block.
 
 **The Single Reveal Rule.** One element on the page carries the authored entrance. A page where every section fades is a page with no emphasis; the reveal belongs to the block that holds the proof.
 
@@ -413,7 +421,7 @@ Under `prefers-reduced-motion: reduce` the suppression is scoped rather than bla
 - **Don't** set body copy, headings, dates or labels in Source Code Pro — chips and status tokens only.
 - **Don't** put Sand Border Strong (`#8f8058`) under text; it is a control outline, not a text or divider colour, and it never appears on the butter panel.
 - **Don't** add a radius outside 12 / 8 / 6 / 999 (the folder tab's 10px top corners are the one fused exception).
-- **Don't** add a second authored reveal, or any transform-based motion that is not switched off under `prefers-reduced-motion: reduce`.
+- **Don't** add a fourth authored moment, or any transform-based motion that is not switched off under `prefers-reduced-motion: reduce`.
 - **Don't** ship a component whose content only exists once JavaScript runs.
 - **Don't** hide content behind a disclosure control that a scanning recruiter would have to open.
 - **Don't** add photography, logos, testimonials or metric callouts; this world carries none.

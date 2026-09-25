@@ -2,7 +2,9 @@
    alternating with a warmer tone; white sheets lifted by one soft shadow; one
    butter yellow accent: deep butter for text, butter fill for the hero panel
    and buttons; Gabarito
-   headlines. See .impeccable/surfaces/index-html.md for the direction contract. */
+   headlines; a drawn stack in the hero, pinned split headings, and a trace
+   that runs down the experience rail. See .impeccable/surfaces/index-html.md
+   for the direction contract. */
 
 /* 1. Tokens */
 :root {
@@ -53,6 +55,8 @@
   --motion-fast: 150ms;
   --motion-base: 220ms;
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --stack-side: #ffe97a;
 
   color-scheme: light;
 }
@@ -375,6 +379,48 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
 /* The accent as a surface: the at-a-glance panel */
+.hero__side { display: grid; gap: var(--space-5); }
+
+/* The stack: three drawn layers under the claim's "platform under them".
+   Geometry, not illustration: 2px ink lines, the service layer in butter, a
+   trace line pinned through all three. It assembles once on load (CSS only, so
+   it also plays without JS) and stays still under reduced motion and in print. */
+.stack {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 13.5rem;
+  align-items: stretch;
+}
+.stack__art { display: block; width: 100%; height: auto; overflow: visible; }
+.stack__art path, .stack__art circle { stroke: var(--text); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.stack__top { fill: var(--sheet); }
+.stack__side { fill: var(--bg-elevated); }
+.stack__side--right { fill: var(--border); }
+.stack__layer--services .stack__top { fill: var(--action); }
+.stack__layer--services .stack__side { fill: var(--stack-side); }
+.stack__layer--services .stack__side--right { fill: var(--accent); }
+.stack__layer--cloud .stack__top { fill: var(--alt); }
+.stack__leader { fill: none; }
+.stack__art .stack__trace { fill: none; stroke: var(--accent); stroke-width: 3; }
+.stack__art .stack__end { fill: var(--accent); stroke: var(--sheet); stroke-width: 2; }
+.stack__art .stack__pulse { fill: var(--action); stroke: var(--text); stroke-width: 2; opacity: 0; }
+[data-theme="dark"] .stack__art .stack__trace { stroke: var(--text); }
+[data-theme="dark"] .stack__art .stack__end { fill: var(--text); stroke: var(--bg); }
+.stack__labels { position: relative; list-style: none; margin: 0; padding: 0; }
+.stack__label {
+  position: absolute;
+  left: var(--space-3);
+  right: 0;
+  transform: translateY(-50%);
+  line-height: 1.25;
+}
+/* Rows sit on the leader lines: y = 56, 116, 176 of a 232-unit drawing. */
+.stack__label--services { top: 24.1%; }
+.stack__label--platform { top: 50%; }
+.stack__label--cloud { top: 75.9%; }
+.stack__label strong { display: block; font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; }
+.stack__label span { display: block; font-size: var(--text-small); color: var(--text-muted); }
+
 .panel-green {
   background: var(--action);
   color: var(--accent-contrast);
@@ -456,37 +502,7 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .panel__subtitle { font-size: 1.125rem; font-weight: 600; margin-bottom: var(--space-1); }
 .panel__meta { font-size: var(--text-small); color: var(--text-muted); margin-bottom: var(--space-4); }
 .panel__body { margin-bottom: var(--space-5); }
-.panel__label {
-  padding-bottom: var(--space-2);
-  margin-bottom: var(--space-4);
-  border-bottom: 1px solid var(--border);
-}
-.panel__grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-5);
-}
-.col + .col { border-left: 1px solid var(--border); padding-left: var(--space-5); }
-.col__title { display: flex; align-items: center; gap: var(--space-2); font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; margin-bottom: var(--space-1); }
-.col__icon { flex: none; color: var(--accent); }
-.col__intent { font-size: var(--text-small); color: var(--text-muted); margin-bottom: var(--space-3); }
-.col__list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); font-size: var(--text-small); }
-.col__list li { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: var(--space-3); align-items: baseline; }
-.col__list strong { font-weight: 600; color: var(--text); }
-.col__list span { color: var(--text-muted); }
-.panel__facts {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3) var(--space-5);
-  margin: var(--space-5) 0 0;
-  padding: var(--space-4) 0 0;
-  border-top: 1px solid var(--border);
-  font-weight: 600;
-  font-size: 0.9375rem;
-}
-.panel__facts li { white-space: nowrap; }
-.panel__facts li + li { border-left: 1px solid var(--border); padding-left: var(--space-5); }
+.panel__points { margin-bottom: 0; }
 
 /* 8. Sections on the page ground */
 .section {
@@ -498,34 +514,40 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .section--alt { background: var(--alt); }
 .section > h2 {
   display: block;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
+  font-size: clamp(1.875rem, 1.4rem + 1vw, 2.25rem);
+  letter-spacing: -0.025em;
 }
-.section > h2 .heading-anchor { margin-left: var(--space-2); }
-.heading-anchor {
-  font-family: var(--font-body);
-  font-weight: 400;
-  color: var(--text-muted);
-  text-decoration: none;
-  opacity: 0;
-  transition: opacity var(--motion-fast) var(--ease-out);
+/* The Colour Break Rule, extended from the name to every section heading. */
+.section > h2 > span > .accent { display: block; }
+/* Pinned split: on wide screens the heading holds a narrow left column and
+   stays pinned below the header while its section scrolls past on the right. */
+@media (min-width: 1100px) {
+  .section--split {
+    grid-template-columns: minmax(var(--space-6), 1fr) minmax(0, 19rem) minmax(0, 57rem) minmax(var(--space-6), 1fr);
+  }
+  .section--split > * { grid-column: 3; }
+  .section--split > h2 {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    align-self: start;
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-6));
+    margin: 0;
+    padding-right: var(--space-6);
+  }
 }
-.section > h2:hover .heading-anchor,
-.heading-anchor:focus-visible { opacity: 1; }
-.heading-anchor:hover { color: var(--accent); }
+
+/* The sign-off: the last heading on the page is set at display scale. */
+.section--signoff > h2 {
+  font-size: clamp(2.75rem, 1.5rem + 5vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  margin-bottom: var(--space-7);
+}
 
 .about { max-width: calc(var(--measure) + 2 * var(--space-6)); }
 .about__text { max-width: var(--measure); }
-.strengths {
-  list-style: none;
-  margin: var(--space-6) 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-5) var(--space-6);
-}
-.strengths li { border-top: 2px solid var(--accent); padding-top: var(--space-3); }
-.strengths__title { font-size: 1.0625rem; margin-bottom: var(--space-1); }
-.strengths p { margin: 0; font-size: var(--text-small); color: var(--text-muted); }
 .education__degree { max-width: 62ch; margin-bottom: var(--space-6); }
 
 /* Status tokens */
@@ -620,8 +642,44 @@ code { font-family: var(--font-code); font-size: 0.9em; }
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--bg);
+  z-index: 1;
 }
 .section--alt .timeline__item::before { box-shadow: 0 0 0 4px var(--alt); }
+
+/* The trace: where scroll-driven animation exists, the rail fills in butter up
+   to the middle of the viewport and each stop lights as the trace reaches it.
+   Elsewhere (and under reduced motion, and in print) the rail stays drawn in
+   its hairline colour with every stop lit, as before. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .timeline { view-timeline-name: --trace; }
+    .timeline::after {
+      content: "";
+      position: absolute;
+      left: 0.45rem;
+      top: 0.6rem;
+      bottom: 0.6rem;
+      width: 2px;
+      background: var(--accent);
+      transform-origin: 50% 0;
+      animation: trace-fill linear both;
+      animation-timeline: --trace;
+      animation-range: cover 50vh cover calc(100% - 50vh);
+    }
+    .timeline__item { view-timeline-name: --stop; }
+    .timeline__item::before {
+      background: radial-gradient(circle closest-side, var(--accent) 99%, transparent) center / 0% 0% no-repeat, var(--bg);
+      box-shadow: 0 0 0 4px var(--bg), inset 0 0 0 2px var(--accent);
+      animation: stop-light linear both;
+      animation-timeline: --stop;
+      animation-range: cover calc(50vh - 2rem) cover 50vh;
+    }
+  }
+}
+@keyframes trace-fill { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+/* No colours in the keyframes: the ring and fill come from the live cascade, so
+   a theme switch repaints them (a finished animation freezes var() in Safari). */
+@keyframes stop-light { from { background-size: 0% 0%, auto; } to { background-size: 100% 100%, auto; } }
 .timeline__dates { display: block; margin-bottom: var(--space-2); }
 .timeline__body { background: var(--sheet); border-radius: var(--radius-lg); box-shadow: var(--shadow); padding: var(--space-5) var(--space-6); }
 .timeline__body > h3 { margin-bottom: var(--space-2); }
@@ -746,6 +804,54 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out); }
 .reveal.is-visible { opacity: 1; transform: none; }
 
+/* The stack assembles once: cloud, platform, then services land; the trace
+   runs down through them last. Opacity/transform/stroke only. */
+@media (prefers-reduced-motion: no-preference) {
+  .stack__layer, .stack__label { animation: stack-land 900ms var(--ease-out-expo) both; }
+  .stack__layer--cloud, .stack__label--cloud { animation-delay: 100ms; }
+  .stack__layer--platform, .stack__label--platform { animation-delay: 260ms; }
+  .stack__layer--services, .stack__label--services { animation-delay: 420ms; }
+  .stack__label { animation-name: stack-label; }
+  .stack__art .stack__trace { stroke-dasharray: 1; animation: stack-trace 700ms var(--ease-out-expo) 900ms both; }
+  .stack__art .stack__end { transform-box: fill-box; transform-origin: center; animation: stack-end 400ms var(--ease-out-expo) 1400ms both; }
+}
+/* After it lands, a request runs down the trace twice and each layer lights
+   as it passes (services, platform, cloud); hovering the drawing replays it.
+   Hovering a layer or its label lifts that layer. Stroke/fill/translate only;
+   the individual translate property composes with the entrance transform. */
+@media (prefers-reduced-motion: no-preference) {
+  .stack__art .stack__pulse { transform-box: view-box; animation: stack-pulse 2.4s linear 1.8s 2 both; }
+  .stack__layer .stack__top { animation: 2.4s linear 1.8s 2 none; }
+  .stack__layer--services .stack__top { animation-name: ping-services; }
+  .stack__layer--platform .stack__top { animation-name: ping-platform; }
+  .stack__layer--cloud .stack__top { animation-name: ping-cloud; }
+  .stack:hover .stack__pulse, .stack:hover .stack__top { animation-iteration-count: infinite; }
+
+  .stack__layer, .stack__label { transition: translate 360ms var(--ease-out-expo); }
+  .stack__label strong { transition: color var(--motion-fast) var(--ease-out); }
+  .stack:has(.stack__layer--services:hover, .stack__label--services:hover) :is(.stack__layer--services, .stack__label--services),
+  .stack:has(.stack__layer--platform:hover, .stack__label--platform:hover) :is(.stack__layer--platform, .stack__label--platform),
+  .stack:has(.stack__layer--cloud:hover, .stack__label--cloud:hover) :is(.stack__layer--cloud, .stack__label--cloud) { translate: 0 -8px; }
+  .stack:has(.stack__layer--services:hover, .stack__label--services:hover) .stack__label--services strong,
+  .stack:has(.stack__layer--platform:hover, .stack__label--platform:hover) .stack__label--platform strong,
+  .stack:has(.stack__layer--cloud:hover, .stack__label--cloud:hover) .stack__label--cloud strong { color: var(--accent); }
+}
+@keyframes stack-pulse {
+  0% { opacity: 0; transform: translateY(0); }
+  8% { opacity: 1; transform: translateY(0); }
+  85% { opacity: 1; transform: translateY(120px); }
+  100% { opacity: 0; transform: translateY(120px); }
+}
+/* Flash-only keyframes and no fill-mode: at rest the layers take their colours
+   from the live cascade, so a theme switch always repaints them. */
+@keyframes ping-services { 9% { fill: var(--action-hover); stroke: var(--accent); } 22% { fill: var(--action); } }
+@keyframes ping-platform { 32%, 62% { fill: var(--sheet); stroke: var(--text); } 47% { fill: var(--action); stroke: var(--accent); } }
+@keyframes ping-cloud { 70% { fill: var(--alt); stroke: var(--text); } 86% { fill: var(--action); stroke: var(--accent); } }
+@keyframes stack-land { from { opacity: 0; transform: translateY(-22px); } }
+@keyframes stack-label { from { opacity: 0; transform: translate(-8px, -50%); } }
+@keyframes stack-trace { from { stroke-dashoffset: 1; } }
+@keyframes stack-end { from { opacity: 0; transform: scale(0); } }
+
 /* 10. Motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -761,11 +867,17 @@ code { font-family: var(--font-code); font-size: 0.9em; }
   .panel-green .iconlink, .panel-green dt { color: #000; opacity: 1; }
   .button { background: none; color: #000; border: 1px solid #000; }
   .panel[hidden] { display: block; }
+  .stack__layer, .stack__label, .stack__trace, .stack__end, .stack__top, .timeline__item::before { animation: none !important; }
+  .stack__pulse { display: none; }
+  .timeline::after { display: none; }
+  .section--split > h2 { position: static; }
 }
 
 /* 11. Narrow screens */
 @media (max-width: 1100px) {
   .hero__inner { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+  /* Single column: availability first, the drawing after it. */
+  .hero__side .stack { order: 2; max-width: 34rem; }
 }
 
 @media (max-width: 900px) {
@@ -786,15 +898,8 @@ code { font-family: var(--font-code); font-size: 0.9em; }
     .tabs__list { padding: 0 var(--space-3) 0 0; gap: var(--space-1); -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent); }
   .panel { padding: var(--space-4); }
   .tab { padding: 0.72rem 0.9rem; font-size: 0.875rem; }
-  .panel__grid { grid-template-columns: 1fr; }
-  .col__list li { grid-template-columns: 7rem minmax(0, 1fr); }
-  .panel__facts { flex-direction: column; gap: var(--space-3); }
-  .panel__facts li { white-space: normal; }
-  .col + .col { border-left: 0; padding-left: 0; border-top: 1px solid var(--border); padding-top: var(--space-4); }
-  .panel__facts li + li { border-left: 0; padding-left: 0; border-top: 1px solid var(--border); padding-top: var(--space-3); }
   .skill-group { grid-template-columns: 1fr; gap: var(--space-2); }
   .skill-group > .skill-group__meta { grid-column: auto; }
-  .strengths { grid-template-columns: 1fr; }
   .timeline { padding-left: 1.5rem; }
   .timeline__item::before { left: -1.5rem; width: 0.75rem; height: 0.75rem; }
   .timeline__body { padding: var(--space-4); }
@@ -806,6 +911,7 @@ code { font-family: var(--font-code); font-size: 0.9em; }
 @media (max-width: 640px) {
   .section { padding-top: var(--space-7); }
   .hero__statement { font-size: 1rem; }
+  .stack__label span { display: none; }
   .contact__list li { grid-template-columns: 1fr; gap: var(--space-1); }
   .cv-entry--nested { margin-left: var(--space-3); }
   .cv-skills { grid-template-columns: 1fr; }

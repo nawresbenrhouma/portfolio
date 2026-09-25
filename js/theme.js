@@ -27,6 +27,20 @@
     }
   }
 
+  // A theme switch replays the hero stack's request pass (skipped when the
+  // animations do not exist, e.g. under reduced motion or without the API).
+  function replayStack(doc) {
+    var nodes = doc.querySelectorAll ? doc.querySelectorAll('.stack__pulse, .stack__top') : [];
+    Array.prototype.forEach.call(nodes, function (el) {
+      if (typeof el.getAnimations !== 'function') return;
+      el.getAnimations().forEach(function (a) {
+        a.cancel();
+        a.play();
+        a.currentTime = 1800; // skip the load delay: start the pass immediately
+      });
+    });
+  }
+
   function initTheme(env) {
     var theme = resolveTheme(env);
     applyTheme(env.document, theme);
@@ -37,12 +51,13 @@
         var next = env.document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         writeStored(env.storage, next);
         applyTheme(env.document, next);
+        replayStack(env.document);
       });
     }
     return theme;
   }
 
-  var api = { resolveTheme: resolveTheme, applyTheme: applyTheme, initTheme: initTheme };
+  var api = { resolveTheme: resolveTheme, applyTheme: applyTheme, initTheme: initTheme, replayStack: replayStack };
 
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = api;

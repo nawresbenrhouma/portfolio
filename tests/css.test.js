@@ -124,3 +124,19 @@ test('skill meta lines sit in the list column and fall back to one column on nar
 test('panel jumps leave room for the tab row under the sticky header', () => {
   assert.match(css(), /\.tabs__list--enhanced ~ \.panel\s*{[^}]*scroll-margin-top:\s*3\.5rem/);
 });
+
+test('v6 touches: drawn stack, pinned split headings, experience trace, sign-off', () => {
+  const s = css();
+  const html = readFile('index.html');
+  assert.match(html, /<figure class="stack" aria-label="[^"]+">[\s\S]*<svg class="stack__art"[^>]*aria-hidden="true"/, 'stack drawing is labelled once, the art is hidden');
+  assert.equal((html.match(/<li class="stack__label /g) || []).length, 3, 'services, platform, cloud');
+  assert.match(html, /<strong>Platform<\/strong> <span>Docker · Kubernetes \(AKS\) · ArgoCD<\/span>/);
+  assert.match(html, /<strong>Cloud<\/strong> <span>Microsoft Azure<\/span>/);
+  assert.equal((html.match(/class="section section--split/g) || []).length, 4, 'about, skills, experience, education pin their headings');
+  assert.match(html, /<section id="contact" class="section section--signoff"/);
+  assert.match(s, /\.section--split > h2\s*{[^}]*position:\s*sticky/);
+  assert.match(s, /@supports \(animation-timeline: view\(\)\)\s*{\s*@media \(prefers-reduced-motion: no-preference\)/, 'trace only where supported and motion is welcome');
+  assert.match(s, /@media \(prefers-reduced-motion: no-preference\)\s*{\s*\.stack__layer, \.stack__label\s*{[^}]*animation:/, 'stack assembles only when motion is welcome');
+  const print = s.match(/@media print\s*{([\s\S]*?)\n}\n/)[1];
+  assert.match(print, /\.timeline::after\s*{[^}]*display:\s*none/);
+});

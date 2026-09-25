@@ -10,10 +10,10 @@ const REQUIRED_INDEX = [
   'https://www.linkedin.com/in/nawres-ben-rhouma21/',
   'https://github.com/nawresbenrhouma',
   'Tunis, Tunisia · remote',
-  'T WebPortal',
+  'Energy Services Portal',
   'Copilot Studio pilot',
   'Travel App',
-  'Industrial control platform',
+  'Control Systems Platform',
   'TravelEase',
   'AZ-900',
   'ESPRIT',
@@ -84,9 +84,9 @@ test('cv.html: required facts and structure present', () => {
     'github.com/nawresbenrhouma',
     'Tunis, Tunisia · remote',
     'Open to remote, part-time roles',
-    'T WebPortal',
+    'Energy Services Portal',
     'Travel App',
-    'Industrial control platform',
+    'Control Systems Platform',
     'Copilot Studio pilot',
     'Consommi Tounsi',
     'TravelEase',
@@ -117,18 +117,16 @@ test('no-JS dark path: <html> carries no hard-coded data-theme', () => {
   }
 });
 
-test('index.html: skip link lands on main content, heading anchors have unique names', () => {
+test('index.html: skip link lands on main content; headings carry no permalink anchors (user, 2026-09-25)', () => {
   const html = readHtml('index.html');
   assert.match(html, /<a class="skip-link" href="#top">/);
-  const labels = [...html.matchAll(/class="heading-anchor"[^>]*aria-label="([^"]+)"/g)].map((m) => m[1]);
-  assert.equal(labels.length, 6);
-  assert.equal(new Set(labels).size, labels.length, 'duplicate heading-anchor labels');
+  assert.doesNotMatch(html, /heading-anchor/);
 });
 
 test('cv.html: nested engagements are h4 under the h3 employer entry', () => {
   const html = readHtml('cv.html');
-  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>T WebPortal/);
-  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Industrial control platform/);
+  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Energy Services Portal/);
+  assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Control Systems Platform/);
   assert.match(html, /cv-entry--nested">\s*<header class="cv-entry__head">\s*<h4>Copilot Studio pilot/);
 });
 
@@ -168,10 +166,11 @@ test('index.html: About is prose only; availability is stated once outside conta
 test('index.html: selected-work tabs ship as plain markup; ARIA is added by JS', () => {
   const html = readHtml('index.html');
   const tabs = [...html.matchAll(/<button class="tab" type="button" id="tab-([a-z]+)" data-panel="panel-\1">([^<]+)<\/button>/g)];
-  assert.deepEqual(tabs.map((m) => m[1]), ['webportal', 'travelapp', 'industrial', 'copilot']);
-  assert.deepEqual(tabs.map((m) => m[2]), ['T WebPortal', 'Travel App', 'Industrial control platform', 'Copilot Studio pilot']);
+  assert.deepEqual(tabs.map((m) => m[1]), ['webportal', 'travelapp', 'industrial']);
+  assert.deepEqual(tabs.map((m) => m[2]), ['Energy Services Portal', 'Travel App', 'Control Systems Platform']);
+  assert.doesNotMatch(html, /panel-copilot/, 'the Copilot Studio pilot lives in Experience only (user, 2026-09-25)');
   assert.match(html, /<div class="tabs__list" data-tablist-label="Selected work">/);
-  for (const id of ['webportal', 'travelapp', 'industrial', 'copilot']) {
+  for (const id of ['webportal', 'travelapp', 'industrial']) {
     assert.match(html, new RegExp(`<article class="panel" id="panel-${id}">`), `panel ${id}`);
   }
   assert.doesNotMatch(html, /role="tab(list|panel)?"|aria-selected|aria-controls/, 'no static tab ARIA: it is inert without JS');
@@ -202,23 +201,23 @@ test('index.html: About is prose only; availability is stated once outside conta
 test('index.html: selected-work tabs ship as plain markup; ARIA is added by JS', () => {
   const html = readHtml('index.html');
   const tabs = [...html.matchAll(/<button class="tab" type="button" id="tab-([a-z]+)" data-panel="panel-\1">([^<]+)<\/button>/g)];
-  assert.deepEqual(tabs.map((m) => m[1]), ['webportal', 'travelapp', 'industrial', 'copilot']);
-  assert.deepEqual(tabs.map((m) => m[2]), ['T WebPortal', 'Travel App', 'Industrial control platform', 'Copilot Studio pilot']);
+  assert.deepEqual(tabs.map((m) => m[1]), ['webportal', 'travelapp', 'industrial']);
+  assert.deepEqual(tabs.map((m) => m[2]), ['Energy Services Portal', 'Travel App', 'Control Systems Platform']);
+  assert.doesNotMatch(html, /panel-copilot/, 'the Copilot Studio pilot lives in Experience only (user, 2026-09-25)');
   assert.match(html, /<div class="tabs__list" data-tablist-label="Selected work">/);
-  for (const id of ['webportal', 'travelapp', 'industrial', 'copilot']) {
+  for (const id of ['webportal', 'travelapp', 'industrial']) {
     assert.match(html, new RegExp(`<article class="panel" id="panel-${id}">`), `panel ${id}`);
   }
   assert.doesNotMatch(html, /role="tab(list|panel)?"|aria-selected|aria-controls/, 'no static tab ARIA: it is inert without JS');
   assert.match(html, /<script src="js\/tabs\.js" defer><\/script>/);
 });
 
-test('index.html: only the work sheet reveals; What-I-did columns carry drawn icons', () => {
+test('index.html: only the work sheet reveals; each panel has a short list of what I did', () => {
   const html = readHtml('index.html');
   assert.equal((html.match(/ data-reveal>/g) || []).length, 1, 'one authored motion, on one element');
   assert.match(html, /<div class="work" data-reveal>/);
-  assert.ok((html.match(/<svg class="col__icon"/g) || []).length >= 12, 'three drawn icons per panel');
-  assert.equal((html.match(/<h4 class="panel__label">What I built<\/h4>/g) || []).length, 4, 'block named What I built');
-  assert.ok((html.match(/<p class="col__intent">/g) || []).length >= 12, 'each column has a one-line intent');
+  assert.doesNotMatch(html, /panel__grid|col__icon|What I built/, 'the column grid was replaced by a short list (user, 2026-09-25)');
+  assert.equal((html.match(/<ul class="bullets panel__points">/g) || []).length, 3, 'each work panel has a short list of what I did');
 });
 
 test('index.html: GitHub and LinkedIn open in a new tab safely', () => {
@@ -316,21 +315,22 @@ test('styles.css: hero claim is set in the display face', () => {
   assert.match(s, /\.hero__claim\s*{[^}]*font-family:\s*var\(--font-display\)/);
 });
 
-test('index.html: Experience engagements carry a summary and a link to their panel, no repeated bullets', () => {
+test('index.html: Experience engagements carry a summary; those with a work panel link to it', () => {
   const html = readHtml('index.html');
   const exp = html.slice(html.indexOf('<section id="experience"'), html.indexOf('</section>', html.indexOf('<section id="experience"')));
-  const engagements = exp.split('<article class="engagement">').slice(1).map((s) => s.slice(0, s.indexOf('</article>')));
+  const engagements = exp.split(/<article class="engagement"[^>]*>/).slice(1).map((s) => s.slice(0, s.indexOf('</article>')));
   assert.equal(engagements.length, 4);
   const targets = [];
   for (const e of engagements) {
     assert.doesNotMatch(e, /class="bullets"/, 'detail lives in Selected work');
     assert.match(e, /<p class="engagement__summary">[^<]{20,}<\/p>/);
     const m = e.match(/<a class="engagement__more" href="#(panel-[a-z]+)">Details<span class="visually-hidden"> on [^<]+<\/span> in Selected work<span aria-hidden="true"> →<\/span><\/a>/);
-    assert.ok(m, 'details link with a hidden project name');
+    if (!m) continue;
     assert.ok(html.includes(`<article class="panel" id="${m[1]}">`), `${m[1]} exists`);
     targets.push(m[1]);
   }
-  assert.deepEqual(targets.sort(), ['panel-copilot', 'panel-industrial', 'panel-travelapp', 'panel-webportal']);
+  assert.deepEqual(targets.sort(), ['panel-industrial', 'panel-travelapp', 'panel-webportal']);
+  assert.match(exp, /<article class="engagement" id="copilot-pilot">/, 'the pilot is a link target in Experience');
 });
 
 test('index.html: every skill group says where it was used; training-only items sit on a Learning line', () => {
@@ -343,7 +343,7 @@ test('index.html: every skill group says where it was used; training-only items 
     assert.ok(used, 'Used in line present');
     const hrefs = [...used[1].matchAll(/href="#([^"]+)"/g)].map((m) => m[1]);
     assert.ok(hrefs.length >= 1, 'at least one project link');
-    for (const id of hrefs) assert.ok(html.includes(`<article class="panel" id="${id}">`), `#${id} exists`);
+    for (const id of hrefs) assert.ok(html.includes(`id="${id}"`), `#${id} exists`);
   }
   const [, cloud, devops] = groups;
   const list = (g) => g.slice(g.indexOf('<ul class="tags">'), g.indexOf('</ul>'));
@@ -357,20 +357,50 @@ test('index.html: every skill group says where it was used; training-only items 
   assert.ok(list(devops).includes('Kubernetes'), 'Kubernetes stays: used on AKS');
 });
 
-test('index.html: About keeps two paragraphs, a lead-in and four How-I-work strengths', () => {
+test('index.html: About is two paragraphs and a lead-in; How I work was removed (user, 2026-09-25)', () => {
   const html = readHtml('index.html');
   const about = html.slice(html.indexOf('<section id="about"'), html.indexOf('<section id="work"'));
-  const text = about.slice(about.indexOf('<div class="about__text">'), about.indexOf('<ul class="strengths"'));
-  assert.equal((text.match(/<p>/g) || []).length, 3, 'two paragraphs plus the lead-in');
+  assert.equal((about.match(/<p>/g) || []).length, 3, 'two paragraphs plus the lead-in');
   assert.match(about, /<p>Curious, proactive and pragmatic; I prefer maintainable solutions and small, shippable steps\.<\/p>/);
-  const titles = [...about.matchAll(/<h3 class="strengths__title">([^<]+)<\/h3>/g)].map((m) => m[1]);
-  assert.deepEqual(titles, ['Release quality', 'Onboarding &amp; documentation', 'Team practice', 'Stepping in']);
-  assert.match(about, /<ul class="strengths" aria-label="How I work">/);
+  assert.doesNotMatch(about, /strengths/);
 });
 
-test('index.html: facts removed from Experience still appear in the work panels', () => {
+test('index.html: work panels have no facts footer, no JAT line, no Claude Code row (user, 2026-09-25)', () => {
   const html = readHtml('index.html');
   const work = html.slice(html.indexOf('<section id="work"'), html.indexOf('<section id="skills"'));
-  assert.match(work, /Co-presented at a JAT event, well received by MaibornWolff and client leadership/);
-  assert.match(work, /version comparisons/i);
+  assert.doesNotMatch(work, /panel__facts|JAT event|Claude Code/);
+});
+
+test('index.html: MaibornWolff is named only in the Experience timeline (user, 2026-09-25)', () => {
+  const html = readHtml('index.html');
+  const experience = html.slice(html.indexOf('<section id="experience"'), html.indexOf('</section>', html.indexOf('<section id="experience"')));
+  const total = (html.match(/MaibornWolff/g) || []).length;
+  const inTimeline = (experience.match(/MaibornWolff/g) || []).length;
+  assert.equal(total, inTimeline, 'no MaibornWolff outside Experience');
+  assert.equal(inTimeline, 2, 'one per role heading');
+});
+
+test('certifications, learning and footer trimmed (user, 2026-09-25)', () => {
+  const html = readHtml('index.html');
+  const cv = readHtml('cv.html');
+  for (const doc of [html, cv]) {
+    assert.doesNotMatch(doc, /Microsoft Agent Academy|MaibornWolff Agentic AI training|Agentic Coding School/);
+    assert.match(doc, /Agentic coding training/);
+    assert.doesNotMatch(doc, /Terraform \/ OpenTofu|Azure networking, governance and security|Azure Landing Zones and Azure Verified Modules/);
+  }
+  const learning = html.slice(html.indexOf('Currently learning'), html.indexOf('</ul>', html.indexOf('Currently learning')));
+  assert.deepEqual([...learning.matchAll(/<li>([^<]+)<\/li>/g)].map((m) => m[1]), ['CKA and CKAD preparation']);
+  assert.match(html, /<footer class="site-footer">\s*<p>© 2026 Nawres Ben Rhouma<\/p>/);
+});
+
+test('project descriptions are impersonal: no I / my / me in work panels, Experience or CV entries (user, 2026-09-25)', () => {
+  const html = readHtml('index.html');
+  const cv = readHtml('cv.html');
+  const strip = (x) => x.replace(/<[^>]+>/g, ' ');
+  const work = html.slice(html.indexOf('<section id="work"'), html.indexOf('<section id="skills"'));
+  const exp = html.slice(html.indexOf('<section id="experience"'), html.indexOf('<section id="education"'));
+  const cvEntries = [...cv.matchAll(/<article class="cv-entry[\s\S]*?<\/article>/g)].map((m) => m[0]).join(' ');
+  for (const [name, part] of [['work', work], ['experience', exp], ['cv entries', cvEntries]]) {
+    assert.doesNotMatch(strip(part), /\b(I|my|My|me)\b/, `${name} uses the first person`);
+  }
 });
